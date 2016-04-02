@@ -1,0 +1,6 @@
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\bin\Debug\Fold.exe.config
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\bin\Debug\Fold.exe
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\bin\Debug\Fold.pdb
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\obj\Debug\Fold.csprojResolveAssemblyReference.cache
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\obj\Debug\Fold.exe
+c:\users\s.schmidt\documents\visual studio 2015\Projects\Fold\Fold\obj\Debug\Fold.pdb

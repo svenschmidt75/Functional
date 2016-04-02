@@ -1,0 +1,12 @@
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\bin\Debug\WriterMonad.exe.config
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\bin\Debug\WriterMonad.exe
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\bin\Debug\WriterMonad.pdb
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\obj\Debug\WriterMonad.csprojResolveAssemblyReference.cache
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\obj\Debug\WriterMonad.exe
+c:\users\s.schmidt\documents\visual studio 2015\Projects\WriterMonad\WriterMonad\obj\Debug\WriterMonad.pdb
+C:\Users\S.Schmidt\Google Drive\WriterMonad\WriterMonad\bin\Debug\WriterMonad.exe.config
+C:\Users\S.Schmidt\Google Drive\WriterMonad\WriterMonad\obj\Debug\WriterMonad.exe
+C:\Users\S.Schmidt\Google Drive\WriterMonad\WriterMonad\obj\Debug\WriterMonad.pdb
+D:\Develop\F#\WriterMonad\WriterMonad\bin\Debug\WriterMonad.exe.config
+D:\Develop\F#\WriterMonad\WriterMonad\obj\Debug\WriterMonad.exe
+D:\Develop\F#\WriterMonad\WriterMonad\obj\Debug\WriterMonad.pdb
