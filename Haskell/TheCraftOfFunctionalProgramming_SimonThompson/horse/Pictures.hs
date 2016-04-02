@@ -34,6 +34,11 @@ beside leftPicture rightPicture = [ l ++ r | (l, r) <- zip leftPicture rightPict
 above :: Picture -> Picture -> Picture
 above topPicture bottomPicture = topPicture ++ bottomPicture
 
+invertPixel :: Char -> Char
+invertPixel c = if c == '.' then '#' else '.'
+
+invertColor :: Picture -> Picture
+invertColor picture = [ map invertPixel line | line <- picture ]
 
 main =
     printPicture (beside (flipV horse) horse)
