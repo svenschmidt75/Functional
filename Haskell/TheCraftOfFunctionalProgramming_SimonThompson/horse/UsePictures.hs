@@ -28,6 +28,23 @@ chessBoard = let half = above (above chessBoardRow chessBoardRow) (above chessBo
             above half half
 
 exercise23_1 :: Picture
-exercise23_1 = above (beside horseV (invertColor horseV)) (beside (invertColor horseV) horseV)
+exercise23_1 = above (beside horseV horseVInverted) (beside horseVInverted horseV)
             where
                 horseV = flipV horse
+                horseVInverted = invertColor horseV
+
+exercise23_2 :: Picture
+exercise23_2 = above (beside horseV horseVInverted) (beside horseInverted horse)
+            where
+                horseV = flipV horse
+                horseVInverted = invertColor horseV
+                horseInverted = invertColor horse
+
+exercise23_3 :: Picture
+exercise23_3 = above (beside horseV horseVInverted) (beside horseHnverted horseH)
+            where
+                horseV = flipV horse
+                horseVInverted = invertColor horseV
+                horseH = flipH horse
+                horseHnverted = invertColor horseH
+

@@ -40,5 +40,8 @@ invertPixel c = if c == '.' then '#' else '.'
 invertColor :: Picture -> Picture
 invertColor picture = [ map invertPixel line | line <- picture ]
 
+rotate :: Picture -> Picture
+rotate = flipH . flipV
+
 main =
     printPicture (beside (flipV horse) horse)
