@@ -40,6 +40,7 @@ exercise23_2 = above (beside horseV horseVInverted) (beside horseInverted horse)
                 horseVInverted = invertColor horseV
                 horseInverted = invertColor horse
 
+
 exercise23_3 :: Picture
 exercise23_3 = above (beside horseV horseVInverted) (beside horseHnverted horseH)
             where
