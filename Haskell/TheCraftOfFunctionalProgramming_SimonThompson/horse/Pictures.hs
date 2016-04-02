@@ -27,3 +27,13 @@ flipH = reverse
 
 flipV :: Picture -> Picture
 flipV picture = [ reverse line | line <- picture ]
+
+beside :: Picture -> Picture -> Picture
+beside leftPicture rightPicture = [ l ++ r | (l, r) <- zip leftPicture rightPicture]
+
+above :: Picture -> Picture -> Picture
+above topPicture bottomPicture = topPicture ++ bottomPicture
+
+
+main =
+    printPicture (beside (flipV horse) horse)
