@@ -17,3 +17,13 @@ exercise22_1 = beside (above whiteSquare blackSquare) (above blackSquare whiteSq
 
 exercise22_2 :: Picture
 exercise22_2 = above (beside whiteSquare blackSquare) (beside blackSquare whiteSquare)
+
+chessBoardRow :: Picture
+chessBoardRow = beside (beside whiteBlack whiteBlack) (beside whiteBlack whiteBlack)
+                where
+                    whiteBlack = beside whiteSquare blackSquare
+
+chessBoard :: Picture
+chessBoard = let half = above (above chessBoardRow chessBoardRow) (above chessBoardRow chessBoardRow) in
+            above half half
+
