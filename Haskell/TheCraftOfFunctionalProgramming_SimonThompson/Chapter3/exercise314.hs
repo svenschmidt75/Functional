@@ -4,6 +4,10 @@ import Test.QuickCheck
 
 
 -- ALT + F3: Select all occurances
+-- git status
+-- git add .
+-- git commit -m "First commit"
+-- git push origin master
 
 
 min2 :: Int -> Int -> Int
