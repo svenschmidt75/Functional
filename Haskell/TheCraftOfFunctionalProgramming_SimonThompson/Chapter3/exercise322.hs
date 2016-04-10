@@ -11,9 +11,9 @@ import Test.QuickCheck
 
 numberNDroots :: Float -> Float -> Float -> Integer
 numberNDroots a b c
-    | b * b > disc = 2
+    | b * b > disc  = 2
     | b * b == disc = 1
-    | b * b < disc = 0
+    | b * b < disc  = 0
     where
         disc = 4.0 * a * c
 
@@ -33,19 +33,24 @@ numberRoots a b c = if a /= 0
                                 3
 
 roots :: Float -> Float -> Float -> (Float, Float)
-roots a b c = if discriminant >= 0
-              then
-                let root1 = (-b - sqrt discriminant)/2.0/a in
-                let root2 = (-b + sqrt discriminant)/2.0/a in
-                (root1, root2)
+roots a b c = if discriminant >= 0 then
+                if a == 0 then
+                    if b == 0 then
+                        (c, 0)
+                    else
+                        (-c/b, 0)
+                else
+                    let root1 = (-b - sqrt discriminant)/2.0/a in
+                    let root2 = (-b + sqrt discriminant)/2.0/a in
+                    (root1, root2)
               else
                 (0, 0)
               where
-                discriminant = 4.0 * a * c
+                discriminant = b * b - 4.0 * a * c
 
 --smallerRoot :: Float -> Float -> Float -> Integer
 --largerRoot :: Float -> Float -> Float -> Integer
 
 main :: IO ()
 main = do
-        print (roots 0 0 9)
+        print (roots 1 2 3)
