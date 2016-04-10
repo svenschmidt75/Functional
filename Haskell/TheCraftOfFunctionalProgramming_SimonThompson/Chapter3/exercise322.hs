@@ -48,9 +48,29 @@ roots a b c = if discriminant >= 0 then
               where
                 discriminant = b * b - 4.0 * a * c
 
---smallerRoot :: Float -> Float -> Float -> Integer
---largerRoot :: Float -> Float -> Float -> Integer
+smallerRoot :: Float -> Float -> Float -> Float
+smallerRoot a b c = fst $ roots a b c
+
+largerRoot :: Float -> Float -> Float -> Float
+largerRoot a b c = snd $ roots a b c
+
+prop_exercise325 :: Float -> Float -> Float -> Bool
+prop_exercise325 a b c = if numberRoots a b c /= 2 then
+                            True
+                         else
+                            let (s, l) = roots a b c in
+                            let p1 = a * s * s + b * s + c in
+                            let p2 = a * l * l + b * l + c in
+                            p1 == 0 && p2 == 0
 
 main :: IO ()
 main = do
-        print (roots 1 2 3)
+        print (roots 5 1 (-1))
+        quickCheck prop_exercise325
+
+{-
+a = 1E-45
+b = 0
+c = -0.12500004
+(-1.3356869e22,1.3356869e22)
+-}
