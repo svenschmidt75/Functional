@@ -1,6 +1,6 @@
 module Exercise514 where
 
-import Test.QuickCheck hiding (Result)
+import           Test.QuickCheck hiding (Result)
 
 
 data Address = ByNumber Int
