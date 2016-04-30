@@ -27,13 +27,31 @@ flipV :: Picture -> Picture
 --flipV = map reverse
 flipV pic = [reverse line | line <- pic]
 
+-- We assume that Picture's are rectangular
+pictureMaxWidth :: Picture -> Int
+pictureMaxWidth pic = maximum $ map length pic
+
+padLineToWidth :: [Char] -> Int -> [Char]
+padLineToWidth line width
+    | length line >= width = line
+    | otherwise            = line ++ (replicate diff '.')
+                            where
+                                diff = width - length line
+
+padPictureToWidth :: Picture -> Int -> Picture
+padPictureToWidth pic width = [padLineToWidth line width | line <- pic]
+
+getMaxPictureWidth :: [Picture] -> Int
+getMaxPictureWidth pics = maximum $ map pictureMaxWidth pics
+
 above :: Picture -> Picture -> Picture
-above = (++)
+above pic1 pic2 = let maxWidth = getMaxPictureWidth [pic1, pic2] in
+                  padPictureToWidth (pic1 ++ pic2) maxWidth
 
 beside :: Picture -> Picture -> Picture
 --beside left right = [leftLine ++ rightLine | (leftLine, rightLine) <- zip left right]
-beside = zipWith (\leftLine rightLine -> leftLine ++ rightLine)
-
+beside pic1 pic2 = let maxWidth = getMaxPictureWidth [pic1, pic2] in
+                   padPictureToWidth (zipWith (\leftLine rightLine -> leftLine ++ rightLine) pic1 pic2) maxWidth
 
 invertChar :: Char -> Char
 invertChar ch = if ch == '.' then '#' else '.'
@@ -80,7 +98,7 @@ multiplyChar ch scale = replicate scale ch
 multiplyCharInLine :: [Char] -> Int -> [Char]
 multiplyCharInLine line scale
     | scale <= 0 = []
-    | otherwise = concat [multiplyChar ch scale | ch <- line]
+    | otherwise  = concat [multiplyChar ch scale | ch <- line]
 
 scale :: Picture -> Int -> Picture
 scale pic idx = concat $ map func pic
