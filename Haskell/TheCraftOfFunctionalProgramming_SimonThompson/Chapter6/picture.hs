@@ -1,6 +1,6 @@
 module Picture where
 
-import Test.QuickCheck hiding (Result)
+import Test.QuickCheck hiding (Result, scale)
 
 
 type Picture = [[Char]]
@@ -55,16 +55,38 @@ superimposeLine line1 line2 = [superimposeChar ch1 ch2 | (ch1, ch2) <- zip line1
 superimpose :: Picture -> Picture -> Picture
 superimpose pic1 pic2 = [superimposeLine line1 line2 | (line1, line2) <- zip pic1 pic2]
 
+
 printPicture :: Picture -> IO ()
 printPicture pic = putStrLn pics
             where
                 pics = foldr (\l r -> l ++ "\n" ++ r) "" pic
 
+
 getColumn :: Int -> Picture -> [Char]
 getColumn idx pic = foldr (\a b -> b ++ [(a !! idx)]) "" pic
 
 rotate90 :: Picture -> Picture
-rotate90 pic = map (\idx -> getColumn idx pic) [0..(length pic - 1)]
+rotate90 pic = 
+            let nColumns = length pic - 1 in
+            map (\idx -> getColumn idx pic) [0..nColumns]
+
+rotate90Anti :: Picture -> Picture
+rotate90Anti = flipV . flipH . rotate90
+
+
+multiplyChar :: Char -> Int -> [Char]
+multiplyChar ch scale = replicate scale ch
+
+multiplyCharInLine :: [Char] -> Int -> [Char]
+multiplyCharInLine line scale
+    | scale <= 0 = []
+    | otherwise = concat [multiplyChar ch scale | ch <- line]
+
+scale :: Picture -> Int -> Picture
+scale pic idx = concat $ map func pic
+            where
+                func line = let l = multiplyCharInLine line idx in
+                            replicate idx l
 
 
 
