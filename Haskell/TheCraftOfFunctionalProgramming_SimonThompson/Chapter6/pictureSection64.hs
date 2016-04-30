@@ -96,10 +96,15 @@ prop_AboveFlipV pic1 pic2 = flipV (pic1 `above` pic2) == (flipV pic1) `above` (f
 prop_AboveFlipH :: Picture -> Picture -> Bool
 prop_AboveFlipH pic1 pic2 = flipH (pic1 `above` pic2) == (flipH pic2) `above` (flipH pic1)
 
+prop_FourCopies :: Picture -> Bool
+prop_FourCopies pic = (pic `above` pic) `beside` (pic `above` pic) == (pic `beside` pic) `above` (pic `beside` pic)
+
+
 
 
 main :: IO ()
 main = do
     quickCheck prop_AboveFlipV
     quickCheck prop_AboveFlipH
+    quickCheck prop_FourCopies
     putStrLn "Test"
