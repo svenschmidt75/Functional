@@ -60,8 +60,11 @@ printPicture pic = putStrLn pics
             where
                 pics = foldr (\l r -> l ++ "\n" ++ r) "" pic
 
+getColumn :: Int -> Picture -> [Char]
+getColumn idx pic = foldr (\a b -> b ++ [(a !! idx)]) "" pic
 
-
+rotate90 :: Picture -> Picture
+rotate90 pic = map (\idx -> getColumn idx pic) [0..(length pic - 1)]
 
 
 
