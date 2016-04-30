@@ -5,21 +5,6 @@ import Test.QuickCheck hiding (Result)
 
 type Picture = [[Char]]
 
-horse :: Picture
-horse = [".......##...",
-         ".....##..#..",
-         "...##.....#.",
-         "..#.......#.",
-         "..#...#...#.",
-         "..#...###.#.",
-         ".#....#..##.",
-         "..#...#.....",
-         "...#...#....",
-         "....#..#....",
-         ".....#.#....",
-         "......##...."]
-
-
 flipH :: Picture -> Picture
 flipH = reverse
 
@@ -34,7 +19,6 @@ beside :: Picture -> Picture -> Picture
 --beside left right = [leftLine ++ rightLine | (leftLine, rightLine) <- zip left right]
 beside = zipWith (\leftLine rightLine -> leftLine ++ rightLine)
 
-
 invertChar :: Char -> Char
 invertChar ch = if ch == '.' then '#' else '.'
 
@@ -45,22 +29,11 @@ invertColor :: Picture -> Picture
 --invertColor pic = [invertLine line | line <- pic]
 invertColor pic = [[invertChar ch | ch <- line] | line <- pic]
 
-
 superimposeChar :: Char -> Char -> Char
 superimposeChar ch1 ch2 = if ch1 == ch2 && ch1 == '.' then '.' else '#'
 
 superimposeLine :: [Char] -> [Char] -> [Char]
-superimposeLine line1 line2 = [superimposeChar ch1 ch2 | (ch1, ch2) <- zip line1 line2]
-
-superimpose :: Picture -> Picture -> Picture
-superimpose pic1 pic2 = [superimposeLine line1 line2 | (line1, line2) <- zip pic1 pic2]
-
-printPicture :: Picture -> IO ()
-printPicture pic = putStrLn pics
-            where
-                pics = foldr (\l r -> l ++ "\n" ++ r) "" pic
-
-
+superimposeLine line1 line2 = [superimposeChar ch1 ch2 | (ch1, ch)]
 
 
 
@@ -70,7 +43,6 @@ prop_AboveFlipV pic1 pic2 = flipV (pic1 `above` pic2) == (flipV pic1) `above` (f
 
 prop_AboveFlipH :: Picture -> Picture -> Bool
 prop_AboveFlipH pic1 pic2 = flipH (pic1 `above` pic2) == (flipH pic2) `above` (flipH pic1)
-
 
 
 main :: IO ()
