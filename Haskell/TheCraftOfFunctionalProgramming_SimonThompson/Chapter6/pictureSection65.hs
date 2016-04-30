@@ -38,20 +38,37 @@ padLineToWidth line width
                             where
                                 diff = width - length line
 
-padPictureToWidth :: Picture -> Int -> Picture
-padPictureToWidth pic width = [padLineToWidth line width | line <- pic]
+getMaxPictureWidth :: Picture -> Int
+getMaxPictureWidth pic = pictureMaxWidth pic
 
-getMaxPictureWidth :: [Picture] -> Int
-getMaxPictureWidth pics = maximum $ map pictureMaxWidth pics
+padPictureToWidth :: Picture -> Picture
+padPictureToWidth pic = if diff > 0 then
+                            [padLineToWidth line nRows | line <- pic]
+                        else
+                            pic
+                    where
+                        nRows      = length pic
+                        nColumns   = getMaxPictureWidth pic
+                        diff       = nRows - nColumns
+
+padPictureToHeight :: Picture -> Picture
+padPictureToHeight pic = if diff > 0 then pic ++ (replicate diff paddedLine) else pic
+                    where
+                        nRows      = length pic
+                        nColumns   = getMaxPictureWidth pic
+                        diff       = nColumns - nRows
+                        paddedLine = replicate nColumns '.'
+
+makePictureRectangular :: Picture -> Picture
+makePictureRectangular = padPictureToWidth . padPictureToHeight
 
 above :: Picture -> Picture -> Picture
-above pic1 pic2 = let maxWidth = getMaxPictureWidth [pic1, pic2] in
-                  padPictureToWidth (pic1 ++ pic2) maxWidth
+above = (++)
 
 beside :: Picture -> Picture -> Picture
 --beside left right = [leftLine ++ rightLine | (leftLine, rightLine) <- zip left right]
-beside pic1 pic2 = let maxWidth = getMaxPictureWidth [pic1, pic2] in
-                   padPictureToWidth (zipWith (\leftLine rightLine -> leftLine ++ rightLine) pic1 pic2) maxWidth
+beside = zipWith (\leftLine rightLine -> leftLine ++ rightLine)
+
 
 invertChar :: Char -> Char
 invertChar ch = if ch == '.' then '#' else '.'
@@ -117,12 +134,24 @@ prop_AboveFlipH pic1 pic2 = flipH (pic1 `above` pic2) == (flipH pic2) `above` (f
 prop_FourCopies :: Picture -> Bool
 prop_FourCopies pic = (pic `above` pic) `beside` (pic `above` pic) == (pic `beside` pic) `above` (pic `beside` pic)
 
+prop_IsRectangular :: Picture -> Property
+prop_IsRectangular pic =
+     (null pic == False)
+    ==>
+     length (makePictureRectangular pic) == getMaxPictureWidth (makePictureRectangular pic)
 
-
+{-
+propAboveBeside3Correct :: Picture -> Picture -> Picture
+propAboveBeside3Correct w e =
+    (rectangular w && rectangular e && height w == height e)
+    ==>
+    (w `beside` e) `above` (w `beside` e) == (w `above` w) `above` (e `beside` e)
+-}
 
 main :: IO ()
 main = do
     quickCheck prop_AboveFlipV
     quickCheck prop_AboveFlipH
     quickCheck prop_FourCopies
+    quickCheck prop_IsRectangular
     putStrLn "Test"
