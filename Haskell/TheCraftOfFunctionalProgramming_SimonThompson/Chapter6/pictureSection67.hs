@@ -1,4 +1,4 @@
-module Picture where
+module SupermarketBill where
 
 import Test.QuickCheck hiding (Result, scale)
 
@@ -19,12 +19,25 @@ codeIndex = [(4719, "Fish Fingers",       121),
 type TillType = [BarCode]
 type BillType = [(Name, Price)]
 
-makeBill :: TillType -> BillType
+--makeBill :: TillType -> BillType
 
-formatBill :: BillType -> String
 
-produceBill :: TillType -> String
-produceBill = formatBill . makeBill
+formatPence :: Price -> String
+formatPence pence = let integer_part = pence `div` 100 in
+                    let fractional_part = pence `mod` 100 in
+                    let formatted_integer_part = show integer_part in
+                    let formatted_fractional_part = show fractional_part in
+                    formatted_integer_part ++ "." ++ (padWithZero formatted_fractional_part)
+                    where
+                     padWithZero formatted_fractional_part
+                        | length formatted_fractional_part == 2 = formatted_fractional_part
+                        | otherwise                             = (replicate (2 - length formatted_fractional_part) '0') ++ formatted_fractional_part
+
+--formatBill :: BillType -> String
+
+
+--produceBill :: TillType -> String
+--produceBill = formatBill . makeBill
 
 lineLength :: Int
 lineLength = 30
