@@ -43,6 +43,15 @@ formatLines :: [(Name, Price)] -> String
 --formatLines []     = ""
 formatLines items = foldr (\item accum -> accum ++ formatLine item) "" items
 
+
+makeDiscount :: BillType -> Price
+makeDiscount bill = let nSherries = length (filter (\(name, _) -> name == "Dry Sherry, 1lt") bill) in
+                    100 * (nSherries - 1)
+
+formatDiscount :: Price -> String
+formatDiscount price = "\n" ++ formatLine ("Discount", price)
+
+
 makeTotal :: BillType -> Price
 makeTotal ((_, price):xs) = price + makeTotal xs
 makeTotal []              = 0
@@ -51,8 +60,13 @@ formatTotal :: Price -> String
 formatTotal price = "\n" ++ formatLine ("Total", price)
 
 formatBill :: BillType -> String
-formatBill bill = formatLines bill ++ formatTotal (makeTotal bill)
-
+formatBill bill = let mainBill = formatLines bill in
+                  let discount = makeDiscount bill in
+                  let total    = formatTotal (makeTotal bill - discount) in
+                  if discount == 0 then
+                    mainBill ++ total
+                  else
+                    mainBill ++ formatDiscount discount ++ total
 
 look :: DataBase -> BarCode -> (Name, Price)
 look ((bc, name, price):xs) barCode = if barCode == bc then (name, price) else look xs barCode
@@ -70,10 +84,6 @@ produceBill = formatBill . makeBill
 lineLength :: Int
 lineLength = 30
 
-
-
-
-
 main :: IO ()
 main = do
-    putStrLn "Test"
+    putStrLn $ produceBill [1234, 4719, 3814, 1112, 9, 1234]
