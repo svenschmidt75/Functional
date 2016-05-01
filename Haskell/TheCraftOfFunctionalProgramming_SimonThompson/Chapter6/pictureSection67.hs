@@ -1,6 +1,8 @@
 module SupermarketBill where
 
 import Test.QuickCheck hiding (Result, scale)
+import Prelude hiding (lookup)
+
 
 type Name = String
 type Price = Int
@@ -52,12 +54,18 @@ formatBill :: BillType -> String
 formatBill bill = formatLines bill ++ formatTotal (makeTotal bill)
 
 
+look :: DataBase -> BarCode -> (Name, Price)
+look ((bc, name, price):xs) barCode = if barCode == bc then (name, price) else look xs barCode
+look                     []       _ = ("Unknown Item", 0)
 
---makeBill :: TillType -> BillType
+lookup :: BarCode -> (Name, Price)
+lookup barCode = look codeIndex barCode
 
+makeBill :: TillType -> BillType
+makeBill till = map lookup till
 
---produceBill :: TillType -> String
---produceBill = formatBill . makeBill
+produceBill :: TillType -> String
+produceBill = formatBill . makeBill
 
 lineLength :: Int
 lineLength = 30
