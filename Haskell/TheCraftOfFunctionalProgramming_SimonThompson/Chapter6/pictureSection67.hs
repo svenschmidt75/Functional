@@ -84,6 +84,19 @@ produceBill = formatBill . makeBill
 lineLength :: Int
 lineLength = 30
 
+removeBarCode :: DataBase -> BarCode -> DataBase
+removeBarCode ((barcode, name, price):dbs) barCode
+    | barcode == barCode = removeBarCode dbs barCode
+    | otherwise          = (barcode, name, price) : removeBarCode dbs barCode
+removeBarCode                           []       _ = []
+
+addBarCode :: DataBase -> (BarCode, Name, Price) -> DataBase
+addBarCode db item = item : db
+
+updateDataBase :: DataBase -> (BarCode, Name, Price) -> DataBase
+updateDataBase db (barCode, name, price) = let updatedDataBase = removeBarCode db barCode in
+                                           addBarCode updatedDataBase (barCode, name, price)
+
 main :: IO ()
 main = do
     putStrLn $ produceBill [1234, 4719, 3814, 1112, 9, 1234]
