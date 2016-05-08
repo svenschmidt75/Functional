@@ -6,8 +6,8 @@ Sven Schmidt
 
 
 CTRL+K, CTRL+I: Show symbol information
-F12: Goto declaration (place cursor on function name for example)
-CTRL+B: Build and execute
+F12           : Goto declaration (place cursor on function name for example)
+CTRL+B        : Build and execute
 
 
 GHCi
@@ -19,9 +19,12 @@ GHCi
 :l file.hs - load file.hs
 :set args foo bar - set command line arguments foo and bar
 
-build: ghc --make file.hs -O2 -rtsopts
-run: file +RTS -tstderr
+build : ghc --make file.hs -O2 -rtsopts
+        Note, this only works if there is a file with
+        'module Main where'
 
--rtsopts: Enable RTS options in executable
-+RTS -tstderr: Print runtime, memory consumption, etc.
+run  : file +RTS -tstderr
+
+-rtsopts      : Enable RTS options in executable
++RTS -tstderr : Print runtime, memory consumption, etc.
                Also, creates file 'tderr' with statistics.
