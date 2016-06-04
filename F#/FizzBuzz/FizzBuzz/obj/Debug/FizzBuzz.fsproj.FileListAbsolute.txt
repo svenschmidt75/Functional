@@ -1,0 +1,8 @@
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.exe.config
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.XML
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.exe
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.pdb
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FSharp.Core.dll
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\bin\Debug\FSharp.Core.xml
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.exe
+D:\Develop\Functional\F#\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.pdb

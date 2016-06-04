@@ -15,8 +15,6 @@ let collatz (start_value : uint64) =
 
 [<EntryPoint>]
 let main argv = 
-
-
     printfn "Number of steps: %A" (collatz 22UL)
     printfn "Number of steps: %A" (collatz 837799UL)
     0 // return an integer exit code
