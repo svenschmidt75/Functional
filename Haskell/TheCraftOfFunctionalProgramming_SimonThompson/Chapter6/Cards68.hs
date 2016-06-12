@@ -1,5 +1,8 @@
 module Main where
 
+import Data.List
+
+
 data Suit = Spades
           | Hearts
           | Diamonds
@@ -39,14 +42,20 @@ cardSuit (Queen s)  = s
 cardSuit (King s)   = s
 cardSuit (Ace s)    = s
 
+getLeadPlayer :: Trick -> Player
+getLeadPlayer []          = error "Empty trick"
+getLeadPlayer ((x, _):_) = x
 
 -- win, no trump
 -- the 1st element is the lead
 winNT :: Trick -> Player
 winNT ((x, y):xs) = let leader      = x in
                     let leader_card = y in
-                     let max_player = filter (\(player, card) -> cardValue card > cardValue leader_card && cardSuit card == cardSuit leader_card) xs in
-                     if null max_player then leader else (fst (head max_player))
+                    let max_player = sortBy (\(_, card1) -> \(_, card2) -> sortCards card1 card2) $ filter (\(_, card) -> compareCard card leader_card) xs in
+                      if null max_player then leader else (getLeadPlayer max_player)
+                      where
+                        compareCard card1 card2 = cardValue card1 > cardValue card2 && cardSuit card1 == cardSuit card2
+                        sortCards card1 card2 = compare (negate (cardValue card1)) (negate (cardValue card2))
 
 main = do
     let trick = [(East, (Jack Hearts)),
@@ -54,3 +63,4 @@ main = do
                  (West, (Card Clubs 10)),
                  (North, (King Hearts))]
     print $ winNT trick
+    print $ winNT2 trick
