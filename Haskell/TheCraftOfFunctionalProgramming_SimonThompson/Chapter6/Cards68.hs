@@ -57,10 +57,31 @@ winNT ((x, y):xs) = let leader      = x in
                         compareCard card1 card2 = cardValue card1 > cardValue card2 && cardSuit card1 == cardSuit card2
                         sortCards card1 card2 = compare (negate (cardValue card1)) (negate (cardValue card2))
 
+trumpCards :: Suit -> Trick -> Trick
+trumpCards trumpSuit cards = filter (\(_, card) -> (cardSuit card) == trumpSuit) cards
+
+nonTrumpCards :: Suit -> Trick -> Trick
+nonTrumpCards trumpSuit cards = filter (\(_, card) -> (cardSuit card) /= trumpSuit) cards
+
+-- win, with trump
+-- the 1st element is the lead
+winT :: Suit -> Trick -> Player
+winT trumpSuit trick@((x, y):xs) = let trump_cards = trumpCards trumpSuit trick in
+                                   if (null trump_cards) then
+                                      -- no trump cards, take highest to win
+                                      winNT trick
+                                   else
+                                      -- take highest trump card
+                                      let ordered_trump_cards = sortBy (\(_, card1) -> \(_, card2) -> sortCards card1 card2) trump_cards in
+                                        getLeadPlayer ordered_trump_cards
+                                      where
+                                        sortCards card1 card2 = compare (negate (cardValue card1)) (negate (cardValue card2))
+
 main = do
     let trick = [(East, (Jack Hearts)),
                  (South, (Card Hearts 2)),
                  (West, (Card Clubs 10)),
                  (North, (King Hearts))]
     print $ winNT trick
-    print $ winNT2 trick
+
+    print $ winT Clubs trick
