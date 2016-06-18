@@ -57,7 +57,12 @@ or (x:xs)     = x || or xs
 prop_exercise77 :: [Bool] -> Bool
 prop_exercise77 xs = or xs == Prelude.or xs
 
-
+-- exercise 7.8
+elemNum :: Integer -> [Integer] -> Integer
+elemNum _ []     = 0
+elemNum item (x:xs)
+    | item == x = 1 + elemNum item xs
+    | otherwise = elemNum item xs
 
 main = do
     print $ excercise71 [0, 1]
@@ -68,3 +73,4 @@ main = do
     quickCheck prop_exercise75
     quickCheck prop_exercise76
     quickCheck prop_exercise77
+    print $ elemNum 7 [1, 7, 5, 4, 3, 7, 8, 9, 7, 9]
