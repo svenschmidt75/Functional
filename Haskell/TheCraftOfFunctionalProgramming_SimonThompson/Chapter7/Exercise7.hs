@@ -129,6 +129,34 @@ max_noSort xs = max' seed xs
                         | n <= y    = max' y ys
                         | otherwise = max' n ys
 
+-- exercise 7.14
+isSorted :: [Integer] -> Bool
+isSorted [] = True
+isSorted (x:y:xs)
+    | x <= y    = isSorted xs
+    | otherwise = False
+-- contains one element only
+isSorted _ = True
+
+prop_isSorted :: [Integer] -> Bool
+prop_isSorted xs = isSorted $ iSort xs
+
+-- exercise 7.16
+ins_descending :: Integer -> [Integer] -> [Integer]
+ins_descending x [] = [x]
+ins_descending x (y:[])
+    | x == y = [x]
+    | otherwise = x:y:[]
+ins_descending x (y:ys)
+    | x < y     = x : ins_descending y ys
+    | x > y     = y : ins_descending x ys
+    | otherwise = ys
+
+iSort_descending :: [Integer] -> [Integer]
+iSort_descending []     = []
+iSort_descending (x:xs) = ins_descending x (iSort_descending xs)
+
+
 main = do
     print $ excercise71 [0, 1]
     print $ excercise72 [1, 2]
@@ -150,3 +178,8 @@ main = do
     print $ max [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
     print $ min_noSort [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
     print $ max_noSort [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
+    print $ isSorted [1]
+    print $ isSorted [1, 2, 3, 7, 9, 10]
+    print $ isSorted $ reverse [1, 2, 3, 7, 9, 10]
+    quickCheck prop_isSorted
+    print $ iSort_descending [2, 1, 4, 1, 2]
