@@ -1,7 +1,7 @@
 module Main where
 
-import Prelude hiding (product, and, or, reverse, unzip)
-import qualified Prelude (product, and, or, reverse, unzip)
+import Prelude hiding (product, and, or, reverse, unzip, min, max)
+import qualified Prelude (product, and, or, reverse, unzip, min, max)
 
 import Test.QuickCheck
 
@@ -87,9 +87,47 @@ prop_reverse :: Eq a => [a] -> Bool
 prop_reverse xs = reverse xs == Prelude.reverse xs
 
 unzip :: [(a, b)] -> ([a], [b])
-unzip [] = []
-unzip ((x, y):xs) = 
+unzip [] = ([], [])
+unzip ((x, y):xs) = let (as, bs) = unzip xs in
+                    ([x] ++ as, [y] ++ bs)
 
+-- exercise 7.12
+
+iSort :: [Integer] -> [Integer]
+iSort []     = []
+iSort (x:xs) = ins x (iSort xs)
+
+ins :: Integer -> [Integer] -> [Integer]
+ins x [] = [x]
+ins x (y:ys)
+    | x <= y    = x:(y:ys)
+    | otherwise = y : ins x ys
+
+min :: [Integer] -> Integer
+min xs = let sorted = iSort xs in
+         head sorted
+
+min_noSort :: [Integer] -> Integer
+min_noSort xs = min' seed xs
+                where
+                    seed = head xs
+                    min' n [] = n
+                    min' n (y:ys)
+                        | n <= y    = min' n ys
+                        | otherwise = min' y ys
+
+max :: [Integer] -> Integer
+max xs = let sorted = iSort xs in
+         last sorted
+
+max_noSort :: [Integer] -> Integer
+max_noSort xs = max' seed xs
+                where
+                    seed = head xs
+                    max' n [] = n
+                    max' n (y:ys)
+                        | n <= y    = max' y ys
+                        | otherwise = max' n ys
 
 main = do
     print $ excercise71 [0, 1]
@@ -107,3 +145,8 @@ main = do
     print $ unique_listComprehension [4, 2, 1, 3, 2, 3]
     print $ reverse [1, 2, 3, 4]
     --quickCheck prop_reverse
+    print $ unzip [(1, 2), (3, 4)]
+    print $ min [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
+    print $ max [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
+    print $ min_noSort [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
+    print $ max_noSort [1, 7, 5, 4, 3, 7, -1, 8, 9, 7, 9]
