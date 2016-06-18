@@ -1,5 +1,11 @@
 module Main where
 
+import Prelude hiding (product, and, or)
+import qualified Prelude (product, and, or)
+
+import Test.QuickCheck
+
+
 excercise71 :: Num a => [a] -> a
 excercise71 []    = 0
 excercise71 (x:_) = x + 1
@@ -24,6 +30,33 @@ excercise74 st = if (null st) then
                  else
                     head st
 
+-- exercise 7.5
+product :: [Integer] -> Integer
+product []     = 1
+product (x:xs) = x * product xs
+
+prop_exercise75 :: [Integer] -> Bool
+prop_exercise75 xs = product xs == Prelude.product xs
+
+-- exercise 7.6
+-- flatten a list of bools to one bool
+and :: [Bool] -> Bool
+and []        = True
+and (True:xs) = and xs
+and (False:_) = False
+
+prop_exercise76 :: [Bool] -> Bool
+prop_exercise76 xs = and xs == Prelude.and xs
+
+-- exercise 7.7
+-- flatten a list of bools to one bool
+or :: [Bool] -> Bool
+or []         = False
+or (x:xs)     = x || or xs
+
+prop_exercise77 :: [Bool] -> Bool
+prop_exercise77 xs = or xs == Prelude.or xs
+
 
 
 main = do
@@ -31,3 +64,7 @@ main = do
     print $ excercise72 [1, 2]
     print $ excercise73_71 [1, 2]
     print $ excercise74 "763"
+    print $ product [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    quickCheck prop_exercise75
+    quickCheck prop_exercise76
+    quickCheck prop_exercise77
