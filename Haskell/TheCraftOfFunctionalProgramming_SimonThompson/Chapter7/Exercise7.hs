@@ -144,13 +144,10 @@ prop_isSorted xs = isSorted $ iSort xs
 -- exercise 7.16
 ins_descending :: Integer -> [Integer] -> [Integer]
 ins_descending x [] = [x]
-ins_descending x (y:[])
-    | x == y = [x]
-    | otherwise = x:y:[]
 ins_descending x (y:ys)
     | x < y     = x : ins_descending y ys
     | x > y     = y : ins_descending x ys
-    | otherwise = ys
+    | otherwise = y:ys
 
 iSort_descending :: [Integer] -> [Integer]
 iSort_descending []     = []
