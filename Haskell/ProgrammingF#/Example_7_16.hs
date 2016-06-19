@@ -9,13 +9,12 @@ module Main where
 
 printRevList :: [Integer] -> IO ()
 printRevList list =
-    printRevListTR list (\x -> putStrLn "Done!")
+    printRevListTR list (putStrLn "Done!")
     where
-        printRevListTR :: [Integer] -> (Integer -> IO ()) -> IO ()
         printRevListTR []     cont = cont
-        printRevListTR (x:xs) cont = printRevListTR xs (\y -> do putStrLn $ show x;
-                                                        return $ cont y)
+        printRevListTR (x:xs) cont = printRevListTR xs (do putStrLn $ show x;
+                                                           cont)
 
 main :: IO ()
 main = do
-    printRevList [1, 2]
+    printRevList [1..10]

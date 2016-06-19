@@ -25,9 +25,8 @@ iter f binTree =
         steps = linearize binTree Finished
 
         processSteps Finished = return "Done"
-        processSteps (Step(x, getNext)) = do
-                                            f x
-                                            processSteps getNext
+        processSteps (Step(x, getNext)) = do f x
+                                             processSteps getNext
 
 main :: IO ()
 main = do
