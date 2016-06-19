@@ -15,24 +15,22 @@ data ContinuationStep a =
       Finished
     | Step (a, ContinuationStep a)
 
-iter :: (a -> ()) -> BinaryTree a -> ()
+iter :: (a -> IO ()) -> BinaryTree a -> IO String
 iter f binTree = 
     processSteps steps
     where
---        linearize :: BinaryTree a -> ContinuationStep a -> ContinuationStep a
         linearize Leaf cont = cont
         linearize (Node x l r) cont = Step(x, linearize l (linearize r cont))
 
---        steps :: ContinuationStep a
         steps = linearize binTree Finished
 
---        processSteps :: ContinuationStep a -> ()
-        processSteps Finished = ()
-        processSteps (Step(x, getNext)) = let r = f x in
-                                        processSteps getNext
+        processSteps Finished = return "Done"
+        processSteps (Step(x, getNext)) = do
+                                            f x
+                                            processSteps getNext
 
 main :: IO ()
 main = do
-    let binTree = Node 1 (Leaf) (Leaf)
-    let res = iter (\x -> ()) binTree
+    let binTree = Node 1 (Node 2 Leaf Leaf) (Node 3 Leaf Leaf)
+    iter (\x -> putStrLn $ show x) binTree
     putStrLn "Done"
