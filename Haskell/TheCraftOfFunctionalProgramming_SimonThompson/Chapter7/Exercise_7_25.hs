@@ -37,5 +37,6 @@ main :: IO ()
 main = do
     print $ is_sublist "ship" "Fish & Chips"
     print $ is_subsequence  "Chip" "Fish & Chips"
-    print $ is_subsequence  "Chip" "Fish & Chips"
+    print $ is_sublist "shC" "Fish & Chips"
+    print $ is_subsequence  "shC" "Fish & Chips"
     print "Done"
