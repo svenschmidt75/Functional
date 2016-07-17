@@ -26,6 +26,8 @@ instance Ord Rank where
     Queen       <= (Number _)  = False
     King        <= (Number _)  = False
     Ace         <= (Number _)  = False
+    King        <= Queen       = False
+    Queen       <= Jack        = False
 
 data Card = Card Suit Rank
           deriving (Show, Eq, Ord)
@@ -34,6 +36,13 @@ type Hand = [Card]
 
 maxByRank :: Card -> Card -> Ordering
 maxByRank (Card _ rank1) (Card _ rank2) = rank1 `compare` rank2
+
+maxByRankAceLow :: Card -> Card -> Ordering
+maxByRankAceLow c1@(Card _ rank1) c2@(Card _ rank2)
+    | rank1 == rank2 = EQ
+    | rank1 == Ace   = LT
+    | rank2 == Ace   = GT
+    | otherwise      = maxByRank c1 c2
 
 partitionBy :: Ord b => (a -> b) ->  [a] -> [[a]]
 partitionBy p [] = []
@@ -81,12 +90,36 @@ tryThreeOfAKind = tryCard 3
 tryFourOfAKind :: Hand -> Maybe [Card]
 tryFourOfAKind = tryCard 4
 
-tryStraight :: Hand -> Maybe [Card]
-tryStraight deck = 
+rankToInt :: Card -> Int
+rankToInt (Card _ (Number x)) = x
+rankToInt (Card _ Ace) = 1
+rankToInt (Card _ Jack) = 11
+rankToInt (Card _ Queen) = 12
+rankToInt (Card _ King) = 13
 
+-- aces rank lowest
+tryStraight :: Hand -> Maybe [Card]
+tryStraight deck = let orderedByRank = sortBy maxByRankAceLow deck in
+                   let nrf = rankToInt . head $ orderedByRank in
+                   let nrl = rankToInt . last $ orderedByRank in
+                   if nrl - nrf == 4
+                     then Just deck
+                     else Nothing
 
 main :: IO ()
 main = do
-    let hand = [(Card Spades (Number 7)), (Card Clubs (Number 7)), (Card Hearts Ace), (Card Diamonds (Number 7))]
-    print $ tryHighCard hand
+    let hand = [
+                (Card Spades (Number 8)),
+                (Card Diamonds (Number 9)),
+                (Card Diamonds (Number 10)),
+                (Card Diamonds Queen),
+                (Card Diamonds Jack)
+               ]
+    let orderedByRank = sortBy maxByRankAceLow hand
+    print orderedByRank
+    let nrf = rankToInt . head $ orderedByRank
+    print nrf
+    let nrl = rankToInt . last $ orderedByRank
+    print nrl
+    print $ tryStraight hand
     return ()
