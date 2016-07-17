@@ -35,33 +35,18 @@ type Hand = [Card]
 maxByRank :: Card -> Card -> Ordering
 maxByRank (Card _ rank1) (Card _ rank2) = rank1 `compare` rank2
 
-partitionBy :: Hand -> [[Card]]
-partitionBy []    = []
-partitionBy cards = let ordered = sortBy maxByRank cards in
-                      doPartitionBy ordered [] []
-                        where
-                          doPartitionBy []       _       result = result
-                          doPartitionBy (x:[])   current result = (x:current):result
-                          doPartitionBy (c1@(Card _ rank1):c2@(Card _ rank2):xs) current result
-                            | rank1 == rank2 = doPartitionBy (c2:xs) (c1:current) result
-                            | otherwise      = doPartitionBy (c2:xs) []           result'
-                            where
-                              result' = (c1:current) : result
-
-partitionBy2 :: Ord b => (a -> b) ->  [a] -> [[a]]
-partitionBy2 p []    = []
-partitionBy2 p xs = let ordered = sortBy (\x y -> p x `compare` p y) xs in
-                      doPartitionBy ordered [] []
-                        where
-                          doPartitionBy []       _       result = result
-                          doPartitionBy (x:[])   current result = (x:current):result
-                          doPartitionBy (x:y:xs) current result
-                            | p x == p y = doPartitionBy (x:xs) (y:current) result
-                            | otherwise      = doPartitionBy (y:xs) []           result'
-                            where
-                              result' = (x:current) : result
-
-
+partitionBy :: Ord b => (a -> b) ->  [a] -> [[a]]
+partitionBy p [] = []
+partitionBy p xs = let ordered = sortBy (\x y -> p x `compare` p y) xs in
+                     doPartitionBy ordered [] []
+                       where
+                         doPartitionBy []       _       result = result
+                         doPartitionBy (x:[])   current result = (x:current):result
+                         doPartitionBy (x:y:xs) current result
+                           | p x == p y = doPartitionBy (x:xs) (y:current) result
+                           | otherwise  = doPartitionBy (y:xs) []          result'
+                           where
+                             result' = (x:current):result
 
 {-
 partition :: [Int] -> [[Int]]
@@ -77,15 +62,31 @@ partition xs = let ordered = sort xs in
                                     result' = (x:current) : result
 -}
 
-tryHighCard :: Hand -> Maybe Card
-tryHighCard xs = Just . head . reverse $ sortBy maxByRank xs
+tryCard :: Int -> Hand -> Maybe [Card]
+tryCard n deck = let partitionedByRank = partitionBy (\(Card _ rank) -> rank) deck in
+                  let pairs = filter (\x -> length x == n) partitionedByRank in
+                    case pairs of
+                      []     -> Nothing
+                      (x:xs) -> Just x
 
---tryPair :: Hand -> Maybe [Card]
+tryHighCard :: Hand -> Maybe [Card]
+tryHighCard = tryCard 1
 
+tryPair :: Hand -> Maybe [Card]
+tryPair = tryCard 2
+
+tryThreeOfAKind :: Hand -> Maybe [Card]
+tryThreeOfAKind = tryCard 3
+
+tryFourOfAKind :: Hand -> Maybe [Card]
+tryFourOfAKind = tryCard 4
+
+tryStraight :: Hand -> Maybe [Card]
+tryStraight deck = 
 
 
 main :: IO ()
 main = do
-    let hand = [(Card Spades (Number 7)), (Card Hearts Ace), (Card Diamonds (Number 7))]
+    let hand = [(Card Spades (Number 7)), (Card Clubs (Number 7)), (Card Hearts Ace), (Card Diamonds (Number 7))]
     print $ tryHighCard hand
     return ()
