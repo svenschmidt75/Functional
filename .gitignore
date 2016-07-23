@@ -48,3 +48,5 @@ Temporary Items
 
 *.suo
 F#/FizzBuzz/FizzBuzz/bin/Debug/FizzBuzz.exe.config
+Haskell/stack_root/
+Haskell/poker/Poker/.stack-work/
