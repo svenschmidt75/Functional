@@ -135,14 +135,21 @@ tryFullHouse hand = let partitionedByRank = partitionBy (\(Card _ rank) -> rank)
                         then Just hand
                         else Nothing
 
+tryStraightFlush :: Hand -> Maybe [Card]
+tryStraightFlush hand = let partitionedBySuit = partitionBy (\(Card suit _) -> suit) hand in
+                        if length partitionedBySuit == 1
+                            then let orderedByRank = sortBy maxByRankAceLow hand in
+                                Just orderedByRank
+                            else Nothing
+
 main :: IO ()
 main = do
     let hand = [
-                (Card Hearts Queen),
-                (Card Spades Queen),
-                (Card Clubs Jack),
-                (Card Diamonds Queen),
-                (Card Diamonds Jack)
+                (Card Hearts (Number 5)),
+                (Card Hearts (Number 4)),
+                (Card Hearts (Number 3)),
+                (Card Hearts (Number 2)),
+                (Card Hearts Ace)
                ]
     let orderedByRank = sortBy maxByRankAceLow hand
     print orderedByRank
@@ -153,4 +160,5 @@ main = do
     print $ tryStraight hand
     print $ tryFlush hand
     print $ tryFullHouse hand
+    print $ tryStraightFlush hand
     return ()
