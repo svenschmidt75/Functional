@@ -3,6 +3,7 @@ module Main where
 import Lib
 
 import Data.List (sort, sortBy)
+import Data.Monoid
 
 
 data Suit = Spades
@@ -142,6 +143,17 @@ tryStraightFlush hand = let partitionedBySuit = partitionBy (\(Card suit _) -> s
                                 Just orderedByRank
                             else Nothing
 
+fJust :: [Maybe a] -> First a
+fJust (x:xs) = First x <> (fJust xs)
+fJust []     = First Nothing
+
+tries = [tryStraightFlush]
+
+evaluate :: Hand -> IO ()
+evaluate hand = let mapped = map (\f -> f hand) tries in
+                let highestHand = fJust mapped in
+                print highestHand
+
 main :: IO ()
 main = do
     let hand = [
@@ -161,4 +173,5 @@ main = do
     print $ tryFlush hand
     print $ tryFullHouse hand
     print $ tryStraightFlush hand
+    evaluate hand
     return ()
