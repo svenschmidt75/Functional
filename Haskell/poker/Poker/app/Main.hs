@@ -25,10 +25,24 @@ instance Ord Rank where
     (Number _)  <= King        = True
     (Number _)  <= Ace         = True
     Jack        <= (Number _)  = False
+    Jack        <= Jack        = True
+    Jack        <= Queen       = True
+    Jack        <= King        = True
+    Jack        <= Ace         = True
     Queen       <= (Number _)  = False
+    Queen       <= Queen       = True
+    Queen       <= King        = True
+    Queen       <= Ace         = True
     King        <= (Number _)  = False
-    Ace         <= (Number _)  = False
+    King        <= Ace         = True
+    King        <= Jack        = False
+    King        <= King        = True
     King        <= Queen       = False
+    Ace         <= (Number _)  = False
+    Ace         <= Jack        = False
+    Ace         <= Queen       = False
+    Ace         <= King        = False
+    Ace         <= Ace         = True
     Queen       <= Jack        = False
 
 data Card = Card Suit Rank
@@ -113,12 +127,20 @@ tryFlush hand
     | length (partitionBy (\(Card suit _) -> suit) hand) == 1 = Just hand
     | otherwise                                               = Nothing
 
+tryFullHouse :: Hand -> Maybe [Card]
+tryFullHouse hand = let partitionedByRank = partitionBy (\(Card _ rank) -> rank) hand in
+                    let pairs = filter (\x -> length x == 2) partitionedByRank in
+                    let triple = filter (\x -> length x == 3) partitionedByRank in
+                    if length partitionedByRank == 2 && null pairs == False && null triple == False
+                        then Just hand
+                        else Nothing
+
 main :: IO ()
 main = do
     let hand = [
-                (Card Diamonds (Number 8)),
-                (Card Diamonds (Number 9)),
-                (Card Diamonds (Number 10)),
+                (Card Hearts Queen),
+                (Card Spades Queen),
+                (Card Clubs Jack),
                 (Card Diamonds Queen),
                 (Card Diamonds Jack)
                ]
@@ -130,4 +152,5 @@ main = do
     print nrl
     print $ tryStraight hand
     print $ tryFlush hand
+    print $ tryFullHouse hand
     return ()
