@@ -4,7 +4,7 @@ import Lib
 
 import Data.List (sort, sortBy)
 import Data.Monoid
-
+import Data.Maybe
 
 data Suit = Spades
           | Hearts
@@ -101,6 +101,12 @@ tryHighCard = tryCard 1
 tryPair :: Hand -> Maybe [Card]
 tryPair = tryCard 2
 
+tryTwoPair :: Hand -> Maybe [Card]
+tryTwoPair hand = let partitionedByRank = sort $ partitionBy (\(Card _ rank) -> rank) hand in
+                  if (map length partitionedByRank == [2, 2, 1])
+                    then Just hand
+                    else Nothing
+
 tryThreeOfAKind :: Hand -> Maybe [Card]
 tryThreeOfAKind = tryCard 3
 
@@ -109,19 +115,23 @@ tryFourOfAKind = tryCard 4
 
 rankToInt :: Card -> Int
 rankToInt (Card _ (Number x)) = x
-rankToInt (Card _ Ace) = 1
-rankToInt (Card _ Jack) = 11
-rankToInt (Card _ Queen) = 12
-rankToInt (Card _ King) = 13
+rankToInt (Card _ Ace)        = 1
+rankToInt (Card _ Jack)       = 11
+rankToInt (Card _ Queen)      = 12
+rankToInt (Card _ King)       = 13
 
 -- aces rank lowest
 tryStraight :: Hand -> Maybe [Card]
-tryStraight deck = let orderedByRank = sortBy maxByRankAceLow deck in
-                   let nrf = rankToInt . head $ orderedByRank in
-                   let nrl = rankToInt . last $ orderedByRank in
-                   if nrl - nrf == 4
-                     then Just deck
-                     else Nothing
+tryStraight hand = let partitionedByRank = partitionBy (\(Card _ rank) -> rank) hand in
+                   if length partitionedByRank == 5
+                     then let orderedByRank = sortBy maxByRankAceLow hand in
+                     let nrf = rankToInt . head $ orderedByRank in
+                     let nrl = rankToInt . last $ orderedByRank in
+                     if nrl - nrf == 4
+                       then Just hand
+                       else Nothing
+                    else
+                        Nothing
 
 tryFlush :: Hand -> Maybe [Card]
 tryFlush hand
@@ -140,22 +150,41 @@ tryStraightFlush :: Hand -> Maybe [Card]
 tryStraightFlush hand = let partitionedBySuit = partitionBy (\(Card suit _) -> suit) hand in
                         if length partitionedBySuit == 1
                             then let orderedByRank = sortBy maxByRankAceLow hand in
-                                Just orderedByRank
+                                 let nrf = rankToInt . head $ orderedByRank in
+                                 let nrl = rankToInt . last $ orderedByRank in
+                                 if nrl - nrf == 4
+                                   then Just hand
+                                   else Nothing
                             else Nothing
 
 fJust :: [Maybe a] -> First a
 fJust (x:xs) = First x <> (fJust xs)
 fJust []     = First Nothing
 
-tries = [tryStraightFlush]
+data WinningHand = WinningHand { func :: Hand -> Maybe [Card], desc :: String }
+
+winningHands :: [WinningHand]
+winningHands = [
+                WinningHand { func = tryStraightFlush, desc = "Straight Flush" },
+                WinningHand { func = tryFourOfAKind, desc = "Four of a kind" },
+                WinningHand { func = tryFullHouse, desc = "Full House" },
+                WinningHand { func = tryFlush, desc = "Flush" },
+                WinningHand { func = tryStraight, desc = "Straight" },
+                WinningHand { func = tryThreeOfAKind, desc = "Three of a kind" },
+                WinningHand { func = tryTwoPair, desc = "Two Pair" },
+                WinningHand { func = tryPair, desc = "Pair" },
+                WinningHand { func = tryHighCard, desc = "High Card" }
+               ]
 
 evaluate :: Hand -> IO ()
-evaluate hand = let mapped = map (\f -> f hand) tries in
-                let highestHand = fJust mapped in
-                print highestHand
+evaluate hand = let mapped = map (\WinningHand { func = f, desc = d } -> (f hand, d)) winningHands in
+                let highestHand = filter (isJust . fst) mapped in
+                print . head $ highestHand
 
 main :: IO ()
 main = do
+{-
+    -- straight flush
     let hand = [
                 (Card Hearts (Number 5)),
                 (Card Hearts (Number 4)),
@@ -163,6 +192,86 @@ main = do
                 (Card Hearts (Number 2)),
                 (Card Hearts Ace)
                ]
+-}
+{-
+    -- four of a kind
+    let hand = [
+                (Card Hearts (Number 5)),
+                (Card Spades (Number 5)),
+                (Card Diamonds (Number 5)),
+                (Card Spades (Number 5)),
+                (Card Hearts Ace)
+               ]
+-}
+{-
+    -- full house
+    let hand = [
+                (Card Hearts (Number 5)),
+                (Card Spades (Number 5)),
+                (Card Diamonds (Number 5)),
+                (Card Spades Queen),
+                (Card Hearts Queen)
+               ]
+-}
+{-
+    -- flush
+    let hand = [
+                (Card Hearts (Number 5)),
+                (Card Hearts (Number 2)),
+                (Card Hearts (Number 7)),
+                (Card Hearts Ace),
+                (Card Hearts Queen)
+               ]
+-}
+{-
+    -- straight
+    let hand = [
+                (Card Hearts Ace),
+                (Card Spades (Number 2)),
+                (Card Hearts (Number 3)),
+                (Card Diamonds (Number 4)),
+                (Card Spades (Number 5))
+               ]
+-}
+{-
+    -- three of a kind
+    let hand = [
+                (Card Hearts Ace),
+                (Card Spades Ace),
+                (Card Hearts (Number 3)),
+                (Card Diamonds Ace),
+                (Card Spades (Number 5))
+               ]
+-}
+{-
+    -- Two Pair
+    let hand = [
+                (Card Hearts Ace),
+                (Card Spades Ace),
+                (Card Hearts (Number 3)),
+                (Card Diamonds King),
+                (Card Spades (Number 3))
+               ]
+-}
+{-
+    -- Pair
+    let hand = [
+                (Card Hearts Ace),
+                (Card Spades Ace),
+                (Card Hearts (Number 3)),
+                (Card Diamonds King),
+                (Card Spades (Number 7))
+               ]
+-}
+    -- High Card
+    let hand = [
+                (Card Hearts Ace),
+                (Card Spades Queen),
+                (Card Hearts (Number 3)),
+                (Card Diamonds King),
+                (Card Spades (Number 7))
+               ]
+{-
     let orderedByRank = sortBy maxByRankAceLow hand
     print orderedByRank
     let nrf = rankToInt . head $ orderedByRank
@@ -173,5 +282,7 @@ main = do
     print $ tryFlush hand
     print $ tryFullHouse hand
     print $ tryStraightFlush hand
+    print $ tryTwoPair hand
+-}
     evaluate hand
     return ()
