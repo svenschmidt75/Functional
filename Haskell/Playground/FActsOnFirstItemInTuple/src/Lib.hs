@@ -3,6 +3,7 @@ module Lib
     ) where
 
 data FInListInTupleInMaybe a = FInListInTupleInMaybe [(Maybe a, String)]
+                               deriving (Show)
 
 instance Functor (FInListInTupleInMaybe) where
 --    fmap :: Functor f => (a -> c) -> [(Maybe a, b)] -> [(Maybe c, b)]
@@ -12,4 +13,6 @@ instance Functor (FInListInTupleInMaybe) where
                                                     doit ((x,s):xs) = (fmap f x, s) : doit xs
 
 someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+someFunc = do
+         let d = FInListInTupleInMaybe [(Just 1, "Nothing")]
+         print $ fmap (\x -> x + 1) d
