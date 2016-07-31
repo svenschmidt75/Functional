@@ -8,6 +8,7 @@ import Lib
        , preorder
        , inorder
        , postorder
+       , foldTree
        )
 
 import Test.Hspec
@@ -73,3 +74,12 @@ spec = do
             let bt = Node (Node Leaf 1 Leaf) 2 (Node Leaf 3 Leaf)
             let expected = [1, 3, 2]
             (postorder bt) `shouldBe` expected
+
+    describe "BinaryTree Foldr" $ do
+        it "foldr on empty tree" $ do
+            (foldTree (+) 0 (Leaf :: BinaryTree Int)) `shouldBe` 0
+
+        it "foldr sum on non-empty tree" $ do
+            let bt = Node (Node Leaf 1 Leaf) 2 (Node Leaf 3 Leaf)
+            let expected = 6
+            (foldTree (+) 0 bt) `shouldBe` expected

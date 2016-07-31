@@ -6,6 +6,7 @@ module Lib
        , preorder
        , inorder
        , postorder
+       , foldTree
        ) where
 
 data BinaryTree a = 
@@ -49,6 +50,12 @@ inorder (Node bl value br) = preorder bl ++ [value] ++ preorder br
 postorder :: BinaryTree a -> [a]
 postorder Leaf = []
 postorder (Node bl value br) = preorder bl ++ preorder br ++ [value]
+
+-- catamorphism
+foldTree :: (a -> b -> b) -> b -> BinaryTree a -> b
+foldTree _ accum Leaf = accum
+foldTree f accum bt = let toList = preorder bt in
+                       foldr f accum toList
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
