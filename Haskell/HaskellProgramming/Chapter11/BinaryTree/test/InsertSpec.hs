@@ -5,6 +5,9 @@ import Lib
        ( BinaryTree (..)
        , insert'
        , mapTree
+       , preorder
+       , inorder
+       , postorder
        )
 
 import Test.Hspec
@@ -45,3 +48,28 @@ spec = do
             let bt = Node (Node Leaf 3 Leaf) 1 (Node Leaf 4 Leaf)
             let expected = Node (Node Leaf 4 Leaf) 2 (Node Leaf 5 Leaf)
             (mapTree (+1) bt) `shouldBe` expected
+
+    describe "BinaryTree -> List" $ do
+        it "preorder on empty tree" $ do
+            (preorder (Leaf :: BinaryTree Int)) `shouldBe` []
+
+        it "preorder on non-empty tree" $ do
+            let bt = Node (Node Leaf 1 Leaf) 2 (Node Leaf 3 Leaf)
+            let expected = [2, 1, 3]
+            (preorder bt) `shouldBe` expected
+
+        it "inorder on empty tree" $ do
+            (inorder (Leaf :: BinaryTree Int)) `shouldBe` []
+
+        it "inorder on non-empty tree" $ do
+            let bt = Node (Node Leaf 1 Leaf) 2 (Node Leaf 3 Leaf)
+            let expected = [1, 2, 3]
+            (inorder bt) `shouldBe` expected
+
+        it "postorder on empty tree" $ do
+            (postorder (Leaf :: BinaryTree Int)) `shouldBe` []
+
+        it "postorder on non-empty tree" $ do
+            let bt = Node (Node Leaf 1 Leaf) 2 (Node Leaf 3 Leaf)
+            let expected = [1, 3, 2]
+            (postorder bt) `shouldBe` expected
