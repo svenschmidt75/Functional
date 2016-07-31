@@ -5,15 +5,15 @@ module Lib
     ) where
 
 data BinaryTree a = 
-	Leaf
+    Leaf
   | Node (BinaryTree a) a (BinaryTree a)
   deriving (Eq, Ord, Show)
 
-insert' :: a -> BinaryTree a -> BinaryTree a
-insert' a (Leaf)  = Node Leaf a Leaf
-
-
-
+insert' :: Ord a => a -> BinaryTree a -> BinaryTree a
+insert' a Leaf  = Node Leaf a Leaf
+insert' a (Node bl value br)
+    | a <= value = Node (insert' a bl) value br
+    | otherwise  = Node bl             value (insert' a br)
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
