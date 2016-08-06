@@ -3,10 +3,13 @@ module Lib
     , DaPhone (..)
     , cellPhonesDead
     , fingerTaps
+    , createMultiplicityMap
+    , mostPopularLetter
     ) where
 
 
 import Data.Char
+import Data.List
 import qualified Data.Map as Map
 
 
@@ -40,11 +43,11 @@ encoderMap = Map.fromList [
 reverseTaps :: DaPhone -> Char -> [(Digit, Presses)]
 reverseTaps _ c = convertToCapital ++ convertChar
                   where
-                      convertToCapital = if c >= 'A' && c <= 'Z'
+                      convertToCapital = if isAsciiUpper c
                                            then [('*', 1)]
                                          else
                                            []
-                      convertChar = case (Map.lookup (toLower c) encoderMap) of
+                      convertChar = case Map.lookup (toLower c) encoderMap of
                                       Just a -> [a]
                                       Nothing -> error [c]
 
@@ -56,8 +59,41 @@ fingerTaps :: [(Digit, Presses)] -> Presses
 fingerTaps [] = 0
 fingerTaps ((_, i):xs) = i + fingerTaps xs
 
+createMultiplicityMap :: String -> Map.Map Char Int
+createMultiplicityMap msg = let m = (Map.empty :: Map.Map Char Int)
+                            in createMultiplicityMap' msg m
+                            where
+                              createMultiplicityMap' [] m' = m'
+                              createMultiplicityMap' (x:xs) m' = let multiplicity = case Map.lookup x m' of
+                                                                                      Just n  -> n
+                                                                                      Nothing -> 0
+                                                                 in createMultiplicityMap' xs (Map.insert x (1 + multiplicity) m')
+
+compare' :: Ord b => (a, b) -> (a, b) -> Ordering
+compare' (_, n1) (_, n2) = compare n1 n2
+
+
+
+{-
+
+An idiomatic way using the libraries is to use maximumBy.
+
+maximumBy :: (a -> a -> Ordering) -> [a] -> a
+Then all is left is to define the function of type a -> a ->Ordering so it knows how to order the elements. The usual way to construct Ordering objects is to use
+
+compare :: (Ord a) => a -> a -> Ordering
+
+-}
+
+
+
+
 mostPopularLetter :: String -> Char
-mostPopularLetter = undefined
+mostPopularLetter [] = undefined
+mostPopularLetter msg = let multiplicityMap = createMultiplicityMap msg in
+                        let maxChar = fst $ maximumBy compare' $ Map.toList multiplicityMap
+                        in
+                          fst . last $ reverseTaps DaPhone maxChar
 
 coolestLtr :: [String] -> Char
 coolestLtr = undefined
