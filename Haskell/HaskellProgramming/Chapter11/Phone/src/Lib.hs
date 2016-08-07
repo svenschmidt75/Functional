@@ -1,10 +1,7 @@
 module Lib
-    ( someFunc
-    , DaPhone (..)
-    , cellPhonesDead
-    , fingerTaps
-    , createMultiplicityMap
-    , mostPopularLetter
+    ( mostPopularLetter
+    , coolestLtr
+    , coolestWord
     ) where
 
 
@@ -69,11 +66,12 @@ createMultiplicityMap :: String -> Map.Map Char Int
 createMultiplicityMap msg = let m = (Map.empty :: Map.Map Char Int)
                             in createMultiplicityMap' msg m
                             where
-                              createMultiplicityMap' [] m' = m'
-                              createMultiplicityMap' (x:xs) m' = let multiplicity = case Map.lookup x m' of
-                                                                                      Just n  -> n
-                                                                                      Nothing -> 0
-                                                                 in createMultiplicityMap' xs (Map.insert x (1 + multiplicity) m')
+                              createMultiplicityMap' []       m' = m'
+                              createMultiplicityMap' (' ':xs) m' = createMultiplicityMap' xs m'
+                              createMultiplicityMap' (x:xs)   m' = let multiplicity = case Map.lookup x m' of
+                                                                                        Just n  -> n
+                                                                                        Nothing -> 0
+                                                                   in createMultiplicityMap' xs (Map.insert x (1 + multiplicity) m')
 
 compare' :: Ord b => (a, b) -> (a, b) -> Ordering
 compare' (_, n1) (_, n2) = compare n1 n2
@@ -88,13 +86,21 @@ mostPopularLetter msg = let multiplicityMap = createMultiplicityMap msg in
                         in
                           (maxChar, multiplicity * (fingerTaps $ cellPhonesDead DaPhone [maxChar]))
 
-coolestLtr :: [String] -> Char
-coolestLtr = undefined
+coolestLtr :: [String] -> (Char, Presses)
+coolestLtr input = mostPopularLetter $ concat input
+
+createMultiplicityMap2 :: [String] -> Map.Map String Int
+createMultiplicityMap2 msg = let m = (Map.empty :: Map.Map String Int)
+                             in createMultiplicityMap2' msg m
+                             where
+                               createMultiplicityMap2' []     m' = m'
+                               createMultiplicityMap2' (x:xs) m' = let multiplicity = case Map.lookup x m' of
+                                                                                        Just n  -> n
+                                                                                        Nothing -> 0
+                                                                   in createMultiplicityMap2' xs (Map.insert x (1 + multiplicity) m')
 
 coolestWord :: [String] -> String
-coolestWord = undefined
-
-
-
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+coolestWord input = let c = words $ map toLower $ filter (\x -> isPunctuation x == False) $ concat $ intersperse " " input in
+                    let m = createMultiplicityMap2 c in
+                    let (word, _) = maximumBy compare' $ Map.toList m in
+                    word
