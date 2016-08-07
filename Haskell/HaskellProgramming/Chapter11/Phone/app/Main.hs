@@ -19,3 +19,4 @@ main :: IO ()
 main = do
     print $ map mostPopularLetter convo
     print $ coolestLtr convo
+    print $ coolestWord convo
