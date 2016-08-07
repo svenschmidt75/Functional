@@ -59,6 +59,12 @@ fingerTaps :: [(Digit, Presses)] -> Presses
 fingerTaps [] = 0
 fingerTaps ((_, i):xs) = i + fingerTaps xs
 
+{- Input: "Hello"
+   Output: 'H' -> 1
+           'e' -> 1
+           'l' -> 2
+           'o' -> 1
+-}
 createMultiplicityMap :: String -> Map.Map Char Int
 createMultiplicityMap msg = let m = (Map.empty :: Map.Map Char Int)
                             in createMultiplicityMap' msg m
@@ -72,28 +78,15 @@ createMultiplicityMap msg = let m = (Map.empty :: Map.Map Char Int)
 compare' :: Ord b => (a, b) -> (a, b) -> Ordering
 compare' (_, n1) (_, n2) = compare n1 n2
 
-
-
-{-
-
-An idiomatic way using the libraries is to use maximumBy.
-
-maximumBy :: (a -> a -> Ordering) -> [a] -> a
-Then all is left is to define the function of type a -> a ->Ordering so it knows how to order the elements. The usual way to construct Ordering objects is to use
-
-compare :: (Ord a) => a -> a -> Ordering
-
+{- Input: "A"
+   Output: ('A', 2) because 'A's sequence is [('*', 1), ('2', 1)]
 -}
-
-
-
-
-mostPopularLetter :: String -> Char
+mostPopularLetter :: String -> (Char, Presses)
 mostPopularLetter [] = undefined
 mostPopularLetter msg = let multiplicityMap = createMultiplicityMap msg in
-                        let maxChar = fst $ maximumBy compare' $ Map.toList multiplicityMap
+                        let (maxChar, multiplicity) = maximumBy compare' $ Map.toList multiplicityMap
                         in
-                          fst . last $ reverseTaps DaPhone maxChar
+                          (maxChar, multiplicity * (fingerTaps $ cellPhonesDead DaPhone [maxChar]))
 
 coolestLtr :: [String] -> Char
 coolestLtr = undefined
