@@ -9,6 +9,8 @@ import Graph
        , addVertex
        , hasEdge
        , addEdge
+       , adjacent
+       , neighbors
        )
 
 import Test.Hspec
@@ -65,3 +67,40 @@ spec = do
             let isGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
             let expectedGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
             addEdge (Edge (Vertex 2) (Vertex 1)) isGraph `shouldBe` expectedGraph
+
+        it "adjacent - edge does not exist" $ do
+            let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
+            adjacent (Vertex 3) (Vertex 2) graph `shouldBe` False
+
+        it "adjacent - exists" $ do
+            let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
+            adjacent (Vertex 1) (Vertex 2) graph `shouldBe` True
+
+        it "adjacent - exists, undirected" $ do
+            let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
+            adjacent (Vertex 2) (Vertex 1) graph `shouldBe` True
+
+    describe "neighbors" $ do
+        it "vertex has no neighbors" $ do
+            let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
+            neighbors (Vertex 3) graph `shouldBe` []
+
+        it "vertex has one neighbor" $ do
+            let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2)]
+            neighbors (Vertex 1) graph `shouldBe` [Vertex 2]
+
+        it "vertex has neighbors" $ do
+            let vertices = [Vertex 1, Vertex 2, Vertex 3, Vertex 4]
+            let edges = [
+                            Edge (Vertex 1) (Vertex 2)
+                          , Edge (Vertex 2) (Vertex 3)
+                          , Edge (Vertex 3) (Vertex 4)
+                          , Edge (Vertex 4) (Vertex 1)
+                          , Edge (Vertex 4) (Vertex 2)
+                          , Edge (Vertex 1) (Vertex 3)
+                        ]
+            let graph = Graph vertices edges
+            neighbors (Vertex 1) graph `shouldBe` [Vertex 2, Vertex 4, Vertex 3]
+            neighbors (Vertex 2) graph `shouldBe` [Vertex 1, Vertex 3, Vertex 4]
+            neighbors (Vertex 3) graph `shouldBe` [Vertex 2, Vertex 4, Vertex 1]
+            neighbors (Vertex 4) graph `shouldBe` [Vertex 3, Vertex 1, Vertex 2]

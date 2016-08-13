@@ -6,6 +6,8 @@ module Graph
     , addVertex
     , hasEdge
     , addEdge
+    , adjacent
+    , neighbors
     ) where
 
 -- Each vertex has a unique index
@@ -46,6 +48,20 @@ hasEdge (Edge v1 v2) (Graph _ edges) = hasEdge' edges
 addEdge :: Edge -> Graph -> Graph
 addEdge e@(Edge v1 v2) g@(Graph vs es)
     | hasEdge e g             = g
-    | hasVertex v1 g == False = error $ "addEdge: Vertex " ++ show v1 ++ " noy in graph"
-    | hasVertex v2 g == False = error $ "addEdge: Vertex " ++ show v2 ++ " noy in graph"
+    | hasVertex v1 g == False = error $ "addEdge: Vertex " ++ show v1 ++ " not in graph"
+    | hasVertex v2 g == False = error $ "addEdge: Vertex " ++ show v2 ++ " not in graph"
     | otherwise               = Graph vs (e:es)
+
+--adjacent(G, x, y): tests whether there is an edge from the vertices x to y;
+adjacent :: Vertex -> Vertex -> Graph -> Bool
+adjacent v1 v2 = hasEdge (Edge v1 v2)
+
+--neighbors(G, x): lists all vertices y such that there is an edge from the vertices x to y;
+neighbors :: Vertex -> Graph -> [Vertex]
+neighbors vertex (Graph _ edges) = neighbors' edges []
+                                 where
+                                   neighbors' [] vs = vs
+                                   neighbors' (Edge v1 v2 : es) vs
+                                       | v1 == vertex = v2 : neighbors' es vs
+                                       | v2 == vertex = v1 : neighbors' es vs
+                                       | otherwise    =      neighbors' es vs
