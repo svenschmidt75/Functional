@@ -134,7 +134,12 @@ spec = do
             isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` Just True
 
     describe "colorEdge" $ do
-        it "edge not found" $ do
+        it "edge found" $ do
             let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
             let expectedGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 1]
             colorEdge (Edge (Vertex 1) (Vertex 2) 0) 1 isGraph `shouldBe` expectedGraph
+
+        it "edge found" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
+            let expectedGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 9]
+            colorEdge (Edge (Vertex 1) (Vertex 2) 0) 9 isGraph `shouldBe` expectedGraph

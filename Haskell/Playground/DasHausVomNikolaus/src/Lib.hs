@@ -1,9 +1,13 @@
 module Lib
-    ( someFunc
+    ( solver
     ) where
 
 import Graph
+       ( Vertex (..)
+       , Graph (..)
+       )
 
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+
+solver :: Graph -> [[Vertex]]
+solver = undefined
