@@ -1,6 +1,5 @@
 module GraphSpec (spec) where
 
-
 import Graph
        ( Vertex (..)
        , Edge (..)
@@ -13,6 +12,7 @@ import Graph
        , neighbors
        , getEdge
        , isEdgeColored
+       , colorEdge
        )
 
 import Test.Hspec
@@ -132,3 +132,9 @@ spec = do
         it "found - colored" $ do
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 1]
             isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` Just True
+
+    describe "colorEdge" $ do
+        it "edge not found" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
+            let expectedGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 1]
+            colorEdge (Edge (Vertex 1) (Vertex 2) 0) 1 isGraph `shouldBe` expectedGraph

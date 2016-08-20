@@ -10,7 +10,10 @@ module Graph
     , neighbors
     , getEdge
     , isEdgeColored
+    , colorEdge
     ) where
+
+import Helper
 
 -- Each vertex has a unique index
 data Vertex = Vertex Int
@@ -20,7 +23,11 @@ type Color = Int
 
 -- An edge connects two vertices
 data Edge = Edge Vertex Vertex Color
-        deriving (Eq, Show)
+        deriving (Show)
+
+-- ignore edge color when comparing edges
+instance Eq Edge where
+    (Edge v1 v2 _) == (Edge y1 y2 _) = v1 == y1 && v2 == y2
 
 -- should this type be UndirectedGraph?
 data Graph = Graph [Vertex] [Edge]
@@ -74,7 +81,6 @@ isEdgeColored v1 v2 g
                                return (c /= 0)
     | otherwise                = Nothing
 
-
 --adjacent(G, x, y): tests whether there is an edge from the vertices x to y;
 adjacent :: Vertex -> Vertex -> Graph -> Bool
 adjacent v1 v2 = hasEdge (Edge v1 v2 0)
@@ -88,3 +94,6 @@ neighbors vertex (Graph _ edges) = neighbors' edges []
                                          | v1 == vertex = v2 : neighbors' es vs
                                          | v2 == vertex = v1 : neighbors' es vs
                                          | otherwise    =      neighbors' es vs
+
+colorEdge :: Edge -> Color -> Graph -> Graph
+colorEdge e@(Edge v1 v2 _) c (Graph vs es) = Graph vs $ replace e (Edge v1 v2 c) es
