@@ -11,6 +11,8 @@ import Graph
        , addEdge
        , adjacent
        , neighbors
+       , getEdge
+       , isEdgeColored
        )
 
 import Test.Hspec

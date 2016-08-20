@@ -8,6 +8,8 @@ module Graph
     , addEdge
     , adjacent
     , neighbors
+    , getEdge
+    , isEdgeColored
     ) where
 
 -- Each vertex has a unique index
@@ -41,11 +43,21 @@ addVertex v g@(Graph vs es)
 hasEdge :: Edge -> Graph -> Bool
 hasEdge (Edge v1 v2 _) (Graph _ edges) = hasEdge' edges
                                            where
-                                             hasEdge' [] = False
+                                             hasEdge' []              = False
                                              hasEdge' (Edge x1 x2 _ : es)
                                                | x1 == v1 && x2 == v2 = True
                                                | x1 == v2 && x2 == v1 = True
                                                | otherwise            = hasEdge' es
+
+-- undirected edges
+getEdge :: Edge -> Graph -> Maybe Edge
+getEdge (Edge v1 v2 _) (Graph _ edges) = getEdge' edges
+                                           where
+                                             getEdge' []              = Nothing
+                                             getEdge' (e@(Edge x1 x2 _):es)
+                                               | x1 == v1 && x2 == v2 = Just e
+                                               | x1 == v2 && x2 == v1 = Just e
+                                               | otherwise            = getEdge' es
 
 addEdge :: Edge -> Graph -> Graph
 addEdge e@(Edge v1 v2 _) g@(Graph vs es)
@@ -54,6 +66,15 @@ addEdge e@(Edge v1 v2 _) g@(Graph vs es)
     | hasVertex v2 g == False = error $ "addEdge: Vertex " ++ show v2 ++ " not in graph"
     | otherwise               = Graph vs (e:es)
 
+isEdgeColored :: Vertex -> Vertex -> Graph -> Maybe Bool
+isEdgeColored v1 v2 g
+    | hasEdge (Edge v1 v2 0) g = do
+                               e <- getEdge (Edge v1 v2 0) g
+                               let (Edge _ _ c) = e
+                               return (c /= 0)
+    | otherwise                = Nothing
+
+
 --adjacent(G, x, y): tests whether there is an edge from the vertices x to y;
 adjacent :: Vertex -> Vertex -> Graph -> Bool
 adjacent v1 v2 = hasEdge (Edge v1 v2 0)
@@ -61,9 +82,9 @@ adjacent v1 v2 = hasEdge (Edge v1 v2 0)
 --neighbors(G, x): lists all vertices y such that there is an edge from the vertices x to y;
 neighbors :: Vertex -> Graph -> [Vertex]
 neighbors vertex (Graph _ edges) = neighbors' edges []
-                                 where
-                                   neighbors' [] vs = vs
-                                   neighbors' (Edge v1 v2 _ : es) vs
-                                       | v1 == vertex = v2 : neighbors' es vs
-                                       | v2 == vertex = v1 : neighbors' es vs
-                                       | otherwise    =      neighbors' es vs
+                                   where
+                                     neighbors' [] vs = vs
+                                     neighbors' (Edge v1 v2 _ : es) vs
+                                         | v1 == vertex = v2 : neighbors' es vs
+                                         | v2 == vertex = v1 : neighbors' es vs
+                                         | otherwise    =      neighbors' es vs
