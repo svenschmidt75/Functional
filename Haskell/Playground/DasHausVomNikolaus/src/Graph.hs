@@ -11,9 +11,13 @@ module Graph
     , getEdge
     , isEdgeColored
     , colorEdge
+    , getUncoloredEdges
     ) where
 
 import Helper
+
+import Data.Maybe (fromMaybe)
+
 
 -- Each vertex has a unique index
 data Vertex = Vertex Int
@@ -73,14 +77,6 @@ addEdge e@(Edge v1 v2 _) g@(Graph vs es)
     | hasVertex v2 g == False = error $ "addEdge: Vertex " ++ show v2 ++ " not in graph"
     | otherwise               = Graph vs (e:es)
 
-isEdgeColored :: Vertex -> Vertex -> Graph -> Maybe Bool
-isEdgeColored v1 v2 g
-    | hasEdge (Edge v1 v2 0) g = do
-                               e <- getEdge (Edge v1 v2 0) g
-                               let (Edge _ _ c) = e
-                               return (c /= 0)
-    | otherwise                = Nothing
-
 --adjacent(G, x, y): tests whether there is an edge from the vertices x to y;
 adjacent :: Vertex -> Vertex -> Graph -> Bool
 adjacent v1 v2 = hasEdge (Edge v1 v2 0)
@@ -97,3 +93,19 @@ neighbors vertex (Graph _ edges) = neighbors' edges []
 
 colorEdge :: Edge -> Color -> Graph -> Graph
 colorEdge e@(Edge v1 v2 _) c (Graph vs es) = Graph vs $ replace e (Edge v1 v2 c) es
+
+
+isEdgeColored :: Vertex -> Vertex -> Graph -> Maybe Bool
+isEdgeColored v1 v2 g
+    | hasEdge (Edge v1 v2 0) g = do
+                               e <- getEdge (Edge v1 v2 0) g
+                               let (Edge _ _ c) = e
+                               return (c /= 0)
+    | otherwise                = Nothing
+
+getUncoloredEdges :: Vertex -> Graph -> [Edge]
+getUncoloredEdges v g =
+                    let neighboringVertices = neighbors v g
+                        edges               = [Edge v y 0 | y <- neighboringVertices]
+                        nonColoredEdges     = filter (\(Edge v1 v2 _) -> not $ fromMaybe False $ isEdgeColored v1 v2 g) edges
+                    in nonColoredEdges
