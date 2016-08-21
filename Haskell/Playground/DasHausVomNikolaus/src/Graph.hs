@@ -17,6 +17,7 @@ module Graph
 import Helper
 
 import Data.Maybe (fromMaybe)
+import Debug.Trace
 
 
 -- Each vertex has a unique index
@@ -27,11 +28,7 @@ type Color = Int
 
 -- An edge connects two vertices
 data Edge = Edge Vertex Vertex Color
-        deriving (Show)
-
--- ignore edge color when comparing edges
-instance Eq Edge where
-    (Edge v1 v2 _) == (Edge y1 y2 _) = v1 == y1 && v2 == y2
+        deriving (Eq, Show)
 
 -- should this type be UndirectedGraph?
 data Graph = Graph [Vertex] [Edge]
@@ -91,8 +88,11 @@ neighbors vertex (Graph _ edges) = neighbors' edges []
                                          | v2 == vertex = v1 : neighbors' es vs
                                          | otherwise    =      neighbors' es vs
 
+edgeComparator :: Edge -> Edge -> Bool
+edgeComparator (Edge v1 v2 _) (Edge y1 y2 _) = v1 == y1 && v2 == y2 || v1 == y2 && v2 == y1
+
 colorEdge :: Edge -> Color -> Graph -> Graph
-colorEdge e@(Edge v1 v2 _) c (Graph vs es) = Graph vs $ replace e (Edge v1 v2 c) es
+colorEdge e@(Edge v1 v2 _) c (Graph vs es) = Graph vs $ replace' edgeComparator e (Edge v1 v2 c) es
 
 
 isEdgeColored :: Vertex -> Vertex -> Graph -> Maybe Bool

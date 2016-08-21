@@ -2,6 +2,7 @@ module HelperSpec (spec) where
 
 import Helper
        ( replace
+       , replace'
        )
 
 import Test.Hspec
@@ -30,7 +31,12 @@ spec = do
             let expected = [1, 2, 3, 7]
             replace 4 7 input `shouldBe` expected
 
-        it "replace - multiple ocurances" $ do
+        it "replace - multiple occurences" $ do
             let input = [1, 2, 3, 4, 3, 6, 2, 4, 8]
             let expected = [1, 9, 3, 4, 3, 6, 9, 4, 8]
             replace 2 9 input `shouldBe` expected
+
+    describe "replace'" $ do
+        it "replace'" $ do
+            let input = [1, 2, 3, 4]
+            replace' (==) 7 1 input `shouldBe` input

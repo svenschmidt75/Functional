@@ -145,6 +145,11 @@ spec = do
             let expectedGraph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 9]
             colorEdge (Edge (Vertex 1) (Vertex 2) 0) 9 isGraph `shouldBe` expectedGraph
 
+        it "edge found - undirected" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 3] [Edge (Vertex 3) (Vertex 1) 0]
+            let expectedGraph = Graph [Vertex 1, Vertex 3] [Edge (Vertex 1) (Vertex 3) 9]
+            colorEdge (Edge (Vertex 1) (Vertex 3) 0) 9 isGraph `shouldBe` expectedGraph
+
     describe "getUncoloredEdges" $ do
         it "at least one" $ do
             let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
