@@ -18,8 +18,9 @@ import Data.List (nub)
 
 solver :: Graph -> [[Vertex]]
 solver g =
-       let (Graph vs _) = g in
-       let results = concatMap (\v -> filter (\x -> length x == 8) $ nub $ step [] v g) vs
+       let (Graph vs es) = g
+           nEdges = length es in
+       let results = concatMap (\v -> filter (\x -> length x == nEdges) $ nub $ step [] v g) vs
        in results
 
 step :: [Vertex] -> Vertex -> Graph -> [[Vertex]]
