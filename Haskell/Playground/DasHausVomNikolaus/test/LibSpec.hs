@@ -24,15 +24,15 @@ spec = do
                         ]
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3] edges
             let expected = [
-                            [Vertex 3,Vertex 2,Vertex 1],
-                            [Vertex 2,Vertex 3,Vertex 1],
-                            [Vertex 3,Vertex 1,Vertex 2],
-                            [Vertex 1,Vertex 3,Vertex 2],
-                            [Vertex 1,Vertex 2,Vertex 3],
-                            [Vertex 2,Vertex 1,Vertex 3]
+                            [Vertex 1,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 2],
+                            [Vertex 3,Vertex 1,Vertex 2,Vertex 3],
+                            [Vertex 3,Vertex 2,Vertex 1,Vertex 3]
                            ]
             solver graph `shouldBe` expected
-{-
+
         it "Two Triangles" $ do
             let edges = [
                           Edge (Vertex 1) (Vertex 2) 0,
@@ -43,18 +43,18 @@ spec = do
                         ]
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3, Vertex 4] edges
             let expected = [
-                            [Vertex 3,Vertex 1,Vertex 4,Vertex 2,Vertex 1],
-                            [Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 1],
-                            [Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 1],
-                            [Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 1],
-                            [Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 1],
-                            [Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 1],
-                            [Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 4],
-                            [Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 4],
-                            [Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 4],
-                            [Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 4],
-                            [Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 4],
-                            [Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 4]
+                            [Vertex 4,Vertex 3,Vertex 1,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 4,Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 4,Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 4,Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 1],
+                            [Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 4],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 4],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 4],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 4],
+                            [Vertex 1,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 4],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 4]
                            ]
             solver graph `shouldBe` expected
 
@@ -70,6 +70,95 @@ spec = do
                           Edge (Vertex 4) (Vertex 5) 0
                         ]
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3, Vertex 4, Vertex 5] edges
-            let expected = [[Vertex 3, Vertex 2, Vertex 1], [Vertex 2, Vertex 3, Vertex 1]]
+            let expected = [
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 4,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 4,Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 2,Vertex 1,Vertex 3,Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 3,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 1,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 3,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 4,Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 3,Vertex 1,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 2,Vertex 1,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 1,Vertex 4,Vertex 5,Vertex 3,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 2,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 4,Vertex 1,Vertex 3,Vertex 5,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 4,Vertex 3,Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 4,Vertex 1,Vertex 2,Vertex 3,Vertex 5,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 3,Vertex 2,Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2],
+                            [Vertex 1,Vertex 2,Vertex 3,Vertex 1,Vertex 4,Vertex 3,Vertex 5,Vertex 4,Vertex 2]
+                           ]
             solver graph `shouldBe` expected
 ---}

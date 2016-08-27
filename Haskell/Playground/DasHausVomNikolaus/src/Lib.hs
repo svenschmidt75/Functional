@@ -37,7 +37,7 @@ step currentPath v1 g =
                 startSolve' v2 | trace ("startSolve': v2=" ++ show v2) False = undefined
                 startSolve' v2 =
                             case fromMaybe True $ isEdgeColored v1 v2 g of
-                              True  -> [(g, currentPath)]
+                              True  -> [(g, (v1 : currentPath))]
                               False -> step (v1 : currentPath) v2 coloredGraph
                                         where
                                           coloredGraph = colorEdge (Edge v1 v2 0) 1 g
