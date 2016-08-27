@@ -12,6 +12,7 @@ module Graph
     , isEdgeColored
     , colorEdge
     , getUncoloredEdges
+    , allEdgesColored
     ) where
 
 import Helper
@@ -109,3 +110,6 @@ getUncoloredEdges v g =
                         edges               = [Edge v y 0 | y <- neighboringVertices]
                         nonColoredEdges     = filter (\(Edge v1 v2 _) -> not $ fromMaybe False $ isEdgeColored v1 v2 g) edges
                     in nonColoredEdges
+
+allEdgesColored :: Graph -> Bool
+allEdgesColored g@(Graph _ es) = all (\(Edge v1 v2 _) -> fromMaybe True $ isEdgeColored v1 v2 g) es

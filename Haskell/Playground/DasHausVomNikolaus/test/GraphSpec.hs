@@ -14,6 +14,7 @@ import Graph
        , isEdgeColored
        , colorEdge
        , getUncoloredEdges
+       , allEdgesColored
        )
 
 import Test.Hspec
@@ -155,3 +156,16 @@ spec = do
             let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
             let expected = [Edge (Vertex 1) (Vertex 2) 0]
             getUncoloredEdges (Vertex 1) isGraph `shouldBe` expected
+
+    describe "allEdgesColored" $ do
+        it "none" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
+            allEdgesColored isGraph `shouldBe` False
+
+        it "some" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0, Edge (Vertex 2) (Vertex 3) 1]
+            allEdgesColored isGraph `shouldBe` False
+
+        it "all" $ do
+            let isGraph       = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 1, Edge (Vertex 2) (Vertex 3) 1]
+            allEdgesColored isGraph `shouldBe` True
