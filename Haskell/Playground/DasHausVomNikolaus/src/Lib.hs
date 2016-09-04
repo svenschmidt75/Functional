@@ -28,14 +28,14 @@ solver g =
     in paths
 
 step :: [Vertex] -> Vertex -> Graph -> [(Graph, [Vertex])]
-step currentPath v1 g | trace ("step: v1=" ++ show v1 ++ " currentPath=" ++ show currentPath ++ " graph=" ++ show g) False = undefined
+--step currentPath v1 g | trace ("step: v1=" ++ show v1 ++ " currentPath=" ++ show currentPath ++ " graph=" ++ show g) False = undefined
 step currentPath v1 g =
     let vs   = neighbors v1 g
         path = concatMap startSolve' vs
     in path
   where
     startSolve' :: Vertex -> [(Graph, [Vertex])]
-    startSolve' v2 | trace ("startSolve': v2=" ++ show v2) False = undefined
+--    startSolve' v2 | trace ("startSolve': v2=" ++ show v2) False = undefined
     startSolve' v2 =
         if isEdgeColored v1 v2 g
             then [(g, v1 : currentPath)]

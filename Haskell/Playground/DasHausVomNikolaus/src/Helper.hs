@@ -5,7 +5,8 @@ module Helper
 
 replace :: Eq a => a -> a -> [a] -> [a]
 replace _ _ [] = []
-replace itemToReplace item xs = replace' (==) itemToReplace item xs
+replace itemToReplace item xs =
+    replace' (==) itemToReplace item xs
 
 replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]
 replace' _ _ _ [] = []
