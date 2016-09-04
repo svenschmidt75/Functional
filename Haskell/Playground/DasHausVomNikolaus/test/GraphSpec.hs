@@ -110,30 +110,22 @@ spec = do
             neighbors (Vertex 4) graph `shouldBe` [Vertex 3, Vertex 1, Vertex 2]
 
     describe "getEdge" $ do
-        it "getEdge - no such edge" $ do
-            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]
-            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing
-
         it "getEdge" $ do
             let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
-            getEdge (Edge (Vertex 1) (Vertex 2) 0) graph `shouldBe` Just (Edge (Vertex 1) (Vertex 2) 0)
+            getEdge (Edge (Vertex 1) (Vertex 2) 0) graph `shouldBe` Edge (Vertex 1) (Vertex 2) 0
 
         it "getEdge - undirected" $ do
             let graph = Graph [Vertex 1, Vertex 2] [Edge (Vertex 1) (Vertex 2) 0]
-            getEdge (Edge (Vertex 2) (Vertex 1) 0) graph `shouldBe` Just (Edge (Vertex 1) (Vertex 2) 0)
+            getEdge (Edge (Vertex 2) (Vertex 1) 0) graph `shouldBe` Edge (Vertex 1) (Vertex 2) 0
 
     describe "isEdgeColored" $ do
-        it "edge not found" $ do
-            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]
-            isEdgeColored (Vertex 1) (Vertex 3) graph `shouldBe` Nothing
-
         it "found - not colored" $ do
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]
-            isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` Just False
+            isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` False
 
         it "found - colored" $ do
             let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 1]
-            isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` Just True
+            isEdgeColored (Vertex 1) (Vertex 2) graph `shouldBe` True
 
     describe "colorEdge" $ do
         it "edge found" $ do
