@@ -2,6 +2,7 @@ module OptionalMonoidSpec (spec) where
 
 import Test.Hspec
 import Test.Hspec.QuickCheck
+import Test.QuickCheck
 
 import Data.Monoid
 
@@ -9,6 +10,17 @@ import Lib
     ( Optional (..)
     )
 
+
+monoidAssoc :: (Eq m, Monoid m) => m -> m -> m -> Bool
+monoidAssoc a b c = (a <> (b <> c)) == ((a <> b) <> c)
+
+instance Arbitrary a => Arbitrary (Sum a) where
+    arbitrary = arbitrarySum
+
+arbitrarySum :: Arbitrary a => Gen (Sum a)
+arbitrarySum = do
+    a <- arbitrary
+    return $ Sum a
 
 spec :: Spec
 spec = do
@@ -37,3 +49,7 @@ spec = do
             let expr = Nada `mappend` Only (Sum 1)
             let expected = Only (Sum {getSum = 1})
             expr `shouldBe` expected
+
+    describe "verify associativety" $ do
+        prop "Sum Int" $
+            \a b c -> monoidAssoc (a :: Sum Int) (b :: Sum Int) (c :: Sum Int)
