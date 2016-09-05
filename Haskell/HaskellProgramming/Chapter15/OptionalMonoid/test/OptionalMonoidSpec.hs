@@ -14,6 +14,13 @@ import Lib
 monoidAssoc :: (Eq m, Monoid m) => m -> m -> m -> Bool
 monoidAssoc a b c = (a <> (b <> c)) == ((a <> b) <> c)
 
+monoidLeftIdentity :: (Eq m, Monoid m) => m -> Bool
+monoidLeftIdentity a = (mempty <> a) == a
+
+monoidRightIdentity :: (Eq m, Monoid m) => m -> Bool
+monoidRightIdentity a = (a <> mempty) == a
+
+
 instance Arbitrary a => Arbitrary (Sum a) where
     arbitrary = arbitrarySum
 
@@ -53,3 +60,10 @@ spec = do
     describe "verify associativety" $ do
         prop "Sum Int" $
             \a b c -> monoidAssoc (a :: Sum Int) (b :: Sum Int) (c :: Sum Int)
+
+    describe "verify identity" $ do
+        prop "Sum Int - left identity" $
+            \a -> monoidLeftIdentity (a :: Sum Int)
+
+        prop "Sum Int - right  identity" $
+            \a -> monoidRightIdentity (a :: Sum Int)
