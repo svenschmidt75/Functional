@@ -8,7 +8,7 @@ data Optional a = Nada
 
 instance Monoid a => Monoid (Optional a) where
     -- identity
-    mempty = undefined
+    mempty = Nada
 
     {- Because the Optional data type is parametrically polymorphic in a,
        we have to express its monoidal properties in terms of the monoidal
@@ -18,3 +18,4 @@ instance Monoid a => Monoid (Optional a) where
     (Only x) `mappend` (Only y) = Only (x `mappend` y)
     (Only x) `mappend` Nada     = Only x
     Nada     `mappend` (Only x) = Only x
+    Nada     `mappend` Nada     = Nada

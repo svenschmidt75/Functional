@@ -7,7 +7,7 @@ import Test.QuickCheck
 import Data.Monoid
 
 import Lib
-    ( Optional (..)
+    ( Optional (Only, Nada)
     )
 
 
@@ -29,22 +29,31 @@ arbitrarySum = do
     a <- arbitrary
     return $ Sum a
 
+
+instance Arbitrary a => Arbitrary (Optional a) where
+    arbitrary = do
+        a <- arbitrary
+        frequency [
+                    (1, return $ Only a)
+                  , (1, return Nada)
+                  ]
+
 spec :: Spec
 spec = do
     describe "expected output" $ do
         it "Only(Sum)-Only(Sum)" $ do
             let expr = Only (Sum 1) `mappend` Only (Sum 1)
-            let expected = Only (Sum {getSum = 2})
+            let expected = Only Sum {getSum = 2}
             expr `shouldBe` expected
 
         it "Only(Product)-Only(Product)" $ do
             let expr = Only (Product 4) `mappend` Only (Product 2)
-            let expected = Only (Product {getProduct = 8})
+            let expected = Only Product {getProduct = 8}
             expr `shouldBe` expected
 
         it "Only(Sum)-Nada" $ do
             let expr = Only (Sum 1) `mappend` Nada
-            let expected = Only (Sum {getSum = 1})
+            let expected = Only Sum {getSum = 1}
             expr `shouldBe` expected
 
         it "Only[1]-Nada" $ do
@@ -54,16 +63,21 @@ spec = do
 
         it "Nada-Only(Sum)" $ do
             let expr = Nada `mappend` Only (Sum 1)
-            let expected = Only (Sum {getSum = 1})
+            let expected = Only Sum {getSum = 1}
             expr `shouldBe` expected
 
-    describe "verify associativety" $ do
-        prop "Sum Int" $
+    describe "Sum Int" $ do
+        prop "verify associativety" $
             \a b c -> monoidAssoc (a :: Sum Int) (b :: Sum Int) (c :: Sum Int)
-
-    describe "verify identity" $ do
-        prop "Sum Int - left identity" $
+        prop "left identity" $
             \a -> monoidLeftIdentity (a :: Sum Int)
-
-        prop "Sum Int - right  identity" $
+        prop "right identity" $
             \a -> monoidRightIdentity (a :: Sum Int)
+
+    describe "Optional" $ do
+        prop "verify associativety" $
+            \a b c -> monoidAssoc (a :: Optional (Sum Int)) (b :: Optional (Sum Int)) (c :: Optional (Sum Int))
+        prop "left identity" $
+            \a -> monoidLeftIdentity (a :: Optional(Sum Int))
+        prop "right identity" $
+            \a -> monoidRightIdentity (a :: Optional(Sum Int))
