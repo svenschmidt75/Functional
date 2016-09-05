@@ -51,6 +51,7 @@ spec = do
             let expected = Only Product {getProduct = 8}
             expr `shouldBe` expected
 
+        -- this is the equation for the right identity!
         it "Only(Sum)-Nada" $ do
             let expr = Only (Sum 1) `mappend` Nada
             let expected = Only Sum {getSum = 1}
@@ -61,6 +62,7 @@ spec = do
             let expected = Only [1]
             expr `shouldBe` expected
 
+        -- this is the equation for the left identity!
         it "Nada-Only(Sum)" $ do
             let expr = Nada `mappend` Only (Sum 1)
             let expected = Only Sum {getSum = 1}

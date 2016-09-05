@@ -5,7 +5,11 @@
 		[
 			[
 				"mo",
-				"module	keyword"
+				"monoidLeftIdentity"
+			],
+			[
+				"A",
+				"Arbitrary"
 			],
 			[
 				"edge",
@@ -111,7 +115,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 215,
+				"buffer_size": 646,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +123,15 @@
 			"file": "test/OptionalMonoidSpec.hs",
 			"settings":
 			{
-				"buffer_size": 200,
+				"buffer_size": 2612,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "OptionalMonoid.cabal",
+			"settings":
+			{
+				"buffer_size": 1360,
 				"line_ending": "Unix"
 			}
 		}
@@ -282,15 +294,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 215,
+						"buffer_size": 646,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11,
-								11
+								201,
+								201
 							]
 						],
 						"settings":
@@ -310,15 +322,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 200,
+						"buffer_size": 2612,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								200,
-								200
+								1760,
+								1760
 							]
 						],
 						"settings":
@@ -326,10 +338,40 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "OptionalMonoid.cabal",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1360,
+								1360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
