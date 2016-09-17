@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Fir",
+				"First"
+			],
+			[
 				"mo",
 				"monoidLeftIdentity"
 			],
@@ -111,6 +115,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Main.hs",
+			"settings":
+			{
+				"buffer_size": 1000,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -161,10 +181,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/MaybeAnotherMonoidSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs",
@@ -269,8 +294,65 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								486,
+								486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								298,
+								298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
