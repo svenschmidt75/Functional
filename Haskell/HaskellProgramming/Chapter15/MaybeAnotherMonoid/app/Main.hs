@@ -10,6 +10,11 @@ import Lib
      , First' (..)
      )
 
+{- The point here is to define a new monoid instance for Maybe a.
+   We have to put Maybe a in a newtype, because there can be only
+   one monoid instance per type.
+-}
+
 monoidAssoc :: (Eq m, Monoid m) => m -> m -> m -> Bool
 monoidAssoc a b c = (a <> (b <> c)) == ((a <> b) <> c)
 
