@@ -5,8 +5,7 @@ import Data.Monoid
 import Test.QuickCheck
 
 import Lib
-     ( firstMappend
-     , FstId
+     ( FstId
      , FirstMappend
      , First' (..)
      )
@@ -21,31 +20,13 @@ monoidRightIdentity :: (Eq m, Monoid m) => m -> Bool
 monoidRightIdentity a = (a <> mempty) == a
 
 
-
-{-
-instance Arbitrary a => Arbitrary (Sum a) where
-    arbitrary = arbitrarySum
-
-arbitrarySum :: Arbitrary a => Gen (Sum a)
-arbitrarySum = do
-    a <- arbitrary
-    return $ Sum a
-
-
-instance Arbitrary a => Arbitrary (Optional a) where
-    arbitrary = do
-        a <- arbitrary
-        frequency [
-                    (1, return $ Only a)
-                  , (1, return Nada)
-                  ]
--}
-
 instance Arbitrary a => Arbitrary (First' a) where
     arbitrary = do
         a <- arbitrary
-        return $ First' $ Just a
-
+        frequency [
+                    (1, return $ First' $ Just a)
+                  , (1, return $ First' Nothing)
+                  ]
 
 main :: IO ()
 main = do
