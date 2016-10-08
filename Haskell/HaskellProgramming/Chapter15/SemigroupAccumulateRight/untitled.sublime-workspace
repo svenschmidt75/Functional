@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Fa",
+				"Failure' ∷ a → a (b Validation')\tLib"
+			],
+			[
+				"A",
+				"AccumulateRight a b\tLib"
+			],
+			[
 				"a",
 				"arbitrary"
 			],
@@ -14,10 +22,6 @@
 			[
 				"mo",
 				"monoidLeftIdentity"
-			],
-			[
-				"A",
-				"Arbitrary"
 			],
 			[
 				"edge",
@@ -115,6 +119,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 657,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/AccumulateRightSpec.hs",
+			"settings":
+			{
+				"buffer_size": 1123,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -165,10 +187,16 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/SemigroupAccumulateRight.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/ValidationSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/app/Main.hs",
@@ -296,8 +324,68 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								657
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/AccumulateRightSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1123,
+								1123
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
