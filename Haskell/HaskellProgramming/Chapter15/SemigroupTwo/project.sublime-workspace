@@ -17,27 +17,27 @@
 			],
 			[
 				"edge",
-				"edgeComparator :: Edge -> Edge -> Bool	Graph"
+				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
 			],
 			[
 				"rep",
-				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]	Helper"
+				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"put",
-				"putStrLn :: String -> IO ()	Prelude"
+				"putStrLn :: String -> IO ()\tPrelude"
 			],
 			[
 				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]	Lib"
+				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
-				"Graph 	Graph"
+				"Graph \tGraph"
 			],
 			[
 				"repl",
-				"replace :: Eq a => a -> a -> [a] -> [a]	Helper"
+				"replace :: Eq a => a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"ne",
@@ -69,15 +69,15 @@
 			],
 			[
 				"isP",
-				"isPunctuation :: Char -> Bool	Data.Char"
+				"isPunctuation :: Char -> Bool\tData.Char"
 			],
 			[
 				"cre",
-				"createMultiplicityMap2 :: [String] -> Map.Map String Int	Lib"
+				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
 			],
 			[
 				"max",
-				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a	Data.List"
+				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
 			],
 			[
 				"fin",
@@ -89,7 +89,7 @@
 			],
 			[
 				"from",
-				"fromList :: Ord k => [(k, a)] -> Map k a	Data.Map"
+				"fromList :: Ord k => [(k, a)] -> Map k a\tData.Map"
 			],
 			[
 				"fi",
@@ -187,6 +187,11 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Downloads/AL Carbon Star List.skylist",
+		"/home/svenschmidt75/Downloads/AstroLeague Urban Club.skylist",
+		"/home/svenschmidt75/Downloads/AL Open Cluster Program-1.skylist",
+		"/home/svenschmidt75/Downloads/AL Carbon Star Observing Challenge-1.skylist",
+		"/home/svenschmidt75/Downloads/AL Carbon Star Observing Challenge-1 (1).skylist",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTwo/SemigroupTwo.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/src/Lib.hs",
@@ -258,7 +263,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -296,7 +301,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -312,19 +317,19 @@
 						"selection":
 						[
 							[
-								143,
-								143
+								234,
+								234
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/Haskell/Haskell.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -346,13 +351,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/Haskell/Haskell.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

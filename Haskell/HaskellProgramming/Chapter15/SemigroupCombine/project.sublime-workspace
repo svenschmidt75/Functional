@@ -17,27 +17,27 @@
 			],
 			[
 				"edge",
-				"edgeComparator :: Edge -> Edge -> Bool	Graph"
+				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
 			],
 			[
 				"rep",
-				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]	Helper"
+				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"put",
-				"putStrLn :: String -> IO ()	Prelude"
+				"putStrLn :: String -> IO ()\tPrelude"
 			],
 			[
 				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]	Lib"
+				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
-				"Graph 	Graph"
+				"Graph \tGraph"
 			],
 			[
 				"repl",
-				"replace :: Eq a => a -> a -> [a] -> [a]	Helper"
+				"replace :: Eq a => a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"ne",
@@ -69,15 +69,15 @@
 			],
 			[
 				"isP",
-				"isPunctuation :: Char -> Bool	Data.Char"
+				"isPunctuation :: Char -> Bool\tData.Char"
 			],
 			[
 				"cre",
-				"createMultiplicityMap2 :: [String] -> Map.Map String Int	Lib"
+				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
 			],
 			[
 				"max",
-				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a	Data.List"
+				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
 			],
 			[
 				"fin",
@@ -89,7 +89,7 @@
 			],
 			[
 				"from",
-				"fromList :: Ord k => [(k, a)] -> Map k a	Data.Map"
+				"fromList :: Ord k => [(k, a)] -> Map k a\tData.Map"
 			],
 			[
 				"fi",
@@ -115,6 +115,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/LibSpec.hs",
+			"settings":
+			{
+				"buffer_size": 1135,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -165,10 +181,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
@@ -276,6 +295,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"SemigroupCombine",
 			"SemigroupOr"
 		],
 		"reverse": false,
@@ -287,8 +307,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								217,
+								217
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/LibSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1135,
+								1135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -17,27 +17,27 @@
 			],
 			[
 				"edge",
-				"edgeComparator :: Edge -> Edge -> Bool	Graph"
+				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
 			],
 			[
 				"rep",
-				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]	Helper"
+				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"put",
-				"putStrLn :: String -> IO ()	Prelude"
+				"putStrLn :: String -> IO ()\tPrelude"
 			],
 			[
 				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]	Lib"
+				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
-				"Graph 	Graph"
+				"Graph \tGraph"
 			],
 			[
 				"repl",
-				"replace :: Eq a => a -> a -> [a] -> [a]	Helper"
+				"replace :: Eq a => a -> a -> [a] -> [a]\tHelper"
 			],
 			[
 				"ne",
@@ -69,15 +69,15 @@
 			],
 			[
 				"isP",
-				"isPunctuation :: Char -> Bool	Data.Char"
+				"isPunctuation :: Char -> Bool\tData.Char"
 			],
 			[
 				"cre",
-				"createMultiplicityMap2 :: [String] -> Map.Map String Int	Lib"
+				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
 			],
 			[
 				"max",
-				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a	Data.List"
+				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
 			],
 			[
 				"fin",
@@ -89,7 +89,7 @@
 			],
 			[
 				"from",
-				"fromList :: Ord k => [(k, a)] -> Map k a	Data.Map"
+				"fromList :: Ord k => [(k, a)] -> Map k a\tData.Map"
 			],
 			[
 				"fi",
@@ -358,7 +358,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
