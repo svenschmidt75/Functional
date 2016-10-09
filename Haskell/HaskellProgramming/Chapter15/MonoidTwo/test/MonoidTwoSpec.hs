@@ -21,25 +21,26 @@ monoidLeftIdentity a = (mempty <> a) == a
 monoidRightIdentity :: (Eq m, Semigroup m, Monoid m) => m -> Bool
 monoidRightIdentity a = (a <> mempty) == a
 
-
-{-
-instance Arbitrary a => Arbitrary (Identity a) where
+instance (Arbitrary a, Arbitrary b) => Arbitrary (Two a b) where
     arbitrary = do
-                    a <- arbitrary
-                    return $ Identity a
+        a <- arbitrary
+        b <- arbitrary
+        return $ Two a b
 
 instance Arbitrary a => Arbitrary (Sum a) where
     arbitrary = do
-                    a <- arbitrary
-                    return $ Sum a
--}
+        a <- arbitrary
+        return $ Sum a
+
+type TwoType = Two String (Sum Int)
+type TwoAssoc = TwoType -> TwoType -> TwoType -> Bool
 
 spec :: Spec
 spec = do
     describe "Two a b" $ do
-        prop "verify associativety" $
-            \a b c -> semigroupAssoc (a :: Two (Sum Int)) (b :: Two (Sum Int)) (c :: Two (Sum Int))
-        prop "left identity" $
-            \a -> monoidLeftIdentity (a :: Two (Sum Int))
-        prop "right identity" $
-            \a -> monoidRightIdentity (a :: Two (Sum Int))
+        prop "verify associativety" $ do
+            semigroupAssoc :: TwoAssoc
+        prop "left identity" $ do
+            monoidLeftIdentity :: TwoType -> Bool
+        prop "right identity" $ do
+            monoidRightIdentity :: TwoType -> Bool

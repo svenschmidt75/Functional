@@ -318,12 +318,12 @@
 						[
 							[
 								234,
-								234
+								110
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Haskell/Haskell.sublime-syntax"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -351,7 +351,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Haskell/Haskell.sublime-syntax"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
