@@ -22,16 +22,13 @@ monoidRightIdentity :: (Eq m, Semigroup m, Monoid m) => m -> Bool
 monoidRightIdentity a = (a <> mempty) == a
 
 
-type CombineAssoc = Combine Int (Sum Int) -> Combine Int (Sum Int) -> Combine Int (Sum Int) -> Bool
-
-
 spec :: Spec
 spec = do
     describe "conidtions" $ do
+        let f' = Mem $ \s -> ("hi", s + 1)
         it "condition 1" $ do
-            let f = Combine $ \n -> Sum (n + 1)
-            let result = unCombine (mappend f mempty) $ 1
-            result `shouldBe` Sum 2
+            let result = runMem (f' <> mempty) 0
+            result `shouldBe` ("hi",1)
 
 -- I need to figure out how to generate functions in QuickCheck (CoArbitrary)
 {-
