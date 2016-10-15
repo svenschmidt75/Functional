@@ -127,32 +127,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "test/MonoidMemSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1657,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/Spec.hs",
-			"settings":
-			{
-				"buffer_size": 44,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 520,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -203,13 +177,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/MonoidMemSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/MonoidMem.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/Spec.hs",
@@ -335,8 +308,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/Spec.hs",
 		"/usr/bin/subl",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/FirstMaybe/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/ParserSpec.hs",
-		"/opt/sublime_text/sublime_text"
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/ParserSpec.hs"
 	],
 	"find":
 	{
@@ -382,95 +354,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test/MonoidMemSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1657,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								105,
-								35
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/Spec.hs",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 44,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44,
-								44
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 520,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 15.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
