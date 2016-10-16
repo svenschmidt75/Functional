@@ -131,6 +131,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "test/FunctorIdentitySpec.hs",
+			"settings":
+			{
+				"buffer_size": 946,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
+			"settings":
+			{
+				"buffer_size": 3933,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "FunctorIdentity.cabal",
+			"settings":
+			{
+				"buffer_size": 1367,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 150,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -181,10 +216,17 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/FunctorIdentity.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/ValidationSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/test/HeavyLifting1Spec.hs",
@@ -308,11 +350,7 @@
 		"/home/svenschmidt75/Downloads/Logfile.txt",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/Foldr/Foldr.hs",
 		"/home/svenschmidt75/Develop/Functional/F#/FizzBuzz/.gitignore",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertTests.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/SerializeTo.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/src/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/lib/Parser.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertTests.hs"
 	],
 	"find":
 	{
@@ -359,8 +397,126 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test/FunctorIdentitySpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								627,
+								627
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1163,
+								1163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 262.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "FunctorIdentity.cabal",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1367,
+								1367
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],

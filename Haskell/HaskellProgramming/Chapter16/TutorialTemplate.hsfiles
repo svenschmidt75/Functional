@@ -1,0 +1,142 @@
+{-# START_FILE .gitignore #-}
+.stack-work
+
+{-# START_FILE app/Main.hs #-}
+module Main where
+
+main :: IO ()
+main = print "Done"
+
+{-# START_FILE src/Lib.hs #-}
+module Lib
+    ( Identity (..)
+    ) where
+
+data Identity a = Identity a
+    deriving (Eq, Show)
+
+instance Functor Identity where
+    fmap f (Identity a) = Identity (f a)
+
+{-# START_FILE test/Spec.hs #-}
+{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
+
+{-# START_FILE test/{{name}}Spec.hs #-}
+
+module FunctorIdentitySpec (spec) where
+
+import Test.Hspec
+import Test.Hspec.QuickCheck (prop)
+import Test.QuickCheck
+import Test.QuickCheck.Function
+import Test.QuickCheck (Property, quickCheck, (==>))
+import Test.QuickCheck.Monadic (assert, monadicIO, run)
+
+import Lib
+    ( Identity (..)
+    )
+
+
+functorIdentity :: (Functor f, Eq (f a)) => f a -> Bool
+functorIdentity f = fmap id f == f
+
+functorCompose :: (Eq (f c), Functor f) => (a -> b) -> (b -> c) -> f a -> Bool
+functorCompose f g x = (fmap g (fmap f x)) == (fmap (g . f) x)
+
+functorCompose' :: (Eq (f c), Functor f) => f a -> Fun a b -> Fun b c -> Bool
+functorCompose' x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x)
+
+type IntToInt = Fun Int Int
+type IntFC = Identity Int -> IntToInt -> IntToInt -> Bool
+
+semigroupAssoc :: (Eq m, Semigroup m) => m -> m -> m -> Bool
+semigroupAssoc a b c = (a <> (b <> c)) == ((a <> b) <> c)
+
+monoidLeftIdentity :: (Eq m, Semigroup m, Monoid m) => m -> Bool
+monoidLeftIdentity a = (mempty <> a) == a
+
+monoidRightIdentity :: (Eq m, Semigroup m, Monoid m) => m -> Bool
+monoidRightIdentity a = (a <> mempty) == a
+
+instance Arbitrary BoolDisj where
+    arbitrary = frequency [
+                            (1, return $ BoolDisj True)
+                          , (1, return $ BoolDisj False)
+                          ]
+
+instance Arbitrary a => Arbitrary (Identity a) where
+    arbitrary = do
+        a <- arbitrary
+        return $ Identity a
+
+spec :: Spec
+spec = do
+    describe "functor laws" $ do
+        prop "identity" $ do
+            \x -> functorIdentity (x :: Identity Int)
+        prop "composition 1" $ do
+            let li = functorCompose (+1) (*2)
+            \x -> li (x :: Identity Int)
+        prop "composition 2" $ do
+            functorCompose' :: IntFC
+    describe "conidtions" $ do
+        it "condition 1" $ do
+            let f = Combine $ \n -> Sum (n + 1)
+            let result = unCombine (mappend f mempty) $ 1
+            result `shouldBe` Sum 2
+        prop "verify associativety" $ do
+            semigroupAssoc :: BoolConjAssoc
+
+prop5 :: Property
+prop5 = monadicIO $ do
+    let e = let ioi = readIO "1" :: IO Integer
+                changed = (fmap read $ fmap ("123" ++) (fmap show ioi)) :: IO Integer
+            in fmap (*3) changed
+    result <- run $ e
+    assert $ result == 3693
+
+
+{-# START_FILE {{name}}.cabal #-}
+name:                {{name}}
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/githubuser/{{name}}#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          svenschmidt75@googlemail.com
+copyright:           2016 Sven Schmidt
+category:            Tutorial
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable {{name}}-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , {{name}}
+  default-language:    Haskell2010
+
+test-suite {{name}}-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , hspec
+                     , QuickCheck
+                     , {{name}}
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/{{name}}
