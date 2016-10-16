@@ -135,16 +135,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 162,
+				"buffer_size": 181,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/FunctorTwoSpec.hs",
+			"file": "test/FunctorThreePrimeSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1156,
+				"buffer_size": 1183,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -199,12 +199,16 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThreePrime",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThreePrime/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThreePrime/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThree/test/FunctorThreeSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThree/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/test/FunctorTwoSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorPair/test/FunctorPairSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorPair/src/Lib.hs",
@@ -328,11 +332,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/Phone.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaximumTutle/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/.gitignore",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Settings/SublimeHaskell.sublime-settings"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaximumTutle/src/Lib.hs"
 	],
 	"find":
 	{
@@ -388,15 +388,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 162,
+						"buffer_size": 181,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20,
-								20
+								181,
+								181
 							]
 						],
 						"settings":
@@ -412,19 +412,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/FunctorTwoSpec.hs",
+					"file": "test/FunctorThreePrimeSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1156,
+						"buffer_size": 1183,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1183,
+								1183
 							]
 						],
 						"settings":
