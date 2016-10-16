@@ -2,8 +2,8 @@ module Lib
     ( Pair (..)
     ) where
 
-data Pair a b = Pair a b
+data Pair a = Pair a a
     deriving (Eq, Show)
 
-instance Functor (Pair a) where
-    fmap f (Pair a b) = Pair a (f b)
+instance Functor Pair where
+    fmap f (Pair a b) = Pair (f a) (f b)

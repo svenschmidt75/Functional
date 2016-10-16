@@ -22,7 +22,6 @@ instance Functor Identity where
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
 {-# START_FILE test/{{name}}Spec.hs #-}
-
 module {{name}}Spec (spec) where
 
 import Test.Hspec
