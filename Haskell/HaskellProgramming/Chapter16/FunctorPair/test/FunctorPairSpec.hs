@@ -1,13 +1,13 @@
-module FunctorIdentitySpec (spec) where
-
-
+module FunctorPairSpec (spec) where
 
 import Test.Hspec
 import Test.Hspec.QuickCheck (prop)
 import Test.QuickCheck
 import Test.QuickCheck.Function
---import Test.QuickCheck (Property, quickCheck, (==>))
---import Test.QuickCheck.Monadic (assert, monadicIO, run)
+
+import Lib
+    ( Pair (..)
+    )
 
 
 functorIdentity :: (Functor f, Eq (f a)) => f a -> Bool
@@ -20,16 +20,21 @@ functorCompose' :: (Eq (f c), Functor f) => f a -> Fun a b -> Fun b c -> Bool
 functorCompose' x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x)
 
 type IntToInt = Fun Int Int
-type IntFC = [Int] -> IntToInt -> IntToInt -> Bool
+type IntFC = Pair String Int -> IntToInt -> IntToInt -> Bool
 
+instance (Arbitrary a, Arbitrary b) => Arbitrary (Pair a b) where
+    arbitrary = do
+        a <- arbitrary
+        b <- arbitrary
+        return $ Pair a b
 
 spec :: Spec
 spec = do
     describe "functor laws" $ do
         prop "identity" $ do
-            \x -> functorIdentity (x :: [Int])
+            \x -> functorIdentity (x :: Pair String Int)
         prop "composition 1" $ do
             let li = functorCompose (+1) (*2)
-            \x -> li (x :: [Int])
+            \x -> li (x :: Pair String Int)
         prop "composition 2" $ do
             functorCompose' :: IntFC
