@@ -37,7 +37,6 @@ showMaybe = fmap show
 
 spec :: Spec
 spec = do
-
     describe "functor laws" $ do
         prop "identity" $ do
             \x -> functorIdentity (x :: Possibly Int)
