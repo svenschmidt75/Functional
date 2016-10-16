@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"putS",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
 				"B",
 				"BoolConjAssoc \tMonoidBoolConjSpec"
 			],
@@ -127,24 +131,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "test/MonoidMemSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1657,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 520,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -195,13 +181,17 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/ValidationSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/test/HeavyLifting1Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/HeavyLifting1.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/MonoidMemSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/MonoidMem.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/Spec.hs",
@@ -247,7 +237,6 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/SemigroupAccumulateRight.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/ValidationSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/.gitignore",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/SemigroupValidation.cabal",
@@ -323,12 +312,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/SerializeTo.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/src/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/lib/Parser.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/Spec.hs",
-		"/usr/bin/subl",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/FirstMaybe/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/ParserSpec.hs",
-		"/opt/sublime_text/sublime_text"
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/lib/Parser.hs"
 	],
 	"find":
 	{
@@ -346,6 +330,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"addThenClearMakesClear",
 			"BoolConj",
 			"SemigroupBoolConj",
 			"theme",
@@ -374,67 +359,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test/MonoidMemSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1657,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								52,
-								52
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 520,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 15.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
