@@ -131,24 +131,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 509,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/FunctorLiftItOutSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1163,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -199,12 +181,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/test/FunctorLiftItOutSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorEvilGoateeConst/test/FunctorEvilGoateeConstSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorEvilGoateeConst/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/test/FunctorFlipSpec.hs",
@@ -330,9 +312,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Lib.hs",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/DasHausVomNikolaus.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/DasHausVomNikolaus.cabal"
 	],
 	"find":
 	{
@@ -383,67 +363,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								509,
-								509
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/FunctorLiftItOutSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1163,
-								1163
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
