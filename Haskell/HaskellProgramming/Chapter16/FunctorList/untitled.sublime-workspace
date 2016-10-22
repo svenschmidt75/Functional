@@ -143,24 +143,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 252,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/FunctorNotoriousSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1274,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -211,12 +193,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorNotorious",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorNotorious/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorNotorious/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorList"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorNotorious/test/FunctorNotoriousSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorNotorious/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIgnoreOne/test/FunctorIgnoreOneSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIgnoreOne/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa/test/FunctorParappaSpec.hs",
@@ -342,9 +324,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Graph.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs"
 	],
 	"find":
 	{
@@ -392,70 +372,17 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"folders":
+	[
+		{
+			"path": "/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorList"
+		}
+	],
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 252,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								252,
-								252
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/FunctorNotoriousSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1274,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1274,
-								1274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -515,7 +442,7 @@
 		"height": 237.0
 	},
 	"pinned_build_system": "Packages/Haskell/Haskell.sublime-build",
-	"project": "untitled.sublime-project",
+	"project": "",
 	"replace":
 	{
 		"height": 62.0
