@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Ign",
+				"IgnoringSomething ∷ (f a) → (g b) → f (g (a (b IgnoreOne)))\tLib"
+			],
+			[
 				"Da",
 				"DaWrappa ∷ (f a) → (g a) → f (g (a Parappa))\tLib"
 			],
@@ -139,16 +143,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 232,
+				"buffer_size": 247,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/FunctorParappaSpec.hs",
+			"file": "test/FunctorIgnoreOneSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1223,
+				"buffer_size": 1245,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -203,12 +207,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIgnoreOne",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIgnoreOne/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIgnoreOne/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa/test/FunctorParappaSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorParappa/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/test/FunctorLiftItOutSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorLiftItOut/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorEvilGoateeConst/test/FunctorEvilGoateeConstSpec.hs",
@@ -334,9 +340,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Graph.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Lib.hs",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/DasHausVomNikolaus.cabal"
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py"
 	],
 	"find":
 	{
@@ -396,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 232,
+						"buffer_size": 247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								232,
-								232
+								247,
+								247
 							]
 						],
 						"settings":
@@ -420,19 +424,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/FunctorParappaSpec.hs",
+					"file": "test/FunctorIgnoreOneSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1223,
+						"buffer_size": 1245,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1223,
-								1223
+								1245,
+								1245
 							]
 						],
 						"settings":
