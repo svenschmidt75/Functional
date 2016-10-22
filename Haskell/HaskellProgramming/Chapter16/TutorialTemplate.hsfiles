@@ -78,7 +78,7 @@ spec = do
             \x -> li (x :: Identity Int)
         prop "composition 2" $ do
             functorCompose' :: IntFC
-    describe "conidtions" $ do
+    describe "conditions" $ do
         it "condition 1" $ do
             let f = Combine $ \n -> Sum (n + 1)
             let result = unCombine (mappend f mempty) $ 1
