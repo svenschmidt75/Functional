@@ -26,5 +26,5 @@ instance Functor (Flip K a) where
     fmap f (Flip a) = undefined
 
 instance Functor (Flip Either a) where
-    fmap f (Flip (Left a)) = Flip $ (Left (f a))
+    fmap f (Flip (Left a))  = Flip $ (Left (f a))
     fmap f (Flip (Right a)) = Flip $ (Right a)
