@@ -135,7 +135,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 685,
+				"buffer_size": 983,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -144,7 +144,7 @@
 			"file": "test/FunctorFlipSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1343,
+				"buffer_size": 2028,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -393,15 +393,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 685,
+						"buffer_size": 983,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								685,
-								685
+								768,
+								768
 							]
 						],
 						"settings":
@@ -421,15 +421,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1343,
+						"buffer_size": 2028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								186,
-								186
+								2028,
+								2028
 							]
 						],
 						"settings":
@@ -439,7 +439,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 11.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

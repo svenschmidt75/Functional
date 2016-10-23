@@ -22,6 +22,9 @@ newtype K a b = K a
 {- K can be used for f in Flip, because K has the same kindness as f,
  - * -> * -> *.
  -}
+{- I couldn't figure this out until I wrote this for K = Either.
+ - Lot's of trial and error involved...
+ -}
 instance Functor (Flip K a) where
     fmap f (Flip (K a)) = Flip $ K (f a)
 
