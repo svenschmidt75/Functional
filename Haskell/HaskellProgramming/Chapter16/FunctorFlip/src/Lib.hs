@@ -17,9 +17,14 @@ newtype Flip f a b = Flip (f b a)
     deriving (Eq, Show)
 
 newtype K a b = K a
+    deriving (Eq, Show)
 
-{- K can be used for f, because K has the same kindness as f,
+{- K can be used for f in Flip, because K has the same kindness as f,
  - * -> * -> *.
  -}
 instance Functor (Flip K a) where
-    fmap = undefined
+    fmap f (Flip a) = undefined
+
+instance Functor (Flip Either a) where
+    fmap f (Flip (Left a)) = Flip $ (Left (f a))
+    fmap f (Flip (Right a)) = Flip $ (Right a)
