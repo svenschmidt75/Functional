@@ -24,6 +24,7 @@ functorCompose' x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x
 
 type IntToInt = Fun Int Int
 type EitherIntFC = Flip Either String Int -> IntToInt -> IntToInt -> Bool
+type KIntFC = Flip K String Int -> IntToInt -> IntToInt -> Bool
 
 instance (Arbitrary a, Arbitrary b) => Arbitrary (Flip Either a b) where
     arbitrary = do
@@ -39,14 +40,14 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Flip Either a b) where
 --         a <- arbitrary
 --         return $ K a
 
--- instance (Arbitrary a, Arbitrary b) => Arbitrary (Flip K a b) where
---     arbitrary = do
---         a <- arbitrary
---         return $ Flip $ a
+instance (Arbitrary a, Arbitrary b) => Arbitrary (Flip K a b) where
+    arbitrary = do
+        a <- arbitrary
+        return $ Flip (K a)
 
 spec :: Spec
 spec = do
-    describe "functor Either laws" $ do
+    describe "functor Flip Either laws" $ do
         prop "identity" $ do
             \x -> functorIdentity (x :: Flip Either String Int)
         prop "composition 1" $ do
@@ -54,13 +55,11 @@ spec = do
             \x -> li (x :: Flip Either String Int)
         prop "composition 2" $ do
             functorCompose' :: EitherIntFC
-
---        it "ds" $ do
---            (+1) <$> (Flip (K 1 :: K Int String)) `shouldBe` (Flip 1 :: K String Int)
---        prop "identity" $ do
-  --          \x -> functorIdentity (x :: Flip K String Int)
-    --    prop "composition 1" $ do
-      --      let li = functorCompose (+1) (*2)
-        --    \x -> li (x :: Flip K String Int)
---        prop "composition 2" $ do
-  --          functorCompose' :: IntFC
+    describe "functor Flip K laws" $ do
+        prop "identity" $ do
+            \x -> functorIdentity (x :: Flip K String Int)
+        prop "composition 1" $ do
+            let li = functorCompose (+1) (*2)
+            \x -> li (x :: Flip K String Int)
+        prop "composition 2" $ do
+            functorCompose' :: KIntFC

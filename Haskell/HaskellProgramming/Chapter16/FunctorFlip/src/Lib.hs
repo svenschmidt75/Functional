@@ -23,7 +23,7 @@ newtype K a b = K a
  - * -> * -> *.
  -}
 instance Functor (Flip K a) where
-    fmap f (Flip a) = undefined
+    fmap f (Flip (K a)) = Flip $ K (f a)
 
 instance Functor (Flip Either a) where
     fmap f (Flip (Left a))  = Flip $ (Left (f a))
