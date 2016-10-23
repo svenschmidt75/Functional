@@ -2,13 +2,24 @@
 
 module Lib
     ( Flip (..)
+    , K (..)
     ) where
 
--- flip the arguments to f
+{- Note: f is NOT a function and (f b a) is NOT function application.
+ - This is because in both type and data constructors, only TYPES
+ - show up, never values!!!
+ - Hence, since (f b a) nust be a concrete type, f has kindness
+ - * -> * -> *. Either satisfies this constraint...
+ - For example, this type takes an Either String Int and redefines
+ - it as Either Int String.
+ -}
 newtype Flip f a b = Flip (f b a)
     deriving (Eq, Show)
 
 newtype K a b = K a
 
+{- K can be used for f, because K has the same kindness as f,
+ - * -> * -> *.
+ -}
 instance Functor (Flip K a) where
-    fmap f (Flip a) = undefined
+    fmap = undefined

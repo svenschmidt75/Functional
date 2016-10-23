@@ -143,7 +143,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 247,
+				"buffer_size": 610,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -400,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 247,
+						"buffer_size": 610,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								247,
-								247
+								610,
+								610
 							]
 						],
 						"settings":
@@ -435,8 +435,8 @@
 						"selection":
 						[
 							[
-								1245,
-								1245
+								868,
+								868
 							]
 						],
 						"settings":
