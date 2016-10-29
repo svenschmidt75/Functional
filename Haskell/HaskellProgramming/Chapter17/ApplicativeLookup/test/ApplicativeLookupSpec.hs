@@ -8,6 +8,8 @@ import Test.QuickCheck.Function
 import Lib
     ( added
     , tupled
+    , maxed
+    , summed
     )
 
 spec :: Spec
@@ -17,3 +19,7 @@ spec = do
             added `shouldBe` (Just 9)
         it "tupled" $ do
             tupled `shouldBe` Just (6, 5)
+        it "maxed" $ do
+            maxed `shouldBe` Just 3
+        it "summed" $ do
+            summed `shouldBe` Just 5

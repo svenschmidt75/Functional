@@ -28,3 +28,9 @@ run  : file +RTS -tstderr
 -rtsopts      : Enable RTS options in executable
 +RTS -tstderr : Print runtime, memory consumption, etc.
                Also, creates file 'tderr' with statistics.
+
+Switch Tabs
+===========
+
+CTRL + PG Up, Dn
+
