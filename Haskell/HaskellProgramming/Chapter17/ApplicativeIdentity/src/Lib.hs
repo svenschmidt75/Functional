@@ -12,10 +12,10 @@ instance Applicative Identity where
 -- f ~ Identity
 -- Applicative f =>
 
--- pure :: a -> f a
+-- pure :: a -> f        a
 -- pure :: a -> Identity a
     pure = Identity
 
--- (<*>) :: f (a -> b) -> f a -> f b
+-- (<*>) :: f        (a -> b) -> f        a -> f        b
 -- (<*>) :: Identity (a -> b) -> Identity a -> Identity b
     (<*>) (Identity f) (Identity a) = Identity $ f a
