@@ -135,16 +135,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 835,
+				"buffer_size": 469,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ApplicativeLookupSpec.hs",
+			"file": "test/ApplicativeIdentitySpec.hs",
 			"settings":
 			{
-				"buffer_size": 532,
+				"buffer_size": 1389,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -199,13 +199,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/test/ApplicativeLookupSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellAndSublime.txt",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/test/FunctorFlipSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/src/Lib.hs",
@@ -331,9 +332,7 @@
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/DasHausVomNikolaus.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs"
 	],
 	"find":
 	{
@@ -393,15 +392,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 835,
+						"buffer_size": 469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								826,
-								826
+								469,
+								469
 							]
 						],
 						"settings":
@@ -417,19 +416,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/ApplicativeLookupSpec.hs",
+					"file": "test/ApplicativeIdentitySpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 532,
+						"buffer_size": 1389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								531,
-								531
+								1389,
+								1389
 							]
 						],
 						"settings":
