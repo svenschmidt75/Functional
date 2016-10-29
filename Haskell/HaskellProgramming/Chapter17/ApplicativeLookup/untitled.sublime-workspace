@@ -131,24 +131,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 983,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/FunctorFlipSpec.hs",
-			"settings":
-			{
-				"buffer_size": 2028,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -199,13 +181,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/test/FunctorFlipSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorK/test/FunctorKSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorK/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorQuant/test/FunctorQuantSpec.hs",
@@ -331,9 +312,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/svenschmidt75/Develop/various/DasHausVomNikolaus/DasHausVomNikolaus/main.cpp",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/GraphSpec.hs"
+		"/home/svenschmidt75/Develop/various/DasHausVomNikolaus/DasHausVomNikolaus/main.cpp"
 	],
 	"find":
 	{
@@ -384,67 +363,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 983,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								983,
-								983
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/FunctorFlipSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2028,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2028,
-								2028
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 11.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
