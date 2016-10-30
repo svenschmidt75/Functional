@@ -135,16 +135,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 657,
+				"buffer_size": 175,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ApplicativeConstantSpec.hs",
+			"file": "test/ApplicativeLawsSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1391,
+				"buffer_size": 1996,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -199,12 +199,16 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/ApplicativeLaws.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/test/ApplicativeConstantSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/test/ApplicativeIdentitySpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/test/ApplicativeLookupSpec.hs",
@@ -329,10 +333,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Graph.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Lib.hs",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Graph.hs"
 	],
 	"find":
 	{
@@ -392,15 +393,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 657,
+						"buffer_size": 175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								657,
-								657
+								175,
+								175
 							]
 						],
 						"settings":
@@ -416,19 +417,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/ApplicativeConstantSpec.hs",
+					"file": "test/ApplicativeLawsSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1391,
+						"buffer_size": 1996,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								910,
-								910
+								798,
+								907
 							]
 						],
 						"settings":
