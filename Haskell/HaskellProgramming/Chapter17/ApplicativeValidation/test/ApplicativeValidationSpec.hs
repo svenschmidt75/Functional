@@ -54,9 +54,11 @@ applicativeIdentity v = (pure id <*> v) == v
  - v :: Either e (a -> b)
  - w :: Either e a
  - so
- - u <*> v :: Either e (a -> c)
+ - v <*> w :: Either e b
  - and
- - u <*> v <*> w :: Either e c
+ - u <*> (v <*> w) :: Either e c
+ - where the function g :: b -> c in context u :: Either e g acts on
+ - the value b in context v <*> w :: Either e c
  -}
 -- We would have to be able to compare functions here?
 --applicativeCompose' :: (Eq (f c), Applicative f) => f a -> Fun b c -> Fun a b -> Fun a c -> Bool
