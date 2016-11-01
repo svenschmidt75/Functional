@@ -6,6 +6,7 @@ import Test.QuickCheck hiding (Success, Failure)
 import Test.QuickCheck.Function
 import Test.QuickCheck (Property, quickCheck, (==>))
 import Test.QuickCheck.Monadic (assert, monadicIO, run)
+import Test.QuickCheck.Checkers
 
 import Lib
     ( Validation (..)
@@ -25,10 +26,42 @@ functorCompose' x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x
 applicativeIdentity :: (Applicative f, Eq (f a)) => f a -> Bool
 applicativeIdentity v = (pure id <*> v) == v
 
-applicativeCompose' :: (Eq (f c), Applicative f) => f a -> Fun a b -> Fun b c -> Bool
-applicativeCompose' x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x)
+{- What does "pure (.) <*> u <*> v <*> w == u <*> v <*> w" mean?
+ - Let's look at the types...
+ - (.) :: (b -> c) -> (a -> b) -> a -> c
+ - f ~ Either e, so
+ - pure :: a -> f        a
+ - pure :: a -> Either e a
+ - so
+ - pure (.) lifts function (.) into the Either e context,
+ - pure (.) :: Either e ((b -> c) -> (a -> b) -> a -> c) where a :: (b -> c) -> (a -> b) -> a -> c
+ - Also,
+ - <*> :: f        (x -> y) -> f        a -> f        b
+ - <*> :: Either e (x -> y) -> Either e x -> Either e y
+ - pure (.) <*> u = (<*>) (pure (.)) u :: Either e ?
+ - The question is, what is x and y in 'Either e (x -> y)' the definition of <*>?
+ - To see that, we use the fact that -> is right associative, so
+ - (.) :: (b -> c) -> (a -> b) -> a -> c = (a -> b) -> ((a -> b) -> a -> c)
+ - or (.) :: x -> y, where x = (b -> c) and y = ((a -> b) -> a -> c)
+ - so
+ - pure (.) <*> u :: Either e y = Either e ((a -> b) -> a -> c)
+ - and
+ - pure (.) <*> u <*> v :: Either e (a -> c)
+ - and
+ - pure (.) <*> u <*> v <*> w :: Either e c
+ - Now "u <*> v <*> w":
+ - u :: Either e (b -> c)
+ - v :: Either e (a -> b)
+ - w :: Either e a
+ - so
+ - u <*> v :: Either e (a -> c)
+ - and
+ - u <*> v <*> w :: Either e c
+ -}
+-- We would have to be able to compare functions here?
+--applicativeCompose' :: (Eq (f c), Applicative f) => f a -> Fun b c -> Fun a b -> Fun a c -> Bool
+--applicativeCompose' x (Fun _ u) (Fun _ v) (Fun _ w) = (pure (.) <*> u <*> v <*> w) x == (u <*> (v <*> w)) x
 
---pure (.) <*> u <*> v <*> w = u <*> (v <*> w)
 
 data Errors = DividedByZero
             | StackOverflow

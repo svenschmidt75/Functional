@@ -1,0 +1,91 @@
+QuickCheck and HSpec
+====================
+
+
+quickCheck :: Testable prop => prop -> IO ()
+
+
+
+Generators
+==========
+
+choose :: Random a => (a, a) -> Gen a
+
+Generates a random element in the given inclusive range.
+
+
+elements :: [a] -> Gen a
+
+Generates one of the given values. The input list must be non-empty.
+
+
+frequency :: [(Int, Gen a)] -> Gen a
+
+Chooses one of the given generators, with a weighted random distribution. The input list must be non-empty.
+
+
+
+generate :: Gen a -> IO a
+
+Run a generator. The size passed to the generator is always 30; if you want another size then you should explicitly use resize.
+
+
+sample :: Show a => Gen a -> IO ()
+
+Generates some example values and prints them to stdout.
+
+
+sample' :: Gen a -> IO [a] Source #
+
+Generates some example values.
+
+
+class Arbitrary a where
+=======================
+
+arbitrary :: Gen a
+
+
+
+instance Arbitrary Point where
+  arbitrary = do
+    x <- arbitrary
+    y <- arbitrary
+    return (MkPoint x y)
+
+
+
+
+class CoArbitrary a where
+=========================
+
+coarbitrary :: a -> Gen b -> Gen b
+
+Used to generate a function of type a -> b. The first argument is a value, the second a generator.
+You should use variant to perturb the random generator; the goal is that different values for the
+first argument will lead to different calls to variant. An example will help:
+
+instance CoArbitrary a => CoArbitrary [a] where
+    coarbitrary []     = variant 0
+    coarbitrary (x:xs) = variant 1 . coarbitrary (x,xs)
+
+
+coarbitrary :: (Generic a, GCoArbitrary (Rep a)) => a -> Gen b -> Gen b
+
+Used to generate a function of type a -> b. The first argument is a value, the second a generator. You should use variant to perturb the random generator; the goal is that different values for the first argument will lead to different calls to variant. An example will help:
+
+instance CoArbitrary a => CoArbitrary [a] where
+    coarbitrary []     = variant 0
+    coarbitrary (x:xs) = variant 1 . coarbitrary (x,xs)
+
+
+
+Helper functions for implementing coarbitrary
+=============================================
+
+variant :: Integral n => n -> Gen a -> Gen a
+
+Modifies a generator using an integer seed.
+
+
+
