@@ -135,34 +135,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 756,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/ApplicativeValidationSpec.hs",
-			"settings":
-			{
-				"buffer_size": 4298,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
-			"settings":
-			{
-				"buffer_size": 2150,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "QuickCheck and HSpec"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -213,12 +185,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/sequenceAL"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/test/ApplicativeValidationSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/ApplicativeValidation.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/test/ApplicativeLawsSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/src/Lib.hs",
@@ -343,10 +316,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs"
 	],
 	"find":
 	{
@@ -397,96 +367,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 756,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								756,
-								756
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ApplicativeValidationSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4298,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								851,
-								851
-							]
-						],
-						"settings":
-						{
-							"auto_name": "QuickCheck and HSpec",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
