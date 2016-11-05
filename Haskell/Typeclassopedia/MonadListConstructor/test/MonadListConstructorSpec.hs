@@ -24,7 +24,10 @@ spec = do
         it "apply" $ do
             let expected = MyList [2, 3] :: MyList Int
             MyList [(+1)] <*> MyList [1, 2] `shouldBe` expected
-    describe "conditions" $ do
-        it "condition 1" $ do
-            let expected = MyList [1, 2] :: MyList Int
-            MyList [1, 2] `shouldBe` expected
+    describe "Monad" $ do
+        it "return" $ do
+            let expected = MyList [1] :: MyList Int
+            return 1 `shouldBe` expected
+        it "bind" $ do
+            let expected = MyList [2, 3, 3, 4] :: MyList Int
+            (MyList [1, 2] >>= (\x -> MyList $ [x + 1, x + 2])) `shouldBe` expected
