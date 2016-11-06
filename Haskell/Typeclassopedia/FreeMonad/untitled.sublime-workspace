@@ -143,16 +143,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 842,
+				"buffer_size": 303,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/MonadListConstructorSpec.hs",
+			"file": "test/FreeMonadSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1082,
+				"buffer_size": 351,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -207,12 +207,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/FreeMonad",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/FreeMonad/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/FreeMonad/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor/test/MonadListConstructorSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/sequenceAL/test/SequenceALSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/sequenceAL/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
@@ -338,9 +340,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/stack.yaml",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs"
+		"/home/svenschmidt75/Develop/Preferences.sublime-settings"
 	],
 	"find":
 	{
@@ -400,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 842,
+						"buffer_size": 303,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								498,
-								498
+								303,
+								303
 							]
 						],
 						"settings":
@@ -424,19 +424,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/MonadListConstructorSpec.hs",
+					"file": "test/FreeMonadSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1082,
+						"buffer_size": 351,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1082,
-								1082
+								351,
+								351
 							]
 						],
 						"settings":
