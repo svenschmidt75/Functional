@@ -3,6 +3,8 @@ module Lib
     , g
     , h
     , join
+    , bind_fmap_join
+    , fmap_bind_return
     ) where
 
 data W a = W a
@@ -36,3 +38,9 @@ h ma mb = do
 
 join :: W (W a) -> W a
 join mma = mma >>= id
+
+bind_fmap_join :: W a -> (a -> W b) -> W b
+bind_fmap_join wa f = join $ f <$> wa
+
+fmap_bind_return :: (a -> b) -> W a -> W b
+fmap_bind_return f wa = wa >>= \a -> return $ (f a)

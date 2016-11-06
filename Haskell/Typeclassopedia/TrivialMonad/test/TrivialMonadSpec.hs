@@ -10,6 +10,8 @@ import Lib
     , g
     , h
     , join
+    , bind_fmap_join
+    , fmap_bind_return
     )
 
 spec :: Spec
@@ -38,3 +40,7 @@ spec = do
             h (W 1) (W 2) `shouldBe` W 3
         it "join" $ do
             join (W (W 1)) `shouldBe` W 1
+        it "bind with fmap and join" $ do
+            bind_fmap_join (W 1) (\x -> W $ x + 1) `shouldBe` (W 1 >>= \x -> W $ x + 1)
+        it "fmap with >>= and return" $ do
+            fmap_bind_return (+1) (W 1) `shouldBe` (W 2)
