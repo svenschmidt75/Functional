@@ -1,15 +1,11 @@
 module ApplicativeLawsSpec (spec) where
 
-import Data.Monoid
 import Test.QuickCheck
 import Test.QuickCheck.Checkers
 import Test.QuickCheck.Classes
 
 import Test.Hspec
 import Test.Hspec.QuickCheck (prop)
-import Test.QuickCheck
-import Test.QuickCheck.Function
-import Test.QuickCheck (Property, quickCheck, (==>))
 import Test.QuickCheck.Monadic (assert, monadicIO, run)
 
 import Lib

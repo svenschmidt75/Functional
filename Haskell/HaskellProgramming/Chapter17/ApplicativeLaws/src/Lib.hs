@@ -7,5 +7,6 @@ data Bull = Fools
     deriving (Eq, Show)
 
 instance Monoid Bull where
-    mempty      = Fools
-    mappend _ _ = Fools
+    mempty            = Twoo
+    mappend Twoo Twoo = Twoo
+    mappend _    _    = Fools
