@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fma",
+				"bind_fmap_join ∷ W a → (a → W b) → W b\tLib"
+			],
+			[
 				"seq",
 				"sequenceAL ∷ Applicative f ⇒ [f a] → f [a]\tLib"
 			],
@@ -139,6 +143,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 927,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/TrivialMonadSpec.hs",
+			"settings":
+			{
+				"buffer_size": 1322,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -189,10 +211,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/TrivialMonad"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/TrivialMonad",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/TrivialMonad/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/TrivialMonad/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Downloads/Learn_Haskell_v4_MEAP.epub_FILES/OEBPS/Text/05.xhtml",
+		"/home/svenschmidt75/Downloads/Learn_Haskell_v4_MEAP.epub_FILES/page_styles.css",
+		"/home/svenschmidt75/Downloads/Learn_Haskell_v4_MEAP.epub_FILES/titlepage.xhtml",
+		"/home/svenschmidt75/Downloads/riderRS-163.8671/Install-Linux-tar.txt",
+		"/home/svenschmidt75/Develop/RemoveDotNetCore.sh",
+		"/home/svenschmidt75/Develop/dotNETCore/rx/VS2015/EventsAsIObservable/EventsAsIObservable/Obs2.cs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/FreeMonad/test/FreeMonadSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/FreeMonad/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Typeclassopedia/MonadListConstructor/test/MonadListConstructorSpec.hs",
@@ -314,13 +344,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/SemigroupIdentity.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTrivial/SemigroupTrivial.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/MaybeAnotherMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/stack.yaml",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal"
 	],
 	"find":
 	{
@@ -338,6 +362,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}",
+			"result",
 			"Possibly",
 			"Identity",
 			"identity",
@@ -371,8 +397,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/TrivialMonadSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haskell/Haskell.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
