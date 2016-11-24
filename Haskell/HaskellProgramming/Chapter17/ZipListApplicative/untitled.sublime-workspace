@@ -135,17 +135,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 781,
+				"buffer_size": 724,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ListApplicativeSpec.hs",
+			"file": "test/ZipListApplicativeSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2106,
-				"encoding": "UTF-8",
+				"buffer_size": 2328,
 				"line_ending": "Unix"
 			}
 		}
@@ -203,9 +202,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ListApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ListApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ListApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/test"
 	],
 	"file_history":
 	[
@@ -391,7 +390,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -400,15 +399,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 781,
+						"buffer_size": 724,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								781,
-								781
+								724,
+								724
 							]
 						],
 						"settings":
@@ -419,24 +418,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/ListApplicativeSpec.hs",
-					"semi_transient": false,
+					"file": "test/ZipListApplicativeSpec.hs",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2106,
+						"buffer_size": 2328,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2106,
-								2106
+								1326,
+								1326
 							]
 						],
 						"settings":
@@ -446,10 +445,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
