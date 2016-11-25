@@ -433,7 +433,7 @@
 						[
 							[
 								640,
-								640
+								0
 							]
 						],
 						"settings":
@@ -533,6 +533,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/untitled.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

@@ -19,6 +19,8 @@ append Nil         ys = ys
 append (Cons x xs) ys = Cons x $ xs `append` ys
 
 -- fold: operation to execute between two Cons elements
+-- in this case, we take two lists and merge them into a new list,
+-- the new merged list is kept in the accumulator
 fold :: (a -> b -> b) -> b -> List a -> b
 fold _ b Nil        = b
 fold f b (Cons h t) = f h (fold f b t)
@@ -27,7 +29,6 @@ concat' :: List (List a) -> List a
 concat' = fold append Nil
 
 -- write this one in terms of concat' and fmap
-
 -- flatMap monadic bind?
 -- bind :: m a -> (a -> m b) -> m b
 -- yes, m = List here...
@@ -47,6 +48,11 @@ newtype ZipList' a = ZipList' (List a)
 instance Functor ZipList' where
     fmap f (ZipList' xs) = ZipList' $ fmap f xs
 
+ap :: List (a -> b) -> List a -> List b
+ap (Cons f fs) (Cons x xs) = Cons (f x) $ ap fs xs
+ap Nil         _           = Nil
+ap _           Nil         = Nil
+
 instance Applicative ZipList' where
-    pure = undefined
-    (<*>) = undefined
+    pure a                      = ZipList' $ Cons a Nil
+    ZipList' fs <*> ZipList' xs = ZipList' $ ap fs xs
