@@ -135,7 +135,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 724,
+				"buffer_size": 746,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -144,7 +144,8 @@
 			"file": "test/ZipListApplicativeSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2328,
+				"buffer_size": 936,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -157,7 +158,7 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "Haskell",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -399,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 724,
+						"buffer_size": 746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								724,
-								724
+								11,
+								11
 							]
 						],
 						"settings":
@@ -424,18 +425,18 @@
 				{
 					"buffer": 1,
 					"file": "test/ZipListApplicativeSpec.hs",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2328,
+						"buffer_size": 936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1326,
-								1326
+								936,
+								936
 							]
 						],
 						"settings":
@@ -535,6 +536,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ListApplicative/untitled.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
