@@ -13,6 +13,7 @@ import Test.QuickCheck.Monadic (assert, monadicIO, run)
 import Lib
     ( List (..)
     , ZipList' (..)
+    , repeat'
     )
 
 
@@ -34,6 +35,11 @@ instance Arbitrary a => Arbitrary (List a) where
         a <- arbitrary
         frequency [(1, return $ Cons a Nil)
                  , (1, return $ Nil)]
+
+instance Arbitrary a => Arbitrary (ZipList' a) where
+    arbitrary = do
+        a <- arbitrary
+        return $ ZipList' a
 
 spec :: Spec
 spec = do
@@ -58,22 +64,29 @@ spec = do
             let values = Nil
             let result = functions <*> values
             result `shouldBe` (Nil :: List Int)
---        prop "List Applicative laws" $ do
---            prop5
+        prop "List Applicative laws" $ do
+            listApplicativeProp
     describe "ZipList' Applicative Tests" $ do
         it "test 1" $ do
             let functions = ZipList' $ Cons (+9) (Cons (*2) (Cons (+8) Nil))
             let values = ZipList' $ Cons 1 (Cons 2 (Cons 3 Nil))
             let result = functions <*> values
             result `shouldBe` ZipList' (Cons 10 (Cons 4 (Cons 11 Nil)))
---        it "with infinite list" $ do
---            let functions = ZipList' [(+9), (*2), (+8)]
---            let values = ZipList' (repeat 1)
---            let result = functions <*> values
---            result `shouldBe` [10,2,9]
+        it "with infinite list" $ do
+            let functions = ZipList' $ Cons (+9) (Cons (*2) (Cons (+8) Nil))
+            let values = ZipList' $ repeat' 1
+            let result = functions <*> values
+            result `shouldBe` (ZipList' $ Cons 10 (Cons 2 (Cons 9 Nil)))
 
---prop5 :: Property
---prop5 = monadicIO $ do
---    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
---    let trigger = undefined :: [(List Int, List Int, List Int)]
---   run $ quickBatch $ applicative trigger
+listApplicativeProp :: Property
+listApplicativeProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: List (Int, Int, Int)
+    run $ quickBatch $ applicative trigger
+{-
+zipListApplicativeProp :: Property
+zipListApplicativeProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: ZipList' (List Int, List Int, List Int)
+    run $ quickBatch $ applicative trigger
+-}

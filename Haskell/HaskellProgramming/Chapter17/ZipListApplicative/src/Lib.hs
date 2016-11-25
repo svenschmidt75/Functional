@@ -1,6 +1,7 @@
 module Lib
     ( List (..)
     , ZipList' (..)
+    , repeat'
     ) where
 
 
@@ -39,7 +40,8 @@ instance Applicative List where
     pure a    = Cons a Nil
     fs <*> xs = flatMap (\f -> fmap f xs) fs
 
-
+repeat' :: a -> List a
+repeat' a = Cons a (repeat' a)
 
 
 newtype ZipList' a = ZipList' (List a)
@@ -48,11 +50,11 @@ newtype ZipList' a = ZipList' (List a)
 instance Functor ZipList' where
     fmap f (ZipList' xs) = ZipList' $ fmap f xs
 
-ap :: List (a -> b) -> List a -> List b
-ap (Cons f fs) (Cons x xs) = Cons (f x) $ ap fs xs
-ap Nil         _           = Nil
-ap _           Nil         = Nil
+zipWith' :: List (a -> b) -> List a -> List b
+zipWith' (Cons f fs) (Cons x xs) = Cons (f x) $ zipWith' fs xs
+zipWith' Nil         _           = Nil
+zipWith' _           Nil         = Nil
 
 instance Applicative ZipList' where
     pure a                      = ZipList' $ Cons a Nil
-    ZipList' fs <*> ZipList' xs = ZipList' $ ap fs xs
+    ZipList' fs <*> ZipList' xs = ZipList' $ zipWith' fs xs
