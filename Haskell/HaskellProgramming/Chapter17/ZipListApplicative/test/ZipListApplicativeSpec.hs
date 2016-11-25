@@ -43,3 +43,13 @@ spec = do
             let values = Cons 1 (Cons 2 Nil)
             let result = functions <*> values
             result `shouldBe` (Cons 2 (Cons 3 (Cons 2 (Cons 4 Nil))))
+        it "test 3" $ do
+            let functions = Nil
+            let values = Cons 1 (Cons 2 Nil)
+            let result = functions <*> values
+            result `shouldBe` (Nil :: List Int)
+        it "test 4" $ do
+            let functions = Cons (+1) Nil
+            let values = Nil
+            let result = functions <*> values
+            result `shouldBe` (Nil :: List Int)
