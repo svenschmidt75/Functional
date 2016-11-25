@@ -77,6 +77,8 @@ spec = do
             let values = ZipList' $ repeat' 1
             let result = functions <*> values
             result `shouldBe` (ZipList' $ Cons 10 (Cons 2 (Cons 9 Nil)))
+--        prop "ZipList' Applicative laws" $ do
+--            zipListApplicativeProp
 
 listApplicativeProp :: Property
 listApplicativeProp = monadicIO $ do
