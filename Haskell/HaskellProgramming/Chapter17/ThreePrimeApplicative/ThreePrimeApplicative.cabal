@@ -1,8 +1,8 @@
-name:                ThreeApplicative
+name:                ThreePrimeApplicative
 version:             0.1.0.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
-homepage:            https://github.com/githubuser/ThreeApplicative#readme
+homepage:            https://github.com/githubuser/ThreePrimeApplicative#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Sven Schmidt
@@ -19,15 +19,15 @@ library
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
-executable ThreeApplicative-exe
+executable ThreePrimeApplicative-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
-                     , ThreeApplicative
+                     , ThreePrimeApplicative
   default-language:    Haskell2010
 
-test-suite ThreeApplicative-test
+test-suite ThreePrimeApplicative-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
@@ -35,10 +35,10 @@ test-suite ThreeApplicative-test
                      , hspec
                      , QuickCheck
                      , checkers
-                     , ThreeApplicative
+                     , ThreePrimeApplicative
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/ThreeApplicative
+  location: https://github.com/githubuser/ThreePrimeApplicative

@@ -23,10 +23,12 @@ instance Eq a => EqProp (Pair a) where
 
 spec :: Spec
 spec = do
---    prop "Pair Functor laws" $ do
---        pairFunctorLawsProp
-    prop "Pair Applicative laws" $ do
-        pairApplicativeLawsProp
+    describe "verify laws" $ do
+        modifyMaxSuccess (const 1) $ do
+            prop "Pair Functor laws" $ do
+                pairFunctorLawsProp
+            prop "Pair Applicative laws" $ do
+                pairApplicativeLawsProp
 
 pairFunctorLawsProp :: Property
 pairFunctorLawsProp = monadicIO $ do

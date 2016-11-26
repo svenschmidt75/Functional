@@ -135,25 +135,17 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 298,
+				"buffer_size": 394,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/PairApplicativeSpec.hs",
+			"file": "test/ThreeApplicativeSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1182,
+				"buffer_size": 1316,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "PairApplicative.cabal",
-			"settings":
-			{
-				"buffer_size": 1404,
 				"line_ending": "Unix"
 			}
 		}
@@ -211,12 +203,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreeApplicative",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreeApplicative/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreeApplicative/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreeApplicative/ThreeApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/PairApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ValidationApplicative/ValidationApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/ZipListApplicative.cabal",
@@ -343,8 +336,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal"
 	],
 	"find":
 	{
@@ -362,6 +354,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pairApplicativeLawsProp",
+			"pairFunctorLawsProp",
+			"Pair",
 			"validationApplicativeLawsProp",
 			"validationFunctorLawsProp",
 			"listApplicativeProp",
@@ -405,7 +400,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -414,15 +409,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 298,
+						"buffer_size": 394,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								298,
-								298
+								394,
+								394
 							]
 						],
 						"settings":
@@ -433,60 +428,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/PairApplicativeSpec.hs",
+					"file": "test/ThreeApplicativeSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1182,
+						"buffer_size": 1316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1182,
-								1182
+								41,
+								41
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 58.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "PairApplicative.cabal",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1404,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								917,
-								917
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -582,7 +547,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreeApplicative/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
