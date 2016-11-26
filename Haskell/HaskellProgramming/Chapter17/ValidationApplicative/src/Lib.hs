@@ -2,6 +2,9 @@ module Lib
     ( Validation (..)
     ) where
 
+import Data.Monoid
+
+
 data Validation e a = Failure e
                     | Success a
     deriving (Eq, Show)
@@ -13,5 +16,8 @@ instance Functor (Validation e) where
 
 -- This is different
 instance Monoid e => Applicative (Validation e) where
-    pure = undefined
-    (<*>) = undefined
+    pure a                        = Success a
+    (Success f)  <*> (Success a)  = Success $ f a
+    (Failure e1) <*> (Failure e2) = Failure $ e1 <> e2
+    (Success _)  <*> (Failure e)  = Failure $ e
+    (Failure e)  <*> (Success _)  = Failure $ e
