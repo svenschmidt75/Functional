@@ -28,8 +28,6 @@ data Errors = DividedByZero
 
 spec :: Spec
 spec = do
---    prop "List Applicative laws" $ do
---        validationFunctorLawsProp
     describe "test examples" $ do
         it "test 1" $ do
             let expected = Success 2 :: Validation String Int
@@ -43,9 +41,19 @@ spec = do
         it "test 4" $ do
             let expected = Failure [MooglesChewedWires, StackOverflow] :: Validation [Errors] Int
             Failure [MooglesChewedWires] <*> Failure [StackOverflow] `shouldBe` expected
+    prop "Validation Functor laws" $ do
+        validationFunctorLawsProp
+    prop "Validation Applicative laws" $ do
+        validationApplicativeLawsProp
 
 validationFunctorLawsProp :: Property
 validationFunctorLawsProp = monadicIO $ do
     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
     let trigger = undefined :: Validation String (Int, Int, Int)
     run $ quickBatch $ functor trigger
+
+validationApplicativeLawsProp :: Property
+validationApplicativeLawsProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: Validation String (Int, Int, Int)
+    run $ quickBatch $ applicative trigger
