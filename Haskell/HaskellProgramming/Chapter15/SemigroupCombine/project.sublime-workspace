@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Com",
+				"CombineType \tLibSpec"
+			],
+			[
 				"Fir",
 				"First"
 			],
@@ -120,6 +124,7 @@
 			"settings":
 			{
 				"buffer_size": 242,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +132,8 @@
 			"file": "test/LibSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1135,
+				"buffer_size": 1288,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -344,15 +350,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1135,
+						"buffer_size": 1288,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								922,
-								922
+								1288,
+								1288
 							]
 						],
 						"settings":
@@ -362,7 +368,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

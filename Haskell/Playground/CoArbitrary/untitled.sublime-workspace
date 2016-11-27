@@ -132,19 +132,19 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"file": "test/CoArbitrarySpec.hs",
 			"settings":
 			{
-				"buffer_size": 101,
+				"buffer_size": 1426,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/LiftA2Spec.hs",
+			"file": "CoArbitrary.cabal",
 			"settings":
 			{
-				"buffer_size": 734,
+				"buffer_size": 1407,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -203,9 +203,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LiftA2",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LiftA2/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LiftA2/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test"
 	],
 	"file_history":
 	[
@@ -354,6 +355,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"functorCompose",
 			"threePrimeApplicativeLawsProp",
 			"threePrimeFunctorLawsProp",
 			"Three",
@@ -403,52 +405,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/CoArbitrarySpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 101,
+						"buffer_size": 1426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54,
-								54
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/LiftA2Spec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 734,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								734,
-								734
+								1426,
+								1426
 							]
 						],
 						"settings":
@@ -462,6 +436,36 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "CoArbitrary.cabal",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								929,
+								929
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
