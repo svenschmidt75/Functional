@@ -2,5 +2,5 @@ module Lib
     ( Person (..)
     ) where
 
-data Person a = Person String String
+data Person = Person String String
     deriving (Eq, Show)

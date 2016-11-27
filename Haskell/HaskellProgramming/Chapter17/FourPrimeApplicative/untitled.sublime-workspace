@@ -447,8 +447,8 @@
 						"selection":
 						[
 							[
-								1286,
-								1286
+								422,
+								422
 							]
 						],
 						"settings":
@@ -550,7 +550,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/Playground/LiftA2/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
