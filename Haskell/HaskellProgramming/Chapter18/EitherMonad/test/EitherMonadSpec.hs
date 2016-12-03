@@ -29,6 +29,8 @@ spec = do
                 sumFunctorLawsProp
             prop "Sum Applicative laws" $ do
                 sumApplicativeLawsProp
+            prop "Sum Monad laws" $ do
+                sumMonadLawsProp
 
 sumFunctorLawsProp :: Property
 sumFunctorLawsProp = monadicIO $ do
@@ -41,3 +43,9 @@ sumApplicativeLawsProp = monadicIO $ do
     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
     let trigger = undefined :: Sum String (Int, Int, Int)
     run $ quickBatch $ applicative trigger
+
+sumMonadLawsProp :: Property
+sumMonadLawsProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: Sum String (Int, Int, Int)
+    run $ quickBatch $ monad trigger

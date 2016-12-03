@@ -13,7 +13,7 @@ instance Functor (Sum a) where
 instance Applicative (Sum a) where
     pure b                      = Second b
 
--- (<*>) :: f (b -> c) -> f b -> f c
+-- (<*>) :: f     (b -> c) -> f     b -> f     c
 -- (<*>) :: Sum a (b -> c) -> Sum a b -> Sum a c
     (<*>) (Second f) (Second b) = Second $ f b
     (<*>) (First a)  _          = First a
@@ -21,4 +21,7 @@ instance Applicative (Sum a) where
 
 instance Monad (Sum a) where
     return = pure
-    (>>=) = undefined
+-- (>>=) :: m     x -> (x -> m     y) -> m     y
+-- (>>=) :: Sum a x -> (x -> Sum a y) -> Sum a y
+    (>>=) (First a) _  = First a
+    (>>=) (Second b) f = f b
