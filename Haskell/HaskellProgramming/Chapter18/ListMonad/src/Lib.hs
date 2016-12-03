@@ -1,9 +1,5 @@
 module Lib
     ( List (..)
-    , mf
-    , concat'
-    , foldr''
-    , join'
     ) where
 
 data List a = Nil
@@ -27,7 +23,7 @@ foldr'' f accum (Cons lh ls) = foldr'' f (f accum lh) ls
 
 join' :: List (List a) -> List a
 join' Nil = Nil
-join' l   = foldr'' concat' Nil l
+join' ls  = foldr'' concat' Nil ls
 
 instance Applicative List where
     pure a = Cons a Nil
@@ -36,7 +32,11 @@ instance Applicative List where
 -- (<*>) :: List (a -> b) -> List a -> List b
     (<*>) Nil             _               = Nil
     (<*>) _               Nil             = Nil
-    (<*>) (Cons f fsTail) (Cons x xsTail) = Cons (f x)    (fsTail <*> xsTail)
+    (<*>) (Cons f fsTail) xs = join' $ Cons (applyF f xs) (Cons (fsTail <*> xs) Nil)
+                               where
+                                 -- applyF :: (a -> b) -> List a -> List b
+                                 applyF f Nil         = Nil
+                                 applyF f (Cons x xs) = Cons (f x) (applyF f xs)
 
 instance Monad List where
     return = pure
@@ -44,7 +44,3 @@ instance Monad List where
 -- (>>=) :: List  a -> (a -> List b) -> List b
     (>>=) Nil              _ = Nil
     (>>=) (Cons head tail) f = join' $ Cons (f head) (Cons (tail >>= f) Nil)
-
-mf :: (b -> a -> b) -> b -> [a] -> b
-mf _ accum []     = accum
-mf f accum (x:xs) = mf f (f accum x) xs
