@@ -119,24 +119,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 728,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/EitherMonadSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1568,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -187,10 +169,7 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/NopeMonad"
 	],
 	"file_history":
 	[
@@ -321,69 +300,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								728,
-								728
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/EitherMonadSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1568,
-								1568
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
