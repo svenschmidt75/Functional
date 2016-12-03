@@ -447,8 +447,8 @@
 						"selection":
 						[
 							[
-								422,
-								422
+								376,
+								376
 							]
 						],
 						"settings":
@@ -550,7 +550,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/Playground/LiftA2/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
