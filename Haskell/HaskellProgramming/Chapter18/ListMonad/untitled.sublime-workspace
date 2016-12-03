@@ -127,7 +127,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 998,
+				"buffer_size": 1592,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +136,7 @@
 			"file": "test/ListMonadSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1526,
+				"buffer_size": 1522,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -296,6 +296,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fs",
+			"concat",
 			"idMonadLawsProp",
 			"idApplicativeLawsProp",
 			"idFunctorLawsProp",
@@ -357,15 +359,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 998,
+						"buffer_size": 1592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								689,
-								689
+								1583,
+								1583
 							]
 						],
 						"settings":
@@ -385,15 +387,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1526,
+						"buffer_size": 1522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								851,
-								851
+								372,
+								372
 							]
 						],
 						"settings":

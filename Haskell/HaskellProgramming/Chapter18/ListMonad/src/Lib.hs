@@ -43,4 +43,5 @@ instance Monad List where
 -- (>>=) :: m     a -> (a -> m    b) -> m    b
 -- (>>=) :: List  a -> (a -> List b) -> List b
     (>>=) Nil              _ = Nil
-    (>>=) (Cons head tail) f = join' $ Cons (f head) (Cons (tail >>= f) Nil)
+--    (>>=) (Cons head tail) f = join' $ Cons (f head) (Cons (tail >>= f) Nil)
+    (>>=) ls f = join' $ f <$> ls
