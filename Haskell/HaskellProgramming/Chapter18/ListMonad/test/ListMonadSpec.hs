@@ -28,8 +28,8 @@ spec = do
                 listFunctorLawsProp
             prop "List Applicative laws" $ do
                 listApplicativeLawsProp
---            prop "List Monad laws" $ do
---                listMonadLawsProp
+            prop "List Monad laws" $ do
+                listMonadLawsProp
 
 listFunctorLawsProp :: Property
 listFunctorLawsProp = monadicIO $ do
