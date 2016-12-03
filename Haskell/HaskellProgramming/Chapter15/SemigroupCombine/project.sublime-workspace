@@ -145,8 +145,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 252.0,
-		"last_filter": "Insta",
+		"height": 324.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -456,6 +456,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Develop/Functional/Haskell/LearnHaskell/OOP/untitled.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

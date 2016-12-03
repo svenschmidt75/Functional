@@ -120,19 +120,19 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"file": "test/OOPSpec.hs",
 			"settings":
 			{
-				"buffer_size": 108,
+				"buffer_size": 392,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ConcatViaFoldSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 657,
+				"buffer_size": 684,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -187,9 +187,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/ConcatViaFold",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/ConcatViaFold/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/ConcatViaFold/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/LearnHaskell/OOP",
+		"/home/svenschmidt75/Develop/Functional/Haskell/LearnHaskell/OOP/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/LearnHaskell/OOP/test"
 	],
 	"file_history":
 	[
@@ -320,24 +320,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/OOPSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 108,
+						"buffer_size": 392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								24,
-								24
+								388,
+								388
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -348,26 +350,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/ConcatViaFoldSpec.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 657,
+						"buffer_size": 684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								657,
-								657
+								684,
+								684
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
