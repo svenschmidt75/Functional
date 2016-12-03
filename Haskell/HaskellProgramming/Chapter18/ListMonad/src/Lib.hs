@@ -1,5 +1,9 @@
 module Lib
     ( List (..)
+    , mf
+    , concat'
+    , foldr''
+    , join'
     ) where
 
 data List a = Nil
@@ -13,17 +17,17 @@ instance Functor List where
     fmap f (Cons head tail) = Cons (f head) (f <$> tail)
 
 concat' :: List a -> List a -> List a
-concat' Nil l = l
-concat' l Nil = l
-concat' (Cons lh lt) l2 = Cons lh (concat' lt l2)
+concat' Nil          ls  = ls
+concat' ls           Nil = ls
+concat' (Cons lh lt) l2  = Cons lh (concat' lt l2)
 
-foldl'' :: (List b -> List a -> List b) -> List b -> List (List a) -> List b
-foldl'' = undefined
+foldr'' :: (List b -> List a -> List b) -> List b -> List (List a) -> List b
+foldr'' _ accum Nil          = accum
+foldr'' f accum (Cons lh ls) = foldr'' f (f accum lh) ls
 
 join' :: List (List a) -> List a
 join' Nil = Nil
-join' l   = foldl'' concat' Nil l
-
+join' l   = foldr'' concat' Nil l
 
 instance Applicative List where
     pure a = Cons a Nil
@@ -32,7 +36,7 @@ instance Applicative List where
 -- (<*>) :: List (a -> b) -> List a -> List b
     (<*>) Nil             _               = Nil
     (<*>) _               Nil             = Nil
-    (<*>) (Cons f fsTail) (Cons x xsTail) = Cons (f x) (fsTail <*> xsTail)
+    (<*>) (Cons f fsTail) (Cons x xsTail) = Cons (f x)    (fsTail <*> xsTail)
 
 instance Monad List where
     return = pure
@@ -40,3 +44,7 @@ instance Monad List where
 -- (>>=) :: List  a -> (a -> List b) -> List b
     (>>=) Nil              _ = Nil
     (>>=) (Cons head tail) f = join' $ Cons (f head) (Cons (tail >>= f) Nil)
+
+mf :: (b -> a -> b) -> b -> [a] -> b
+mf _ accum []     = accum
+mf f accum (x:xs) = mf f (f accum x) xs
