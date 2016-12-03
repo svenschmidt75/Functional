@@ -123,24 +123,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "test/IdentityMonadSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1508,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 607,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -191,9 +173,7 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/IdentityMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/IdentityMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/IdentityMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad"
 	],
 	"file_history":
 	[
@@ -343,67 +323,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test/IdentityMonadSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1508,
-								1508
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								607,
-								607
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
