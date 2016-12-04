@@ -32,11 +32,7 @@ instance Applicative List where
 -- (<*>) :: List (a -> b) -> List a -> List b
     (<*>) Nil             _               = Nil
     (<*>) _               Nil             = Nil
-    (<*>) (Cons f fsTail) xs = join' $ Cons (applyF f xs) (Cons (fsTail <*> xs) Nil)
-                               where
-                                 -- applyF :: (a -> b) -> List a -> List b
-                                 applyF f Nil         = Nil
-                                 applyF f (Cons x xs) = Cons (f x) (applyF f xs)
+    (<*>) (Cons f fsTail) xs = join' $ Cons (f <$> xs) (Cons (fsTail <*> xs) Nil)
 
 instance Monad List where
     return = pure
