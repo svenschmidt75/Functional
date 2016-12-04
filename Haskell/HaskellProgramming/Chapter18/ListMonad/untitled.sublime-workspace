@@ -127,7 +127,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1592,
+				"buffer_size": 1545,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +136,7 @@
 			"file": "test/ListMonadSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1522,
+				"buffer_size": 1514,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -296,6 +296,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"foldr",
 			"fs",
 			"concat",
 			"idMonadLawsProp",
@@ -359,15 +360,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1592,
+						"buffer_size": 1545,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1583,
-								1583
+								751,
+								751
 							]
 						],
 						"settings":
@@ -387,15 +388,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1522,
+						"buffer_size": 1514,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								372,
-								372
+								561,
+								561
 							]
 						],
 						"settings":
