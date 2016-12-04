@@ -6,7 +6,7 @@ import Test.Hspec.QuickCheck
 import Test.QuickCheck
 import Test.QuickCheck.Checkers
 import Test.QuickCheck.Classes
-import Test.QuickCheck.Monadic (assert, monadicIO, run)
+import Test.QuickCheck.Monadic (monadicIO, run)
 
 import Lib
     ( List (..)

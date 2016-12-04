@@ -17,13 +17,18 @@ concat' Nil          ls  = ls
 concat' ls           Nil = ls
 concat' (Cons lh lt) l2  = Cons lh (concat' lt l2)
 
-foldr'' :: (List b -> List a -> List b) -> List b -> List (List a) -> List b
+foldl'' :: (List b -> List a -> List b) -> List b -> List (List a) -> List b
+foldl'' _ accum Nil          = accum
+foldl'' f accum (Cons lh ls) = foldl'' f (f accum lh) ls
+
+foldr'' :: (List a -> List b -> List b) -> List b -> List (List a) -> List b
 foldr'' _ accum Nil          = accum
-foldr'' f accum (Cons lh ls) = foldr'' f (f accum lh) ls
+foldr'' f accum (Cons lh ls) = f lh (foldr'' f accum ls)
 
 join' :: List (List a) -> List a
 join' Nil = Nil
-join' ls  = foldr'' concat' Nil ls
+join' ls  = foldl'' concat' Nil ls
+--join' ls  = foldr'' concat' Nil ls
 
 instance Applicative List where
     pure a = Cons a Nil
