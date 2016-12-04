@@ -41,5 +41,5 @@ meh (x:xs) f = do
 -}
 
 flipType :: (Monad m) => [m a] -> m [a]
-flipType []     = return []
+flipType [] = return []
 flipType xs = meh xs id
