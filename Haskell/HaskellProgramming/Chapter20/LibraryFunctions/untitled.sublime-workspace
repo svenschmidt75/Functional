@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"n",
+				"null ∷ (Foldable t) ⇒ t a → Bool\tLib"
+			],
+			[
+				"max",
+				"maximum ∷ (Foldable t, Ord a) ⇒ t a → a\tPrelude"
+			],
+			[
+				"min",
+				"minimum ∷ (Foldable t, Ord a) ⇒ t a → a\tPrelude"
+			],
+			[
 				"Nope",
 				"NopeDotJpg ∷ a Nope\tLib"
 			],
@@ -84,10 +96,6 @@
 				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
 			],
 			[
-				"max",
-				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
-			],
-			[
 				"fin",
 				"fingerTaps"
 			],
@@ -123,6 +131,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "test/LibraryFunctionsSpec.hs",
+			"settings":
+			{
+				"buffer_size": 3003,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 1623,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -173,10 +199,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Rust/JMArcher_Screencasts/Part13/dice/src/dice_tests.rs",
 		"/home/svenschmidt75/Develop/Functional/MonadsC#/TheUsefulThree/ReaderMonad/ReaderMonad/Program.cs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test/ListMonadSpec.hs",
@@ -280,6 +309,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"prop_length",
+			"prop_null",
+			"prop_maximum",
+			"prop_minimum",
+			"min",
+			"prop_elem",
+			"prop_product",
+			"prop_sum",
 			"foldr",
 			"fs",
 			"concat",
@@ -335,8 +372,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test/LibraryFunctionsSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1875,
+								1875
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1623,
+								1623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
