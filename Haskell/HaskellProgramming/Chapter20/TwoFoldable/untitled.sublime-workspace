@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"foldr",
+				"foldr ∷ Foldable t ⇒ (a → b → b) → b → t a → b\tPrelude"
+			],
+			[
 				"n",
 				"null ∷ (Foldable t) ⇒ t a → Bool\tLib"
 			],
@@ -132,19 +136,19 @@
 	"buffers":
 	[
 		{
-			"file": "test/LibraryFunctionsSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 3003,
+				"buffer_size": 206,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Lib.hs",
+			"file": "test/TwoFoldableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1623,
+				"buffer_size": 465,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -199,9 +203,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/TwoFoldable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/TwoFoldable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/TwoFoldable/test"
 	],
 	"file_history":
 	[
@@ -372,24 +376,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test/LibraryFunctionsSpec.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3003,
+						"buffer_size": 206,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								317,
-								317
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/TwoFoldableSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
 							]
 						],
 						"settings":
@@ -403,34 +435,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1623,
-								1623
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
