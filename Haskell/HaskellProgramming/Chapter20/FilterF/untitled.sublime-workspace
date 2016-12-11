@@ -135,6 +135,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 347,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/FilterFSpec.hs",
+			"settings":
+			{
+				"buffer_size": 592,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -185,7 +203,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/FilterF"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/FilterF",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/FilterF/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/FilterF/test"
 	],
 	"file_history":
 	[
@@ -357,8 +377,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/FilterFSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								522,
+								522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

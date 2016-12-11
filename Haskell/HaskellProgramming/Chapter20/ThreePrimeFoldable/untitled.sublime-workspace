@@ -135,6 +135,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 227,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/ThreePrimeFoldableSpec.hs",
+			"settings":
+			{
+				"buffer_size": 516,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -185,7 +203,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/test"
 	],
 	"file_history":
 	[
@@ -293,6 +313,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Two",
 			"prop_length",
 			"prop_null",
 			"prop_maximum",
@@ -356,8 +377,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								221,
+								221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/ThreePrimeFoldableSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
