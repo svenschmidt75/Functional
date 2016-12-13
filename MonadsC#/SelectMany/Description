@@ -1,0 +1,4 @@
+1. with exceptions
+2. with Either, but manual unwrapping
+  - we really want composition...
+3. with bind
