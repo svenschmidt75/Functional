@@ -127,16 +127,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1545,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/ListMonadSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1514,
+				"buffer_size": 1211,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -191,12 +182,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test/ListMonadSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/ListMonad.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/IdentityMonad/IdentityMonad.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/NopeMonad/NopeMonad.cabal",
@@ -360,21 +353,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1545,
+						"buffer_size": 1211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								751,
-								751
+								1211,
+								1211
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -382,36 +375,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ListMonadSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1514,
-								1514
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]

@@ -24,9 +24,13 @@ class (Functor t, Foldable t) => Traversable (t :: * -> *) where
 -}
 
 instance Traversable Identity where
---   traverse :: Applicative f => (a -> f b) -> t a -> f (t b)
--- fmap :: (a -> b) -> g a -> g b
--- with b => f b,
--- fmap :: (a -> f b) -> g a -> g (f b)
--- now flip the types of g(f b) around to f(g b)
+-- traverse :: Applicative f => (a -> f b) -> t a -> f (t b)
+-- traverse g (Identity a) => g a :: f b, but we need to return
+-- type 'f (Identity b)'. This means we need to move the data
+-- constructor 'Identity' past context f without modifying it.
+-- This is what fmap does!!! We are lifting 'Identity' into the
+-- context f.
+-- NOTE: Do NOT define traverse in terms of sequence!!!
+-- This will cause an infinite loop, or bottom?
+-- i.e. that call will not terminate
     traverse f (Identity a) = Identity <$> f a
