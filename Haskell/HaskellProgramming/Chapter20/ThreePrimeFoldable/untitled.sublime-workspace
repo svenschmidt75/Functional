@@ -152,15 +152,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "/home/svenschmidt75/Develop/Functional/MonadsC#/SelectMany/Description",
-			"settings":
-			{
-				"buffer_size": 93,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -218,6 +209,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/MonadsC#/SelectMany/Description",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter20/LibraryFunctions/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Rust/JMArcher_Screencasts/Part13/dice/src/dice_tests.rs",
 		"/home/svenschmidt75/Develop/Functional/MonadsC#/TheUsefulThree/ReaderMonad/ReaderMonad/Program.cs",
@@ -386,7 +378,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -414,7 +406,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -430,8 +422,8 @@
 						"selection":
 						[
 							[
-								43,
-								43
+								516,
+								516
 							]
 						],
 						"settings":
@@ -439,34 +431,6 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/svenschmidt75/Develop/Functional/MonadsC#/SelectMany/Description",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 93,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								93,
-								93
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
