@@ -139,7 +139,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 235,
+				"buffer_size": 223,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -376,7 +376,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -385,15 +385,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 235,
+						"buffer_size": 223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								113,
-								113
+								136,
+								136
 							]
 						],
 						"settings":
@@ -404,7 +404,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -420,8 +420,8 @@
 						"selection":
 						[
 							[
-								99,
-								99
+								310,
+								310
 							]
 						],
 						"settings":
@@ -434,7 +434,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

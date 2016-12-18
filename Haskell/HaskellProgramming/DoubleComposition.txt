@@ -1,0 +1,40 @@
+Sven Schmidt
+Dec. 17, 2016
+
+Haskell Programming, chapter 21, page 820
+
+(sequence .) . fmap = \ f xs -> sequence (fmap f xs)
+
+
+(.) :: (b -> c) -> (a -> b) -> a -> c
+
+sequenceA :: Applicative f => t (f a) -> f (t a)
+fmap :: (a -> b) -> f a -> f b
+
+(sequenceA .) :: (Applicative f, Traversable t) => (a -> t (f a1)) -> a -> f (t a1)
+                                                   ^^^^^^^^^^^^^^^
+                                                 1st argument to fmap!
+
+with
+
+fmap :: (a -> b) -> f a -> f b and
+
+a = a
+b = f a1
+f b = f (t a1)
+
+we have
+
+fmap :: (a -> t (f a1)) -> f (t a) -> t (f a1)
+
+(sequenceA .) fmap :: (Applicative f, Traversable t) => (a1 -> f a1) -> t a1 -> f (t a)
+
+
+
+fmap :: (a -> b) -> f a -> f b
+Now, b = t b, then
+fmap :: (a -> t b) -> f a -> f (t b)
+or
+fmap :: (a -> f b) -> t a -> t (f b)
+sequenceA :: Applicative f => t (f a) -> f (t a)
+?

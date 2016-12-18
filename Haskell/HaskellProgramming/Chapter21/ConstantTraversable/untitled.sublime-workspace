@@ -127,16 +127,17 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1211,
+				"buffer_size": 786,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/IdentityTraversableSpec.hs",
+			"file": "test/ConstantTraversableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1223,
+				"buffer_size": 1241,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -190,12 +191,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/ConstantTraversable.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test/ListMonadSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/ListMonad.cabal",
@@ -297,6 +300,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"identityTraversableLawsProp",
+			"Identity",
+			"identityFunctorLawsProp",
 			"foldr",
 			"fs",
 			"concat",
@@ -352,7 +358,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -361,45 +367,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1211,
+						"buffer_size": 786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								658,
-								658
+								786,
+								786
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/IdentityTraversableSpec.hs",
-					"semi_transient": true,
+					"file": "test/ConstantTraversableSpec.hs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1223,
+						"buffer_size": 1241,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1223,
-								1223
+								1180,
+								1180
 							]
 						],
 						"settings":
@@ -409,10 +413,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 15.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
