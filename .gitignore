@@ -45,16 +45,14 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-
-*.suo
-F#/FizzBuzz/FizzBuzz/bin/Debug/FizzBuzz.exe.config
-Haskell/stack_root/
-Haskell/poker/Poker/.stack-work/
-Haskell/Poker/.stack-work/
-Haskell/Playground/FActsOnFirstItemInTuple/.stack-work/
-Haskell/Playground/FirstMaybe/.stack-work/
-Haskell/ProgrammingChallenges/ProjectEuler
-F#/FizzBuzz/FizzBuzz/bin/
-F#/FizzBuzz/FizzBuzz/obj/
+.pdb
+.exe
+.dll
+.suo
+*.exe.config
+.stack-work
 .idea
-netcoreapp1.0
+obj/
+bin/
+packages/
+
