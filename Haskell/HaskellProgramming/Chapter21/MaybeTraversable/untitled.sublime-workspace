@@ -127,16 +127,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 786,
+				"buffer_size": 521,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ConstantTraversableSpec.hs",
+			"file": "test/MaybeTraversableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1241,
+				"buffer_size": 1250,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -191,12 +191,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/MaybeTraversable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/MaybeTraversable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/MaybeTraversable/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/MaybeTraversable/MaybeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/ConstantTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test/ListMonadSpec.hs",
@@ -300,6 +301,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"constantTraversableLawsProp",
+			"constantFunctorLawsProp",
+			"Constant",
+			"Identity",
 			"identityTraversableLawsProp",
 			"Identity",
 			"identityFunctorLawsProp",
@@ -367,15 +372,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 786,
+						"buffer_size": 521,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								786,
-								786
+								115,
+								115
 							]
 						],
 						"settings":
@@ -391,19 +396,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/ConstantTraversableSpec.hs",
+					"file": "test/MaybeTraversableSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1241,
+						"buffer_size": 1250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								44,
-								44
+								41,
+								41
 							]
 						],
 						"settings":
