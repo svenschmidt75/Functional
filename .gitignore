@@ -45,10 +45,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-.pdb
-.exe
-.dll
-.suo
+*.pdb
+*.exe
+*.dll
+*.suo
+*.hi
+*.o
 *.exe.config
 .stack-work
 .idea
