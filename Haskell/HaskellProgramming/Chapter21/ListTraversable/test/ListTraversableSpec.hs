@@ -20,8 +20,6 @@ instance Arbitrary a => Arbitrary (List a) where
 instance Eq a => EqProp (List a) where
     (=-=) = eq
 
--- reduce to the 1st 3000 elements!!!
-
 spec :: Spec
 spec = do
     describe "verify laws" $ do
@@ -38,7 +36,6 @@ listFunctorLawsProp = monadicIO $ do
     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
     let trigger = undefined :: List (Int, Int, Int)
     run $ quickBatch $ functor trigger
-
 
 listApplicativeLawsProp :: Property
 listApplicativeLawsProp = monadicIO $ do

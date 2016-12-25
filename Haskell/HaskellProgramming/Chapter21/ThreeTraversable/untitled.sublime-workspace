@@ -124,20 +124,19 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"file": "test/ThreeTraversableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1784,
+				"buffer_size": 1226,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ListTraversableSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1507,
-				"encoding": "UTF-8",
+				"buffer_size": 570,
 				"line_ending": "Unix"
 			}
 		}
@@ -191,9 +190,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ListTraversable",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ListTraversable/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ListTraversable/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreeTraversable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreeTraversable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreeTraversable/test"
 	],
 	"file_history":
 	[
@@ -300,6 +299,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"listTraversableLawsProp",
+			"listFunctorLawsProp",
+			"List",
 			"identityTraversableLawsProp",
 			"Identity",
 			"identityFunctorLawsProp",
@@ -358,54 +360,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/ThreeTraversableSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1784,
+						"buffer_size": 1226,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ListTraversableSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1507,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1507,
-								1507
+								1226,
+								1226
 							]
 						],
 						"settings":
@@ -419,6 +391,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Lib.hs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								570,
+								570
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
