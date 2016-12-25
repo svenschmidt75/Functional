@@ -363,7 +363,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -379,7 +379,7 @@
 						"selection":
 						[
 							[
-								516,
+								220,
 								516
 							]
 						],
@@ -391,7 +391,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -421,7 +421,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -510,7 +510,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/FourPrimeApplicative/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/untitled.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -127,16 +127,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 615,
+				"buffer_size": 555,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/STraversableSpec.hs",
+			"file": "test/TreeTraversableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1132,
+				"buffer_size": 1159,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -191,9 +191,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/test"
 	],
 	"file_history":
 	[
@@ -302,6 +302,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"S",
+			"identity",
+			"Identity",
 			"sthreeTraversableLawsProp",
 			"threeTraversableLawsProp",
 			"threeFunctorLawsProp",
@@ -367,7 +370,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -376,15 +379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 615,
+						"buffer_size": 555,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								559,
-								559
+								555,
+								555
 							]
 						],
 						"settings":
@@ -395,24 +398,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/STraversableSpec.hs",
+					"file": "test/TreeTraversableSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1132,
+						"buffer_size": 1159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								37,
-								37
+								258,
+								258
 							]
 						],
 						"settings":
@@ -425,7 +428,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
