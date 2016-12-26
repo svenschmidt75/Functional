@@ -28,8 +28,8 @@ spec = do
         modifyMaxSuccess (const 1) $ do
             prop "Tree Functor laws" $ do
                 treeFunctorLawsProp
-            -- prop "Tree Traversable laws" $ do
-            --     treeTraversableLawsProp
+            prop "Tree Traversable laws" $ do
+                treeTraversableLawsProp
 
 treeFunctorLawsProp :: Property
 treeFunctorLawsProp = monadicIO $ do
@@ -37,8 +37,8 @@ treeFunctorLawsProp = monadicIO $ do
     let trigger = undefined :: Tree (Int, Int, Int)
     run $ quickBatch $ functor trigger
 
--- treeTraversableLawsProp :: Property
--- treeTraversableLawsProp = monadicIO $ do
---     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
---     let trigger = undefined :: Tree Maybe (Int, Int, [Int])
---     run $ quickBatch $ traversable trigger
+treeTraversableLawsProp :: Property
+treeTraversableLawsProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: Tree (Int, Int, [Int])
+    run $ quickBatch $ traversable trigger
