@@ -9,7 +9,9 @@ data Tree a = Empty
 
 instance Functor Tree where
 --  fmap :: (a -> b) -> f     a -> f     b
-    fmap = undefined
+    fmap _ Empty        = Empty
+    fmap f (Leaf a)     = Leaf $ f a
+    fmap f (Node l a r) = Node (f <$> l) (f a) (f <$> r)
 
 -- foldMap is a bit easier and looks more natural,
 -- but you can do foldr too for extra credit.
