@@ -127,7 +127,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 555,
+				"buffer_size": 1415,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +136,7 @@
 			"file": "test/TreeTraversableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1159,
+				"buffer_size": 1291,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -149,13 +149,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 252.0,
-		"last_filter": "Insta",
+		"height": 108.0,
+		"last_filter": "Package Control: Up",
 		"selected_items":
 		[
 			[
+				"Package Control: Up",
+				"Package Control: Upgrade Package"
+			],
+			[
 				"Insta",
-				"Package Control: Install Package"
+				"SublimeHaskell: Reinspect all"
 			],
 			[
 				"Haskell",
@@ -197,6 +201,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/STraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable/ThreePrimeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/ConstantTraversable.cabal",
@@ -302,6 +307,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sFunctorLawsProp",
+			"sTraversableLawsProp",
 			"S",
 			"identity",
 			"Identity",
@@ -379,15 +386,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 555,
+						"buffer_size": 1415,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								555,
-								555
+								1415,
+								1415
 							]
 						],
 						"settings":
@@ -395,7 +402,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 15.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -407,15 +414,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1159,
+						"buffer_size": 1291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								258,
-								258
+								1230,
+								1230
 							]
 						],
 						"settings":
