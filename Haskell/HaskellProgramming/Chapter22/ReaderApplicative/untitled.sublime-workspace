@@ -124,19 +124,19 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"file": "test/ReaderApplicativeSpec.hs",
 			"settings":
 			{
-				"buffer_size": 516,
+				"buffer_size": 592,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ThreePrimeTraversableSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1208,
+				"buffer_size": 771,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -149,13 +149,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 252.0,
-		"last_filter": "Insta",
+		"height": 108.0,
+		"last_filter": "Package Control: Up",
 		"selected_items":
 		[
 			[
+				"Package Control: Up",
+				"Package Control: Upgrade Package"
+			],
+			[
 				"Insta",
-				"Package Control: Install Package"
+				"SublimeHaskell: Reinspect all"
 			],
 			[
 				"Haskell",
@@ -191,12 +195,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/STraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable/ThreePrimeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/ConstantTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src/Lib.hs",
@@ -301,6 +308,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sFunctorLawsProp",
+			"sTraversableLawsProp",
+			"S",
+			"identity",
+			"Identity",
+			"sthreeTraversableLawsProp",
+			"threeTraversableLawsProp",
+			"threeFunctorLawsProp",
 			"Three",
 			"listTraversableLawsProp",
 			"listFunctorLawsProp",
@@ -368,24 +383,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/ReaderApplicativeSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 516,
+						"buffer_size": 592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								516,
-								516
+								592,
+								592
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -396,26 +413,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/ThreePrimeTraversableSpec.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1208,
+						"buffer_size": 771,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								643,
-								480
+								708,
+								708
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -510,7 +525,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
