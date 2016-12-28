@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getDogRM ∷ Person → Dog\tReaderMonadSpec"
+			],
+			[
 				"Nope",
 				"NopeDotJpg ∷ a Nope\tLib"
 			],
@@ -34,10 +38,6 @@
 			[
 				"put",
 				"putStrLn :: String -> IO ()\tPrelude"
-			],
-			[
-				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
@@ -124,19 +124,19 @@
 	"buffers":
 	[
 		{
-			"file": "test/ReaderApplicativeSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 592,
+				"buffer_size": 1052,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Lib.hs",
+			"file": "test/ReaderMonadSpec.hs",
 			"settings":
 			{
-				"buffer_size": 771,
+				"buffer_size": 1287,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -195,9 +195,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/test"
 	],
 	"file_history":
 	[
@@ -383,26 +383,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test/ReaderApplicativeSpec.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 592,
+						"buffer_size": 1052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42,
-								42
+								1052,
+								1052
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -413,24 +411,26 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/Lib.hs",
+					"file": "test/ReaderMonadSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 771,
+						"buffer_size": 1287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								771,
-								771
+								1287,
+								1287
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
