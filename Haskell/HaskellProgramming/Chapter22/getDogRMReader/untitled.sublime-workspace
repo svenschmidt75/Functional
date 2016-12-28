@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"do",
+				"dogName' ∷ Reader Person DogName\tgetDogRMReaderSpec"
+			],
+			[
+				"get",
+				"getDogRM ∷ Person → Dog\tgetDogRMReaderSpec"
+			],
+			[
+				"dog",
+				"dogName ∷ Person → DogName\tgetDogRMReaderSpec"
+			],
+			[
+				"D",
+				"DogName \tgetDogRMReaderSpec"
+			],
+			[
 				"Nope",
 				"NopeDotJpg ∷ a Nope\tLib"
 			],
@@ -34,10 +50,6 @@
 			[
 				"put",
 				"putStrLn :: String -> IO ()\tPrelude"
-			],
-			[
-				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
@@ -124,10 +136,10 @@
 	"buffers":
 	[
 		{
-			"file": "test/ReaderApplicativeSpec.hs",
+			"file": "test/GetDogRMReaderSpec.hs",
 			"settings":
 			{
-				"buffer_size": 592,
+				"buffer_size": 1764,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +148,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 771,
+				"buffer_size": 1052,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -195,12 +207,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/STraversable.cabal",
@@ -378,24 +391,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test/ReaderApplicativeSpec.hs",
+					"file": "test/GetDogRMReaderSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 592,
+						"buffer_size": 1764,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								592,
-								592
+								559,
+								559
 							]
 						],
 						"settings":
@@ -408,7 +421,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -417,15 +430,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 771,
+						"buffer_size": 1052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								100,
-								100
+								1052,
+								1052
 							]
 						],
 						"settings":
@@ -436,7 +449,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
