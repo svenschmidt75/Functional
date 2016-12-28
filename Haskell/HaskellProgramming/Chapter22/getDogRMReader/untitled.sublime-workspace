@@ -213,6 +213,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/Reader.README",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
@@ -437,8 +438,8 @@
 						"selection":
 						[
 							[
-								1052,
-								1052
+								315,
+								315
 							]
 						],
 						"settings":

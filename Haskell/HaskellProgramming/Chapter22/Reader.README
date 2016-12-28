@@ -1,0 +1,93 @@
+Sven Schmidt
+12/28/2016
+
+newtype Reader r a = Reader { runReader :: r -> a }
+
+As can be seen, Reader is just a wrapper around a function
+taking one argument.
+Composition,
+(.) :: (b -> c) -> (a -> b) -> (a -> c)
+cannot be used directly on Reader. The functor instance of Reader
+implements function composition for a Reader, i.e. fmap lift a
+function a -> b into the Reader context,
+
+fmap :: (a -> b) -> f a -> f b where
+f ~ Reader r, i.e.
+fmap :: (a -> b) -> Reader r a -> Reader r b
+
+So, basically, fmap returns a function wrapped in Reader, that
+takes an r, applies that r to Reader r a, to yield Reader r b, or
+fmap f (Reader ra) = Reader $ \r -> f (ra r)
+
+Examples:
+
+foo :: Integer -> Integer
+foo = (*2)
+
+Where is the reader in here?
+Let's write foo this way:
+
+foo :: (->) Integer Integer, where '(->) Integer' is the reader
+context, i.e.
+foo :: Reader Integer Integer, or Reader ~ (->), so Reader is
+function application.
+
+bar :: Integer -> Integer
+bar = (+10)
+
+Then:
+
+fmap bar foo x = bar (foo x)
+
+or, when using Reader,
+
+bar <$> foo $ x :: Reader Integer Integer.
+
+So, basically,
+
+<$> first applies argument x to foo, and the result to bar.
+
+However, say we have a function that takes more than one argument,
+say (+), i.e.
+
+foo' = (+) <$> (*2)
+The type of (+) is
+(+) :: a -> a -> a, hence
+
+fmap :: (a -> b) -> f a -> f b
+fmap :: (a -> b) -> Reader r a -> Reader r b
+
+fmap    (+)         (*2) = Reader $ \r -> (+) (r * 2)
+i.e.
+b :: a -> a
+
+Example:
+
+Prelude>:t fmap (+) (*2)
+fmap (+) (*2) :: Num a => a -> a -> a
+
+Prelude> :t fmap (+) (*2) $ 1
+fmap (+) (*2) $ 1 :: Num r => r -> r
+
+
+Applicative is sort of a generalization of Functor is this sence, since
+it allows to string more functions together.
+Again,
+fmap (+) (*2) :: Num a => a -> a -> a
+so
+(+) <$> (*2) <*> (+10) :: Num a => a
+i.e.
+this expression takes an argument a and passes that to both (*2) and (+10)
+and the result of both to (+).
+Another way to look at it is this:
+
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b
+or, with f ~ (->) r,
+(<*>) :: (->) r (a -> b) -> (->) r a -> (->) r b
+(<*>) :: (r -> a -> b) -> (r -> a) -> (r -> b)
+so both arguments are functions, and both take r, but the 1st one also takes an
+a. That a comes from the 2ns function, after the r has been applied to it. The
+result is a b.
+Now,
+(+) <$> (*2) :: Num a => a -> a -> a
+i.e. it fits the type signature of the 1st argument to (<*>).
