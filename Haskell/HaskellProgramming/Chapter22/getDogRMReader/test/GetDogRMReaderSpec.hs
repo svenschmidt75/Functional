@@ -25,6 +25,8 @@ data Dog = Dog { dogsName :: DogName
                }
     deriving (Eq, Show)
 
+-- getDogRM :: (->) Person Dog
+-- where (->) Person is the reader monad...
 getDogRM :: Person -> Dog
 getDogRM = do
     name <- dogName
@@ -32,7 +34,8 @@ getDogRM = do
     return $ Dog name addy
 
 
-
+-- The reader type just wraps a function with one argument,
+-- here of type Person, and returns a type, here DogName.
 dogName' :: Reader Person DogName
 dogName' = Reader $ dogName
 

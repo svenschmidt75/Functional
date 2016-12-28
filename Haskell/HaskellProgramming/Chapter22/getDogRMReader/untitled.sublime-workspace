@@ -139,7 +139,7 @@
 			"file": "test/GetDogRMReaderSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1764,
+				"buffer_size": 1956,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -400,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1764,
+						"buffer_size": 1956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								559,
-								559
+								701,
+								701
 							]
 						],
 						"settings":
