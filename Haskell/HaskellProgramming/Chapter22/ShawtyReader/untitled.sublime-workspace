@@ -148,18 +148,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 88,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 2908,
+				"buffer_size": 3032,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -218,13 +210,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ChapterExercise",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ChapterExercise/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ChapterExercise/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ChapterExercise/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader/app"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader/ShawtyReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/Reader.README",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
@@ -320,7 +311,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -334,6 +325,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getURI",
+			"rConn",
+			"shortyAintUri",
 			"sFunctorLawsProp",
 			"sTraversableLawsProp",
 			"S",
@@ -404,24 +398,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "app/Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 88,
+						"buffer_size": 3032,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								88,
-								88
+								1810,
+								1810
 							]
 						],
 						"settings":
@@ -430,34 +424,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Main.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2908,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2908,
-								2908
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
