@@ -148,19 +148,22 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"contents": "module StateMonadSpec (spec) where\n\nimport Test.Hspec\n\nimport Lib (State (..))\n\nspec :: Spec\nspec = do\n    describe \"State\" $ do\n        it \"Functor\" $ do\n            let state = State $ \\s -> (s, s + 1 :: Int)\n            let applied = runState ((+1) <$> state) 1\n            applied `shouldBe` (1, 3)\n        it \"Applicative - pure\" $ do\n            let fa = State $ \\s -> (s, s + 1 :: Int)\n            let fab = (pure (+1)) :: State Int (Int -> Int)\n            let applied = runState (fab <*> fa) 1\n            applied `shouldBe` (1, 3)\n        it \"Applicative - <*>\" $ do\n            let fa = State $ \\s -> (s + 3, s + 1 :: Int)\n            let fab = State $ \\s -> (s + 4, \\a -> a + 7)\n            let applied = runState (fab <*> fa) 1\n            applied `shouldBe` (8, 9)\n        it \"Monad - >>=\" $ do\n            let fa = State $ \\s -> (s + 3, s + 1 :: Int)\n            let fab = \\a -> State $ \\s -> (s + 4, a + 7)\n            let applied = runState (fa >>= fab) 1\n            applied `shouldBe` (8, 9)\n",
+			"file": "test/StateMonadSpec.hs",
+			"file_size": 1185,
+			"file_write_time": 131276216580251136,
 			"settings":
 			{
-				"buffer_size": 330,
+				"buffer_size": 1011,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/StateFunctorSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 305,
+				"buffer_size": 1162,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -219,10 +222,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/test"
 	],
 	"file_history":
 	[
@@ -409,52 +411,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/StateMonadSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 330,
+						"buffer_size": 1011,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								330,
-								330
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/StateFunctorSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 305,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								305,
-								305
+								1011,
+								1011
 							]
 						],
 						"settings":
@@ -468,6 +442,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1162,
+								1162
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -551,13 +553,9 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "StateAp",
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"StateAp",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateApplicative/untitled.sublime-project"
-			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/untitled.sublime-project"
