@@ -148,19 +148,10 @@
 	"buffers":
 	[
 		{
-			"file": "test/StateMonadSpec.hs",
+			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1179,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 1168,
+				"buffer_size": 970,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -219,12 +210,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieClunky",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieClunky/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieClunky/src"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieClunky/DieClunky.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieClunky/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader/ShawtyReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/Reader.README",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
@@ -408,60 +401,30 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test/StateMonadSpec.hs",
+					"file": "app/Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1179,
+						"buffer_size": 970,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								304,
-								304
+								40,
+								924
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1168,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1168,
-								1168
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -557,7 +520,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/DieState/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
