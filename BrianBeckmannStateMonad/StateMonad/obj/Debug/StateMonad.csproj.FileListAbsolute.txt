@@ -1,5 +1,0 @@
-D:\Develop\Functional\BrianBeckmannStateMonad\StateMonad\bin\Debug\StateMonad.exe
-D:\Develop\Functional\BrianBeckmannStateMonad\StateMonad\bin\Debug\StateMonad.pdb
-D:\Develop\Functional\BrianBeckmannStateMonad\StateMonad\obj\Debug\StateMonad.csprojResolveAssemblyReference.cache
-D:\Develop\Functional\BrianBeckmannStateMonad\StateMonad\obj\Debug\StateMonad.exe
-D:\Develop\Functional\BrianBeckmannStateMonad\StateMonad\obj\Debug\StateMonad.pdb
