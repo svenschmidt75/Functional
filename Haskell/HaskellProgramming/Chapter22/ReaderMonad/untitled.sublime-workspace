@@ -378,7 +378,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -400,13 +400,15 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -422,8 +424,8 @@
 						"selection":
 						[
 							[
-								1287,
-								1287
+								675,
+								675
 							]
 						],
 						"settings":
@@ -436,7 +438,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -520,9 +522,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "state",
 		"selected_items":
 		[
+			[
+				"state",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor/untitled.sublime-project"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/untitled.sublime-project"

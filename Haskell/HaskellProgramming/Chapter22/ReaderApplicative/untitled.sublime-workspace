@@ -378,7 +378,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -394,8 +394,8 @@
 						"selection":
 						[
 							[
-								592,
-								592
+								151,
+								151
 							]
 						],
 						"settings":
@@ -408,7 +408,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -424,8 +424,8 @@
 						"selection":
 						[
 							[
-								100,
-								100
+								59,
+								59
 							]
 						],
 						"settings":
@@ -436,7 +436,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
