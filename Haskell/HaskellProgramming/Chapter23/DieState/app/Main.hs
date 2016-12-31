@@ -44,11 +44,14 @@ rollDie = state $ do
     return (intToDie n, s)
 -- rollDie = state $ randomR (1, 6)
 --               >>= \(n, s) -> return (intToDie n, s)
+-- state $ randomR (1, 6) => State StdGen (Int, Int)
+-- State $ \s -> randomR (1, 6) s
+-- The type of 'randomR (1, 6) >>= \(n, s) -> return (intToDie n, s)'
+-- is 'RandomGen t => t -> (Die, t)'
+-- The type of 'randomR (1, 6)' is '(Random a, RandomGen g, Num a) => g -> (a, g)'
 
 rollDie' :: State StdGen Die
 rollDie' = intToDie <$> state (randomR (1, 6))
--- state (randomR (1, 6) => State StdGen (Int, Int)
--- State $ \s -> randomR (1, 6) s
 
 rollDieThreeTimes' :: State StdGen (Die, Die, Die)
 rollDieThreeTimes' = liftA3 (,,) rollDie rollDie rollDie
