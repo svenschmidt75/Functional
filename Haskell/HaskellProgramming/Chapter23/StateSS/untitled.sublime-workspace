@@ -151,16 +151,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 767,
+				"buffer_size": 1769,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/StateApplicativeSpec.hs",
+			"file": "test/StateSSSpec.hs",
 			"settings":
 			{
-				"buffer_size": 785,
+				"buffer_size": 1158,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -219,12 +219,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateSS",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateSS/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateSS/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateSS/StateSS.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader/ShawtyReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/Reader.README",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
@@ -417,15 +418,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 767,
+						"buffer_size": 1769,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								767,
-								767
+								1769,
+								1769
 							]
 						],
 						"settings":
@@ -441,19 +442,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/StateApplicativeSpec.hs",
+					"file": "test/StateSSSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 785,
+						"buffer_size": 1158,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								785,
-								785
+								1158,
+								1158
 							]
 						],
 						"settings":
@@ -550,13 +551,9 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "StaMo",
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"StaMo",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/untitled.sublime-project"
-			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/untitled.sublime-project"

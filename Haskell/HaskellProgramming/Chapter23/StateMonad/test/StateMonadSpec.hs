@@ -7,26 +7,26 @@ import Lib (State (..))
 spec :: Spec
 spec = do
     describe "State" $ do
-        it "Functor" $ do
-            let state = State $ \s -> (s, s + 1 :: Int)
+        it "Functor 1" $ do
+            let state = State $ \s -> (s + 1 :: Int, s)
             let applied = runState ((+1) <$> state) 1
-            applied `shouldBe` (1, 3)
+            applied `shouldBe` (3, 1)
+        it "Functor 2" $ do
+            let state = State $ \s -> (0, s)
+            let applied = runState ((+1) <$> state) 0
+            applied `shouldBe` (1, 0)
         it "Applicative - pure" $ do
-            let fa = State $ \s -> (s, s + 1 :: Int)
+            let fa = State $ \s -> (s + 1 :: Int, s)
             let fab = (pure (+1)) :: State Int (Int -> Int)
             let applied = runState (fab <*> fa) 1
-            applied `shouldBe` (1, 3)
+            applied `shouldBe` (3, 1)
         it "Applicative - <*>" $ do
             let fa = State $ \s -> (s + 3, s + 1 :: Int)
-            let fab = State $ \s -> (s + 4, \a -> a + 7)
+            let fab = State $ \s -> (\a -> a + 7, s + 4)
             let applied = runState (fab <*> fa) 1
-            applied `shouldBe` (8, 9)
+            applied `shouldBe` (11, 6)
         it "Monad - >>=" $ do
-            let fa = State $ \s -> (s + 3, s + 1 :: Int)
-            let fab = \a -> State $ \s -> (s + 4, a + 7)
+            let fa = State $ \s -> (s + 1 :: Int, s + 3)
+            let fab = \a -> State $ \s -> (a + 7, s + 4)
             let applied = runState (fa >>= fab) 1
-            applied `shouldBe` (8, 9)
-        it "mkState" $ do
-            let state = State $ \s -> (s, s + 1 :: Int)
-            let applied = runState ((+1) <$> state) 1
-            applied `shouldBe` (1, 3)
+            applied `shouldBe` (9, 8)

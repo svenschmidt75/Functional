@@ -1,5 +1,11 @@
 module Lib
     ( State (..)
+    , get
+    , put
+    , exec
+    , eval
+    , modify
+    , state
     ) where
 
 newtype State s a = State { runState :: s -> (a, s) }
@@ -30,5 +36,27 @@ instance Monad (State s) where
                                            applied = runState $ f a
                                        in applied s'
 
--- mkState :: (s -> (s, a)) -> State s a
--- mkState = State
+-- from Control.Monad.State
+-- get :: m s Source
+-- Return the state from the internals of the monad.
+get :: State s s
+get = State $ \s -> (s, s)
+
+-- put :: s -> m () Source
+-- Replace the state inside the monad.
+put :: s -> State s ()
+put s = State $ \_ -> ((), s)
+
+exec :: State s a -> s -> s
+exec (State sa) s = let (_, s') = sa s
+                    in s'
+
+eval :: State s a -> s -> a
+eval (State sa) = \s -> let (a, _) = sa s
+                        in a
+
+modify :: (s -> s) -> State s ()
+modify f = State $ \s -> ((), f s)
+
+state :: (s -> (a, s)) -> State s a
+state f = State $ \s -> f s
