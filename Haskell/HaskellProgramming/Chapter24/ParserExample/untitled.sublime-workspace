@@ -4,34 +4,6 @@
 		"selected_items":
 		[
 			[
-				"mkS",
-				"mkStdGen"
-			],
-			[
-				"get",
-				"getDogRM ∷ Person → Dog\tReaderMonadSpec"
-			],
-			[
-				"Nope",
-				"NopeDotJpg ∷ a Nope\tLib"
-			],
-			[
-				"Com",
-				"CombineType \tLibSpec"
-			],
-			[
-				"Fir",
-				"First"
-			],
-			[
-				"mo",
-				"monoidLeftIdentity"
-			],
-			[
-				"A",
-				"Arbitrary"
-			],
-			[
 				"edge",
 				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
 			],
@@ -42,6 +14,10 @@
 			[
 				"put",
 				"putStrLn :: String -> IO ()\tPrelude"
+			],
+			[
+				"get",
+				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
@@ -131,25 +107,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1052,
+				"buffer_size": 834,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-2.hs",
+			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 951,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/ReaderMonadSpec.hs",
-			"settings":
-			{
-				"buffer_size": 1287,
+				"buffer_size": 706,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -162,32 +129,24 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 108.0,
-		"last_filter": "Package Control: Up",
+		"height": 392.0,
+		"last_filter": "Pack",
 		"selected_items":
 		[
 			[
-				"Package Control: Up",
+				"Pack",
 				"Package Control: Upgrade Package"
 			],
 			[
-				"Insta",
-				"SublimeHaskell: Reinspect all"
-			],
-			[
 				"Haskell",
-				"SublimeHaskell: Show type"
-			],
-			[
-				"Pack",
-				"Package Control: Install Package"
+				"Set Syntax: Haskell Repl"
 			],
 			[
 				"view",
 				"View: Toggle Menu"
 			]
 		],
-		"width": 471.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -208,60 +167,19 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/test"
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-1.hs",
-		"/home/svenschmidt75/wifi-powerman-off",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/STraversable.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ThreePrimeTraversable/ThreePrimeTraversable.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/ConstantTraversable/ConstantTraversable.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/IdentityTraversable/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/test/ListMonadSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/ListMonad/ListMonad.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/IdentityMonad/IdentityMonad.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/NopeMonad/NopeMonad.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad/EitherMonad.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/BST2ndLargestElement.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/SemigroupIdentity.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTrivial/SemigroupTrivial.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/MaybeAnotherMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/stack.yaml",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default.sublime-keymap",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/.gitignore",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Graph.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Lib.hs",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs",
@@ -269,12 +187,15 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
 		"/home/svenschmidt75/Develop/various/DasHausVomNikolaus/DasHausVomNikolaus/main.cpp",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/GraphSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/StringProcessingSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/SpecGraph.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/test/HuttonsRazorSpec.hs",
@@ -295,6 +216,8 @@
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
 		"/home/svenschmidt75/Downloads/Logfile.txt",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/Foldr/Foldr.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/svenschmidt75/Develop/Functional/.gitignore",
 		"/home/svenschmidt75/Develop/Functional/F#/FizzBuzz/.gitignore",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertTests.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/SerializeTo.cabal",
@@ -323,51 +246,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"sFunctorLawsProp",
-			"sTraversableLawsProp",
-			"S",
-			"identity",
-			"Identity",
-			"sthreeTraversableLawsProp",
-			"threeTraversableLawsProp",
-			"threeFunctorLawsProp",
-			"Three",
-			"listTraversableLawsProp",
-			"listFunctorLawsProp",
-			"List",
-			"identityTraversableLawsProp",
-			"Identity",
-			"identityFunctorLawsProp",
-			"foldr",
-			"fs",
-			"concat",
-			"idMonadLawsProp",
-			"idApplicativeLawsProp",
-			"idFunctorLawsProp",
-			"Identity",
-			"nopeMonadLawsProp",
-			"nopeApplicativeLawsProp",
-			"nopeFunctorLawsProp",
-			"Nope",
-			"NopeMonadLawsProp",
-			"NopeApplicativeLawsProp",
-			"NopeFunctorLawsProp",
-			"sum",
-			"Sum",
-			"sum",
-			"Sum",
-			"sum",
-			"Sum",
-			"sum",
-			"Sum",
-			"sum",
-			"Sum",
-			"Left",
-			"Right",
-			"fourPrimeApplicativeLawsProp",
-			"fourPrimeFunctorLawsProp",
-			"SemigroupBoolConj",
-			"theme",
 			"i",
 			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
 			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
@@ -381,8 +259,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"SemigroupCombine",
-			"SemigroupOr"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -393,7 +269,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -402,52 +278,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1052,
+						"buffer_size": 834,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1052,
-								1052
+								728,
+								728
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-2.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 951,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								951,
-								951
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -457,33 +301,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "test/ReaderMonadSpec.hs",
+					"buffer": 1,
+					"file": "app/Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1287,
+						"buffer_size": 706,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								675,
-								675
+								563,
+								563
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -495,7 +337,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -522,15 +364,11 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 266.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
-	},
-	"output.haskell_run_output":
-	{
-		"height": 98.0
 	},
 	"output.sublime_haskell_build_log_panel":
 	{
@@ -540,15 +378,11 @@
 	{
 		"height": 425.0
 	},
-	"output.sublime_haskell_show_types_panel":
-	{
-		"height": 98.0
-	},
 	"output.sublime_haskell_symbol_info_panel":
 	{
 		"height": 237.0
 	},
-	"pinned_build_system": "Packages/Haskell/Haskell.sublime-build",
+	"pinned_build_system": "",
 	"project": "untitled.sublime-project",
 	"replace":
 	{
@@ -567,21 +401,9 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "DasH",
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"DasH",
-				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
-			],
-			[
-				"state",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor/untitled.sublime-project"
-			],
-			[
-				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/untitled.sublime-project"
-			]
 		],
 		"width": 380.0
 	},
@@ -602,7 +424,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 319.0,
+	"side_bar_width": 249.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

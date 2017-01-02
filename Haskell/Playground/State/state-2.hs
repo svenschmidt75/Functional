@@ -9,6 +9,14 @@ import System.Random
 f1 :: State StdGen Int
 f1 = state $ \s -> (1, s)
 
+-- Read 'State s a' as a function s -> (a, s). State is nothing more than
+-- a wrapper around functions of type s -> (a, s). By wrapping a function
+-- of signature s -> (a, s), we can implement typeclasses like functor,
+-- applicative and monad, adding certain capabilities like threading state
+-- through subsequent function applications.
+-- Reader, on the other hand, wraps functions of type r -> a, and the
+-- implementation of functor, applicative and monad for it gives it different
+-- semmantics compared to State.
 f2 :: State StdGen Int
 f2 = do
     -- get state

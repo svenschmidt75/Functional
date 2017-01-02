@@ -112,6 +112,14 @@
 			}
 		},
 		{
+			"file": "test/LibSpec.hs",
+			"settings":
+			{
+				"buffer_size": 13227,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/Graph.hs",
 			"settings":
 			{
@@ -174,10 +182,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default.sublime-keymap",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
@@ -233,7 +246,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -276,7 +289,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -306,11 +319,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "test/LibSpec.hs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 13227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2224,
+								2224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "src/Graph.hs",
 					"semi_transient": false,
 					"settings":
@@ -322,8 +365,8 @@
 						"selection":
 						[
 							[
-								1042,
-								1042
+								3702,
+								3702
 							]
 						],
 						"settings":
@@ -333,14 +376,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "src/Helper.hs",
 					"semi_transient": false,
 					"settings":
@@ -352,8 +395,8 @@
 						"selection":
 						[
 							[
-								167,
-								167
+								457,
+								457
 							]
 						],
 						"settings":
@@ -364,7 +407,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -403,7 +446,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 266.0
 	},
 	"output.find_results":
 	{
