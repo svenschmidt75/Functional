@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mkS",
+				"mkStdGen"
+			],
+			[
 				"get",
 				"getDogRM ∷ Person → Dog\tReaderMonadSpec"
 			],
@@ -133,6 +137,15 @@
 			}
 		},
 		{
+			"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-2.hs",
+			"settings":
+			{
+				"buffer_size": 430,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "test/ReaderMonadSpec.hs",
 			"settings":
 			{
@@ -201,6 +214,8 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-1.hs",
+		"/home/svenschmidt75/wifi-powerman-off",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderApplicative/ReaderApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/TreeTraversable/TreeTraversable.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter21/STraversable/STraversable.cabal",
@@ -413,6 +428,36 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-2.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								430,
+								430
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "test/ReaderMonadSpec.hs",
 					"semi_transient": false,
 					"settings":
@@ -438,7 +483,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
