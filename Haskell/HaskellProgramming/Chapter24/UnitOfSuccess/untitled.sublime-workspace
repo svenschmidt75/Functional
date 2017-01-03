@@ -107,32 +107,25 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1341,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/LibSpec.hs",
-			"settings":
-			{
-				"buffer_size": 13227,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Graph.hs",
-			"settings":
-			{
-				"buffer_size": 3702,
+				"buffer_size": 67,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Helper.hs",
+			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 457,
+				"buffer_size": 356,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "UnitOfSuccess.cabal",
+			"settings":
+			{
+				"buffer_size": 1361,
 				"line_ending": "Unix"
 			}
 		}
@@ -182,13 +175,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/UnitOfSuccess",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/UnitOfSuccess/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/UnitOfSuccess/src"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/UnitOfSuccess/UnitOfSuccess.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default.sublime-keymap",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
@@ -246,7 +239,7 @@
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -280,16 +273,10 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"folders":
-	[
-		{
-			"path": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus"
-		}
-	],
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -298,105 +285,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1341,
+						"buffer_size": 67,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35,
-								35
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/LibSpec.hs",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 13227,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2224,
-								2224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 765.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Graph.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3702,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3702,
-								3702
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Helper.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 457,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								457,
-								457
+								67,
+								67
 							]
 						],
 						"settings":
@@ -407,7 +304,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "UnitOfSuccess.cabal",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								901,
+								901
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -465,7 +420,7 @@
 		"height": 237.0
 	},
 	"pinned_build_system": "",
-	"project": "",
+	"project": "untitled.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -483,13 +438,9 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "Pars",
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"Pars",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/untitled.sublime-project"
-			]
 		],
 		"width": 380.0
 	},
