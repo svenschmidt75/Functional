@@ -127,7 +127,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1226,
+				"buffer_size": 1872,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +136,7 @@
 			"file": "test/SemVerSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1576,
+				"buffer_size": 2033,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -298,15 +298,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1226,
+						"buffer_size": 1872,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								897,
-								897
+								1872,
+								1872
 							]
 						],
 						"settings":
@@ -326,15 +326,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1576,
+						"buffer_size": 2033,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1334,
-								1334
+								2033,
+								2033
 							]
 						],
 						"settings":
