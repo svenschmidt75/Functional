@@ -127,16 +127,17 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1860,
+				"buffer_size": 383,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/SemVerSpec.hs",
+			"file": "test/PhoneNumbersSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2033,
+				"buffer_size": 2039,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -186,13 +187,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/test"
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test/SemVerSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/PhoneNumbers.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/Base10Number.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/SemVer.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
@@ -298,22 +300,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1860,
+						"buffer_size": 383,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								92,
-								92
+								142,
+								142
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -324,19 +324,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "test/SemVerSpec.hs",
-					"semi_transient": true,
+					"file": "test/PhoneNumbersSpec.hs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2033,
+						"buffer_size": 2039,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2033,
-								2033
+								2039,
+								2039
 							]
 						],
 						"settings":
@@ -430,7 +430,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/untitled.sublime-project"
 			]
 		],
 		"width": 380.0

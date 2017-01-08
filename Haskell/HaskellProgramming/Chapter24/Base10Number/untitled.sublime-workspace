@@ -127,16 +127,17 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1860,
+				"buffer_size": 407,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/SemVerSpec.hs",
+			"file": "test/Base10NumberSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2033,
+				"buffer_size": 2226,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -186,13 +187,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/test"
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test/SemVerSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/Base10Number.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/SemVer.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
@@ -289,7 +290,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -298,15 +299,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1860,
+						"buffer_size": 407,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								92,
-								92
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/Base10NumberSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2096,
+								2096
 							]
 						],
 						"settings":
@@ -320,36 +349,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/SemVerSpec.hs",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2033,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2033,
-								2033
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -430,7 +429,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/untitled.sublime-project"
 			]
 		],
 		"width": 380.0

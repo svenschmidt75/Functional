@@ -1,8 +1,8 @@
 module Lib where
-    -- ( SemVer (..)
-    -- , NumberOrString (..)
-    -- , parseSemVer
-    -- ) where
+    ( SemVer (..)
+    , NumberOrString (..)
+    , parseSemVer
+    ) where
 
 import Data.Maybe
 import Control.Applicative
