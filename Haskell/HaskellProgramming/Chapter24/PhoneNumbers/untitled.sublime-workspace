@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"par",
+				"parseLineNumber"
+			],
+			[
+				"Li",
+				"LineNumber"
+			],
+			[
+				"pas",
+				"parse3Digits"
+			],
+			[
+				"pars",
+				"parse3Digits"
+			],
+			[
+				"pa",
+				"parse3Digits"
+			],
+			[
+				"P",
+				"Parser"
+			],
+			[
 				"num",
 				"numberOrStringParser"
 			],
@@ -14,10 +38,6 @@
 			[
 				"nu",
 				"numberParser"
-			],
-			[
-				"pa",
-				"parsePreRelease"
 			],
 			[
 				"Num",
@@ -127,7 +147,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 383,
+				"buffer_size": 1332,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +156,7 @@
 			"file": "test/PhoneNumbersSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2039,
+				"buffer_size": 1818,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -268,6 +288,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SemVer",
+			"semVer",
+			"SemVer",
+			"semVer",
+			"SemVer",
+			"parseSemVer",
 			"i",
 			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
 			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
@@ -291,7 +317,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -300,15 +326,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 383,
+						"buffer_size": 1332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								1332,
+								1332
 							]
 						],
 						"settings":
@@ -319,7 +345,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -328,15 +354,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2039,
+						"buffer_size": 1818,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2039,
-								2039
+								1818,
+								1818
 							]
 						],
 						"settings":
@@ -349,7 +375,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
