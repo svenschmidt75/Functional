@@ -5,27 +5,51 @@
 		[
 			[
 				"par",
-				"parseLineNumber"
+				"parse2Digits"
 			],
 			[
-				"Li",
-				"LineNumber"
+				"dig",
+				"digitToInt"
 			],
 			[
-				"pas",
-				"parse3Digits"
+				"p",
+				"parseYear"
+			],
+			[
+				"parse",
+				"parseSectionStart"
 			],
 			[
 				"pars",
-				"parse3Digits"
+				"parseSectionStart"
 			],
 			[
-				"pa",
-				"parse3Digits"
+				"log",
+				"logFileEntries"
 			],
 			[
-				"P",
-				"Parser"
+				"LogF",
+				"LogFileSection"
+			],
+			[
+				"logFile",
+				"LogFileEntry"
+			],
+			[
+				"exp",
+				"expectedTime"
+			],
+			[
+				"ut",
+				"utctDay"
+			],
+			[
+				"LogFi",
+				"LogFileEntry \tLib"
+			],
+			[
+				"parseLog",
+				"parseLogFileSection ∷ None\tLib"
 			],
 			[
 				"num",
@@ -38,6 +62,10 @@
 			[
 				"nu",
 				"numberParser"
+			],
+			[
+				"pa",
+				"parsePreRelease"
 			],
 			[
 				"Num",
@@ -144,19 +172,19 @@
 	"buffers":
 	[
 		{
-			"file": "src/Lib.hs",
+			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1332,
+				"buffer_size": 3331,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/PhoneNumbersSpec.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1818,
+				"buffer_size": 2209,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -207,14 +235,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/test"
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/PhoneNumbers/PhoneNumbers.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/Base10Number.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test/SemVerSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/SemVer.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
@@ -288,12 +316,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"SemVer",
-			"semVer",
-			"SemVer",
-			"semVer",
-			"SemVer",
-			"parseSemVer",
 			"i",
 			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
 			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
@@ -317,24 +339,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Lib.hs",
+					"file": "test/LogFileSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1332,
+						"buffer_size": 3331,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								751,
-								761
+								3229,
+								3229
 							]
 						],
 						"settings":
@@ -344,40 +366,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/PhoneNumbersSpec.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1818,
+						"buffer_size": 2209,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1818,
-								1818
+								835,
+								835
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -458,7 +478,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"
 			]
 		],
 		"width": 380.0
