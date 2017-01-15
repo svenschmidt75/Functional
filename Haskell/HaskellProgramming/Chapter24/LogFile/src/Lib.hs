@@ -7,6 +7,8 @@ module Lib
     , parseSectionStart
     , parseLogFile
     , parseLogFileSection
+    , parseComments
+    , parseComment
     ) where
 
 import Data.Char
@@ -17,10 +19,13 @@ import Text.Trifecta
 type Activity = String
 
 data LogFileEntry = LogFileEntry DT.UTCTime Activity
+    deriving (Show, Eq)
 
 data LogFileSection = LogFileSection DT.Day [LogFileEntry]
+    deriving (Show, Eq)
 
 newtype LogFile = LogFile [LogFileSection]
+    deriving (Show, Eq)
 
 
 parse2Digits :: Parser Int
@@ -61,16 +66,17 @@ parseMonth = parse2Digits
 parseDay :: Parser Int
 parseDay = parse2Digits
 
-skipComment :: Parser ()
-skipComment = try $ do
+parseComment :: Parser ()
+parseComment = try $ do
+    whiteSpace
     _ <- string "--"
     skipMany (oneOf "\n")
     return ()
 
-skipComments :: Parser ()
-skipComments = do
+parseComments :: Parser ()
+parseComments = do
     whiteSpace
-    _ <- optional $ skipComment
+    _ <- optional parseComment
     return ()
 
 parseSectionStart :: Parser DT.Day
@@ -82,12 +88,14 @@ parseSectionStart = do
     month <- parseMonth
     _ <- char '-'
     day <- parseDay
-    skipComments
+    parseComments
     return $ DT.fromGregorian (fromIntegral year) month day
 
 parseLogFileSection :: Parser LogFileSection
 parseLogFileSection = do
+    parseComments
     date <- parseSectionStart
+    whiteSpace
     logFileEntries <- some parseLogFileEntry
     return $ LogFileSection date logFileEntries
 

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"pars",
+				"skipComment ∷ Parser ()\tLib"
+			],
+			[
+				"skip",
+				"skipComments ∷ Parser ()\tLib"
+			],
+			[
+				"exam",
+				"exampleLogFileSection ∷ [Char]\tLogFileSpec"
+			],
+			[
+				"parseLog",
+				"parseLogFileSection ∷ Parser LogFileSection\tLib"
+			],
+			[
+				"parse",
+				"parseLogFileEntry ∷ Parser LogFileEntry\tLib"
+			],
+			[
 				"par",
 				"parse2Digits"
 			],
@@ -14,14 +34,6 @@
 			[
 				"p",
 				"parseYear"
-			],
-			[
-				"parse",
-				"parseSectionStart"
-			],
-			[
-				"pars",
-				"parseSectionStart"
 			],
 			[
 				"log",
@@ -46,10 +58,6 @@
 			[
 				"LogFi",
 				"LogFileEntry \tLib"
-			],
-			[
-				"parseLog",
-				"parseLogFileSection ∷ None\tLib"
 			],
 			[
 				"num",
@@ -175,7 +183,7 @@
 			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 3331,
+				"buffer_size": 5903,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -184,7 +192,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2209,
+				"buffer_size": 2372,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -316,6 +324,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pComment",
+			"skipComment",
+			"skipComments",
+			"skipComment",
+			"skipComments",
 			"i",
 			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
 			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
@@ -339,7 +352,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -348,15 +361,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3331,
+						"buffer_size": 5903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3229,
-								3229
+								464,
+								464
 							]
 						],
 						"settings":
@@ -366,10 +379,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -378,15 +391,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2209,
+						"buffer_size": 2372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								835,
-								835
+								2092,
+								2092
 							]
 						],
 						"settings":
@@ -394,10 +407,10 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
