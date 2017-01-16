@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"parseLo",
+				"parseLogFile"
+			],
+			[
+				"logFile",
+				"LogFileSection"
+			],
+			[
 				"pars",
 				"skipComment ∷ Parser ()\tLib"
 			],
@@ -42,10 +50,6 @@
 			[
 				"LogF",
 				"LogFileSection"
-			],
-			[
-				"logFile",
-				"LogFileEntry"
 			],
 			[
 				"exp",
@@ -183,7 +187,7 @@
 			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 5903,
+				"buffer_size": 6536,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -192,7 +196,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2372,
+				"buffer_size": 2579,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -324,6 +328,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"parseLogFileEntry",
 			"pComment",
 			"skipComment",
 			"skipComments",
@@ -352,7 +357,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -361,15 +366,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5903,
+						"buffer_size": 6536,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								464,
-								464
+								6536,
+								6536
 							]
 						],
 						"settings":
@@ -379,10 +384,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1665.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -391,15 +396,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2372,
+						"buffer_size": 2579,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2092,
-								2092
+								1454,
+								1454
 							]
 						],
 						"settings":
@@ -407,10 +412,10 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

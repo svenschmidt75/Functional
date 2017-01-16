@@ -8,19 +8,21 @@ import Test.Hspec
 
 import Lib
     ( LogFileEntry (..)
-    , LogFileSection (..)
+    , LogFile (..)
     , parseComments
     , parseComment
     , parseTime
     , parseLogFileEntry
     , parseSectionStart
     , parseLogFileSection
+    , parseLogFile
     )
 
 exampleLogFileSection :: [Char]
 exampleLogFileSection = [r|
 -- wheee a comment
 # 2025-02-05
+08:00 Breakfast
 |]
 
 exampleLog :: [Char]
@@ -148,6 +150,18 @@ spec = do
             -- manually unpack
             case result of
                 TF.Success _ -> True `shouldBe` True
+                    -- -> day `shouldBe` expectedDay
+                    --     where
+                    --         expectedDay = DT.fromGregorian 2025 2 5
+                -- fail this test...
+                TF.Failure err   -> show err `shouldBe` "False"
+    describe "parseLogFile" $ do
+        it "Test 1" $ do
+            let result = TF.parseString parseLogFile mempty exampleLog
+            -- TF.Result does not have an eq instance, so need to
+            -- manually unpack
+            case result of
+                TF.Success (LogFile logFileSections) -> (length logFileSections) `shouldBe` 2
                     -- -> day `shouldBe` expectedDay
                     --     where
                     --         expectedDay = DT.fromGregorian 2025 2 5

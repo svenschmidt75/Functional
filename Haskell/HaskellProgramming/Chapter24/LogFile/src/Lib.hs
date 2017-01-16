@@ -47,10 +47,13 @@ parseTime = do
     return $ DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime (fromIntegral secs))
 
 parseActivity :: Parser Activity
-parseActivity = some anyChar
+parseActivity = parseUntilEOL
 
 parseLogFile :: Parser LogFile
-parseLogFile = undefined
+parseLogFile = do
+    logFileSections <- some parseLogFileSection
+    eof
+    return $ LogFile logFileSections
 
 parseYear :: Parser Int
 parseYear = do
@@ -66,10 +69,14 @@ parseMonth = parse2Digits
 parseDay :: Parser Int
 parseDay = parse2Digits
 
+parseUntilEOL :: Parser [Char]
+parseUntilEOL = some (noneOf "\n")
+
 parseComment :: Parser ()
 parseComment = try $ do
     whiteSpace
     _ <- string "--"
+    _ <- parseUntilEOL
     skipMany (oneOf "\n")
     return ()
 
@@ -94,14 +101,16 @@ parseSectionStart = do
 parseLogFileSection :: Parser LogFileSection
 parseLogFileSection = do
     parseComments
-    date <- parseSectionStart
     whiteSpace
+    date <- parseSectionStart
     logFileEntries <- some parseLogFileEntry
     return $ LogFileSection date logFileEntries
 
 parseLogFileEntry :: Parser LogFileEntry
 parseLogFileEntry = do
+    whiteSpace
     time <- parseTime
     whiteSpace
     activity <- parseActivity
+    whiteSpace
     return $ LogFileEntry time activity
