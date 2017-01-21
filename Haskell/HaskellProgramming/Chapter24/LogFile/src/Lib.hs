@@ -1,15 +1,16 @@
 module Lib
-    ( LogFileEntry (..)
-    , LogFileSection (..)
-    , LogFile (..)
-    , parseTime
-    , parseLogFileEntry
-    , parseSectionStart
-    , parseLogFile
-    , parseLogFileSection
-    , parseComments
-    , parseComment
-    ) where
+    -- ( LogFileEntry (..)
+    -- , LogFileSection (..)
+    -- , LogFile (..)
+    -- , parseTime
+    -- , parseLogFileEntry
+    -- , parseSectionStart
+    -- , parseLogFile
+    -- , parseLogFileSection
+    -- , parseComments
+    -- , parseComment
+    -- ) where
+where
 
 import Data.Char
 import qualified Data.Time as DT
@@ -28,14 +29,57 @@ newtype LogFile = LogFile [LogFileSection]
     deriving (Show, Eq)
 
 
+
+
+activitySum :: Activity -> LogFile -> Int
+activitySum = undefined
+
+activityLogFile :: Activity -> LogFile -> Int
+activityLogFile = undefined
+
+activityLogFileSection :: Activity -> LogFileSection -> DT.NominalDiffTime
+activityLogFileSection activity (LogFileSection _ entries) =
+    foldr (\c b -> b + duration c) 0 matchingEntries
+    where
+        z = zip entries (tail entries)
+        activityPred (entry, _) = getActivity entry == activity
+        matchingEntries = filter activityPred z
+        duration :: (LogFileEntry, LogFileEntry) -> DT.NominalDiffTime
+        duration (LogFileEntry t1 _, LogFileEntry t2 _) = DT.diffUTCTime t2 t1
+
+getActivity :: LogFileEntry -> Activity
+getActivity (LogFileEntry _ activity) = activity
+
+-- Parse methods
+
+parseLogFile :: Parser LogFile
+parseLogFile = do
+    logFileSections <- some parseLogFileSection
+    eof
+    return $ LogFile logFileSections
+
+parseLogFileSection :: Parser LogFileSection
+parseLogFileSection = do
+    parseComments
+    whiteSpace
+    date <- parseSectionStart
+    logFileEntries <- some parseLogFileEntry
+    return $ LogFileSection date logFileEntries
+
+parseLogFileEntry :: Parser LogFileEntry
+parseLogFileEntry = do
+    whiteSpace
+    time <- parseTime
+    whiteSpace
+    activity <- parseActivity
+    whiteSpace
+    return $ LogFileEntry time activity
+
 parse2Digits :: Parser Int
 parse2Digits = do
     d1 <- digit
     d2 <- digit
     return $ (10 * digitToInt d1) + (digitToInt d2)
-
-toSeconds :: Int -> Int -> Int
-toSeconds h m = h * 3600 + m * 60
 
 parseTime :: Parser DT.UTCTime
 parseTime = do
@@ -48,12 +92,6 @@ parseTime = do
 
 parseActivity :: Parser Activity
 parseActivity = parseUntilEOL
-
-parseLogFile :: Parser LogFile
-parseLogFile = do
-    logFileSections <- some parseLogFileSection
-    eof
-    return $ LogFile logFileSections
 
 parseYear :: Parser Int
 parseYear = do
@@ -98,19 +136,7 @@ parseSectionStart = do
     parseComments
     return $ DT.fromGregorian (fromIntegral year) month day
 
-parseLogFileSection :: Parser LogFileSection
-parseLogFileSection = do
-    parseComments
-    whiteSpace
-    date <- parseSectionStart
-    logFileEntries <- some parseLogFileEntry
-    return $ LogFileSection date logFileEntries
+-- Helper methods
 
-parseLogFileEntry :: Parser LogFileEntry
-parseLogFileEntry = do
-    whiteSpace
-    time <- parseTime
-    whiteSpace
-    activity <- parseActivity
-    whiteSpace
-    return $ LogFileEntry time activity
+toSeconds :: Int -> Int -> Int
+toSeconds h m = h * 3600 + m * 60

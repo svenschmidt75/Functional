@@ -1,0 +1,35 @@
+Sven Schmidt
+Jan 21, 2017
+
+from http://www.corecursion.net/post/2017-01-12-Why_Traversable_is_the_real_deal
+
+
+Say we have a data structure, that we want to fold over.
+The Foldable typeclass contains function
+
+ foldMap :: Monoid m => (a -> m) -> t a -> m
+
+which we want to use.
+The Traversable typeclass,
+
+class Functor t => Traversable t where
+  traverse :: Applicative f => (a -> f b) -> t a -> f (t b)
+
+exposes a function traverse, that abstracts out the specifics
+of traversing a data type.
+It allows to apply an effectful transformation, with the only
+requirement that the transformation has to be in the Applicative
+typeclass.
+
+Now, to implement foldMap, lets start to build this up step-by-step:
+
+foldMap f = f
+
+
+
+
+foldMap :: (Traversable f, Monoid m) => (a -> m) -> f a -> m
+foldMap f = constant . traverse (Constant . f)
+
+
+

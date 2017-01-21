@@ -8,6 +8,7 @@ import Test.Hspec
 
 import Lib
     ( LogFileEntry (..)
+    , LogFileSection (..)
     , LogFile (..)
     , parseComments
     , parseComment
@@ -16,16 +17,10 @@ import Lib
     , parseSectionStart
     , parseLogFileSection
     , parseLogFile
+    , activityLogFileSection
     )
 
-exampleLogFileSection :: [Char]
-exampleLogFileSection = [r|
--- wheee a comment
-# 2025-02-05
-08:00 Breakfast
-|]
-
-exampleLog :: [Char]
+exampleLog :: String
 exampleLog = [r|
 -- wheee a comment
 # 2025-02-05
@@ -40,6 +35,21 @@ exampleLog = [r|
 21:00 Shower
 21:15 Read
 22:00 Sleep
+# 2025-02-07 -- dates not nececessarily sequential
+08:00 Breakfast -- should I try skippin bfast?CHAPTER 24. PARSER COMBINATORS
+09:00 Bumped head, passed out
+13:36 Wake up, headache
+13:37 Go to medbay
+13:40 Patch self up
+13:45 Commute home for rest
+14:15 Read
+21:00 Dinner
+21:15 Read
+22:00 Sleep
+|]
+
+exampleLogFileSection :: String
+exampleLogFileSection = [r|
 # 2025-02-07 -- dates not nececessarily sequential
 08:00 Breakfast -- should I try skippin bfast?CHAPTER 24. PARSER COMBINATORS
 09:00 Bumped head, passed out
@@ -167,3 +177,10 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+    describe "activityLogFileSection" $ do
+        it "Test 1" $ do
+            let lfe1 = LogFileEntry (DT.UTCTime (DT.fromGregorian 2017 1 1) 61) "Breakfast"
+            let lfe2 = LogFileEntry (DT.UTCTime (DT.fromGregorian 2017 1 1) 120) "Reading"
+            let lfs = LogFileSection (DT.fromGregorian 2017 1 1) [lfe1, lfe2]
+            let result = activityLogFileSection "Breakfast" lfs
+            result `shouldBe` 59
