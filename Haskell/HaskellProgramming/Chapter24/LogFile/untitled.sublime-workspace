@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"LogF",
+				"LogFileSection \tLib"
+			],
+			[
+				"Lof",
+				"LogFileEntry \tLib"
+			],
+			[
+				"ac",
+				"Activity \tLib"
+			],
+			[
+				"LogFile",
+				"LogFileSection \tLib"
+			],
+			[
 				"parseLo",
 				"parseLogFile"
 			],
@@ -46,10 +62,6 @@
 			[
 				"log",
 				"logFileEntries"
-			],
-			[
-				"LogF",
-				"LogFileSection"
 			],
 			[
 				"exp",
@@ -187,19 +199,17 @@
 			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 6784,
+				"buffer_size": 9526,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "module Lib\n    ( LogFileEntry (..)\n    , LogFileSection (..)\n    , LogFile (..)\n    , parseTime\n    , parseLogFileEntry\n    , parseSectionStart\n    , parseLogFile\n    , parseLogFileSection\n    , parseComments\n    , parseComment\n    ) where\n\nimport Data.Char\nimport qualified Data.Time as DT\nimport Text.Trifecta\n\n\ntype Activity = String\n\ndata LogFileEntry = LogFileEntry DT.UTCTime Activity\n    deriving (Show, Eq)\n\ndata LogFileSection = LogFileSection DT.Day [LogFileEntry]\n    deriving (Show, Eq)\n\nnewtype LogFile = LogFile [LogFileSection]\n    deriving (Show, Eq)\n\n\n\n\nactivitySum :: Activity -> LogFile -> Int\nactivitySum = undefined\n\nactivityLogFile :: Activity -> LogFile -> Int\nactivityLogFile = undefined\n\nactivityLogFileSection :: Activity -> LogFileSection -> Int\nactivityLogFileSection activity (LogFile) = undefined\n    where\n        z = zip \n\n\n\n-- Parse methods\n\nparseLogFile :: Parser LogFile\nparseLogFile = do\n    logFileSections <- some parseLogFileSection\n    eof\n    return $ LogFile logFileSections\n\nparseLogFileSection :: Parser LogFileSection\nparseLogFileSection = do\n    parseComments\n    whiteSpace\n    date <- parseSectionStart\n    logFileEntries <- some parseLogFileEntry\n    return $ LogFileSection date logFileEntries\n\nparseLogFileEntry :: Parser LogFileEntry\nparseLogFileEntry = do\n    whiteSpace\n    time <- parseTime\n    whiteSpace\n    activity <- parseActivity\n    whiteSpace\n    return $ LogFileEntry time activity\n\nparse2Digits :: Parser Int\nparse2Digits = do\n    d1 <- digit\n    d2 <- digit\n    return $ (10 * digitToInt d1) + (digitToInt d2)\n\nparseTime :: Parser DT.UTCTime\nparseTime = do\n    -- should use time's parseTime here...\n    hr <- parse2Digits\n    _ <- char ':'\n    m <- parse2Digits\n    let secs = toSeconds hr m\n    return $ DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime (fromIntegral secs))\n\nparseActivity :: Parser Activity\nparseActivity = parseUntilEOL\n\nparseYear :: Parser Int\nparseYear = do\n    d1 <- digit\n    d2 <- digit\n    d3 <- digit\n    d4 <- digit\n    return $ (1000 * digitToInt d1) + (100 * digitToInt d2) + (10 * digitToInt d3) + (digitToInt d4)\n\nparseMonth :: Parser Int\nparseMonth = parse2Digits\n\nparseDay :: Parser Int\nparseDay = parse2Digits\n\nparseUntilEOL :: Parser [Char]\nparseUntilEOL = some (noneOf \"\\n\")\n\nparseComment :: Parser ()\nparseComment = try $ do\n    whiteSpace\n    _ <- string \"--\"\n    _ <- parseUntilEOL\n    skipMany (oneOf \"\\n\")\n    return ()\n\nparseComments :: Parser ()\nparseComments = do\n    whiteSpace\n    _ <- optional parseComment\n    return ()\n\nparseSectionStart :: Parser DT.Day\nparseSectionStart = do\n    _ <- char '#'\n    whiteSpace\n    year <- parseYear\n    _ <- char '-'\n    month <- parseMonth\n    _ <- char '-'\n    day <- parseDay\n    parseComments\n    return $ DT.fromGregorian (fromIntegral year) month day\n\n-- Helper methods\n\ntoSeconds :: Int -> Int -> Int\ntoSeconds h m = h * 3600 + m * 60\n",
 			"file": "src/Lib.hs",
-			"file_size": 2859,
-			"file_write_time": 131294855498267978,
 			"settings":
 			{
-				"buffer_size": 2904,
+				"buffer_size": 3672,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -211,10 +221,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 132.0,
-		"last_filter": "",
+		"height": 204.0,
+		"last_filter": "Haskell: Go",
 		"selected_items":
 		[
+			[
+				"Haskell: Go",
+				"SublimeHaskell: Go to declaration"
+			],
 			[
 				"Pack",
 				"Package Control: Upgrade Package"
@@ -255,9 +269,9 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test/SemVerSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/SemVer.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
@@ -331,6 +345,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"exampleLogFileSection",
+			"parseActivity",
+			"parseUntilEOL",
+			"result",
+			"entries",
+			"z",
+			"duration",
 			"parseLogFileEntry",
 			"pComment",
 			"skipComment",
@@ -369,15 +390,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6784,
+						"buffer_size": 9526,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								647,
-								647
+								8938,
+								8938
 							]
 						],
 						"settings":
@@ -387,7 +408,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2743.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -399,15 +420,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2904,
+						"buffer_size": 3672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								813,
-								813
+								2047,
+								2047
 							]
 						],
 						"settings":
@@ -415,7 +436,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

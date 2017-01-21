@@ -13,8 +13,10 @@ module Lib
 where
 
 import Data.Char
+import Control.Applicative
 import qualified Data.Time as DT
 import Text.Trifecta
+import Text.Parser.LookAhead
 
 
 type Activity = String
@@ -29,8 +31,6 @@ newtype LogFile = LogFile [LogFileSection]
     deriving (Show, Eq)
 
 
-
-
 activitySum :: Activity -> LogFile -> Int
 activitySum = undefined
 
@@ -38,14 +38,14 @@ activityLogFile :: Activity -> LogFile -> Int
 activityLogFile = undefined
 
 activityLogFileSection :: Activity -> LogFileSection -> DT.NominalDiffTime
-activityLogFileSection activity (LogFileSection _ entries) =
-    foldr (\c b -> b + duration c) 0 matchingEntries
+activityLogFileSection activity (LogFileSection _ logFileEntries) =
+    foldr (\c b -> b + activityDuration c) 0 matchingEntries
     where
-        z = zip entries (tail entries)
+        entryPairs              = zip logFileEntries (tail logFileEntries)
         activityPred (entry, _) = getActivity entry == activity
-        matchingEntries = filter activityPred z
-        duration :: (LogFileEntry, LogFileEntry) -> DT.NominalDiffTime
-        duration (LogFileEntry t1 _, LogFileEntry t2 _) = DT.diffUTCTime t2 t1
+        matchingEntries         = filter activityPred entryPairs
+        activityDuration :: (LogFileEntry, LogFileEntry) -> DT.NominalDiffTime
+        activityDuration (LogFileEntry t1 _, LogFileEntry t2 _) = DT.diffUTCTime t2 t1
 
 getActivity :: LogFileEntry -> Activity
 getActivity (LogFileEntry _ activity) = activity
@@ -73,13 +73,14 @@ parseLogFileEntry = do
     whiteSpace
     activity <- parseActivity
     whiteSpace
+    parseComments
     return $ LogFileEntry time activity
 
 parse2Digits :: Parser Int
 parse2Digits = do
     d1 <- digit
     d2 <- digit
-    return $ (10 * digitToInt d1) + (digitToInt d2)
+    return $ 10 * digitToInt d1 + digitToInt d2
 
 parseTime :: Parser DT.UTCTime
 parseTime = do
@@ -91,7 +92,7 @@ parseTime = do
     return $ DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime (fromIntegral secs))
 
 parseActivity :: Parser Activity
-parseActivity = parseUntilEOL
+parseActivity = trim <$> (manyTill anyChar (string "\n" <|> (lookAhead $ string "--")))
 
 parseYear :: Parser Int
 parseYear = do
@@ -99,7 +100,7 @@ parseYear = do
     d2 <- digit
     d3 <- digit
     d4 <- digit
-    return $ (1000 * digitToInt d1) + (100 * digitToInt d2) + (10 * digitToInt d3) + (digitToInt d4)
+    return $ 1000 * digitToInt d1 + 100 * digitToInt d2 + 10 * digitToInt d3 + digitToInt d4
 
 parseMonth :: Parser Int
 parseMonth = parse2Digits
@@ -107,7 +108,7 @@ parseMonth = parse2Digits
 parseDay :: Parser Int
 parseDay = parse2Digits
 
-parseUntilEOL :: Parser [Char]
+parseUntilEOL :: Parser String
 parseUntilEOL = some (noneOf "\n")
 
 parseComment :: Parser ()
@@ -140,3 +141,7 @@ parseSectionStart = do
 
 toSeconds :: Int -> Int -> Int
 toSeconds h m = h * 3600 + m * 60
+
+trim :: String -> String
+trim = f . f
+   where f = reverse . dropWhile isSpace

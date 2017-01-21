@@ -4,7 +4,14 @@ module LogFileSpec (spec) where
 import qualified Data.Time as DT
 import qualified Text.Trifecta as TF
 import Text.RawString.QQ
+
 import Test.Hspec
+import Test.Hspec.QuickCheck
+
+import Test.QuickCheck
+-- import Test.QuickCheck.Classes
+import Test.QuickCheck.Monadic (monadicIO, run)
+
 
 import Lib
     ( LogFileEntry (..)
@@ -36,7 +43,7 @@ exampleLog = [r|
 21:15 Read
 22:00 Sleep
 # 2025-02-07 -- dates not nececessarily sequential
-08:00 Breakfast -- should I try skippin bfast?CHAPTER 24. PARSER COMBINATORS
+08:00 Breakfast -- should I try skippin bfast?
 09:00 Bumped head, passed out
 13:36 Wake up, headache
 13:37 Go to medbay
@@ -51,7 +58,7 @@ exampleLog = [r|
 exampleLogFileSection :: String
 exampleLogFileSection = [r|
 # 2025-02-07 -- dates not nececessarily sequential
-08:00 Breakfast -- should I try skippin bfast?CHAPTER 24. PARSER COMBINATORS
+08:00 Breakfast -- should I try skippin bfast?
 09:00 Bumped head, passed out
 13:36 Wake up, headache
 13:37 Go to medbay
@@ -118,7 +125,19 @@ spec = do
                 TF.Failure err   -> show err `shouldBe` "False"
     describe "parseLogFileEntry" $ do
         it "Test 1" $ do
-            let result = TF.parseString parseLogFileEntry mempty "08:00 Breakfast"
+            let result = TF.parseString parseLogFileEntry mempty "08:00 Breakfast\n"
+            -- TF.Result does not have an eq instance, so need to
+            -- manually unpack
+            case result of
+                TF.Success (LogFileEntry time activity)
+                    -> (time, activity) `shouldBe` (expectedTime, expectedActivity)
+                        where
+                            expectedTime = (DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime $ 8 * 3600))
+                            expectedActivity = "Breakfast"
+                -- fail this test...
+                TF.Failure err   -> show err `shouldBe` "False"
+        it "Test 2" $ do
+            let result = TF.parseString parseLogFileEntry mempty "08:00 Breakfast -- with comment"
             -- TF.Result does not have an eq instance, so need to
             -- manually unpack
             case result of
@@ -184,3 +203,40 @@ spec = do
             let lfs = LogFileSection (DT.fromGregorian 2017 1 1) [lfe1, lfe2]
             let result = activityLogFileSection "Breakfast" lfs
             result `shouldBe` 59
+        it "Test 2" $ do
+            let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
+            case result of
+                TF.Success lfs -> do
+                    -- Breakfast for 1hr = 60*60=3600 seconds
+                    let duration = activityLogFileSection "Breakfast" lfs
+                    duration `shouldBe` 60*60
+                TF.Failure err   -> show err `shouldBe` "False"
+            let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
+            case result of
+                TF.Success lfs -> do
+                    let duration = activityLogFileSection "Read" lfs
+                    -- read for 7.5hr = 7.5*60*60=27000 seconds
+                    duration `shouldBe` 7.5*60*60
+                TF.Failure err   -> show err `shouldBe` "False"
+
+--         prop "5" $ do
+-- --            modifyMaxSuccess (const 1) $ do
+--                 prop5
+--         prop "6" $ do
+-- --            modifyMaxSuccess (const 1) $ do
+--                 prop6
+
+
+-- prop5 :: Property
+-- prop5 = monadicIO $ do
+--     let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
+--     run $ case result of
+--         TF.Success lfs -> print lfs
+--         TF.Failure err   -> return ()
+
+-- prop6 :: Property
+-- prop6 = monadicIO $ do
+--     let result = TF.parseString parseLogFile mempty exampleLog
+--     run $ case result of
+--         TF.Success lfs -> print lfs
+--         TF.Failure err   -> return ()
