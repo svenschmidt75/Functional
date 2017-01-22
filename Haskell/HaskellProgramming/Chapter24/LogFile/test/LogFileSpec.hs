@@ -25,6 +25,7 @@ import Lib
     , parseLogFileSection
     , parseLogFile
     , activityLogFileSection
+    , activityLogFile
     )
 
 exampleLog :: String
@@ -203,7 +204,7 @@ spec = do
             let lfs = LogFileSection (DT.fromGregorian 2017 1 1) [lfe1, lfe2]
             let result = activityLogFileSection "Breakfast" lfs
             result `shouldBe` 59
-        it "Test 2" $ do
+        it "Test 2 - Breakfast" $ do
             let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
             case result of
                 TF.Success lfs -> do
@@ -211,6 +212,7 @@ spec = do
                     let duration = activityLogFileSection "Breakfast" lfs
                     duration `shouldBe` 60*60
                 TF.Failure err   -> show err `shouldBe` "False"
+        it "Test 3 - Read" $ do
             let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
             case result of
                 TF.Success lfs -> do
@@ -218,14 +220,29 @@ spec = do
                     -- read for 7.5hr = 7.5*60*60=27000 seconds
                     duration `shouldBe` 7.5*60*60
                 TF.Failure err   -> show err `shouldBe` "False"
-
 --         prop "5" $ do
 -- --            modifyMaxSuccess (const 1) $ do
 --                 prop5
 --         prop "6" $ do
 -- --            modifyMaxSuccess (const 1) $ do
 --                 prop6
-
+    describe "activityLogFile" $ do
+        it "Test 1 - Breakfast" $ do
+            let result = TF.parseString parseLogFile mempty exampleLog
+            case result of
+                TF.Success lfs -> do
+                    -- Breakfast for 1hr = 60*60=3600 seconds at two days
+                    let duration = activityLogFile "Breakfast" lfs
+                    duration `shouldBe` 2*60*60
+                TF.Failure err   -> show err `shouldBe` "False"
+        it "Test 1 - Dinner" $ do
+            let result = TF.parseString parseLogFile mempty exampleLog
+            case result of
+                TF.Success lfs -> do
+                    -- Dinner for 2hr = 2*60*60 seconds, and 15min
+                    let duration = activityLogFile "Dinner" lfs
+                    duration `shouldBe` 2*60*60+15*60
+                TF.Failure err   -> show err `shouldBe` "False"
 
 -- prop5 :: Property
 -- prop5 = monadicIO $ do

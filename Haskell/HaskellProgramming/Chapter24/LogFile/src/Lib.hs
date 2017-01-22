@@ -31,11 +31,8 @@ newtype LogFile = LogFile [LogFileSection]
     deriving (Show, Eq)
 
 
-activitySum :: Activity -> LogFile -> Int
-activitySum = undefined
-
-activityLogFile :: Activity -> LogFile -> Int
-activityLogFile = undefined
+activityLogFile :: Activity -> LogFile -> DT.NominalDiffTime
+activityLogFile activity (LogFile lfs) = sum $ map (activityLogFileSection activity) lfs
 
 activityLogFileSection :: Activity -> LogFileSection -> DT.NominalDiffTime
 activityLogFileSection activity (LogFileSection _ logFileEntries) =
