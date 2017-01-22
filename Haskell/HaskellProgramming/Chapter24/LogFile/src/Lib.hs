@@ -1,20 +1,26 @@
 module Lib
-    -- ( LogFileEntry (..)
-    -- , LogFileSection (..)
-    -- , LogFile (..)
-    -- , parseTime
-    -- , parseLogFileEntry
-    -- , parseSectionStart
-    -- , parseLogFile
-    -- , parseLogFileSection
-    -- , parseComments
-    -- , parseComment
-    -- ) where
-where
+    ( LogFileEntry (..)
+    , LogFileSection (..)
+    , LogFile (..)
+    , parseTime
+    , parseLogFileEntry
+    , parseSectionStart
+    , parseLogFile
+    , parseLogFileSection
+    , parseComments
+    , parseComment
+    , activityLogFileSection
+    , activityDurationLogFile
+    , activitiesPerLogFileSection
+    , avgActivityDurationPerDay
+    , totalActivityDurationPerDay
+    , avgActivityDuration
+    ) where
 
 import Data.Char
 import Control.Applicative
 import qualified Data.Time as DT
+import qualified Data.List as DL
 import Text.Trifecta
 import Text.Parser.LookAhead
 
@@ -31,8 +37,32 @@ newtype LogFile = LogFile [LogFileSection]
     deriving (Show, Eq)
 
 
-activityLogFile :: Activity -> LogFile -> DT.NominalDiffTime
-activityLogFile activity (LogFile lfs) = sum $ map (activityLogFileSection activity) lfs
+-- average time spent per activity per day
+avgActivityDuration :: LogFile -> [(DT.Day, [(Activity, DT.NominalDiffTime)])]
+avgActivityDuration (LogFile lfss) = map func lfss
+    where
+        func lfs = (getDay lfs, avgActivityDurationPerDay lfs)
+
+-- average time spent per activity per day
+avgActivityDurationPerDay :: LogFileSection -> [(Activity, DT.NominalDiffTime)]
+avgActivityDurationPerDay logFileSection = map (\a -> (a, avgDuration a)) activities
+    where
+        activities = activitiesPerLogFileSection logFileSection
+        totalActivityTime = totalActivityDurationPerDay logFileSection
+        avgDuration = \activity -> activityLogFileSection activity logFileSection / totalActivityTime
+
+-- total duration of all activities
+totalActivityDurationPerDay :: LogFileSection -> DT.NominalDiffTime
+totalActivityDurationPerDay logFileSection = foldr (\a b -> b + func a) 0 activities
+    where
+        activities = activitiesPerLogFileSection logFileSection
+        func       = \activity -> activityLogFileSection activity logFileSection
+
+activitiesPerLogFileSection :: LogFileSection -> [Activity]
+activitiesPerLogFileSection (LogFileSection _ logFileEntries) = DL.nub $ map (\(LogFileEntry _ a) -> a) logFileEntries
+
+activityDurationLogFile :: Activity -> LogFile -> DT.NominalDiffTime
+activityDurationLogFile activity (LogFile lfs) = sum $ map (activityLogFileSection activity) lfs
 
 activityLogFileSection :: Activity -> LogFileSection -> DT.NominalDiffTime
 activityLogFileSection activity (LogFileSection _ logFileEntries) =
@@ -142,3 +172,6 @@ toSeconds h m = h * 3600 + m * 60
 trim :: String -> String
 trim = f . f
    where f = reverse . dropWhile isSpace
+
+getDay :: LogFileSection -> DT.Day
+getDay (LogFileSection day _) = day

@@ -6,10 +6,7 @@ import qualified Text.Trifecta as TF
 import Text.RawString.QQ
 
 import Test.Hspec
-import Test.Hspec.QuickCheck
-
 import Test.QuickCheck
--- import Test.QuickCheck.Classes
 import Test.QuickCheck.Monadic (monadicIO, run)
 
 
@@ -25,7 +22,9 @@ import Lib
     , parseLogFileSection
     , parseLogFile
     , activityLogFileSection
-    , activityLogFile
+    , activityDurationLogFile
+    , activitiesPerLogFileSection
+    , totalActivityDurationPerDay
     )
 
 exampleLog :: String
@@ -222,17 +221,17 @@ spec = do
                 TF.Failure err   -> show err `shouldBe` "False"
 --         prop "5" $ do
 -- --            modifyMaxSuccess (const 1) $ do
---                 prop5
+--                 printLogFileSectionProp
 --         prop "6" $ do
 -- --            modifyMaxSuccess (const 1) $ do
---                 prop6
-    describe "activityLogFile" $ do
+--                 printLogFileProp
+    describe "activityDurationLogFile" $ do
         it "Test 1 - Breakfast" $ do
             let result = TF.parseString parseLogFile mempty exampleLog
             case result of
                 TF.Success lfs -> do
                     -- Breakfast for 1hr = 60*60=3600 seconds at two days
-                    let duration = activityLogFile "Breakfast" lfs
+                    let duration = activityDurationLogFile "Breakfast" lfs
                     duration `shouldBe` 2*60*60
                 TF.Failure err   -> show err `shouldBe` "False"
         it "Test 1 - Dinner" $ do
@@ -240,19 +239,37 @@ spec = do
             case result of
                 TF.Success lfs -> do
                     -- Dinner for 2hr = 2*60*60 seconds, and 15min
-                    let duration = activityLogFile "Dinner" lfs
+                    let duration = activityDurationLogFile "Dinner" lfs
                     duration `shouldBe` 2*60*60+15*60
                 TF.Failure err   -> show err `shouldBe` "False"
+    describe "activitiesPerLogFileSection" $ do
+        it "Test 1" $ do
+            let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
+            let result = (length . activitiesPerLogFileSection) <$> parseResult
+            case result of
+                TF.Success count -> do
+                    count `shouldBe` 9
+                TF.Failure err   -> show err `shouldBe` "False"
+    describe "totalActivityDurationPerDay" $ do
+        it "Test 1" $ do
+            let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
+            let result = totalActivityDurationPerDay <$> parseResult
+            case result of
+                TF.Success count -> do
+                    -- 14hr total activity
+                    count `shouldBe` (14*60*60)
+                TF.Failure err   -> show err `shouldBe` "False"
 
--- prop5 :: Property
--- prop5 = monadicIO $ do
+-- -- Write some output while running tests
+-- printLogFileSectionProp :: Property
+-- printLogFileSectionProp = monadicIO $ do
 --     let result = TF.parseString parseLogFileSection mempty exampleLogFileSection
 --     run $ case result of
 --         TF.Success lfs -> print lfs
 --         TF.Failure err   -> return ()
 
--- prop6 :: Property
--- prop6 = monadicIO $ do
+-- printLogFileProp :: Property
+-- printLogFileProp = monadicIO $ do
 --     let result = TF.parseString parseLogFile mempty exampleLog
 --     run $ case result of
 --         TF.Success lfs -> print lfs
