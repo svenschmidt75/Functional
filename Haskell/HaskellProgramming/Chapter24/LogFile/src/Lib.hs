@@ -27,11 +27,26 @@ import Text.Parser.LookAhead
 
 type Activity = String
 
+
 data LogFileEntry = LogFileEntry DT.UTCTime Activity
-    deriving (Show, Eq)
+    deriving Eq
+
+instance Show LogFileEntry where
+    show (LogFileEntry t a) = mconcat [timeStr, " ", a, "\n"]
+        where
+            timeStr = DT.formatTime DT.defaultTimeLocale "%R" t
+
 
 data LogFileSection = LogFileSection DT.Day [LogFileEntry]
-    deriving (Show, Eq)
+    deriving Eq
+
+instance Show LogFileSection where
+    show (LogFileSection d es) = mconcat ["# ", dayStr, "\n", toStr]
+        where
+            dayStr = DT.formatTime DT.defaultTimeLocale "%F" d
+            esStr  = [show e | e <- es]
+            toStr  = concat esStr
+
 
 newtype LogFile = LogFile [LogFileSection]
     deriving (Show, Eq)

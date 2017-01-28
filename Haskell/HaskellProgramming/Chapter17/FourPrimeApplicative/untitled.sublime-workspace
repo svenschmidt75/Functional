@@ -447,8 +447,8 @@
 						"selection":
 						[
 							[
-								376,
-								376
+								1286,
+								1286
 							]
 						],
 						"settings":
@@ -550,7 +550,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter18/EitherMonad/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"
 			]
 		],
 		"width": 380.0

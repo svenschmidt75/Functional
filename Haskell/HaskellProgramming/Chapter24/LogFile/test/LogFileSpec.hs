@@ -6,9 +6,10 @@ import qualified Text.Trifecta as TF
 import Text.RawString.QQ
 
 import Test.Hspec
+import Test.Hspec.QuickCheck
 import Test.QuickCheck
-import Test.QuickCheck.Monadic (monadicIO, run)
-
+import Test.QuickCheck.Monadic (monadicIO, run, assert)
+import Test.QuickCheck.Property
 
 import Lib
     ( LogFileEntry (..)
@@ -69,6 +70,10 @@ exampleLogFileSection = [r|
 21:15 Read
 22:00 Sleep
 |]
+
+
+instance Arbitrary DT.UTCTime where
+    arbitrary = undefined
 
 
 spec :: Spec
@@ -148,6 +153,9 @@ spec = do
                             expectedActivity = "Breakfast"
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+        prop "Test 3 - from generated" $
+--            modifyMaxSuccess (const 1) $
+                generatedLogFileEntryProp
     describe "parseSectionStart" $ do
         it "Test 1" $ do
             let result = TF.parseString parseSectionStart mempty "# 2025-02-05"
@@ -184,6 +192,7 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+
     describe "parseLogFile" $ do
         it "Test 1" $ do
             let result = TF.parseString parseLogFile mempty exampleLog
@@ -196,6 +205,7 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+
     describe "activityLogFileSection" $ do
         it "Test 1" $ do
             let lfe1 = LogFileEntry (DT.UTCTime (DT.fromGregorian 2017 1 1) 61) "Breakfast"
@@ -225,6 +235,7 @@ spec = do
 --         prop "6" $ do
 -- --            modifyMaxSuccess (const 1) $ do
 --                 printLogFileProp
+
     describe "activityDurationLogFile" $ do
         it "Test 1 - Breakfast" $ do
             let result = TF.parseString parseLogFile mempty exampleLog
@@ -242,6 +253,7 @@ spec = do
                     let duration = activityDurationLogFile "Dinner" lfs
                     duration `shouldBe` 2*60*60+15*60
                 TF.Failure err   -> show err `shouldBe` "False"
+
     describe "activitiesPerLogFileSection" $ do
         it "Test 1" $ do
             let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
@@ -250,6 +262,7 @@ spec = do
                 TF.Success count -> do
                     count `shouldBe` 9
                 TF.Failure err   -> show err `shouldBe` "False"
+
     describe "totalActivityDurationPerDay" $ do
         it "Test 1" $ do
             let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
@@ -274,3 +287,12 @@ spec = do
 --     run $ case result of
 --         TF.Success lfs -> print lfs
 --         TF.Failure err   -> return ()
+
+generatedLogFileEntryProp :: Property
+generatedLogFileEntryProp = monadicIO $ do
+    let logFileEntry = show <$> (LogFileEntry <$> arbitrary <*> arbitrary)
+    argument <- run $ generate logFileEntry
+    let result = TF.parseString parseLogFileEntry mempty argument
+    case result of
+        (TF.Success _) -> assert True
+        otherwise      -> assert False
