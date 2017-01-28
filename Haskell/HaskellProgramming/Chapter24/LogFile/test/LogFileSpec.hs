@@ -9,7 +9,6 @@ import Test.Hspec
 import Test.Hspec.QuickCheck
 import Test.QuickCheck
 import Test.QuickCheck.Monadic (monadicIO, run, assert)
-import Test.QuickCheck.Property
 
 import Lib
     ( LogFileEntry (..)
@@ -73,8 +72,21 @@ exampleLogFileSection = [r|
 
 
 instance Arbitrary DT.UTCTime where
-    arbitrary = undefined
+    arbitrary = do
+        year <- choose (1000, 2000)
+        day <- choose (1, 31)
+        month <- choose (1, 31)
+        hour <- choose (0, 11)
+        minute <- choose (0, 59)
+        let secs = (hour * 3600 + minute * 60) :: Integer
+        return $ DT.UTCTime (DT.fromGregorian year month day) (DT.secondsToDiffTime (fromIntegral secs))
 
+generateActivity :: Gen String
+generateActivity = do
+    a <- arbitrary
+    -- we append an 'a' here, to make sure the activity
+    -- is never an empty string!
+    return $ a ++ "a\n"
 
 spec :: Spec
 spec = do
@@ -290,9 +302,10 @@ spec = do
 
 generatedLogFileEntryProp :: Property
 generatedLogFileEntryProp = monadicIO $ do
-    let logFileEntry = show <$> (LogFileEntry <$> arbitrary <*> arbitrary)
+    let logFileEntry = show <$> (LogFileEntry <$> arbitrary <*> generateActivity)
     argument <- run $ generate logFileEntry
+--    run $ print argument
     let result = TF.parseString parseLogFileEntry mempty argument
     case result of
         (TF.Success _) -> assert True
-        otherwise      -> assert False
+        _              -> assert False

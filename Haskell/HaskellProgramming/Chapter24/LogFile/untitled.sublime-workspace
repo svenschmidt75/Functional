@@ -4,24 +4,32 @@
 		"selected_items":
 		[
 			[
+				"LogF",
+				"LogFileEntry \tLib"
+			],
+			[
+				"logFile",
+				"LogFileEntry \tLib"
+			],
+			[
 				"log",
-				"exampleLogFileSection ∷ String\tMain"
+				"LogFileEntry \tLib"
+			],
+			[
+				"parse",
+				"parseLogFileEntry ∷ Parser LogFileEntry\tLib"
+			],
+			[
+				"Log",
+				"LogFileEntry \tLib"
 			],
 			[
 				"exa",
 				"exampleLogFileSection ∷ String\tMain"
 			],
 			[
-				"LogF",
-				"LogFileSection \tLib"
-			],
-			[
 				"tot",
 				"totalActivityDurationPerDay ∷ LogFileSection → DT.NominalDiffTime\tLib"
-			],
-			[
-				"parse",
-				"parseLogFileSection ∷ Parser LogFileSection\tLib"
 			],
 			[
 				"ac",
@@ -42,10 +50,6 @@
 			[
 				"parseLo",
 				"parseLogFile"
-			],
-			[
-				"logFile",
-				"LogFileSection"
 			],
 			[
 				"pars",
@@ -208,13 +212,10 @@
 	"buffers":
 	[
 		{
-			"contents": "{-# LANGUAGE QuasiQuotes #-}\nmodule LogFileSpec (spec) where\n\nimport qualified Data.Time as DT\nimport qualified Text.Trifecta as TF\nimport Text.RawString.QQ\n\nimport Test.Hspec\nimport Test.QuickCheck.Monadic (monadicIO, run)\n\n\nimport Lib\n    ( LogFileEntry (..)\n    , LogFileSection (..)\n    , LogFile (..)\n    , parseComments\n    , parseComment\n    , parseTime\n    , parseLogFileEntry\n    , parseSectionStart\n    , parseLogFileSection\n    , parseLogFile\n    , activityLogFileSection\n    , activityDurationLogFile\n    , activitiesPerLogFileSection\n    , totalActivityDurationPerDay\n    )\n\nexampleLog :: String\nexampleLog = [r|\n-- wheee a comment\n# 2025-02-05\n08:00 Breakfast\n09:00 Sanitizing moisture collector\n11:00 Exercising in high-grav gym\n12:00 Lunch\n13:00 Programming\n17:00 Commuting home in rover\n17:30 R&R\n19:00 Dinner\n21:00 Shower\n21:15 Read\n22:00 Sleep\n# 2025-02-07 -- dates not nececessarily sequential\n08:00 Breakfast -- should I try skippin bfast?\n09:00 Bumped head, passed out\n13:36 Wake up, headache\n13:37 Go to medbay\n13:40 Patch self up\n13:45 Commute home for rest\n14:15 Read\n21:00 Dinner\n21:15 Read\n22:00 Sleep\n|]\n\nexampleLogFileSection :: String\nexampleLogFileSection = [r|\n# 2025-02-07 -- dates not nececessarily sequential\n08:00 Breakfast -- should I try skippin bfast?\n09:00 Bumped head, passed out\n13:36 Wake up, headache\n13:37 Go to medbay\n13:40 Patch self up\n13:45 Commute home for rest\n14:15 Read\n21:00 Dinner\n21:15 Read\n22:00 Sleep\n|]\n\n\nspec :: Spec\nspec = do\n    describe \"parseComment\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseComment mempty \"-- abc\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success _ -> True `shouldBe` True\n                -- fail this test...\n                TF.Failure err -> show err `shouldBe` \"False\"\n        it \"leading newline\" $ do\n            let result = TF.parseString parseComment mempty \"\\n-- abc\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success _ -> True `shouldBe` True\n                -- fail this test...\n                TF.Failure err -> show err `shouldBe` \"False\"\n        it \"leading newline\" $ do\n            let result = TF.parseString parseComments mempty \"\\n-- abc\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success _ -> True `shouldBe` True\n                -- fail this test...\n                TF.Failure err -> show err `shouldBe` \"False\"\n    describe \"parseTime\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseTime mempty \"08:00\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success (DT.UTCTime utctDay utctDayTime)\n                    -> (DT.toGregorian utctDay, utctDayTime) `shouldBe` (expectedDay, expectedTime)\n                        where\n                            expectedDay  = (2000, 1, 1)\n                            expectedTime = 8 * 3600\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n        it \"Test 2\" $ do\n            let result = TF.parseString parseTime mempty \"21:15\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success (DT.UTCTime utctDay utctDayTime)\n                    -> (DT.toGregorian utctDay, utctDayTime) `shouldBe` (expectedDay, expectedTime)\n                        where\n                            expectedDay  = (2000, 1, 1)\n                            expectedTime = 21 * 3600 + 15 * 60\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"parseLogFileEntry\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseLogFileEntry mempty \"08:00 Breakfast\\n\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success (LogFileEntry time activity)\n                    -> (time, activity) `shouldBe` (expectedTime, expectedActivity)\n                        where\n                            expectedTime = (DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime $ 8 * 3600))\n                            expectedActivity = \"Breakfast\"\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n        it \"Test 2\" $ do\n            let result = TF.parseString parseLogFileEntry mempty \"08:00 Breakfast -- with comment\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success (LogFileEntry time activity)\n                    -> (time, activity) `shouldBe` (expectedTime, expectedActivity)\n                        where\n                            expectedTime = (DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime $ 8 * 3600))\n                            expectedActivity = \"Breakfast\"\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"parseSectionStart\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseSectionStart mempty \"# 2025-02-05\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success day\n                    -> day `shouldBe` expectedDay\n                        where\n                            expectedDay = DT.fromGregorian 2025 2 5\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n        it \"Test 2\" $ do\n            let result = TF.parseString parseSectionStart mempty \"# 2025-02-07 -- dates not nececessarily sequential\"\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success day\n                    -> day `shouldBe` expectedDay\n                        where\n                            expectedDay = DT.fromGregorian 2025 2 7\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n\n    describe \"parseLogFileSection\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseLogFileSection mempty exampleLogFileSection\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success _ -> True `shouldBe` True\n                    -- -> day `shouldBe` expectedDay\n                    --     where\n                    --         expectedDay = DT.fromGregorian 2025 2 5\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"parseLogFile\" $ do\n        it \"Test 1\" $ do\n            let result = TF.parseString parseLogFile mempty exampleLog\n            -- TF.Result does not have an eq instance, so need to\n            -- manually unpack\n            case result of\n                TF.Success (LogFile logFileSections) -> (length logFileSections) `shouldBe` 2\n                    -- -> day `shouldBe` expectedDay\n                    --     where\n                    --         expectedDay = DT.fromGregorian 2025 2 5\n                -- fail this test...\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"activityLogFileSection\" $ do\n        it \"Test 1\" $ do\n            let lfe1 = LogFileEntry (DT.UTCTime (DT.fromGregorian 2017 1 1) 61) \"Breakfast\"\n            let lfe2 = LogFileEntry (DT.UTCTime (DT.fromGregorian 2017 1 1) 120) \"Reading\"\n            let lfs = LogFileSection (DT.fromGregorian 2017 1 1) [lfe1, lfe2]\n            let result = activityLogFileSection \"Breakfast\" lfs\n            result `shouldBe` 59\n        it \"Test 2 - Breakfast\" $ do\n            let result = TF.parseString parseLogFileSection mempty exampleLogFileSection\n            case result of\n                TF.Success lfs -> do\n                    -- Breakfast for 1hr = 60*60=3600 seconds\n                    let duration = activityLogFileSection \"Breakfast\" lfs\n                    duration `shouldBe` 60*60\n                TF.Failure err   -> show err `shouldBe` \"False\"\n        it \"Test 3 - Read\" $ do\n            let result = TF.parseString parseLogFileSection mempty exampleLogFileSection\n            case result of\n                TF.Success lfs -> do\n                    let duration = activityLogFileSection \"Read\" lfs\n                    -- read for 7.5hr = 7.5*60*60=27000 seconds\n                    duration `shouldBe` 7.5*60*60\n                TF.Failure err   -> show err `shouldBe` \"False\"\n--         prop \"5\" $ do\n-- --            modifyMaxSuccess (const 1) $ do\n--                 printLogFileSectionProp\n--         prop \"6\" $ do\n-- --            modifyMaxSuccess (const 1) $ do\n--                 printLogFileProp\n    describe \"activityDurationLogFile\" $ do\n        it \"Test 1 - Breakfast\" $ do\n            let result = TF.parseString parseLogFile mempty exampleLog\n            case result of\n                TF.Success lfs -> do\n                    -- Breakfast for 1hr = 60*60=3600 seconds at two days\n                    let duration = activityDurationLogFile \"Breakfast\" lfs\n                    duration `shouldBe` 2*60*60\n                TF.Failure err   -> show err `shouldBe` \"False\"\n        it \"Test 1 - Dinner\" $ do\n            let result = TF.parseString parseLogFile mempty exampleLog\n            case result of\n                TF.Success lfs -> do\n                    -- Dinner for 2hr = 2*60*60 seconds, and 15min\n                    let duration = activityDurationLogFile \"Dinner\" lfs\n                    duration `shouldBe` 2*60*60+15*60\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"activitiesPerLogFileSection\" $ do\n        it \"Test 1\" $ do\n            let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection\n            let result = (length . activitiesPerLogFileSection) <$> parseResult\n            case result of\n                TF.Success count -> do\n                    count `shouldBe` 9\n                TF.Failure err   -> show err `shouldBe` \"False\"\n    describe \"totalActivityDurationPerDay\" $ do\n        it \"Test 1\" $ do\n            let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection\n            let result = totalActivityDurationPerDay <$> parseResult\n            case result of\n                TF.Success count -> do\n                    -- 14hr total activity\n                    count `shouldBe` (14*60*60)\n                TF.Failure err   -> show err `shouldBe` \"False\"\n\n-- Write some output while running tests\nprintLogFileSectionProp :: Property\nprintLogFileSectionProp = monadicIO $ do\n    let result = TF.parseString parseLogFileSection mempty exampleLogFileSection\n    run $ case result of\n        TF.Success lfs -> print lfs\n        TF.Failure err   -> return ()\n\nprintLogFileProp :: Property\nprintLogFileProp = monadicIO $ do\n    let result = TF.parseString parseLogFile mempty exampleLog\n    run $ case result of\n        TF.Success lfs -> print lfs\n        TF.Failure err   -> return ()\n",
 			"file": "test/LogFileSpec.hs",
-			"file_size": 11509,
-			"file_write_time": 131295755434411484,
 			"settings":
 			{
-				"buffer_size": 11447,
+				"buffer_size": 12639,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -223,7 +224,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 5176,
+				"buffer_size": 5593,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -356,7 +357,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -370,6 +371,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dr",
+			"esStr",
+			"activityLogFileSection",
+			"activityDurationLogFile",
+			"activitiesPerLogFileSection",
 			"activityLogFile",
 			"prop6",
 			"prop5",
@@ -419,15 +425,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11447,
+						"buffer_size": 12639,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								12639,
+								12639
 							]
 						],
 						"settings":
@@ -437,7 +443,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3972.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -449,15 +455,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5176,
+						"buffer_size": 5593,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								841,
-								841
+								4340,
+								4340
 							]
 						],
 						"settings":
@@ -465,7 +471,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 1215.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -484,8 +490,8 @@
 						"selection":
 						[
 							[
-								168,
-								168
+								311,
+								311
 							]
 						],
 						"settings":
