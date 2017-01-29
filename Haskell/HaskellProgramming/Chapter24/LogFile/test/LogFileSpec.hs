@@ -106,6 +106,11 @@ instance Arbitrary LogFileSection where
         let logFileEntries = sequence [arbitrary | _ <- [1..n]]
         LogFileSection <$> arbitrary <*> logFileEntries
 
+instance Arbitrary LogFile where
+    arbitrary = sized $ \n -> do
+        let logFileSections = sequence [arbitrary | _ <- [1..n]]
+        LogFile <$> logFileSections
+
 spec :: Spec
 spec = do
     describe "parseComment" $ do
@@ -186,6 +191,7 @@ spec = do
         prop "Test 3 - from generated" $
 --            modifyMaxSuccess (const 1) $
                 generatedLogFileEntryProp
+
     describe "parseSectionStart" $ do
         it "Test 1" $ do
             let result = TF.parseString parseSectionStart mempty "# 2025-02-05"
@@ -238,6 +244,9 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+        prop "Test 2 - from generated" $
+--            modifyMaxSuccess (const 1) $
+                generatedLogFileProp
 
     describe "activityLogFileSection" $ do
         it "Test 1" $ do
@@ -339,6 +348,17 @@ generatedLogFileSectionProp = monadicIO $ do
     -- show the failure if any
 --    run $ print argument
     let result = TF.parseString parseLogFileSection mempty argument
+    case result of
+        (TF.Success _) -> assert True
+        _              -> assert False
+
+generatedLogFileProp :: Property
+generatedLogFileProp = monadicIO $ do
+    let logFile = show <$> (arbitrary :: Gen LogFile)
+    argument <- run $ generate logFile
+    -- show the failure if any
+--    run $ print argument
+    let result = TF.parseString parseLogFile mempty argument
     case result of
         (TF.Success _) -> assert True
         _              -> assert False

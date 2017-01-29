@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"seq",
+				"sequence ∷ (Traversable t, Monad m) ⇒ t (m a) → m (t a)\tPrelude"
+			],
+			[
 				"LogF",
 				"LogFileEntry \tLib"
 			],
@@ -215,7 +219,7 @@
 			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 12639,
+				"buffer_size": 14562,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -224,7 +228,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 5593,
+				"buffer_size": 5691,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -295,6 +299,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/.bashrc",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/stack.yaml",
@@ -371,6 +376,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"generatedLogFileSectionProp",
+			"a",
+			"generatedLogFileEntryProp",
 			"dr",
 			"esStr",
 			"activityLogFileSection",
@@ -425,15 +433,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12639,
+						"buffer_size": 14562,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12639,
-								12639
+								0,
+								0
 							]
 						],
 						"settings":
@@ -443,7 +451,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3972.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -455,15 +463,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5593,
+						"buffer_size": 5691,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4340,
-								4340
+								1604,
+								1604
 							]
 						],
 						"settings":
@@ -471,7 +479,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1215.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

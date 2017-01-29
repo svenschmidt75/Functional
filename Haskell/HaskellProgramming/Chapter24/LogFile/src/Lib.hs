@@ -49,7 +49,10 @@ instance Show LogFileSection where
 
 
 newtype LogFile = LogFile [LogFileSection]
-    deriving (Show, Eq)
+    deriving Eq
+
+instance Show LogFile where
+    show (LogFile ss) = mconcat [show logFileSection | logFileSection <- ss]
 
 
 -- average time spent per activity per day
