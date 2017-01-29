@@ -81,12 +81,30 @@ instance Arbitrary DT.UTCTime where
         let secs = (hour * 3600 + minute * 60) :: Integer
         return $ DT.UTCTime (DT.fromGregorian year month day) (DT.secondsToDiffTime (fromIntegral secs))
 
+instance Arbitrary DT.Day where
+    arbitrary = do
+        year <- choose (1000, 2000)
+        day <- choose (1, 31)
+        month <- choose (1, 31)
+        return $ DT.fromGregorian year month day
+
 generateActivity :: Gen String
 generateActivity = do
-    a <- arbitrary
+    rndActivity <- filter (/= '\n') <$> arbitrary
     -- we append an 'a' here, to make sure the activity
     -- is never an empty string!
-    return $ a ++ "a\n"
+    return $ rndActivity ++ "a\n"
+
+instance Arbitrary LogFileEntry where
+    arbitrary = LogFileEntry <$> arbitrary <*> generateActivity
+
+instance Arbitrary LogFileSection where
+    arbitrary = sized $ \n -> do
+        -- We have to put sequence here, because
+        -- [arbitrary | _ <- [1..n]] :: [Gen LogFileEntry], but we
+        -- need Gen [LogFileEntry]!
+        let logFileEntries = sequence [arbitrary | _ <- [1..n]]
+        LogFileSection <$> arbitrary <*> logFileEntries
 
 spec :: Spec
 spec = do
@@ -204,6 +222,9 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
+        prop "Test 2 - from generated" $
+--            modifyMaxSuccess (const 1) $
+                generatedLogFileSectionProp
 
     describe "parseLogFile" $ do
         it "Test 1" $ do
@@ -302,10 +323,22 @@ spec = do
 
 generatedLogFileEntryProp :: Property
 generatedLogFileEntryProp = monadicIO $ do
-    let logFileEntry = show <$> (LogFileEntry <$> arbitrary <*> generateActivity)
+    let logFileEntry = show <$> (arbitrary :: Gen LogFileEntry)
     argument <- run $ generate logFileEntry
+    -- show the failure if any
 --    run $ print argument
     let result = TF.parseString parseLogFileEntry mempty argument
+    case result of
+        (TF.Success _) -> assert True
+        _              -> assert False
+
+generatedLogFileSectionProp :: Property
+generatedLogFileSectionProp = monadicIO $ do
+    let logFileSection = show <$> (arbitrary :: Gen LogFileSection)
+    argument <- run $ generate logFileSection
+    -- show the failure if any
+--    run $ print argument
+    let result = TF.parseString parseLogFileSection mempty argument
     case result of
         (TF.Success _) -> assert True
         _              -> assert False
