@@ -172,7 +172,7 @@ spec = do
                 TF.Success (LogFileEntry time activity)
                     -> (time, activity) `shouldBe` (expectedTime, expectedActivity)
                         where
-                            expectedTime = (DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime $ 8 * 3600))
+                            expectedTime     = DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime 8 * 3600)
                             expectedActivity = "Breakfast"
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
@@ -184,11 +184,11 @@ spec = do
                 TF.Success (LogFileEntry time activity)
                     -> (time, activity) `shouldBe` (expectedTime, expectedActivity)
                         where
-                            expectedTime = (DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime $ 8 * 3600))
+                            expectedTime     = DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime 8 * 3600)
                             expectedActivity = "Breakfast"
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
-        prop "Test 3 - from generated" $
+        prop "Test 3 - from generated"
 --            modifyMaxSuccess (const 1) $
                 generatedLogFileEntryProp
 
@@ -228,7 +228,7 @@ spec = do
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
-        prop "Test 2 - from generated" $
+        prop "Test 2 - from generated"
 --            modifyMaxSuccess (const 1) $
                 generatedLogFileSectionProp
 
@@ -238,13 +238,13 @@ spec = do
             -- TF.Result does not have an eq instance, so need to
             -- manually unpack
             case result of
-                TF.Success (LogFile logFileSections) -> (length logFileSections) `shouldBe` 2
+                TF.Success (LogFile logFileSections) -> length logFileSections `shouldBe` 2
                     -- -> day `shouldBe` expectedDay
                     --     where
                     --         expectedDay = DT.fromGregorian 2025 2 5
                 -- fail this test...
                 TF.Failure err   -> show err `shouldBe` "False"
-        prop "Test 2 - from generated" $
+        prop "Test 2 - from generated"
 --            modifyMaxSuccess (const 1) $
                 generatedLogFileProp
 
@@ -296,23 +296,22 @@ spec = do
                     duration `shouldBe` 2*60*60+15*60
                 TF.Failure err   -> show err `shouldBe` "False"
 
-    describe "activitiesPerLogFileSection" $ do
+    describe "activitiesPerLogFileSection" $
         it "Test 1" $ do
             let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
-            let result = (length . activitiesPerLogFileSection) <$> parseResult
+            let result      = (length . activitiesPerLogFileSection) <$> parseResult
             case result of
-                TF.Success count -> do
-                    count `shouldBe` 9
+                TF.Success count -> count `shouldBe` 9
                 TF.Failure err   -> show err `shouldBe` "False"
 
-    describe "totalActivityDurationPerDay" $ do
+    describe "totalActivityDurationPerDay" $
         it "Test 1" $ do
             let parseResult = TF.parseString parseLogFileSection mempty exampleLogFileSection
-            let result = totalActivityDurationPerDay <$> parseResult
+            let result      = totalActivityDurationPerDay <$> parseResult
             case result of
-                TF.Success count -> do
+                TF.Success count ->
                     -- 14hr total activity
-                    count `shouldBe` (14*60*60)
+                    count `shouldBe` 14*60*60
                 TF.Failure err   -> show err `shouldBe` "False"
 
 -- -- Write some output while running tests

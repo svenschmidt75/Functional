@@ -65,16 +65,16 @@ avgActivityDuration (LogFile lfss) = map func lfss
 avgActivityDurationPerDay :: LogFileSection -> [(Activity, DT.NominalDiffTime)]
 avgActivityDurationPerDay logFileSection = map (\a -> (a, avgDuration a)) activities
     where
-        activities = activitiesPerLogFileSection logFileSection
-        totalActivityTime = totalActivityDurationPerDay logFileSection
-        avgDuration = \activity -> activityLogFileSection activity logFileSection / totalActivityTime
+        activities           = activitiesPerLogFileSection logFileSection
+        totalActivityTime    = totalActivityDurationPerDay logFileSection
+        avgDuration activity = activityLogFileSection activity logFileSection / totalActivityTime
 
 -- total duration of all activities
 totalActivityDurationPerDay :: LogFileSection -> DT.NominalDiffTime
 totalActivityDurationPerDay logFileSection = foldr (\a b -> b + func a) 0 activities
     where
-        activities = activitiesPerLogFileSection logFileSection
-        func       = \activity -> activityLogFileSection activity logFileSection
+        activities    = activitiesPerLogFileSection logFileSection
+        func activity = activityLogFileSection activity logFileSection
 
 activitiesPerLogFileSection :: LogFileSection -> [Activity]
 activitiesPerLogFileSection (LogFileSection _ logFileEntries) = DL.nub $ map (\(LogFileEntry _ a) -> a) logFileEntries
@@ -137,7 +137,7 @@ parseTime = do
     return $ DT.UTCTime (DT.fromGregorian 2000 1 1) (DT.secondsToDiffTime (fromIntegral secs))
 
 parseActivity :: Parser Activity
-parseActivity = trim <$> (manyTill anyChar (string "\n" <|> (lookAhead $ string "--")))
+parseActivity = trim <$> manyTill anyChar (string "\n" <|> lookAhead (string "--"))
 
 parseYear :: Parser Int
 parseYear = do

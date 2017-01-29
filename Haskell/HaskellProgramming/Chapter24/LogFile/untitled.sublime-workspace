@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"avg",
+				"avgActivityDurationPerDay ∷ LogFileSection → [(Activity, DT.NominalDiffTime)]\tLib"
+			],
+			[
 				"seq",
 				"sequence ∷ (Traversable t, Monad m) ⇒ t (m a) → m (t a)\tPrelude"
 			],
@@ -219,7 +223,7 @@
 			"file": "test/LogFileSpec.hs",
 			"settings":
 			{
-				"buffer_size": 14562,
+				"buffer_size": 14530,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -228,7 +232,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 5691,
+				"buffer_size": 5689,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -433,15 +437,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14562,
+						"buffer_size": 14530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								11775,
+								11775
 							]
 						],
 						"settings":
@@ -463,15 +467,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5691,
+						"buffer_size": 5689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1604,
-								1604
+								4545,
+								4545
 							]
 						],
 						"settings":
@@ -479,10 +483,10 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -507,10 +511,10 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
