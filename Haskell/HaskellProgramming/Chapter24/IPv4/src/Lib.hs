@@ -1,7 +1,7 @@
 module Lib
-    -- ( Identity (..)
-    -- ) where
-    where
+    ( IPAddress (..)
+    , parseIPvAddress
+    ) where
 
 import Data.Word
 import Data.Bits
