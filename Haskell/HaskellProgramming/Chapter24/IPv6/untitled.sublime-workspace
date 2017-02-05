@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"IP",
+				"IPAddress6 \tLib"
+			],
+			[
+				"exp",
+				"expand1 ∷ [Word16] → [Word16]\tLib"
+			],
+			[
+				"concat",
+				"concatMap ∷ Foldable t ⇒ (a → [b]) → t a → [b]\tPrelude"
+			],
+			[
 				"avg",
 				"avgActivityDurationPerDay ∷ LogFileSection → [(Activity, DT.NominalDiffTime)]\tLib"
 			],
@@ -86,10 +98,6 @@
 			[
 				"p",
 				"parseYear"
-			],
-			[
-				"exp",
-				"expectedTime"
 			],
 			[
 				"ut",
@@ -219,6 +227,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 2197,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/IPv6Spec.hs",
+			"settings":
+			{
+				"buffer_size": 2861,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -269,10 +295,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/test/IPv6Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/stack.yaml",
 		"/home/svenschmidt75/.bashrc",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
@@ -350,6 +381,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"chunk",
+			"chunk1",
+			"posts2",
+			"pres2",
+			"ptmp",
+			"posts",
+			"pres",
+			"chunk",
+			"parseChunks",
+			"parseChunk",
+			"pre",
+			"convertPre",
+			"arrange",
+			"parseIPvAddress",
+			"bla",
 			"generatedLogFileSectionProp",
 			"a",
 			"generatedLogFileEntryProp",
@@ -398,8 +444,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/IPv6Spec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1725,
+								1725
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -1,9 +1,11 @@
 module Lib
-    -- ( IPAddress6 (..)
-    -- ) where
-        where
+    ( IPAddress6 (..)
+    , parseIPv6Address
+    , iPv6ToDecimal
+    ) where
 
 import Data.Word
+import Data.LargeWord
 import Data.Bits
 import Control.Applicative
 import qualified Text.Trifecta as TF
@@ -30,7 +32,7 @@ parseBitGroups = do
     -- 1. :: in which case we are done
     -- 2. : in which case we expect the next bitGroup
     -- 3. eof, end of IPv6 address
-    (PL.lookAhead (TF.string "::") >> return []) <|> (TF.eof >> return [bitGroup]) <|> (TF.char ':' >> TF.notFollowedBy (TF.char ':') >> (bitGroup:) <$> parseBitGroups)
+    (PL.lookAhead (TF.string "::") >> return [bitGroup]) <|> (TF.eof >> return [bitGroup]) <|> (TF.char ':' >> TF.notFollowedBy (TF.char ':') >> (bitGroup:) <$> parseBitGroups)
 
 parseIPv6Address :: TF.Parser IPAddress6
 parseIPv6Address = do
@@ -43,8 +45,12 @@ parseIPv6Address = do
 
 expand :: [Word16] -> [Word16] -> [Word16]
 expand p1 p2 =
-    let zeros = [0 | _ <- [1..(8 - (length p1 + length p2))]]
-    in p1 ++ zeros ++ p2
+    if length p2 == 0 then
+        let zeros = [0 | _ <- [1..(8 - (length p1))]]
+        in zeros ++ p1
+    else
+        let zeros = [0 | _ <- [1..(8 - (length p1 + length p2))]]
+        in p1 ++ zeros ++ p2
 
 combine :: [Word16] -> Word64
 combine xs =
@@ -54,3 +60,6 @@ combine xs =
         bitGroup4 = fromIntegral $ xs !! 3
         dec       = (bitGroup1 `shiftL` 48) .|. (bitGroup2 `shiftL` 32) .|. (bitGroup3 `shiftL` 16) .|. bitGroup4
     in dec
+
+iPv6ToDecimal :: IPAddress6 -> Word128
+iPv6ToDecimal (IPAddress6 high low) = LargeKey low high

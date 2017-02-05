@@ -227,7 +227,7 @@
 			"file": "test/IPv4Spec.hs",
 			"settings":
 			{
-				"buffer_size": 2429,
+				"buffer_size": 2433,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -236,7 +236,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 879,
+				"buffer_size": 882,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -375,6 +375,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"parseIPvAddress",
 			"parse3Digits",
 			"generatedLogFileSectionProp",
 			"a",
@@ -424,7 +425,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -433,26 +434,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2429,
+						"buffer_size": 2433,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2101,
-								2101
+								85,
+								85
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -461,26 +464,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 879,
+						"buffer_size": 882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								485,
-								485
+								102,
+								102
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
