@@ -32,14 +32,11 @@ parseBitGroups = do
     -- 3. eof, end of IPv6 address
     (PL.lookAhead (TF.string "::") >> return []) <|> (TF.eof >> return [bitGroup]) <|> (TF.char ':' >> TF.notFollowedBy (TF.char ':') >> (bitGroup:) <$> parseBitGroups)
 
-post :: TF.Parser [Word16]
-post = parseBitGroups
-
 parseIPv6Address :: TF.Parser IPAddress6
 parseIPv6Address = do
-    pres <- parseBitGroups
-    posts <- (TF.eof >> return []) <|> (TF.string "::" >> post)
-    let expanded = expand pres posts
+    upper4BitGroups <- parseBitGroups
+    lower4BitGroups <- (TF.eof >> return []) <|> (TF.string "::" >> parseBitGroups)
+    let expanded = expand upper4BitGroups lower4BitGroups
     let pres2 = combine (take 4 expanded)
     let posts2 = combine (drop 4 expanded)
     return $ IPAddress6 pres2 posts2
