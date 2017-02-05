@@ -37,20 +37,20 @@ parseIPv6Address = do
     upper4BitGroups <- parseBitGroups
     lower4BitGroups <- (TF.eof >> return []) <|> (TF.string "::" >> parseBitGroups)
     let expanded = expand upper4BitGroups lower4BitGroups
-    let pres2 = combine (take 4 expanded)
-    let posts2 = combine (drop 4 expanded)
-    return $ IPAddress6 pres2 posts2
+    let upperExpanded = combine (take 4 expanded)
+    let lowerExpanded = combine (drop 4 expanded)
+    return $ IPAddress6 upperExpanded lowerExpanded
 
 expand :: [Word16] -> [Word16] -> [Word16]
 expand p1 p2 =
-    let ptmp = [0 | _ <- [1..(8 - (length p1 + length p2))]]
-    in p1 ++ ptmp ++ p2
+    let zeros = [0 | _ <- [1..(8 - (length p1 + length p2))]]
+    in p1 ++ zeros ++ p2
 
 combine :: [Word16] -> Word64
 combine xs =
-    let chunk1 = fromIntegral $ head xs
-        chunk2 = fromIntegral $ xs !! 1
-        chunk3 = fromIntegral $ xs !! 2
-        chunk4 = fromIntegral $ xs !! 3
-        dec = (chunk1 `shiftL` 48) .|. (chunk2 `shiftL` 32) .|. (chunk3 `shiftL` 16) .|. chunk4
+    let bitGroup1 = fromIntegral $ head xs
+        bitGroup2 = fromIntegral $ xs !! 1
+        bitGroup3 = fromIntegral $ xs !! 2
+        bitGroup4 = fromIntegral $ xs !! 3
+        dec       = (bitGroup1 `shiftL` 48) .|. (bitGroup2 `shiftL` 32) .|. (bitGroup3 `shiftL` 16) .|. bitGroup4
     in dec
