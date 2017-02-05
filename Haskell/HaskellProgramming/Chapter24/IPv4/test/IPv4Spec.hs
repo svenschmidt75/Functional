@@ -8,7 +8,7 @@ import Lib
 
 spec :: Spec
 spec =
-    describe "parseComment" $ do
+    describe "parse IPv4" $ do
         it "Test 1" $ do
             let result = TF.parseString parseIPv4Address mempty "172.16.254.1"
             -- TF.Result does not have an eq instance, so need to
