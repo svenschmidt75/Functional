@@ -13,8 +13,8 @@ import qualified Text.Parser.LookAhead as PL
 data IPAddress6 = IPAddress6 Word64 Word64
     deriving (Eq, Ord, Show)
 
-parseChunk :: TF.Parser Word16
-parseChunk = do
+parseBitGroup :: TF.Parser Word16
+parseBitGroup = do
     digits <- TF.some TF.hexDigit
     let value = read ("0x" ++ digits) :: Integer
     let maxValue = toInteger (maxBound :: Word16)
@@ -23,21 +23,21 @@ parseChunk = do
     else
         return $ fromInteger value
 
-pre :: TF.Parser [Word16]
-pre = do
-    chunk <- parseChunk
-    -- 3 possibilities:
+parseBitGroups :: TF.Parser [Word16]
+parseBitGroups = do
+    bitGroup <- parseBitGroup
+    -- We need to account for 3 possibilities:
     -- 1. :: in which case we are done
-    -- 2. : in which case we expect the next chunk
+    -- 2. : in which case we expect the next bitGroup
     -- 3. eof, end of IPv6 address
-    (PL.lookAhead (TF.string "::") >> return []) <|> (TF.eof >> return [chunk]) <|> (TF.char ':' >> TF.notFollowedBy (TF.char ':') >> (chunk:) <$> pre)
+    (PL.lookAhead (TF.string "::") >> return []) <|> (TF.eof >> return [bitGroup]) <|> (TF.char ':' >> TF.notFollowedBy (TF.char ':') >> (bitGroup:) <$> parseBitGroups)
 
 post :: TF.Parser [Word16]
-post = pre
+post = parseBitGroups
 
 parseIPv6Address :: TF.Parser IPAddress6
 parseIPv6Address = do
-    pres <- pre
+    pres <- parseBitGroups
     posts <- (TF.eof >> return []) <|> (TF.string "::" >> post)
     let expanded = expand pres posts
     let pres2 = combine (take 4 expanded)
@@ -45,10 +45,8 @@ parseIPv6Address = do
     return $ IPAddress6 pres2 posts2
 
 expand :: [Word16] -> [Word16] -> [Word16]
-expand pres posts =
-    let p1 = pres
-        p2 = posts
-        ptmp = [0 | _ <- [1..(8 - (length p1 + length p2))]]
+expand p1 p2 =
+    let ptmp = [0 | _ <- [1..(8 - (length p1 + length p2))]]
     in p1 ++ ptmp ++ p2
 
 combine :: [Word16] -> Word64

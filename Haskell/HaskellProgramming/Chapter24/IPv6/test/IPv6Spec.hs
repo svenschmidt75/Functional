@@ -14,7 +14,7 @@ spec =
             let result = TF.parseString parseIPv6Address mempty "0:0:0:0:0:ffff:ac10:fe01"
             -- manually unpack
             case result of
-                TF.Success ip -> ip `shouldBe` IPAddress6 0 281473568538113)
+                TF.Success ip -> ip `shouldBe` IPAddress6 0 281473568538113
                 -- fail this test...
                 TF.Failure err -> show err `shouldBe` "False"
         it "Test 2" $ do
