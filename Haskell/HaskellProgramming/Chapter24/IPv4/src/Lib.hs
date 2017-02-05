@@ -1,6 +1,6 @@
 module Lib
     ( IPAddress (..)
-    , parseIPvAddress
+    , parseIPv4Address
     ) where
 
 import Data.Word
@@ -23,8 +23,8 @@ parseOctet = do
     else
         return $ fromInteger value
 
-parseIPvAddress :: TF.Parser IPAddress
-parseIPvAddress = do
+parseIPv4Address :: TF.Parser IPAddress
+parseIPv4Address = do
     octet1 <- parseOctet
 
     _ <- TF.char '.'

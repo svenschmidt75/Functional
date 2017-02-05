@@ -1,0 +1,508 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"avg",
+				"avgActivityDurationPerDay ∷ LogFileSection → [(Activity, DT.NominalDiffTime)]\tLib"
+			],
+			[
+				"seq",
+				"sequence ∷ (Traversable t, Monad m) ⇒ t (m a) → m (t a)\tPrelude"
+			],
+			[
+				"LogF",
+				"LogFileEntry \tLib"
+			],
+			[
+				"logFile",
+				"LogFileEntry \tLib"
+			],
+			[
+				"log",
+				"LogFileEntry \tLib"
+			],
+			[
+				"parse",
+				"parseLogFileEntry ∷ Parser LogFileEntry\tLib"
+			],
+			[
+				"Log",
+				"LogFileEntry \tLib"
+			],
+			[
+				"exa",
+				"exampleLogFileSection ∷ String\tMain"
+			],
+			[
+				"tot",
+				"totalActivityDurationPerDay ∷ LogFileSection → DT.NominalDiffTime\tLib"
+			],
+			[
+				"ac",
+				"activitiesPerLogFile ∷ LogFile → [Activity]\tLib"
+			],
+			[
+				"acti",
+				"activityLogFileSection ∷ Activity → LogFileSection → DT.NominalDiffTime\tLib"
+			],
+			[
+				"Lof",
+				"LogFileEntry \tLib"
+			],
+			[
+				"LogFile",
+				"LogFileSection \tLib"
+			],
+			[
+				"parseLo",
+				"parseLogFile"
+			],
+			[
+				"pars",
+				"skipComment ∷ Parser ()\tLib"
+			],
+			[
+				"skip",
+				"skipComments ∷ Parser ()\tLib"
+			],
+			[
+				"exam",
+				"exampleLogFileSection ∷ [Char]\tLogFileSpec"
+			],
+			[
+				"parseLog",
+				"parseLogFileSection ∷ Parser LogFileSection\tLib"
+			],
+			[
+				"par",
+				"parse2Digits"
+			],
+			[
+				"dig",
+				"digitToInt"
+			],
+			[
+				"p",
+				"parseYear"
+			],
+			[
+				"exp",
+				"expectedTime"
+			],
+			[
+				"ut",
+				"utctDay"
+			],
+			[
+				"LogFi",
+				"LogFileEntry \tLib"
+			],
+			[
+				"num",
+				"numberOrStringParser"
+			],
+			[
+				"st",
+				"stringParser"
+			],
+			[
+				"nu",
+				"numberParser"
+			],
+			[
+				"pa",
+				"parsePreRelease"
+			],
+			[
+				"Num",
+				"NumberOrString \tLib"
+			],
+			[
+				"edge",
+				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
+			],
+			[
+				"rep",
+				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]\tHelper"
+			],
+			[
+				"put",
+				"putStrLn :: String -> IO ()\tPrelude"
+			],
+			[
+				"get",
+				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
+			],
+			[
+				"gra",
+				"Graph \tGraph"
+			],
+			[
+				"repl",
+				"replace :: Eq a => a -> a -> [a] -> [a]\tHelper"
+			],
+			[
+				"ne",
+				"neighbors"
+			],
+			[
+				"Gra",
+				"Graph"
+			],
+			[
+				"ha",
+				"hasEdge"
+			],
+			[
+				"has",
+				"hasVertex"
+			],
+			[
+				"v",
+				"vertices"
+			],
+			[
+				"vowels",
+				"vowelsInString"
+			],
+			[
+				"co",
+				"countVowels"
+			],
+			[
+				"isP",
+				"isPunctuation :: Char -> Bool\tData.Char"
+			],
+			[
+				"cre",
+				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
+			],
+			[
+				"max",
+				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
+			],
+			[
+				"fin",
+				"fingerTaps"
+			],
+			[
+				"mu",
+				"multiplicityMap"
+			],
+			[
+				"from",
+				"fromList :: Ord k => [(k, a)] -> Map k a\tData.Map"
+			],
+			[
+				"fi",
+				"fingerTaps"
+			],
+			[
+				"con",
+				"convertToCapital"
+			],
+			[
+				"a",
+				"accum"
+			],
+			[
+				"fold",
+				"foldTree"
+			],
+			[
+				"ins",
+				"insert"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "Haskell",
+		"selected_items":
+		[
+			[
+				"Haskell",
+				"SublimeHaskell: Reinspect all"
+			],
+			[
+				"Haskell: Go",
+				"SublimeHaskell: Go to declaration"
+			],
+			[
+				"Pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"view",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 471.0
+	},
+	"console":
+	{
+		"height": 305.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6"
+	],
+	"file_history":
+	[
+		"/home/svenschmidt75/.bashrc",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/stack.yaml",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/test/SemVerSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/SemVer/SemVer.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/ParserExample/ParserExample.cabal",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default.sublime-keymap",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Lib.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/hsdev.py",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/DasHausVomNikolaus.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/helper.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
+		"/home/svenschmidt75/Develop/various/DasHausVomNikolaus/DasHausVomNikolaus/main.cpp",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/GraphSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/StringProcessingSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/SpecGraph.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/test/HuttonsRazorSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/BinaryTree.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Preferences.sublime-settings.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/HuttonsRazor.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/HuttonsRazor/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/Phone.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaximumTutle/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/Phone/.gitignore",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/SublimeHaskell/Settings/SublimeHaskell.sublime-settings",
+		"/home/svenschmidt75/Downloads/Logfile.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/Foldr/Foldr.hs",
+		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/svenschmidt75/Develop/Functional/.gitignore",
+		"/home/svenschmidt75/Develop/Functional/F#/FizzBuzz/.gitignore",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter11/BinaryTree/test/InsertTests.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/SerializeTo.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/stack.yaml",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/src/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/lib/Parser.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/Spec.hs",
+		"/usr/bin/subl",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/FirstMaybe/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/SerializeTo/test-suite/ParserSpec.hs",
+		"/opt/sublime_text/sublime_text"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"generatedLogFileSectionProp",
+			"a",
+			"generatedLogFileEntryProp",
+			"dr",
+			"esStr",
+			"activityLogFileSection",
+			"activityDurationLogFile",
+			"activitiesPerLogFileSection",
+			"activityLogFile",
+			"prop6",
+			"prop5",
+			"Dinner",
+			"exampleLogFileSection",
+			"parseActivity",
+			"parseUntilEOL",
+			"result",
+			"entries",
+			"z",
+			"duration",
+			"parseLogFileEntry",
+			"pComment",
+			"skipComment",
+			"skipComments",
+			"skipComment",
+			"skipComments",
+			"i",
+			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
+			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
+			"addVertex",
+			"hasEdge",
+			"hasVertex"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 266.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sublime_haskell_build_log_panel":
+	{
+		"height": 234.0
+	},
+	"output.sublime_haskell_output_panel":
+	{
+		"height": 425.0
+	},
+	"output.sublime_haskell_symbol_info_panel":
+	{
+		"height": 237.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
