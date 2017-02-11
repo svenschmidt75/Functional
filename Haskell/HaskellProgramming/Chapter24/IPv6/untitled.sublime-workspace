@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"high"
+			],
+			[
 				"IP",
 				"IPAddress6 \tLib"
 			],
@@ -296,6 +300,7 @@
 	"expanded_folders":
 	[
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/app",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/src",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/test"
 	],
@@ -444,7 +449,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -460,19 +465,21 @@
 						"selection":
 						[
 							[
-								87,
-								87
+								2196,
+								2196
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -502,7 +509,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

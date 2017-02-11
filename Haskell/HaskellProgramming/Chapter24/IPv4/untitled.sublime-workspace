@@ -425,7 +425,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -441,8 +441,8 @@
 						"selection":
 						[
 							[
-								85,
-								85
+								1163,
+								1163
 							]
 						],
 						"settings":
@@ -455,7 +455,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -471,8 +471,8 @@
 						"selection":
 						[
 							[
-								102,
-								102
+								882,
+								882
 							]
 						],
 						"settings":
@@ -485,7 +485,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -561,9 +561,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "Ipv6",
 		"selected_items":
 		[
+			[
+				"Ipv6",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/untitled.sublime-project"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"

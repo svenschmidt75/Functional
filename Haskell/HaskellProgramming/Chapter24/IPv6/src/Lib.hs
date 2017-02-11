@@ -15,6 +15,9 @@ import qualified Text.Parser.LookAhead as PL
 data IPAddress6 = IPAddress6 Word64 Word64
     deriving (Eq, Ord, Show)
 
+-- instance Show IPAddress6 where
+--     show = undefined
+
 parseBitGroup :: TF.Parser Word16
 parseBitGroup = do
     digits <- TF.some TF.hexDigit
@@ -37,7 +40,14 @@ parseBitGroups = do
 parseIPv6Address :: TF.Parser IPAddress6
 parseIPv6Address = do
     upper4BitGroups <- parseBitGroups
-    lower4BitGroups <- (TF.eof >> return []) <|> (TF.string "::" >> parseBitGroups)
+    -- We need to account for 3 possibilities:
+    -- 1. \n, i.e. we are done
+    -- 2. ::\n, i.e. all zeros and done. Note that if 2 fails, 3 needs to see
+    --    the ::, so put try in front of it (i.e. 2 does not consume input if it fails)
+    -- 3. more bitgroups
+    lower4BitGroups <-     (TF.eof >> return [])
+                       <|> TF.try (TF.string "::" >> TF.eof >> return [0 :: Word16])
+                       <|> (TF.string "::" >> parseBitGroups)
     let expanded = expand upper4BitGroups lower4BitGroups
     let upperExpanded = combine (take 4 expanded)
     let lowerExpanded = combine (drop 4 expanded)
@@ -45,8 +55,8 @@ parseIPv6Address = do
 
 expand :: [Word16] -> [Word16] -> [Word16]
 expand p1 p2 =
-    if length p2 == 0 then
-        let zeros = [0 | _ <- [1..(8 - (length p1))]]
+    if null p2 then
+        let zeros = [0 | _ <- [1..(8 - length p1)]]
         in zeros ++ p1
     else
         let zeros = [0 | _ <- [1..(8 - (length p1 + length p2))]]
