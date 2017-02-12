@@ -235,7 +235,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2197,
+				"buffer_size": 2628,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -244,7 +244,7 @@
 			"file": "test/IPv6Spec.hs",
 			"settings":
 			{
-				"buffer_size": 2861,
+				"buffer_size": 3746,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -458,15 +458,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2197,
+						"buffer_size": 2628,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2196,
-								2196
+								2095,
+								2095
 							]
 						],
 						"settings":
@@ -475,8 +475,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 24.0,
+						"translation.y": 3.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -488,15 +488,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2861,
+						"buffer_size": 3746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1725,
-								1725
+								3365,
+								3365
 							]
 						],
 						"settings":
@@ -506,7 +506,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 333.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -560,7 +560,7 @@
 	},
 	"output.sublime_haskell_output_panel":
 	{
-		"height": 425.0
+		"height": 430.0
 	},
 	"output.sublime_haskell_symbol_info_panel":
 	{
@@ -585,9 +585,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "ipv6",
 		"selected_items":
 		[
+			[
+				"ipv6",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/untitled.sublime-project"
+			],
+			[
+				"ipv",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/untitled.sublime-project"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/Base10Number/untitled.sublime-project"

@@ -1,8 +1,9 @@
 module Lib
-    ( IPAddress6 (..)
-    , parseIPv6Address
-    , iPv6ToDecimal
-    ) where
+    -- ( IPAddress6 (..)
+    -- , parseIPv6Address
+    -- , iPv6ToDecimal
+    -- ) where
+        where
 
 import Data.Word
 import Data.LargeWord
@@ -17,6 +18,28 @@ data IPAddress6 = IPAddress6 Word64 Word64
 
 -- instance Show IPAddress6 where
 --     show = undefined
+
+-- Group by consecutive index in list of tuples.
+--  input: [(1,'0'),(2,'0'),(3,'0'),(4,'0'),(6,'0')]
+-- output: [[(1,'0'),(2,'0'),(3,'0'),(4,'0')],[(6,'0')]]
+groupByConsecutive :: [(Integer, a)] -> [[(Integer, a)]]
+groupByConsecutive = groupByConsecutive' []
+    where
+        groupByConsecutive' :: [(Integer, b)] -> [(Integer, b)] -> [[(Integer, b)]]
+        groupByConsecutive' accum (x:y:ys) = if fst x + 1 == fst y then
+                                                 groupByConsecutive' (accum ++ [x]) (y:ys)
+                                             else
+                                                (accum ++ [x]) : groupByConsecutive' [] (y:ys)
+        groupByConsecutive' accum [x]      = [accum ++ [x]]
+
+doo :: [Char] -> [(Integer, (Integer, Integer))]
+doo input = let p1 = zip [0..] input
+                p2 = filter (\x -> snd x == '0') p1
+                p3 = zip p2 (drop 1 p2)
+            in map maps p3
+            where
+                maps ((idx1, val1), (idx2, val2)) = (idx2 - idx1 - 1, (idx1 + 1, idx2 - 1))
+
 
 parseBitGroup :: TF.Parser Word16
 parseBitGroup = do
