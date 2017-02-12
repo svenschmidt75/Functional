@@ -235,7 +235,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2628,
+				"buffer_size": 5117,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -306,9 +306,9 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/test/IPv6Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/stack.yaml",
 		"/home/svenschmidt75/.bashrc",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/SublimeHaskell.sublime-settings",
@@ -386,6 +386,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"doo",
+			"a",
+			"do3",
 			"chunk",
 			"chunk1",
 			"posts2",
@@ -458,15 +461,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2628,
+						"buffer_size": 5117,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2095,
-								2095
+								2682,
+								2736
 							]
 						],
 						"settings":
@@ -475,8 +478,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 24.0,
-						"translation.y": 3.0,
+						"translation.x": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
