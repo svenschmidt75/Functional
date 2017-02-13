@@ -60,14 +60,14 @@ generateNormalized input zeroRange =
                                              val
 
 fooBar :: [Char] -> [Char]
-fooBar input = fooBar' [head input] input
+fooBar input = fooBar' [] input
     where
         fooBar' :: [Char] -> [Char] -> [Char]
         fooBar' accum (x:y:ys)
-          | x /= ':' && y == ':' = fooBar' (accum ++ [y]) ys
+          | x == ':' && y == ':' = fooBar' accum (y:ys)
+          | x /= ':' && y == ':' = fooBar' (accum ++ [x, y]) (y:ys)
           | x == ':' && y /= ':' = fooBar' (accum ++ [x, y]) ys
-          | x /= ':' && y /= ':' = fooBar' (accum ++ [x, y]) ys
-          | otherwise = fooBar' accum ys
+          | x /= ':' && y /= ':' = fooBar' (accum ++ [x, y]) (y:ys)
         fooBar' accum (x:xs) = fooBar' (accum ++ [x]) xs
         fooBar' accum [] = accum
 
