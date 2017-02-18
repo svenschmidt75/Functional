@@ -9,65 +9,27 @@ import qualified Numeric as N
 -- Group by consecutive index in list of tuples.
 --  input: [(1,'0'),(2,'0'),(3,'0'),(4,'0'),(6,'0')]
 -- output: [[(1,'0'),(2,'0'),(3,'0'),(4,'0')],[(6,'0')]]
-groupByConsecutive :: [(Integer, a)] -> [[(Integer, a)]]
+groupByConsecutive :: [(Int, a)] -> [[(Int, a)]]
 groupByConsecutive = groupByConsecutive' []
     where
-        groupByConsecutive' :: [(Integer, b)] -> [(Integer, b)] -> [[(Integer, b)]]
+        groupByConsecutive' :: [(Int, b)] -> [(Int, b)] -> [[(Int, b)]]
         groupByConsecutive' accum (x:y:ys) = if fst x + 1 == fst y then
                                                  groupByConsecutive' (accum ++ [x]) (y:ys)
                                              else
                                                 (accum ++ [x]) : groupByConsecutive' [] (y:ys)
         groupByConsecutive' accum [x]      = [accum ++ [x]]
-        groupByConsecutive' _     []       = error "should not happen"
+        groupByConsecutive' _     []       = [[]]
 
--- input: "10002"
--- output: [(1,0), (2,0), (3,0), (4,0)]
-getLongestZeroRange :: [Char] -> [(Integer, Char)]
+-- input: [65152,0,0,0,514,46079,65054,33577]
+-- output: [1,2,3]
+getLongestZeroRange :: [Word16] -> [Int]
 getLongestZeroRange input =
             let p1 = zip [0..] input
-                p2 = filter (\x -> snd x == '0') p1
+                p2 = filter (\x -> snd x == 0) p1
                 p3 = groupByConsecutive p2
                 p4 = maximumBy (\a b -> compare (length a) (length b)) p3
                 p5 = if length p4 < 2 then [] else p4
-            in p5
-
--- input: "1000212"
--- output: 1:::212"
-generateNormalized :: [Char] -> [(Integer, Char)] -> [Char]
-generateNormalized input zeroRange =
-                      let p1 = zip [0..] input
-                          p4 = map f p1
-                      in p4
-                      where
-                          p2 = fst $ head zeroRange
-                          p3 = fst $ last zeroRange
-                          f (idx, val) = if idx >= p2 && idx <= p3 then
-                                             ':'
-                                         else
-                                             val
-
--- Compress :
--- input: 1000101
--- ouput: 1::1:0:1
-{-
-    let data2 = "10000010"
-    let data4 = generateNormalized data2 (getLongestZeroRange data2)
-    let data5 = formatIPv6 (intersperse ':' data4)
--}
-formatIPv6 :: [Char] -> [Char]
-formatIPv6 input = formatIPv6' [] input
-    where
-        formatIPv6' :: [Char] -> [Char] -> [Char]
-        formatIPv6' accum (x:y:ys)
-          | x == ':' && y == ':' = formatIPv6' accum (y:ys)
-          | x /= ':' && y == ':' = formatIPv6' (accum ++ [x, y]) (y:ys)
-          | x == ':' && y /= ':' = formatIPv6' (accum ++ [x, y]) ys
-          | x /= ':' && y /= ':' = formatIPv6' (accum ++ [x, y]) (y:ys)
-        formatIPv6' accum (x:xs) = formatIPv6' (accum ++ [x]) xs
-        formatIPv6' accum [] = accum
-
-
-
+            in map fst p5
 
 decompose :: Word64 -> [Word16]
 decompose w64 = let w16_1 = fromInteger (toInteger w64 .&. 0xFFFF)
@@ -79,5 +41,31 @@ decompose w64 = let w16_1 = fromInteger (toInteger w64 .&. 0xFFFF)
 decomposeQuad :: Word64 -> Word64 -> [Word16]
 decomposeQuad hw lw = concat [decompose hw, decompose lw]
 
-ipV6ToString :: Word64 -> Word64 -> [String]
-ipV6ToString hw lw = map (\x -> N.showHex x "") $ decomposeQuad hw lw
+removeLeadingZeros :: [Word16] -> [Word16]
+removeLeadingZeros = dropWhile (== 0)
+
+doI :: [Word16] -> [Int] -> [String]
+doI ws [] = map f [0..length ws - 1]
+    where
+        f idx
+          | idx == 0         = (N.showHex (ws !! idx) "")
+          | otherwise        = ":" ++ (N.showHex (ws !! idx) "")
+doI ws idxs = map f [0..length ws - 1]
+    where
+        f idx
+          | idx == head idxs = ""
+          | idx == 0         = (N.showHex (ws !! idx) "")
+          | idx < head idxs  = (N.showHex (ws !! idx) "")
+          | idx < last idxs  = ""
+          | idx == last idxs = ":"
+          | otherwise        = ":" ++ (N.showHex (ws !! idx) "")
+
+flubs = let r1 = removeLeadingZeros $ decomposeQuad  0x1 0x0
+            r2 = doI r1 (getLongestZeroRange r1)
+        in concat r2
+
+{-
+    let r1 = decomposeQuad  0xFE80000000000000 0x0202B3FFFE1E8329
+    let r2 = doI r1 (getLongestZeroRange r1)
+    concat r2
+-}
