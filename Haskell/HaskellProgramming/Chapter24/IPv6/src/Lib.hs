@@ -6,12 +6,12 @@ module Lib
         where
 
 import Data.Word
-import Data.List
 import Data.LargeWord
 import Data.Bits
 import Control.Applicative
 import qualified Text.Trifecta as TF
 import qualified Text.Parser.LookAhead as PL
+import ShowIPv6
 
 
 data IPAddress6 = IPAddress6 Word64 Word64
@@ -20,64 +20,8 @@ data IPAddress6 = IPAddress6 Word64 Word64
 -- instance Show IPAddress6 where
 --     show = undefined
 
--- Group by consecutive index in list of tuples.
---  input: [(1,'0'),(2,'0'),(3,'0'),(4,'0'),(6,'0')]
--- output: [[(1,'0'),(2,'0'),(3,'0'),(4,'0')],[(6,'0')]]
-groupByConsecutive :: [(Integer, a)] -> [[(Integer, a)]]
-groupByConsecutive = groupByConsecutive' []
-    where
-        groupByConsecutive' :: [(Integer, b)] -> [(Integer, b)] -> [[(Integer, b)]]
-        groupByConsecutive' accum (x:y:ys) = if fst x + 1 == fst y then
-                                                 groupByConsecutive' (accum ++ [x]) (y:ys)
-                                             else
-                                                (accum ++ [x]) : groupByConsecutive' [] (y:ys)
-        groupByConsecutive' accum [x]      = [accum ++ [x]]
-
--- input: "10002"
--- output: [(1,0), (2,0), (3,0), (4,0)]
-getLongestZeroRange :: [Char] -> [(Integer, Char)]
-getLongestZeroRange input =
-            let p1 = zip [0..] input
-                p2 = filter (\x -> snd x == '0') p1
-                p3 = groupByConsecutive p2
-                p4 = maximumBy (\a b -> compare (length a) (length b)) p3
-                p5 = if length p4 < 2 then [] else p4
-            in p5
-
--- input: "10002"
--- output: 1:::2"
-generateNormalized :: [Char] -> [(Integer, Char)] -> [Char]
-generateNormalized input zeroRange =
-                      let p1 = zip [0..] input
-                          p4 = map f p1
-                      in p4
-                      where
-                          p2 = fst $ head zeroRange
-                          p3 = fst $ last zeroRange
-                          f (idx, val) = if idx >= p2 && idx <= p3 then
-                                             ':'
-                                         else
-                                             val
-
-fooBar :: [Char] -> [Char]
-fooBar input = fooBar' [] input
-    where
-        fooBar' :: [Char] -> [Char] -> [Char]
-        fooBar' accum (x:y:ys)
-          | x == ':' && y == ':' = fooBar' accum (y:ys)
-          | x /= ':' && y == ':' = fooBar' (accum ++ [x, y]) (y:ys)
-          | x == ':' && y /= ':' = fooBar' (accum ++ [x, y]) ys
-          | x /= ':' && y /= ':' = fooBar' (accum ++ [x, y]) (y:ys)
-        fooBar' accum (x:xs) = fooBar' (accum ++ [x]) xs
-        fooBar' accum [] = accum
-
-full input = fooBar $ intersperse ':' (generateNormalized input (getLongestZeroRange input))
-{-
-let data2 = "10000010"
-let data4 = generateNormalized data2 (getLongestZeroRange data2)
-let data5 = fooBar (intersperse ':' data4)
-
--}
+decomposeIPAddress6 :: IPAddress6 -> [Word16]
+decomposeIPAddress6 (IPAddress6 hw lw) = decomposeQuad hw lw
 
 
 parseBitGroup :: TF.Parser Word16
