@@ -44,28 +44,37 @@ decomposeQuad hw lw = concat [decompose hw, decompose lw]
 removeLeadingZeros :: [Word16] -> [Word16]
 removeLeadingZeros = dropWhile (== 0)
 
-doI :: [Word16] -> [Int] -> [String]
-doI ws [] = map f [0..length ws - 1]
+intersperseQuad :: [Word16] -> [Int] -> [String]
+intersperseQuad ws [] = map f [0..length ws - 1]
     where
         f idx
-          | idx == 0         = (N.showHex (ws !! idx) "")
-          | otherwise        = ":" ++ (N.showHex (ws !! idx) "")
-doI ws idxs = map f [0..length ws - 1]
+          | idx == 0         = N.showHex (ws !! idx) ""
+          | otherwise        = ":" ++ N.showHex (ws !! idx) ""
+intersperseQuad ws idxs = map f [0..length ws - 1]
     where
         f idx
-          | idx == head idxs = ""
-          | idx == 0         = (N.showHex (ws !! idx) "")
-          | idx < head idxs  = (N.showHex (ws !! idx) "")
-          | idx < last idxs  = ""
-          | idx == last idxs = ":"
-          | otherwise        = ":" ++ (N.showHex (ws !! idx) "")
+          | idx == last idxs && idx == length ws - 1 = ":"
+          | idx >= head idxs && idx < last idxs      = ""
+          | idx == last idxs                         = ":"
+          | idx == length ws - 1                     = N.showHex (ws !! idx) ""
+          | otherwise                                = N.showHex (ws !! idx) "" ++ ":"
 
-flubs = let r1 = removeLeadingZeros $ decomposeQuad  0x1 0x0
-            r2 = doI r1 (getLongestZeroRange r1)
-        in concat r2
+showQuad :: Word64 -> Word64 -> String
+showQuad hw lw = let r1 = removeLeadingZeros $ decomposeQuad hw lw
+                     r2 = intersperseQuad r1 (getLongestZeroRange r1)
+                 in concat r2
+
 
 {-
-    let r1 = decomposeQuad  0xFE80000000000000 0x0202B3FFFE1E8329
+flubs (0x20010DB800000000 :: Word64) (0x80800200C417A :: Word64)
+flubs (0 :: Word64) (1 :: Word64)
+flubs (1 :: Word64) (0 :: Word64)
+flubs (1 :: Word64) (1 :: Word64)
+-}
+
+{-
+    let r1 = decomposeQuad 0xFE80000000000000 0x0202B3FFFE1E8329
     let r2 = doI r1 (getLongestZeroRange r1)
     concat r2
+
 -}

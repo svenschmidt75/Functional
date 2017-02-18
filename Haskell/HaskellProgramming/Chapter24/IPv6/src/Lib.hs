@@ -15,10 +15,12 @@ import ShowIPv6
 
 
 data IPAddress6 = IPAddress6 Word64 Word64
-    deriving (Eq, Ord, Show)
+--    deriving (Eq, Ord, Show)
+    deriving (Eq, Ord)
 
--- instance Show IPAddress6 where
---     show = undefined
+instance Show IPAddress6 where
+    show (IPAddress6 hw lw) = showQuad hw lw
+
 
 decomposeIPAddress6 :: IPAddress6 -> [Word16]
 decomposeIPAddress6 (IPAddress6 hw lw) = decomposeQuad hw lw

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"show",
+				"showQuad ∷ Word64 → Word64 → String\tShowIPv6"
+			],
+			[
+				"drop",
+				"dropWhile ∷ (a → Bool) → [a] → [a]\tData.List"
+			],
+			[
+				"Ip",
+				"formatIPv6 ∷ [Char] → [Char]\tShowIPv6"
+			],
+			[
+				"decom",
+				"decomposeQuad ∷ Word64 → Word64 → [Word16]\tShowIPv6"
+			],
+			[
+				"shift",
+				"shiftR ∷ Bits a ⇒ a → Int → a\tData.Bits"
+			],
+			[
 				"h",
 				"high"
 			],
@@ -235,7 +255,25 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 5133,
+				"buffer_size": 2823,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ShowIPv6.hs",
+			"settings":
+			{
+				"buffer_size": 3023,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "IPv6.cabal",
+			"settings":
+			{
+				"buffer_size": 1529,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -245,6 +283,15 @@
 			"settings":
 			{
 				"buffer_size": 3746,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/ShowIPv6Spec.hs",
+			"settings":
+			{
+				"buffer_size": 3990,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -386,6 +433,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"doI",
+			"flubs",
+			"decomposeQuad",
+			"fooBar",
 			"doo",
 			"a",
 			"do3",
@@ -452,7 +503,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -461,15 +512,104 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5133,
+						"buffer_size": 2823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								120,
-								120
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/ShowIPv6.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2402,
+								2402
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "IPv6.cabal",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1158,
+								1158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/IPv6Spec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
 							]
 						],
 						"settings":
@@ -482,24 +622,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "test/IPv6Spec.hs",
+					"buffer": 4,
+					"file": "test/ShowIPv6Spec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3746,
+						"buffer_size": 3990,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3365,
-								3365
+								15,
+								15
 							]
 						],
 						"settings":
@@ -509,7 +649,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 333.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -524,7 +664,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
