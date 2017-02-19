@@ -1,9 +1,8 @@
 module Lib
-    -- ( IPAddress6 (..)
-    -- , parseIPv6Address
-    -- , iPv6ToDecimal
-    -- ) where
-        where
+    ( IPAddress6 (..)
+    , parseIPv6Address
+    , iPv6ToDecimal
+    ) where
 
 import Data.Word
 import Data.LargeWord
@@ -20,10 +19,6 @@ data IPAddress6 = IPAddress6 Word64 Word64
 
 instance Show IPAddress6 where
     show (IPAddress6 hw lw) = showQuad hw lw
-
-
-decomposeIPAddress6 :: IPAddress6 -> [Word16]
-decomposeIPAddress6 (IPAddress6 hw lw) = decomposeQuad hw lw
 
 
 parseBitGroup :: TF.Parser Word16

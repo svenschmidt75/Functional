@@ -1,9 +1,11 @@
-module ShowIPv6 where
+module ShowIPv6
+    ( showQuad
+    ) where
 
 import Data.Word
 import Data.List
 import Data.Bits
-import qualified Numeric as N
+import qualified Text.Printf as TP
 
 
 -- Group by consecutive index in list of tuples.
@@ -20,7 +22,7 @@ groupByConsecutive = groupByConsecutive' []
         groupByConsecutive' accum [x]      = [accum ++ [x]]
         groupByConsecutive' _     []       = [[]]
 
--- input: [65152,0,0,0,514,46079,65054,33577]
+--  input: [65152,0,0,0,514,46079,65054,33577]
 -- output: [1,2,3]
 getLongestZeroRange :: [Word16] -> [Int]
 getLongestZeroRange input =
@@ -48,33 +50,18 @@ intersperseQuad :: [Word16] -> [Int] -> [String]
 intersperseQuad ws [] = map f [0..length ws - 1]
     where
         f idx
-          | idx == 0         = N.showHex (ws !! idx) ""
-          | otherwise        = ":" ++ N.showHex (ws !! idx) ""
+          | idx == 0         = TP.printf "%X" (ws !! idx)
+          | otherwise        = ":" ++ TP.printf "%X" (ws !! idx)
 intersperseQuad ws idxs = map f [0..length ws - 1]
     where
         f idx
           | idx == last idxs && idx == length ws - 1 = ":"
           | idx >= head idxs && idx < last idxs      = ""
           | idx == last idxs                         = ":"
-          | idx == length ws - 1                     = N.showHex (ws !! idx) ""
-          | otherwise                                = N.showHex (ws !! idx) "" ++ ":"
+          | idx == length ws - 1                     = TP.printf "%X" (ws !! idx)
+          | otherwise                                = TP.printf "%X" (ws !! idx) ++ ":"
 
 showQuad :: Word64 -> Word64 -> String
 showQuad hw lw = let r1 = removeLeadingZeros $ decomposeQuad hw lw
                      r2 = intersperseQuad r1 (getLongestZeroRange r1)
                  in concat r2
-
-
-{-
-flubs (0x20010DB800000000 :: Word64) (0x80800200C417A :: Word64)
-flubs (0 :: Word64) (1 :: Word64)
-flubs (1 :: Word64) (0 :: Word64)
-flubs (1 :: Word64) (1 :: Word64)
--}
-
-{-
-    let r1 = decomposeQuad 0xFE80000000000000 0x0202B3FFFE1E8329
-    let r2 = doI r1 (getLongestZeroRange r1)
-    concat r2
-
--}
