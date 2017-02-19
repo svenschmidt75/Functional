@@ -255,7 +255,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2823,
+				"buffer_size": 2688,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -264,16 +264,7 @@
 			"file": "src/ShowIPv6.hs",
 			"settings":
 			{
-				"buffer_size": 3023,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "IPv6.cabal",
-			"settings":
-			{
-				"buffer_size": 1529,
+				"buffer_size": 3043,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -282,7 +273,7 @@
 			"file": "test/IPv6Spec.hs",
 			"settings":
 			{
-				"buffer_size": 3746,
+				"buffer_size": 4613,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -291,7 +282,7 @@
 			"file": "test/ShowIPv6Spec.hs",
 			"settings":
 			{
-				"buffer_size": 3990,
+				"buffer_size": 1047,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -305,9 +296,13 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "Haskell",
+		"last_filter": "Up",
 		"selected_items":
 		[
+			[
+				"Up",
+				"Package Control: Upgrade Package"
+			],
 			[
 				"Haskell",
 				"SublimeHaskell: Reinspect all"
@@ -353,8 +348,8 @@
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/test/IPv6Spec.hs",
 		"/home/svenschmidt75/.bashrc",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/LogFile.cabal",
@@ -419,7 +414,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -433,6 +428,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"IO",
+			"element",
+			"intersperseQuad",
+			"decompose",
+			"decomposeQuad",
 			"doI",
 			"flubs",
 			"decomposeQuad",
@@ -503,7 +503,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -512,80 +512,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2823,
+						"buffer_size": 2688,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								2606,
+								2606
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/ShowIPv6.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3023,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2402,
-								2402
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "IPv6.cabal",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1158,
-								1158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -596,20 +537,49 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "test/IPv6Spec.hs",
+					"buffer": 1,
+					"file": "src/ShowIPv6.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3746,
+						"buffer_size": 3043,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								212,
-								212
+								2824,
+								2824
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/IPv6Spec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4613,
+								4613
 							]
 						],
 						"settings":
@@ -619,27 +589,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 518.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "test/ShowIPv6Spec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3990,
+						"buffer_size": 1047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15,
-								15
+								1045,
+								1045
 							]
 						],
 						"settings":
@@ -728,7 +698,7 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "ipv6",
+		"last_filter": "",
 		"selected_items":
 		[
 			[

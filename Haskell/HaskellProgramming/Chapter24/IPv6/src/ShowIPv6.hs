@@ -57,7 +57,7 @@ intersperse128 ws [] = map f [0..length ws - 1]
           | idx == 0         = bitGroup
           | otherwise        = ":" ++ bitGroup
           where
-              bitGroup = TP.printf "%X" (ws !! idx)
+              bitGroup = TP.printf "%x" (ws !! idx)
 intersperse128 ws idxs = map f [0..length ws - 1]
     where
         f idx
@@ -67,7 +67,7 @@ intersperse128 ws idxs = map f [0..length ws - 1]
           | idx == length ws - 1                     = bitGroup
           | otherwise                                = bitGroup ++ ":"
           where
-              bitGroup = TP.printf "%X" (ws !! idx)
+              bitGroup = TP.printf "%x" (ws !! idx)
 
 showQuad :: Word64 -> Word64 -> String
 showQuad hw lw = let r1 = removeLeadingZeros $ decompose128 hw lw

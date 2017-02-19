@@ -77,3 +77,19 @@ spec =
                 TF.Success ip -> ip `shouldBe` IPAddress6 281474976710656 0
                 -- fail this test...
                 TF.Failure err -> show err `shouldBe` "False"
+        it "Test 9" $ do
+            -- TF.Result does not have an eq instance, so need to
+            let result = TF.parseString parseIPv6Address mempty "2001:0db8:0a0b:12f0:0000:0000:0000:0001"
+            -- manually unpack
+            case result of
+                TF.Success ip -> ip `shouldBe` IPAddress6 0x20010db80a0b12f0 0x1
+                -- fail this test...
+                TF.Failure err -> show err `shouldBe` "False"
+        it "Test 10" $ do
+            -- TF.Result does not have an eq instance, so need to
+            let result = TF.parseString parseIPv6Address mempty "2001:db8:0:1:1:1:1:1"
+            -- manually unpack
+            case result of
+                TF.Success ip -> ip `shouldBe` IPAddress6 0x20010db800000001 0x0001000100010001
+                -- fail this test...
+                TF.Failure err -> show err `shouldBe` "False"
