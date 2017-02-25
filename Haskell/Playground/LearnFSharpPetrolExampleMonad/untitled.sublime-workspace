@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"map",
+				"mapM_ ∷ (Foldable t, Monad m) ⇒ (a → m b) → t a → m ()\tPrelude"
+			],
+			[
 				"mkS",
 				"mkStdGen"
 			],
@@ -131,16 +135,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1052,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/ReaderMonadSpec.hs",
-			"settings":
-			{
-				"buffer_size": 2236,
+				"buffer_size": 1057,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -199,12 +194,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnFSharpPetrolExampleMonad",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnFSharpPetrolExampleMonad/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnFSharpPetrolExampleMonad/src"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnFSharpPetrolExampleMonad/LearnFSharpPetrolExampleMonad.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-2.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state-1.hs",
 		"/home/svenschmidt75/wifi-powerman-off",
@@ -315,6 +311,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"driveReader",
 			"getDogRM",
 			"dogName",
 			"sFunctorLawsProp",
@@ -387,7 +384,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -396,15 +393,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1052,
+						"buffer_size": 1057,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30,
-								30
+								482,
+								482
 							]
 						],
 						"settings":
@@ -415,36 +412,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ReaderMonadSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								903,
-								903
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -531,16 +498,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "state",
+		"last_filter": "DasH",
 		"selected_items":
 		[
 			[
-				"state",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/untitled.sublime-project"
-			],
-			[
 				"DasH",
 				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+			],
+			[
+				"state",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateFunctor/untitled.sublime-project"
 			],
 			[
 				"",

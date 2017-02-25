@@ -148,11 +148,13 @@
 	"buffers":
 	[
 		{
+			"contents": "module StateMonadSpec (spec) where\n\nimport Test.Hspec\n\nimport Lib (State (..))\n\nspec :: Spec\nspec = do\n    describe \"State\" $ do\n        it \"Functor 1\" $ do\n            let state = State $ \\s -> (s + 1 :: Int, s)\n            let applied = runState ((+1) <$> state) 1\n            applied `shouldBe` (3, 1)\n        it \"Functor 2\" $ do\n            let state = State $ \\s -> (0, s)\n            let applied = runState ((+1) <$> state) 0\n            applied `shouldBe` (1, 0)\n        it \"Applicative - pure\" $ do\n            let fa = State $ \\s -> (s + 1 :: Int, s)\n            let fab = (pure (+1)) :: State Int (Int -> Int)\n            let applied = runState (fab <*> fa) 1\n            applied `shouldBe` (3, 1)\n        it \"Applicative - <*>\" $ do\n            let fa = State $ \\s -> (s + 3, s + 1 :: Int)\n            let fab = State $ \\s -> (\\a -> a + 7, s + 4)\n            let applied = runState (fab <*> fa) 1\n            applied `shouldBe` (11, 6)\n        it \"Monad - >>=\" $ do\n            let fa = State $ \\s -> (s + 1 :: Int, s + 3)\n            let fab = \\a -> State $ \\s -> (a + 7, s + 4)\n            let applied = runState (fa >>= fab) 1\n            applied `shouldBe` (9, 8)\n",
 			"file": "test/StateMonadSpec.hs",
+			"file_size": 1179,
+			"file_write_time": 131282239195517766,
 			"settings":
 			{
 				"buffer_size": 1179,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -162,23 +164,6 @@
 			{
 				"buffer_size": 1168,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state.hs",
-			"settings":
-			{
-				"buffer_size": 3506,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/etc/modprobe.d/iwlwifi.conf",
-			"settings":
-			{
-				"buffer_size": 347,
 				"line_ending": "Unix"
 			}
 		}
@@ -242,6 +227,8 @@
 	],
 	"file_history":
 	[
+		"/etc/modprobe.d/iwlwifi.conf",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ShawtyReader/ShawtyReader.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/Reader.README",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter22/getDogRMReader/getDogRMReader.cabal",
@@ -427,7 +414,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -443,8 +430,8 @@
 						"selection":
 						[
 							[
-								304,
-								304
+								582,
+								619
 							]
 						],
 						"settings":
@@ -457,7 +444,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -473,8 +460,8 @@
 						"selection":
 						[
 							[
-								1168,
-								1168
+								1106,
+								1106
 							]
 						],
 						"settings":
@@ -487,63 +474,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/state.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3506,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2076,
-								2076
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/etc/modprobe.d/iwlwifi.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								229,
-								229
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -627,9 +558,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "Reader",
 		"selected_items":
 		[
+			[
+				"Reader",
+				"~/Develop/Functional/Haskell/Playground/ReaderMonad/untitled.sublime-project"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/untitled.sublime-project"
