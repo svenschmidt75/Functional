@@ -1,9 +1,13 @@
 module Lib
-    ( Identity (..)
-    ) where
+    ( Image (..)
+    , generateImage
+    )
+    where
 
-data Identity a = Identity a
-    deriving (Eq, Show)
+newtype Image = Image { content :: [Int] }
 
-instance Functor Identity where
-    fmap f (Identity a) = Identity (f a)
+generateImage :: (Int -> Int) -> Int -> Image
+generateImage f count = Image $ generateImage' count
+    where
+        generateImage' n = f n : generateImage' (n - 1)
+        generateImage' 0 = []
