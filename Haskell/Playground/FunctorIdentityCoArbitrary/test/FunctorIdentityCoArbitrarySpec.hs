@@ -5,7 +5,6 @@ import Test.Hspec.QuickCheck (prop)
 import Test.QuickCheck
 import Test.QuickCheck.Function
 import Test.QuickCheck (Property, quickCheck, (==>))
-import Test.QuickCheck.Monadic (assert, monadicIO, run)
 import Test.QuickCheck.Property as QCP
 
 import Lib
@@ -36,14 +35,18 @@ spec = do
     describe "functor laws" $ do
         prop "identity" $ do
             \x -> functorIdentity (x :: Identity Int)
-        prop "composition 2" $ do
+        prop "composition 1" $ do
             functorCompose' :: IntFC
         prop "composition 2" $ do
             prop_commutativeAdd
-        prop "composition 2" $ do
+        prop "composition 3" $ do
             prop_commutativeAdd2
-        prop "composition 2" $ do
+        prop "composition 3" $ do
             prop_functorCompose
+        -- prop "composition 2" $ do
+        --     prop_functorCompose2 :: (Int -> Int) -> (Int -> Int) -> Identity Int -> Bool
+        -- prop "composition 2" $ do
+        --     \f g x -> prop_functorCompose2 (f :: Int -> Int) (g :: Int -> Int) (x :: Identity Int)
 
 prop_commutativeAdd :: Gen QCP.Result
 prop_commutativeAdd = do
@@ -64,10 +67,5 @@ prop_functorCompose = do
     then succeeded
     else failed { QCP.reason = "stupid non-commutative addition" }
 
-prop5 :: Property
-prop5 = monadicIO $ do
-    let e = let ioi = readIO "1" :: IO Integer
-                changed = (fmap read $ fmap ("123" ++) (fmap show ioi)) :: IO Integer
-            in fmap (*3) changed
-    result <- run $ e
-    assert $ result == 3693
+prop_functorCompose2 :: (Int -> Int) -> (Int -> Int) -> Identity Int -> Bool
+prop_functorCompose2 f g x = functorCompose f g x

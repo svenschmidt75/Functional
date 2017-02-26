@@ -1,0 +1,207 @@
+QuickCheck Cheat Sheet
+----------------------
+
+Sven Schmidt
+Feb. 26th, 2017
+
+
+Properties
+==========
+
+
+Generate functions to verify laws:
+---------------------------------
+
+spec :: Spec
+spec = do
+    describe "functor laws" $ do
+        prop "composition" $ do
+            prop_functorCompose
+
+prop_functorCompose :: Gen QCP.Result
+prop_functorCompose = do
+    f <- arbitrary :: Gen (Int -> Int)
+    g <- arbitrary :: Gen (Int -> Int)
+    x <- arbitrary :: Gen (Identity Int)
+    return $ if functorCompose f g x == True
+    then succeeded
+    else failed { QCP.reason = "stupid non-commutative addition" }
+
+
+or
+
+functorIdentity :: (Functor f, Eq (f a)) => f a -> Bool
+functorIdentity f = fmap id f == f
+
+functorCompose :: (Eq (f c), Functor f) => f a -> Fun a b -> Fun b c -> Bool
+functorCompose x (Fun _ f) (Fun _ g) = (fmap (g . f) x) == (fmap g . fmap f $ x)
+
+type IntToInt = Fun Int Int
+type IntFC = Identity Int -> IntToInt -> IntToInt -> Bool
+
+instance Arbitrary a => Arbitrary (Identity a) where
+    arbitrary = do
+        a <- arbitrary
+        return $ Identity a
+
+spec :: Spec
+spec = do
+    describe "functor laws" $ do
+        prop "identity" $ do
+            \x -> functorIdentity (x :: Identity Int)
+        prop "composition 1" $ do
+            functorCompose :: IntFC
+
+
+
+
+Simple properties:
+-----------------
+
+import Test.QuickCheck.Property as QCP
+
+spec :: Spec
+spec = do
+    describe "functor laws" $ do
+        prop "1" $ do
+            prop_commutativeAdd
+        prop "2" $ do
+            prop_commutativeAdd2
+
+prop_commutativeAdd :: Gen QCP.Result
+prop_commutativeAdd = do
+  (x, y) <- arbitrary :: Gen (Int, Int)
+  return $ if x + y == y + x
+    then succeeded
+    else failed { QCP.reason = "stupid non-commutative addition" }
+
+prop_commutativeAdd2 :: Int -> Int -> Bool
+prop_commutativeAdd2 x y = x + y == y + x
+
+
+
+
+'prop "bla"'' is short-hand for 'it "bla" $ property $'
+
+
+
+Monadic property testing:
+------------------------
+
+import Test.Hspec
+import Test.Hspec.QuickCheck (prop)
+import Test.QuickCheck (Property, quickCheck, (==>))
+import Test.QuickCheck.Monadic (assert, monadicIO, run)
+
+-- Add fmap, parentheses, and function composition to the expression
+-- as needed for the expression to typecheck and produce the expected
+-- result.
+
+spec :: Spec
+spec = do
+    describe "Heavy Lifting" $ do
+        prop "5" $ do
+            prop5
+
+prop5 :: Property
+prop5 = monadicIO $ do
+    let e = let ioi = readIO "1" :: IO Integer
+                changed = (fmap read $ fmap ("123" ++) (fmap show ioi)) :: IO Integer
+            in fmap (*3) changed
+    result <- run $ e
+    assert $ result == 3693
+
+
+
+Restrict number of tests to run
+===============================
+
+
+=> modifyMaxSuccess (const 1) $ do
+
+spec :: Spec
+spec = do
+    describe "verify laws" $ do
+        modifyMaxSuccess (const 1) $ do
+            prop "Sum Functor laws" $ do
+                sumFunctorLawsProp
+            prop "Sum Applicative laws" $ do
+                sumApplicativeLawsProp
+            prop "Sum Monad laws" $ do
+                sumMonadLawsProp
+
+sumFunctorLawsProp :: Property
+sumFunctorLawsProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: Sum String (Int, Int, Int)
+    run $ quickBatch $ functor trigger
+
+
+
+Arbitrary
+=========
+
+
+choose
+------
+
+
+instance Arbitrary DT.Day where
+    arbitrary = do
+        year <- choose (1000, 2000)
+        day <- choose (1, 31)
+        month <- choose (1, 31)
+        return $ DT.fromGregorian year month day
+
+
+frequency
+---------
+
+instance (Arbitrary a, Arbitrary b) => Arbitrary (Sum a b) where
+    arbitrary = frequency [
+                            (1, First <$> arbitrary)
+                          , (1, Second <$> arbitrary)
+                          ]
+
+
+sized
+-----
+
+instance Arbitrary LogFileSection where
+    arbitrary = sized $ \n -> do
+        -- We have to put sequence here, because
+        -- [arbitrary | _ <- [1..n]] :: [Gen LogFileEntry], but we
+        -- need Gen [LogFileEntry]!
+        let logFileEntries = sequence [arbitrary | _ <- [1..n]]
+        LogFileSection <$> arbitrary <*> logFileEntries
+
+
+generate
+--------
+
+generate random data
+
+resize
+------
+
+Modifies a generator.
+-> restricts the range of random data to generate
+
+resize :: Int -> Gen a -> Gen a
+
+
+variant
+-------
+
+Modifies a generator, perturbs a generator.
+
+variant :: Integral n => n -> Gen a -> Gen a
+
+
+
+arbitrary
+---------
+
+coarbitrary
+-----------
+
