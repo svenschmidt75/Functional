@@ -139,16 +139,7 @@
 			"file": "test/FunctorIdentityCoArbitrarySpec.hs",
 			"settings":
 			{
-				"buffer_size": 2325,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "FunctorIdentityCoArbitrary.cabal",
-			"settings":
-			{
-				"buffer_size": 1553,
+				"buffer_size": 2419,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -213,6 +204,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/FunctorIdentityCoArbitrary/FunctorIdentityCoArbitrary.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test/CoArbitrarySpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/CoArbitrary.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/stack.yaml",
@@ -339,8 +331,7 @@
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal"
 	],
 	"find":
 	{
@@ -418,15 +409,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2325,
+						"buffer_size": 2419,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								899,
-								899
+								1713,
+								1713
 							]
 						],
 						"settings":
@@ -436,40 +427,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "FunctorIdentityCoArbitrary.cabal",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1553,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1024,
-								1024
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
