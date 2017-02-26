@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances #-}
 module FunctorIdentityCoArbitrarySpec (spec) where
 
 import Test.Hspec
@@ -30,6 +31,10 @@ instance Arbitrary a => Arbitrary (Identity a) where
         a <- arbitrary
         return $ Identity a
 
+instance Show (Int -> Int) where
+    show _ = "Function: (Int -> Int)"
+
+
 spec :: Spec
 spec = do
     describe "functor laws" $ do
@@ -43,10 +48,10 @@ spec = do
             prop_commutativeAdd2
         prop "composition 3" $ do
             prop_functorCompose
-        -- prop "composition 2" $ do
-        --     prop_functorCompose2 :: (Int -> Int) -> (Int -> Int) -> Identity Int -> Bool
-        -- prop "composition 2" $ do
-        --     \f g x -> prop_functorCompose2 (f :: Int -> Int) (g :: Int -> Int) (x :: Identity Int)
+        prop "composition 4" $ do
+            prop_functorCompose2 :: (Int -> Int) -> (Int -> Int) -> Identity Int -> Bool
+        prop "composition 5" $ do
+            \f g x -> prop_functorCompose2 (f :: Int -> Int) (g :: Int -> Int) (x :: Identity Int)
 
 prop_commutativeAdd :: Gen QCP.Result
 prop_commutativeAdd = do
@@ -67,5 +72,5 @@ prop_functorCompose = do
     then succeeded
     else failed { QCP.reason = "stupid non-commutative addition" }
 
-prop_functorCompose2 :: (Int -> Int) -> (Int -> Int) -> Identity Int -> Bool
+prop_functorCompose2 :: Eq c => (a -> b) -> (b -> c) -> Identity a -> Bool
 prop_functorCompose2 f g x = functorCompose f g x

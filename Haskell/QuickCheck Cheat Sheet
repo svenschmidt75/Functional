@@ -190,6 +190,11 @@ Modifies a generator.
 resize :: Int -> Gen a -> Gen a
 
 
+scale
+-----
+
+
+
 variant
 -------
 
