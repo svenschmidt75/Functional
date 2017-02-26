@@ -1,36 +1,21 @@
-type Customer = { Name : string }
-type Account = { AccountId : System.Guid; Owner : Customer; Balance : decimal }
+#load "Domain.fs"
+#load "Operations.fs"
+#load "Auditing.fs"
 
-let deposit amount account = { account with Balance = amount + account.Balance }
+open Capstone2.Operations
+open Capstone2.Domain
+open Capstone2.Auditing
+open System
 
-let withdraw amount account =
-    if amount > account.Balance then
-        account
-    else
-        { account with Balance = account.Balance - amount }
+let withdraw = withdraw |> auditAs "withdraw" consoleAudit
+let deposit = deposit |> auditAs "deposit" consoleAudit
 
+let customer = { Name = "Isaac" }
+let account = { AccountId = Guid.NewGuid(); Owner = customer; Balance = 90M }
 
-let account = { AccountId = System.Guid.NewGuid (); Owner = { Name = "Sven" }; Balance = 10m }
-printfn "%M" (account
-             |> deposit 50m
-             |> withdraw 25m
-             |> deposit 10m).Balance
-
-let fileSystemAudit account message =
-    let foldername = "/tmp/audits"
-    let filename = sprintf "%s/%O.txt" foldername account.AccountId
-    if (not (System.IO.Directory.Exists filename)) then
-        System.IO.Directory.CreateDirectory foldername |> ignore
-    else
-        ()
-    let m = sprintf "Account %O: %s" account.AccountId message
-    System.IO.File.AppendAllText (filename, m)
-
-fileSystemAudit account "audits\n"
-
-
-let consoleAudit account message = 
-    let m = sprintf "Account %O: %s" account.AccountId message
-    printfn "%s" m
-
-consoleAudit account "Hi there"
+account
+|> withdraw 50M
+|> deposit 50M
+|> deposit 100M
+|> withdraw 50M
+|> withdraw 350M
