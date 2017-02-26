@@ -20,5 +20,10 @@ genImage = do
 main :: IO ()
 main = do
     -- resize restricts the range of random values used
-    result <- generate $ resize 5 genImage
+    result <- generate $ resize 1000 genImage
     print $ content result
+
+
+-- if random function f, that we want to generate, returns own type,
+-- need to define a CoArbitrary instance of it
+-- (Gen b)

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"gen",
+				"genImage"
+			],
+			[
 				"putS",
 				"putStrLn ∷ String → IO ()\tPrelude"
 			],
@@ -132,19 +136,19 @@
 	"buffers":
 	[
 		{
-			"file": "test/CoArbitrarySpec.hs",
+			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1426,
+				"buffer_size": 730,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "CoArbitrary.cabal",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1407,
+				"buffer_size": 327,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -210,6 +214,9 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test/CoArbitrarySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/CoArbitrary.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/FourPrimeApplicative/FourPrimeApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreePrimeApplicative/ThreePrimeApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/PairApplicative.cabal",
@@ -334,10 +341,7 @@
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs"
 	],
 	"find":
 	{
@@ -355,6 +359,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"higherOrderFunc",
 			"functorCompose",
 			"threePrimeApplicativeLawsProp",
 			"threePrimeFunctorLawsProp",
@@ -410,26 +415,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test/CoArbitrarySpec.hs",
+					"file": "app/Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1426,
+						"buffer_size": 730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1426,
-								1426
+								318,
+								318
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -440,26 +443,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "CoArbitrary.cabal",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1407,
+						"buffer_size": 327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								929,
-								929
+								128,
+								128
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

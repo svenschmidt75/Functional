@@ -139,6 +139,14 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "test/FunctorTrivialSpec.hs",
+			"settings":
+			{
+				"buffer_size": 2324,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -341,6 +349,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"IntFC",
 			"Identity",
 			"identity",
 			"Identity",
@@ -373,7 +382,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -396,6 +405,36 @@
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/FunctorTrivialSpec.hs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1557,
+								1557
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

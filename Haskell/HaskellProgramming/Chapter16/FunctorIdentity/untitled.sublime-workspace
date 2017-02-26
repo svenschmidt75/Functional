@@ -141,15 +141,6 @@
 			}
 		},
 		{
-			"file": "/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
-			"settings":
-			{
-				"buffer_size": 4137,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/Lib.hs",
 			"settings":
 			{
@@ -405,14 +396,16 @@
 						"selection":
 						[
 							[
-								1127,
-								1127
+								671,
+								795
 							]
 						],
 						"settings":
 						{
 							"auto_name": "",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -423,36 +416,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1196,
-								1196
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
@@ -464,8 +427,8 @@
 						"selection":
 						[
 							[
-								100,
-								100
+								174,
+								174
 							]
 						],
 						"settings":
@@ -476,7 +439,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

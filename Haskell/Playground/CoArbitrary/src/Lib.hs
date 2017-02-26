@@ -9,5 +9,6 @@ newtype Image = Image { content :: [Int] }
 generateImage :: (Int -> Int) -> Int -> Image
 generateImage f count = Image $ generateImage' count
     where
-        generateImage' n = f n : generateImage' (n - 1)
-        generateImage' 0 = []
+        generateImage' n
+            | n > 0     = f n : generateImage' (n - 1)
+            | otherwise = []
