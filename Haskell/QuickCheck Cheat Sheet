@@ -5,6 +5,17 @@ Sven Schmidt
 Feb. 26th, 2017
 
 
+
+
+Load QuichCheck into instance og ghci:
+
+:set -package QuickCheck
+import Test.Quickcheck
+
+
+
+
+
 Properties
 ==========
 
@@ -138,12 +149,36 @@ sumFunctorLawsProp = monadicIO $ do
 
 
 
+
+quickCheck :: Testable prop => prop -> IO ()
+
+
+
+Generators
+==========
+
+
 Arbitrary
 =========
+
+class Arbitrary a where
+    arbitrary :: Gen a
+
+
+instance Arbitrary Point where
+  arbitrary = do
+    x <- arbitrary
+    y <- arbitrary
+    return (MkPoint x y)
+
 
 
 choose
 ------
+
+choose :: Random a => (a, a) -> Gen a
+
+Generates a random element in the given inclusive range.
 
 
 instance Arbitrary DT.Day where
@@ -157,6 +192,10 @@ instance Arbitrary DT.Day where
 frequency
 ---------
 
+frequency :: [(Int, Gen a)] -> Gen a
+
+Chooses one of the given generators, with a weighted random distribution. The input list must be non-empty.
+
 instance (Arbitrary a, Arbitrary b) => Arbitrary (Sum a b) where
     arbitrary = frequency [
                             (1, First <$> arbitrary)
@@ -164,8 +203,7 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Sum a b) where
                           ]
 
 
-sized
------
+sized :: (Int -> Gen a) -> Gen a
 
 instance Arbitrary LogFileSection where
     arbitrary = sized $ \n -> do
@@ -176,22 +214,41 @@ instance Arbitrary LogFileSection where
         LogFileSection <$> arbitrary <*> logFileEntries
 
 
-generate
---------
+resize :: Int -> Gen a -> Gen a
 
-generate random data
-
-resize
-------
 
 Modifies a generator.
 -> restricts the range of random data to generate
 
-resize :: Int -> Gen a -> Gen a
 
 
-scale
------
+scale :: (Int -> Int) -> Gen a -> Gen a
+
+
+
+elements :: [a] -> Gen a
+
+Generates one of the given values. The input list must be non-empty.
+
+
+
+generate :: Gen a -> IO a
+
+Run a generator. The size passed to the generator is always 30; if you want another size then you should explicitly use resize.
+
+
+
+sample :: Show a => Gen a -> IO ()
+
+Generates some example values and prints them to stdout.
+
+
+
+sample' :: Gen a -> IO [a] Source #
+
+Generates some example values.
+
+
 
 
 
@@ -204,9 +261,88 @@ variant :: Integral n => n -> Gen a -> Gen a
 
 
 
-arbitrary
----------
-
 coarbitrary
 -----------
 
+Based on https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html
+
+
+The typeclass CoArbitrary is used to generate random functions.
+Given f:: a -> b, a naive way to generate random functions could be to drop the
+argument and return a random value. Unfortunately, that would give wrong results:
+
+propFunc1 :: (Int -> Int) -> Int -> Bool
+propFunc1 f x = (f . (+2)) x == (f . (*2)) x
+
+These should generate different results, but if we always generate a random result,
+while discarding the argument, this is generally not the case.
+
+This is clearly wrong, hence we need a functional dependency between arguments and
+result.
+
+How is the achieved in QuichCheck?
+
+Basically, Arbitrary (a -> b) is already defined:
+
+instance (CoArbitrary a, Arbitrary b) => Arbitrary (a -> b) where
+    arbitrary = ... :: Gen (a -> b)
+
+Notice that (essentially)
+
+    Gen (a -> b) = Int -> Rand -> a -> b
+                 = a -> Int -> Rand -> b
+                 = a -> Gen b
+
+So, a function modifying a generator,
+
+    a -> Gen b
+
+can be transformed into a generator for functions,
+
+    Gen (a -> b)
+
+arbitrary :: Gen (a -> b), so in order to defined Gen (a -> b), we need to defined
+a functions a -> Gen b. How can we do that?
+Before we answer that, there is a related function, that has type signature
+
+    coarbitrary :: a -> Gen b -> Gen b
+
+where
+
+    class CoArbitrary a where
+        coarbitrary :: a -> Gen b -> Gen b
+
+With this,
+
+    instance (CoArbitrary a, Arbitrary b) => Arbitrary (a -> b) where
+        arbitrary = promote (\a -> coarbitrary a arbitrary) :: Gen (a -> b)
+
+where
+
+    promote :: (a -> Gen b) -> Gen (a -> b)
+
+So, in order to make this work, we need to define what coarbitrary means
+for each function argument, i.e. we have to implement the CoArbitary for
+each function argument type. To do this, we use
+
+    variant :: Int -> Gen a -> Gen a
+
+Notice:
+
+    coarbitrary :: a   -> Gen b -> Gen b
+        variant :: Int -> Gen b -> Gen b
+
+For example:
+
+    instance CoArbitrary Bool where
+        coarbitrary b = if b then (variant 0) else (variant 1)
+
+Variant basically allows us to perturb a generator to yield a new generator
+of the same type. Variant deterministically alters the stream of pseudo-random
+numbers feeding the generator, so the magic sauce is in variant.
+
+Deterministically, because we want to generate the same results for the same input!
+Randomly generating return values does not allow us to do so.
+
+This is basically what it means to have a functional dependency between input
+arguments and return value.
