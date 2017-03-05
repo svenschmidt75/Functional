@@ -1,20 +1,24 @@
 ﻿// Learn more about F# at http://fsharp.org
 
+open System
 open Capstone3.Operations
 open Capstone3.Domain
 open Capstone3.Auditing
-open System
+open Capstone3.FileReposititory
 
+
+let loadAccountFromDisk ownerName =
+    let (accountId, transactions) = findTransactionsOnDisk ownerName
+    loadAccount ownerName accountId transactions
 
 let isValidCommand (command : char) =
-    let cmds = ['w'; 'x'; 'd']
-    List.contains command cmds
+    ['w'; 'x'; 'd'] |> List.contains command
 
-let isStopCommand (command : char) = command = 'x'
+let isStopCommand = (=) 'x'
 
 let processCommand (account : Account) (command : char, amount : decimal) =
-    let withdrawWithAudit = withdraw |> auditAs "withdraw" consoleAudit
-    let depositWithAudit = deposit |> auditAs "deposit" consoleAudit
+    let withdrawWithAudit = withdraw |> auditAs "withdraw" writeTransaction
+    let depositWithAudit = deposit |> auditAs "deposit" writeTransaction
     if command = 'w' then
         withdrawWithAudit amount account
     elif command = 'd' then
@@ -33,9 +37,10 @@ let consoleCommands = seq {
 }
 
 [<EntryPoint>]
-let main argv = 
-    let customer = { Name = "Isaac" }
-    let openingAccount = { AccountId = System.Guid.Empty; Owner = customer; Balance = 90M }
+let main _ = 
+    let openingAccount =
+        Console.Write "Please enter your name: "
+        Console.ReadLine() |> loadAccountFromDisk
     let closingAccount =
         consoleCommands
         |> Seq.filter isValidCommand

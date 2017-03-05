@@ -4,16 +4,16 @@ open Capstone3.Domain
 
 
 let fileSystemAudit account message =
-    let foldername = "/tmp/audits"
-    let filename = sprintf "%s/%O.txt" foldername account.AccountId
-    if (not (System.IO.Directory.Exists filename)) then
+    let foldername = sprintf "/tmp/audits/%s" account.Owner.Name
+    if (not (System.IO.Directory.Exists foldername)) then
         System.IO.Directory.CreateDirectory foldername |> ignore
     else
         ()
-    let m = sprintf "Account %O: %s" account.AccountId message
+    let m = sprintf "Account %O: %s\n" account.AccountId message
+    let filename = sprintf "%s/%O.txt" foldername account.AccountId
     System.IO.File.AppendAllText (filename, m)
 
 
-let consoleAudit account message = 
-    let m = sprintf "Account %O: %s" account.AccountId message
+let consoleAudit account (transaction : Transaction) = 
+    let m = sprintf "Account %O: %A" account.AccountId transaction
     printfn "%s" m

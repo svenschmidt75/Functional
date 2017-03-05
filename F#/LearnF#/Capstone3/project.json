@@ -8,7 +8,9 @@
       "includeFiles": [
         "Domain.fs",
         "Operations.fs",
+        "Transaction.fs",
         "Auditing.fs",
+        "FileRepository.fs",
         "Program.fs"
       ]
     }

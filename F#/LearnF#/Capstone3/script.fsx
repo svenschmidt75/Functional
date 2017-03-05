@@ -1,36 +1,22 @@
 #load "Domain.fs"
 #load "Operations.fs"
+#load "Transaction.fs"
+#load "Auditing.fs"
+#load "FileRepository.fs"
 
+
+open System
 open Capstone3.Operations
 open Capstone3.Domain
-open System
+open Capstone3.Transaction
 
-let isValidCommand (command : char) =
-    let cmds = ['w'; 'x'; 'd']
-    List.contains command cmds
+let t = [{Timestamp = DateTime.Now; Operation = "withdraw"; Amount = 10M; Accepted = true;}; {Timestamp = DateTime.Now; Operation = "deposit"; Amount = 40M; Accepted = true;}]
+loadAccount "Sven" Guid.Empty t
 
-let isStopCommand (command : char) = command = 'x'
 
-let getAmount (command : char) = if command = 'd' then
-                                    command, 50M
-                                 elif command = 'w' then
-                                    command, 25M
-                                 else
-                                    'x', 0M
+let record = "Account 61c35614-c95e-4007-8514-cf1491e7ccb9: 3/5/17 9:45:59 AM***deposit***100***true"
 
-let processCommand (account : Account) (command : char, amount : decimal) =
-    if command = 'w' then
-        { account with Balance = account.Balance - amount }
-    elif command = 'd' then
-        { account with Balance = account.Balance + amount }
-    else
-        failwith "Invalid command"
+let parts = record.Split([|":"|], StringSplitOptions.None)
+let p2 = parts.[0].Split([|" "|], StringSplitOptions.None)
 
-let openingAccount = { Owner = { Name = "Isaac" }; Balance = 0M; AccountId = Guid.Empty }
-let account =
-    let commands = [ 'd'; 'w'; 'z'; 'f'; 'd'; 'x'; 'w' ]
-    commands
-    |> Seq.filter isValidCommand
-    |> Seq.takeWhile (not << isStopCommand)
-    |> Seq.map getAmount
-    |> Seq.fold processCommand openingAccount
+Guid.Parse p2.[1]
