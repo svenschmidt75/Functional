@@ -21,7 +21,7 @@ let findTransactionsOnDisk (ownerName : string) : (System.Guid * Transaction lis
     if (not (System.IO.Directory.Exists foldername)) then
         System.Guid.NewGuid (), List.empty
     else
-        let files = System.IO.Directory.GetFiles "%s"
+        let files = System.IO.Directory.GetFiles  foldername
         if (Array.isEmpty files) then
             System.Guid.NewGuid (), List.empty
         else
