@@ -37,7 +37,7 @@ parserCommand = subparser $
      <> command "email" (parserEmail `withInfo` "Add email address.")
 
 parserInfoCommand :: ParserInfo Commands
-parserInfoCommand = info parserCommand (progDesc "Manage address book")
+parserInfoCommand = info (parserCommand <**> helper) (progDesc "Manage address book")
 
 main :: IO ()
 main = do
