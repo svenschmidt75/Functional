@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"par",
+				"parserInfoCommand"
+			],
+			[
+				"pa",
+				"parserInfoCommand"
+			],
+			[
+				"Parser",
+				"ParserInfo"
+			],
+			[
 				"putSt",
 				"putStrLn ∷ String → IO ()\tPrelude"
 			],
@@ -143,8 +155,7 @@
 			"file": "src/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1056,
-				"encoding": "UTF-8",
+				"buffer_size": 68,
 				"line_ending": "Unix"
 			}
 		}
@@ -202,8 +213,8 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/optex",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/optex/src"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/src"
 	],
 	"file_history":
 	[
@@ -409,25 +420,23 @@
 				{
 					"buffer": 0,
 					"file": "src/Main.hs",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1056,
+						"buffer_size": 68,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
