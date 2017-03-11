@@ -2,6 +2,7 @@ module Transactions
      ( Transaction
      , findTransactionsOnDisk
      , deserialize
+     , getGuid
      )
  where
 
@@ -13,6 +14,7 @@ import System.Directory
 import System.IO
 import qualified Data.UUID as DU
 import Data.List.Split
+import Data.Maybe (fromJust)
 
 
 data Transaction = Transaction { timestamp :: UTCTime
@@ -23,47 +25,45 @@ data Transaction = Transaction { timestamp :: UTCTime
     deriving (Show, Eq)
 
 
-findTransactionsOnDisk :: String -> IO [Transaction]
+findTransactionsOnDisk :: String -> IO (DU.UUID, [Transaction])
 findTransactionsOnDisk name = do
     let folderName = printf "/tmp/audits/%s" name
     dirExists <- doesDirectoryExist folderName
     if not dirExists then
-        return []
+        return (DU.nil, [])
     else do
         files <- listDirectory folderName
-        mapM_ putStrLn files
+--        mapM_ putStrLn files
         if null files then
-            return []
+            return (DU.nil, [])
         else do
-            -- get account id from file name
-            -- read file line-by-line
-            -- turn lines into transactions
             let transactionFile = printf "%s/%s" folderName (head files)
             guid <- getGuid transactionFile
-            content <- readFile transactionFile
-            let lineContent = lines content
-            return [] -- $ getAccountId (head files)
-    -- where
-    --     getAccountId fileName =
+            content <- lines <$> readFile transactionFile
+            return (guid, map deserialize content)
 
-getGuid :: FilePath -> IO (Maybe DU.UUID)
+getGuid :: FilePath -> IO DU.UUID
 getGuid fileName = do
-    putStrLn fileName
-    content <- readFile fileName
-    let l = lines content
-    mapM_ putStrLn l
-    return $ DU.fromString "c2cc10e1-57d6-4b6f-9899-38d972112d8c"
+    content <- lines <$> readFile fileName
+    return $ guid (head content)
+    where
+        split1         = splitOn ":"
+        split2 content = splitOn " " (head $ split1 content)
+        guid content   = fromJust $ DU.fromString (split2 content !! 1)
 
 deserialize :: String -> Transaction
-deserialize content = Transaction datetime operation amount accepted
+deserialize content = Transaction timestamp operation amount accepted
     where
-        split1 = splitOn "***" content
-        operation = split1 !! 1
-        amount = (read (split1 !! 2)) :: Decimal
-        accepted = stringToBool (split1 !! 3)
-        split2 = splitOn " " (head split1)
-        datetimeStr = concat [split2 !! 2, " ", split2 !! 3, " ", split2 !! 4]
-        datetime = parseTimeOrError True defaultTimeLocale "%-m/%-d/%y %-I:%-M:%-S %P" datetimeStr
+        split1       = splitOn "***" content
+        operation    = split1 !! 1
+        amount       = read (split1 !! 2)
+        accepted     = stringToBool (split1 !! 3)
+        split2       = splitOn " " (head split1)
+        date         = split2 !! 2
+        time         = split2 !! 3
+        pm_am        = split2 !! 4
+        timestampStr = concat [date, " ", time, " ", pm_am]
+        timestamp    = parseTimeOrError True defaultTimeLocale "%-m/%-d/%y %-I:%-M:%-S %P" timestampStr
 
 stringToBool :: String -> Bool
 stringToBool "true"  = True
