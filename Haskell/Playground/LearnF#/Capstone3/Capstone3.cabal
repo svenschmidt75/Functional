@@ -22,3 +22,4 @@ executable Capstone3
                      , Decimal
                      , directory
                      , uuid
+                     , split

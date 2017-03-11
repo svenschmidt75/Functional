@@ -1,15 +1,18 @@
 module Transactions
      ( Transaction
      , findTransactionsOnDisk
+     , deserialize
      )
  where
 
 import Data.Time.Clock
+import Data.Time.Format
 import Data.Decimal
 import Text.Printf
 import System.Directory
 import System.IO
 import qualified Data.UUID as DU
+import Data.List.Split
 
 
 data Transaction = Transaction { timestamp :: UTCTime
@@ -35,7 +38,10 @@ findTransactionsOnDisk name = do
             -- get account id from file name
             -- read file line-by-line
             -- turn lines into transactions
-            _ <- getGuid (printf "%s/%s" folderName (head files))
+            let transactionFile = printf "%s/%s" folderName (head files)
+            guid <- getGuid transactionFile
+            content <- readFile transactionFile
+            let lineContent = lines content
             return [] -- $ getAccountId (head files)
     -- where
     --     getAccountId fileName =
@@ -48,26 +54,17 @@ getGuid fileName = do
     mapM_ putStrLn l
     return $ DU.fromString "c2cc10e1-57d6-4b6f-9899-38d972112d8c"
 
+deserialize :: String -> Transaction
+deserialize content = Transaction datetime operation amount accepted
+    where
+        split1 = splitOn "***" content
+        operation = split1 !! 1
+        amount = (read (split1 !! 2)) :: Decimal
+        accepted = stringToBool (split1 !! 3)
+        split2 = splitOn " " (head split1)
+        datetimeStr = concat [split2 !! 2, " ", split2 !! 3, " ", split2 !! 4]
+        datetime = parseTimeOrError True defaultTimeLocale "%-m/%-d/%y %-I:%-M:%-S %P" datetimeStr
 
-
-{-
-
-let findTransactionsOnDisk (ownerName : string) : (System.Guid * Transaction list) =
-    let getAccountId filename =
-        let content = System.IO.File.ReadAllLines filename
-        let parts = content.[0].Split([|":"|], StringSplitOptions.None)
-        let p2 = parts.[0].Split([|" "|], StringSplitOptions.None)
-        Guid.Parse p2.[1]
-    let foldername = sprintf "/tmp/audits/%s" ownerName
-    if (not (System.IO.Directory.Exists foldername)) then
-        System.Guid.NewGuid (), List.empty
-    else
-        let files = System.IO.Directory.GetFiles  foldername
-        if (Array.isEmpty files) then
-            System.Guid.NewGuid (), List.empty
-        else
-            getAccountId files.[0], System.IO.File.ReadAllLines files.[0]
-                                 |> Array.map deserialize
-                                 |> Array.toList
-
--}
+stringToBool :: String -> Bool
+stringToBool "true"  = True
+stringToBool "false" = False
