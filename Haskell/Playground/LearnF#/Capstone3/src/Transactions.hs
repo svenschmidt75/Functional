@@ -14,6 +14,7 @@ import System.Directory
 import qualified Data.ByteString as DBS
 import qualified Data.ByteString.Char8 as DBS8
 import qualified Data.UUID as DU
+import qualified Data.UUID.V4 as DU4
 import Data.List.Split
 import Data.Maybe (fromJust)
 
@@ -30,13 +31,24 @@ findTransactionsOnDisk :: String -> IO (DU.UUID, [Transaction])
 findTransactionsOnDisk name = do
     let folderName = printf "/tmp/audits/%s" name
     dirExists <- doesDirectoryExist folderName
-    if not dirExists then
-        return (DU.nil, [])
+    if not dirExists then do
+--        createDirectory "/tmp/audits"
+--        createDirectory folderName
+        id <- DU4.nextRandom
+        print id
+        let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
+        _ <- DBS.writeFile transactionFileName (DBS8.pack "")
+        print id
+        return (id, [])
     else do
         files <- listDirectory folderName
 --        mapM_ putStrLn files
-        if null files then
-            return (DU.nil, [])
+        if null files then do
+--            createDirectory folderName
+            id <- DU4.nextRandom
+            let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
+            _ <- DBS.writeFile transactionFileName (DBS8.pack "")
+            return (id, [])
         else do
             let transactionFile = printf "%s/%s" folderName (head files)
             guid <- getGuid transactionFile
@@ -68,12 +80,14 @@ deserialize content = Transaction timestamp operation amount accepted
 
 stringToBool :: String -> Bool
 stringToBool "true"  = True
+stringToBool "True"  = True
 stringToBool "false" = False
+stringToBool "False" = False
 
 writeTransaction :: String -> DU.UUID -> Transaction -> IO ()
 writeTransaction name accountId transaction = do
     let time                = formatTime defaultTimeLocale "%D %T %P" (timestamp transaction)
-        serializeLog        = printf "%s***%s***%v***%v" time (operation transaction) (show $ amount transaction) (show $ accepted transaction)
+        serializeLog        = printf "Account %s: %s***%s***%v***%v\n" (DU.toString accountId) time (operation transaction) (show $ amount transaction) (show $ accepted transaction)
         transactionFileName = printf "/tmp/audits/%s/%s.txt" name (DU.toString accountId)
     putStrLn transactionFileName
     putStrLn serializeLog
