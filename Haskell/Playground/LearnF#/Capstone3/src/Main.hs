@@ -4,10 +4,23 @@ import Data.Decimal
 import qualified Transactions as T
 import Operations
 import Domain
+import Audit
 
 
 isValidCommand :: Char -> Bool
 isValidCommand x = x `elem` "dwx"
+
+runOperation :: Char -> Account -> Decimal -> IO Account
+runOperation operation account amount = do
+    let name = unCustomer $ owner account :: String
+    let aid = accountId account
+    let audit = case operation of
+                    'w' -> auditAs "withdraw" (T.writeTransaction name aid)
+                    'd' -> auditAs "deposit" (T.writeTransaction name aid)
+    audit account amount
+    return $ case operation of
+        'w' -> withdraw account amount
+        'd' -> deposit account amount
 
 mainLoop :: Account -> IO Account
 mainLoop account = do
@@ -19,13 +32,10 @@ mainLoop account = do
         else do
             putStrLn "Amount: "
             amount <- read <$> getLine :: IO Decimal
-            mainLoop $ runOperation op account amount
+            newAccount <- runOperation op account amount
+            mainLoop newAccount
     else
         mainLoop account
-    where
-        runOperation 'd' account amount = deposit account amount
-        runOperation 'w' account amount = withdraw account amount
-
 
 main :: IO ()
 main = do

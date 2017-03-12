@@ -3,6 +3,7 @@ module Transactions
      , findTransactionsOnDisk
      , deserialize
      , getGuid
+     , writeTransaction
      ) where
 
 import Data.Time.Clock
@@ -67,3 +68,12 @@ deserialize content = Transaction timestamp operation amount accepted
 stringToBool :: String -> Bool
 stringToBool "true"  = True
 stringToBool "false" = False
+
+writeTransaction :: String -> DU.UUID -> Transaction -> IO ()
+writeTransaction name accountId transaction = do
+    let time                = formatTime defaultTimeLocale "%D %T %P" (timestamp transaction)
+        serializeLog        = printf "%s***%s***%v***%v" time (operation transaction) (show $ amount transaction) (show $ accepted transaction)
+        transactionFileName = printf "/tmp/audits/%s/%s.txt" name (DU.toString accountId)
+    putStrLn transactionFileName
+    putStrLn serializeLog
+    appendFile transactionFileName serializeLog
