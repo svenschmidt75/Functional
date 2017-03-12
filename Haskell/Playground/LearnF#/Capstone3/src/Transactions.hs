@@ -1,10 +1,9 @@
 module Transactions
-     ( Transaction
+     ( Transaction (..)
      , findTransactionsOnDisk
      , deserialize
      , getGuid
-     )
- where
+     ) where
 
 import Data.Time.Clock
 import Data.Time.Format
