@@ -23,3 +23,4 @@ executable Capstone3
                      , directory
                      , uuid
                      , split
+                     , bytestring

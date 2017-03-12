@@ -11,7 +11,8 @@ import Data.Time.Format
 import Data.Decimal
 import Text.Printf
 import System.Directory
-import System.IO
+import qualified Data.ByteString as DBS
+import qualified Data.ByteString.Char8 as DBS8
 import qualified Data.UUID as DU
 import Data.List.Split
 import Data.Maybe (fromJust)
@@ -39,7 +40,7 @@ findTransactionsOnDisk name = do
         else do
             let transactionFile = printf "%s/%s" folderName (head files)
             guid <- getGuid transactionFile
-            content <- lines <$> readFile transactionFile
+            content <- lines <$> (DBS8.unpack <$> DBS.readFile transactionFile)
             return (guid, map deserialize content)
 
 getGuid :: FilePath -> IO DU.UUID
@@ -76,4 +77,4 @@ writeTransaction name accountId transaction = do
         transactionFileName = printf "/tmp/audits/%s/%s.txt" name (DU.toString accountId)
     putStrLn transactionFileName
     putStrLn serializeLog
-    appendFile transactionFileName serializeLog
+    DBS.appendFile transactionFileName (DBS8.pack serializeLog)
