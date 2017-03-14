@@ -1,0 +1,90 @@
+Sven Schmidt
+March 13th, 2017
+
+Why does the combination of two monads not yield a new monad?
+
+
+The monad typeclass looks like this:
+
+class Applicative m => Monad where
+    return :: a -> m a
+    (>>=) :: m a -> (a -> m b) -> m b
+
+Bind can also be implmented like this:
+
+    (>>=) ma f = join $ fmap f ma
+
+because
+
+fmap :: Functor f => (a -> b) -> f a -> f b
+
+and
+
+join :: Monad m => m (m a) -> m a
+
+
+Now, with
+
+f :: a -> m b
+ma :: m a we find
+
+fmap :: (a -> m b) -> m a -> m (m b)
+
+hence the join, to peel off one layer of m in the
+definition of bind via fmap.
+
+
+Now assume we want to define a composite type like
+this:
+
+data Compose f g a = Compose { unCompose :: f (g a) }
+
+Let's say we want to define a monad instance for this type:
+
+instance Monad (Compose f g) where
+    (>>=) :: Compose f g a -> (a -> Compose f g b) -> Compose f g b
+
+We could think that this works:
+
+    (>>=) fga f = join $ (fmap . fmap) f fga
+
+This expression, however, will not work. To see why, we need to look
+at the type of (fmap . fmap) f fga,
+
+fmap . fmap :: (a -> b) -> f (f1 a) -> f (f1 b)
+
+so
+
+(fmap . fmap) f fga :: f (f1 b)
+
+The problem is now that
+
+f1 != f, so join cannot collapse f and f1.
+
+You might think that
+
+sequence :: (Traversable t, Monad m) => t (m a) -> m (t a)
+
+does the trick, but a monad is NOT an traversable, so this
+approach does NOT work.
+Hence the need for monad transformers, that is essentially
+like the combine type, but with the f a known type.
+
+Consider this trivial monad transformer:
+
+newtype IdentityT f a = IdentityT { runIdentityT :: f a }
+    deriving (Eq, Show)
+
+Here, the above f = IdentityT and g = f.
+The monad instance is this:
+
+instance (Monad m) => Monad (IdentityT m) where
+    return = pure
+    (IdentityT ma) >>= f = IdentityT $ ma >>= runIdentityT . f
+
+Note: the runIdentity is used here to peel away one layer of
+IdentityT. This is why IdentityT has a monad instance, because
+the know the type, we can use runIdentity.
+In the general setting, we could not do this because we know
+nothing more about that type than that it has a monad instance.
+This, it turns out, is not enough.
