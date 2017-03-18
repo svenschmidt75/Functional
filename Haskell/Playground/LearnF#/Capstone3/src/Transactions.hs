@@ -10,7 +10,9 @@ import Data.Time.Clock
 import Data.Time.Format
 import Data.Decimal
 import Text.Printf
-import System.Directory
+import qualified System.Directory as SD (doesDirectoryExist
+                                       , createDirectoryIfMissing
+                                       , listDirectory)
 import qualified Data.ByteString as DBS
 import qualified Data.ByteString.Char8 as DBS8
 import qualified Data.UUID as DU
@@ -30,30 +32,29 @@ data Transaction = Transaction { timestamp :: UTCTime
 findTransactionsOnDisk :: String -> IO (DU.UUID, [Transaction])
 findTransactionsOnDisk name = do
     let folderName = printf "/tmp/audits/%s" name
-    dirExists <- doesDirectoryExist folderName
+    dirExists <- SD.doesDirectoryExist folderName
     if not dirExists then do
---        createDirectory "/tmp/audits"
---        createDirectory folderName
-        id <- DU4.nextRandom
-        print id
-        let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
-        _ <- DBS.writeFile transactionFileName (DBS8.pack "")
-        print id
+        SD.createDirectoryIfMissing True folderName
+        id <- createEmptyTransactionFile folderName
         return (id, [])
     else do
-        files <- listDirectory folderName
+        files <- SD.listDirectory folderName
 --        mapM_ putStrLn files
         if null files then do
---            createDirectory folderName
-            id <- DU4.nextRandom
-            let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
-            _ <- DBS.writeFile transactionFileName (DBS8.pack "")
+            id <- createEmptyTransactionFile folderName
             return (id, [])
         else do
             let transactionFile = printf "%s/%s" folderName (head files)
             guid <- getGuid transactionFile
             content <- lines <$> (DBS8.unpack <$> DBS.readFile transactionFile)
             return (guid, map deserialize content)
+
+createEmptyTransactionFile :: String -> IO DU.UUID
+createEmptyTransactionFile folderName = do
+    id <- DU4.nextRandom
+    let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
+    _ <- DBS.writeFile transactionFileName (DBS8.pack "")
+    return id
 
 getGuid :: FilePath -> IO DU.UUID
 getGuid fileName = do
