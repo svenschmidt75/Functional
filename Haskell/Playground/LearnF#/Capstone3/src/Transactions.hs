@@ -13,7 +13,9 @@ import Text.Printf
 import qualified System.Directory as SD (doesDirectoryExist
                                        , createDirectoryIfMissing
                                        , listDirectory)
-import qualified Data.ByteString as DBS
+import qualified Data.ByteString as DBS (readFile
+                                       , writeFile
+                                       , appendFile)
 import qualified Data.ByteString.Char8 as DBS8
 import qualified Data.UUID as DU
 import qualified Data.UUID.V4 as DU4
@@ -90,6 +92,4 @@ writeTransaction name accountId transaction = do
     let time                = formatTime defaultTimeLocale "%D %T %P" (timestamp transaction)
         serializeLog        = printf "Account %s: %s***%s***%v***%v\n" (DU.toString accountId) time (operation transaction) (show $ amount transaction) (show $ accepted transaction)
         transactionFileName = printf "/tmp/audits/%s/%s.txt" name (DU.toString accountId)
-    putStrLn transactionFileName
-    putStrLn serializeLog
     DBS.appendFile transactionFileName (DBS8.pack serializeLog)
