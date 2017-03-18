@@ -21,12 +21,11 @@ data Account = Account { accountId :: DU.UUID
 data Command = Withdraw
              | Deposit
              | Exit
-             | Unknown
              deriving (Show, Eq)
 
-char2Command :: Char -> Command
+char2Command :: Char -> Maybe Command
 char2Command c
-    | c == 'w'  = Withdraw
-    | c == 'd'  = Deposit
-    | c == 'x'  = Exit
-    | otherwise = Unknown
+    | c == 'w'  = Just Withdraw
+    | c == 'd'  = Just Deposit
+    | c == 'x'  = Just Exit
+    | otherwise = Nothing

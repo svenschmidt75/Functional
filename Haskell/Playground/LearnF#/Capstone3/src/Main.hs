@@ -5,7 +5,7 @@ import qualified Transactions as T
 import Operations
 import Domain (Account (..)
              , Customer (..)
-             , Command (Withdraw, Deposit, Unknown, Exit)
+             , Command (Withdraw, Deposit, Exit)
              , char2Command)
 import Audit
 
@@ -26,18 +26,19 @@ mainLoop :: Account -> IO Account
 mainLoop account = do
     putStrLn "(d)eposit, (w)ithdraw or e(x)it: "
     op <- char2Command <$> getChar
-    if op /= Unknown then
-        if op == Exit then
-            return account
-        else do
-            putStrLn "Amount: "
-            amount <- read <$> getLine :: IO Decimal
-            newAccount <- runOperation op account amount
-            print newAccount
-            mainLoop newAccount
-    else do
-        putStrLn "Unknown command. Please Try again"
-        mainLoop account
+    case op of
+        Nothing -> do
+                    putStrLn "Unknown command. Please Try again"
+                    mainLoop account
+        Just cmd ->
+            if cmd == Exit then
+                return account
+            else do
+                putStrLn "Amount: "
+                amount <- read <$> getLine
+                newAccount <- runOperation cmd account amount
+                print newAccount
+                mainLoop newAccount
 
 main :: IO ()
 main = do
@@ -47,6 +48,7 @@ main = do
     let account = initializeAccount owner guid transactions
     -- Without these two lines I get
     -- openBinaryFile: resource busy (file is locked)
+    -- when appending a transaction...
     print account
     print transactions
 --    mapM_ (putStrLn . show) transactions
