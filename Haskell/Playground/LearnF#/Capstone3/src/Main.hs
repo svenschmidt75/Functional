@@ -1,6 +1,7 @@
 module Main where
 
 import Data.Decimal
+import Text.Read (readMaybe)
 import qualified Transactions as T
 import Operations (Command (BankCommand, Exit)
                  , BankOperation (Withdraw, Deposit)
@@ -39,13 +40,18 @@ mainLoop account = do
                 return account
             else do
                 putStrLn "Amount: "
-                amount <- read <$> getLine
-                let bank_operation = tryGetBankOperation cmd
-                newAccount <- case bank_operation of
-                                Just op -> runOperation op account amount
-                                _       -> return account
-                print newAccount
-                mainLoop newAccount
+                amount <- readMaybe <$> getLine :: IO (Maybe Decimal)
+                new_account <- case amount of
+                                   Just a -> do
+                                              let bank_operation = tryGetBankOperation cmd
+                                              case bank_operation of
+                                                  Just op -> runOperation op account a
+                                                  _       -> return account
+                                   Nothing -> do
+                                               putStrLn "Error: Invalid input"
+                                               return account
+                print new_account
+                mainLoop new_account
 
 main :: IO ()
 main = do
