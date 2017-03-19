@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Maybe",
+				"MaybeIO a\tLib"
+			],
+			[
 				"Ban",
 				"BankCommand ∷ BankOperation → Command\tOperations"
 			],
@@ -188,51 +192,30 @@
 	"buffers":
 	[
 		{
-			"file": "src/Main.hs",
+			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2607,
+				"buffer_size": 338,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Audit.hs",
+			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 510,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "module Audit"
-			}
-		},
-		{
-			"file": "src/Operations.hs",
-			"settings":
-			{
-				"buffer_size": 1481,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "module Operations where"
-			}
-		},
-		{
-			"file": "src/Domain.hs",
-			"settings":
-			{
-				"buffer_size": 409,
+				"buffer_size": 1194,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Transactions.hs",
+			"file": "test/MaybeIOSpec.hs",
 			"settings":
 			{
-				"buffer_size": 3784,
+				"buffer_size": 319,
 				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "module Transactions where"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -289,8 +272,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/src"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/test"
 	],
 	"file_history":
 	[
@@ -425,7 +410,7 @@
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -499,143 +484,28 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Main.hs",
+					"file": "src/Lib.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2607,
+						"buffer_size": 338,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1328,
-								1328
+								338,
+								338
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Audit.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 510,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								452,
-								452
-							]
-						],
-						"settings":
-						{
-							"auto_name": "module Audit",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Operations.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1481,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								135,
-								135
-							]
-						],
-						"settings":
-						{
-							"auto_name": "module Operations where",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Domain.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 409,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								55,
-								55
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Transactions.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3784,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								758,
-								758
-							]
-						],
-						"settings":
-						{
-							"auto_name": "module Transactions where",
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -643,6 +513,64 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								729,
+								729
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/MaybeIOSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
