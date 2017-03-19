@@ -32,10 +32,10 @@ import Lib ( MaybeIO (..)
     Need to convert: IO a -> MaybeIO a...
 -}
 
-f :: MaybeIO Int
-f = MaybeIO $ do
-        liftIO $ putStrLn "Enter a number: "
-        (Just <$> (read <$> getLine :: IO Int)) :: IO (Maybe Int)
+-- f :: MaybeIO Int
+-- f = MaybeIO $ do
+--        liftIO $ putStrLn "Enter a number: "
+--        (Just <$> (read <$> getLine :: IO Int)) :: IO (Maybe Int)
 --    MaybeIO (return $ Just a)
     -- putStrLn ("The number you entered is " ++ show a)
     -- let mb = if a < 10 then
@@ -49,5 +49,5 @@ f = MaybeIO $ do
 
 main :: IO ()
 main = do
-    result <- runMaybeIO f
-    print result
+--    result <- runMaybeIO f
+    print "result"

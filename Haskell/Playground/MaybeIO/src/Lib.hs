@@ -1,3 +1,4 @@
+{-# LANGUAGE InstanceSigs #-}
 module Lib
     ( MaybeIO (..)
     , liftIO
@@ -5,6 +6,35 @@ module Lib
 
 
 newtype MaybeIO a = MaybeIO { runMaybeIO :: IO (Maybe a) }
+
+-- instance Eq (MaybeIO a) where
+--     (==) :: MaybeIO a -> MaybeIO a -> Bool
+--     (==) (MaybeIO a) (MaybeIO b) = do
+--         a1 <- a
+--         b1 <- b
+--         return (a1 == b1)
+
+instance Show (MaybeIO a) where
+    show :: MaybeIO a -> String
+    show _ = "MaybeIO a"
+
+instance Functor MaybeIO where
+    fmap :: (a -> b) -> MaybeIO a -> MaybeIO b
+    fmap = undefined
+
+instance Applicative MaybeIO where
+    pure :: a -> MaybeIO a
+    pure = undefined
+
+    (<*>) :: MaybeIO (a -> b) -> MaybeIO a -> MaybeIO b
+    (<*>) = undefined
+
+instance Monad MaybeIO where
+    return :: a -> MaybeIO a
+    return = pure
+
+    (>>=) :: MaybeIO a -> (a -> MaybeIO b) -> MaybeIO b
+    (>>=) = undefined
 
 
 -- (>>=) :: IO a -> (a -> IO b) -> IO b, b :: Maybe a
