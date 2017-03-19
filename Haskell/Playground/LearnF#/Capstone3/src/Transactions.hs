@@ -37,14 +37,14 @@ findTransactionsOnDisk name = do
     dirExists <- SD.doesDirectoryExist folderName
     if not dirExists then do
         SD.createDirectoryIfMissing True folderName
-        id <- createEmptyTransactionFile folderName
-        return (id, [])
+        uuid <- createEmptyTransactionFile folderName
+        return (uuid, [])
     else do
         files <- SD.listDirectory folderName
 --        mapM_ putStrLn files
         if null files then do
-            id <- createEmptyTransactionFile folderName
-            return (id, [])
+            uuid <- createEmptyTransactionFile folderName
+            return (uuid, [])
         else do
             let transactionFile = printf "%s/%s" folderName (head files)
             guid <- getGuid transactionFile
@@ -53,10 +53,10 @@ findTransactionsOnDisk name = do
 
 createEmptyTransactionFile :: String -> IO DU.UUID
 createEmptyTransactionFile folderName = do
-    id <- DU4.nextRandom
-    let transactionFileName = printf "%s/%s.txt" folderName (DU.toString id)
+    uuid <- DU4.nextRandom
+    let transactionFileName = printf "%s/%s.txt" folderName (DU.toString uuid)
     _ <- DBS.writeFile transactionFileName (DBS8.pack "")
-    return id
+    return uuid
 
 getGuid :: FilePath -> IO DU.UUID
 getGuid fileName = do
@@ -86,6 +86,7 @@ stringToBool "true"  = True
 stringToBool "True"  = True
 stringToBool "false" = False
 stringToBool "False" = False
+stringToBool _       = error "Should be either true of false"
 
 writeTransaction :: String -> DU.UUID -> Transaction -> IO ()
 writeTransaction name accountId transaction = do

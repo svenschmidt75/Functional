@@ -1,5 +1,9 @@
 module Operations
-     ( initializeAccount
+     ( Command (..)
+     , BankOperation (..)
+     , char2Command
+     , tryGetBankOperation
+     , initializeAccount
      , deposit
      , withdraw
      ) where
@@ -9,6 +13,25 @@ import Data.Decimal
 import Domain
 import Transactions
 
+
+data BankOperation = Deposit
+                   | Withdraw
+    deriving (Show, Eq)
+
+data Command = BankCommand BankOperation
+             | Exit
+    deriving (Show, Eq)
+
+char2Command :: Char -> Maybe Command
+char2Command c
+    | c == 'w'  = Just $ BankCommand Withdraw
+    | c == 'd'  = Just $ BankCommand Deposit
+    | c == 'x'  = Just Exit
+    | otherwise = Nothing
+
+tryGetBankOperation :: Command -> Maybe BankOperation
+tryGetBankOperation (BankCommand op) = Just op
+tryGetBankOperation _                = Nothing
 
 initializeAccount :: String -> DU.UUID-> [Transaction] -> Account
 initializeAccount owner guid transactions =

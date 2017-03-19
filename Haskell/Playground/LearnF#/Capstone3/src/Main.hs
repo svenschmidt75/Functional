@@ -2,15 +2,19 @@ module Main where
 
 import Data.Decimal
 import qualified Transactions as T
-import Operations
+import Operations (Command (BankCommand, Exit)
+                 , BankOperation (Withdraw, Deposit)
+                 , char2Command
+                 , tryGetBankOperation
+                 , withdraw
+                 , deposit
+                 , initializeAccount)
 import Domain (Account (..)
-             , Customer (..)
-             , Command (Withdraw, Deposit, Exit)
-             , char2Command)
+             , Customer (..))
 import Audit
 
 
-runOperation :: Command -> Account -> Decimal -> IO Account
+runOperation :: BankOperation -> Account -> Decimal -> IO Account
 runOperation operation account amount = do
     let name = unCustomer $ owner account
     let aid = accountId account
@@ -36,7 +40,10 @@ mainLoop account = do
             else do
                 putStrLn "Amount: "
                 amount <- read <$> getLine
-                newAccount <- runOperation cmd account amount
+                let bank_operation = tryGetBankOperation cmd
+                newAccount <- case bank_operation of
+                                Just op -> runOperation op account amount
+                                _       -> return account
                 print newAccount
                 mainLoop newAccount
 
