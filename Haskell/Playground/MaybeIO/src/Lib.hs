@@ -20,21 +20,26 @@ instance Show (MaybeIO a) where
 
 instance Functor MaybeIO where
     fmap :: (a -> b) -> MaybeIO a -> MaybeIO b
-    fmap = undefined
+    fmap f (MaybeIO ma) = MaybeIO $ (fmap . fmap) f ma
 
 instance Applicative MaybeIO where
     pure :: a -> MaybeIO a
-    pure = undefined
+    pure a = MaybeIO $ (return . Just) a
 
     (<*>) :: MaybeIO (a -> b) -> MaybeIO a -> MaybeIO b
-    (<*>) = undefined
+    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ do
+        maybeF <- mf
+        maybeA <- ma
+        return (maybeF <*> maybeA)
 
 instance Monad MaybeIO where
     return :: a -> MaybeIO a
     return = pure
 
     (>>=) :: MaybeIO a -> (a -> MaybeIO b) -> MaybeIO b
-    (>>=) = undefined
+    (>>=) (MaybeIO ioma) f = MaybeIO $ ioma >>= \ma -> case ma of
+        Just a  -> runMaybeIO (f a)
+        Nothing -> return Nothing
 
 
 -- (>>=) :: IO a -> (a -> IO b) -> IO b, b :: Maybe a
