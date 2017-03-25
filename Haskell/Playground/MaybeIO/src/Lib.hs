@@ -27,10 +27,7 @@ instance Applicative MaybeIO where
     pure a = MaybeIO $ (return . Just) a
 
     (<*>) :: MaybeIO (a -> b) -> MaybeIO a -> MaybeIO b
-    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ do
-        maybeF <- mf
-        maybeA <- ma
-        return (maybeF <*> maybeA)
+    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ (<*>) <$> mf <*> ma
 
 instance Monad MaybeIO where
     return :: a -> MaybeIO a
