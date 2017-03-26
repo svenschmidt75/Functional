@@ -2,7 +2,10 @@
 module Lib
     ( MaybeIO (..)
     , liftIO
+    , liftMaybe
     ) where
+
+import Control.Applicative (liftA2)
 
 
 newtype MaybeIO a = MaybeIO { runMaybeIO :: IO (Maybe a) }
@@ -27,7 +30,8 @@ instance Applicative MaybeIO where
     pure a = MaybeIO $ (return . Just) a
 
     (<*>) :: MaybeIO (a -> b) -> MaybeIO a -> MaybeIO b
-    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ (<*>) <$> mf <*> ma
+--    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ (<*>) <$> mf <*> ma
+    (<*>) (MaybeIO mf) (MaybeIO ma) = MaybeIO $ liftA2 (<*>) mf ma
 
 instance Monad MaybeIO where
     return :: a -> MaybeIO a
@@ -35,8 +39,8 @@ instance Monad MaybeIO where
 
     (>>=) :: MaybeIO a -> (a -> MaybeIO b) -> MaybeIO b
     (>>=) (MaybeIO ioma) f = MaybeIO $ ioma >>= \ma -> case ma of
-        Just a  -> runMaybeIO (f a)
-        Nothing -> return Nothing
+                                                        Just a  -> runMaybeIO (f a)
+                                                        Nothing -> return Nothing
 
 
 -- (>>=) :: IO a -> (a -> IO b) -> IO b, b :: Maybe a
@@ -44,3 +48,6 @@ liftIO :: IO a -> MaybeIO a
 --liftIO ioa = MaybeIO $ ioa >>= \a -> return $ Just a
 --liftIO ioa = MaybeIO $ ioa >>= return . Just
 liftIO ioa = MaybeIO $ Just <$> ioa
+
+liftMaybe :: Maybe a -> MaybeIO a
+liftMaybe m = MaybeIO $ return m

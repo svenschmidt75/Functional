@@ -1,7 +1,8 @@
 module Main where
 
 import Lib ( MaybeIO (..)
-           , liftIO)
+           , liftIO
+           , liftMaybe)
 
 
 -- f :: IO (Maybe Int)
@@ -32,22 +33,20 @@ import Lib ( MaybeIO (..)
     Need to convert: IO a -> MaybeIO a...
 -}
 
--- f :: MaybeIO Int
--- f = MaybeIO $ do
---        liftIO $ putStrLn "Enter a number: "
---        (Just <$> (read <$> getLine :: IO Int)) :: IO (Maybe Int)
---    MaybeIO (return $ Just a)
-    -- putStrLn ("The number you entered is " ++ show a)
-    -- let mb = if a < 10 then
-    --              Just a
-    --          else
-    --              Nothing
-    -- value <- value
-    -- putStrLn ("Number: " ++ show value)
-    -- return value
-
+f :: MaybeIO Int
+f = do
+        liftIO $ putStrLn "Enter a number: "
+        a <- liftIO $ (read <$> getLine :: IO Int)
+        return a
+        -- liftIO $ putStrLn ("The number you entered is " ++ show a)
+        -- let mb = if a < 10 then
+        --              Just a
+        --          else
+        --              Nothing
+        -- liftIO $ putStrLn ("Number: " ++ show mb)
+        -- return mb
 
 main :: IO ()
 main = do
---    result <- runMaybeIO f
-    print "result"
+    result <- runMaybeIO f
+    print $ "Result: " ++ show result

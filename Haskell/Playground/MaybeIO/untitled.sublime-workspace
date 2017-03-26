@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"M",
+				"Monad\tmodule"
+			],
+			[
+				"May",
+				"MaybeIO"
+			],
+			[
 				"Maybe",
 				"MaybeIO a\tLib"
 			],
@@ -195,7 +203,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 338,
+				"buffer_size": 1453,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -204,7 +212,7 @@
 			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1194,
+				"buffer_size": 1199,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -213,7 +221,7 @@
 			"file": "test/MaybeIOSpec.hs",
 			"settings":
 			{
-				"buffer_size": 319,
+				"buffer_size": 3708,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -279,6 +287,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/MaybeIO.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/Capstone3.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/fmap_fmap",
@@ -405,8 +414,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/stack.yaml"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs"
 	],
 	"find":
 	{
@@ -424,6 +432,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"applicativeNothingJustProp",
+			"applicativeJustJustProp",
+			"functorNothingProp",
+			"sumFunctorLawsProp",
 			"bank_operation",
 			"operation",
 			"serialize",
@@ -484,7 +496,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -493,43 +505,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 338,
+						"buffer_size": 1453,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								338,
-								338
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Main.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1194,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								729,
-								729
+								121,
+								121
 							]
 						],
 						"settings":
@@ -544,20 +528,48 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "test/MaybeIOSpec.hs",
+					"buffer": 1,
+					"file": "app/Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 319,
+						"buffer_size": 1199,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								319,
-								319
+								1125,
+								1125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/MaybeIOSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3119,
+								3119
 							]
 						],
 						"settings":
@@ -567,7 +579,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 867.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
