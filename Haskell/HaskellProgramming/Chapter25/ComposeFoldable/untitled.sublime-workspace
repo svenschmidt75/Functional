@@ -203,25 +203,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1565,
+				"buffer_size": 799,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Main.hs",
+			"file": "test/ComposeFoldableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1730,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/MaybeIOSpec.hs",
-			"settings":
-			{
-				"buffer_size": 3708,
+				"buffer_size": 570,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -280,13 +271,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
 		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
@@ -413,8 +405,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs"
 	],
 	"find":
 	{
@@ -505,15 +496,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1565,
+						"buffer_size": 799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								190,
-								190
+								799,
+								799
 							]
 						],
 						"settings":
@@ -529,47 +520,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/Main.hs",
+					"file": "test/ComposeFoldableSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1730,
+						"buffer_size": 570,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1690,
-								1690
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "test/MaybeIOSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3708,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3119,
-								3119
+								570,
+								570
 							]
 						],
 						"settings":
@@ -579,10 +542,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 867.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -666,16 +629,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "DasHaus",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"DasHaus",
-				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/test/LogFileSpec.sublime-workspace"
 			],
 			[
-				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/untitled.sublime-project"
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
 			]
 		],
 		"width": 380.0

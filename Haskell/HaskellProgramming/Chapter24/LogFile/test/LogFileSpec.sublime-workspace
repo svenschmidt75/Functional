@@ -425,6 +425,10 @@
 	{
 		"height": 0.0
 	},
+	"output.sublime_haskell_output_panel":
+	{
+		"height": 425.0
+	},
 	"pinned_build_system": "Packages/Haskell/Haskell.sublime-build",
 	"project": "LogFileSpec.sublime-project",
 	"replace":
@@ -444,16 +448,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "DasHaus",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"DasHaus",
-				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/untitled.sublime-project"
 			],
 			[
-				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/untitled.sublime-project"
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
 			]
 		],
 		"width": 380.0
