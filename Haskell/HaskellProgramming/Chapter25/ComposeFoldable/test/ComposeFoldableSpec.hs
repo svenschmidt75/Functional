@@ -1,10 +1,12 @@
 module ComposeFoldableSpec (spec) where
 
 import Test.Hspec
+import Data.Monoid (Sum (..))
 
 import Lib
     ( Compose (..)
     )
+
 
 spec :: Spec
 spec = do
@@ -19,3 +21,9 @@ spec = do
             let f = Compose $ Just [(+1), (+(-1))]
             let result = f <*> value
             result `shouldBe` (Compose $ Just [2, 0])
+
+        it "Foldable" $ do
+            let value = Compose $ Just [Sum 1, Sum 2, Sum 3] :: Compose Maybe [] (Sum Int)
+            let result = foldMap id value
+            result `shouldBe` (Sum 6)
+
