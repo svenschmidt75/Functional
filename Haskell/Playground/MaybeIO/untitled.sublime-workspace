@@ -518,7 +518,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -540,13 +542,15 @@
 						"selection":
 						[
 							[
-								1690,
-								1690
+								1302,
+								1302
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -666,16 +670,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "DasHaus",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"DasHaus",
-				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/untitled.sublime-project"
 			],
 			[
-				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/untitled.sublime-project"
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
 			]
 		],
 		"width": 380.0

@@ -207,7 +207,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1410,
+				"buffer_size": 1408,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -500,15 +500,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1410,
+						"buffer_size": 1408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1410,
-								1410
+								1388,
+								1388
 							]
 						],
 						"settings":
@@ -640,7 +640,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter24/LogFile/test/LogFileSpec.sublime-workspace"
+				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"
 			],
 			[
 				"DasHaus",
