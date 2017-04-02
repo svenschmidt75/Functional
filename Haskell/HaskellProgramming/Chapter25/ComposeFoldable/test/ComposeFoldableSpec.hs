@@ -9,7 +9,7 @@ import Lib
 
 
 spec :: Spec
-spec = do
+spec =
     describe "Compose laws" $ do
         it "Functor" $ do
             let value = Compose $ Just [1] :: Compose Maybe [] Int
@@ -27,3 +27,7 @@ spec = do
             let result = foldMap id value
             result `shouldBe` (Sum 6)
 
+        it "Traversable" $ do
+            let value = Compose $ Just [1, 2, 3] :: Compose Maybe [] Int
+            let result = traverse (Just . show) value
+            result `shouldBe` (Just $ Compose (Just ["1", "2", "3"]))

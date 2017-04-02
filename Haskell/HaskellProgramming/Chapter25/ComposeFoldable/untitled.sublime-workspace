@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"tra",
+				"traverse ∷ (Traversable t, Applicative f) ⇒ (a → f b) → t a → f (t b)\tPrelude"
+			],
+			[
 				"M",
 				"Monad\tmodule"
 			],
@@ -203,7 +207,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 799,
+				"buffer_size": 1410,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -212,7 +216,7 @@
 			"file": "test/ComposeFoldableSpec.hs",
 			"settings":
 			{
-				"buffer_size": 570,
+				"buffer_size": 1032,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -487,7 +491,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -496,43 +500,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 799,
+						"buffer_size": 1410,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								799,
-								799
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ComposeFoldableSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								570,
-								570
+								1410,
+								1410
 							]
 						],
 						"settings":
@@ -546,6 +522,36 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/ComposeFoldableSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1032,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1032,
+								1032
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

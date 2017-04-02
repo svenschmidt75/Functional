@@ -24,9 +24,12 @@ instance (Applicative f, Applicative g) => Applicative (Compose f g) where
 instance (Functor f, Foldable f, Foldable g) => Foldable (Compose f g) where
 --  foldMap :: Monoid m => (a -> m) -> t           a -> m
     foldMap :: Monoid m => (a -> m) -> Compose f g a -> m
-    foldMap f (Compose fga) = foldMap id ((foldMap f) <$> fga)
-
-
+    foldMap f (Compose fga) = foldMap id (foldMap f <$> fga)
 
 instance (Traversable f, Traversable g) => Traversable (Compose f g) where
-    traverse = undefined
+--  traverse :: Applicative h => (a -> h b) -> t           a -> h (t           b)
+    traverse :: Applicative h => (a -> h b) -> Compose f g a -> h (Compose f g b)
+--  traverse h <$> fga :: f (h (g b))
+--  sequenceA :: Applicative f -> t (f a) -> f (t a)
+--  sequenceA $ traverse h <$> fga :: h (f (g b))
+    traverse h (Compose fga) = Compose <$> (sequenceA $ traverse h <$> fga)
