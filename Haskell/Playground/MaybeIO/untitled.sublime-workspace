@@ -287,6 +287,10 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-balanced.csv",
+		"/home/svenschmidt75/Develop/ML/104864_-_Flint_Hills_Resources_-_Corpus_Christi__Texas01_8-inch_Lead_Free_Line_feat.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat.csv",
 		"/home/svenschmidt75/Develop/NUnit3.txt",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/MaybeIO.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/Capstone3.cabal",
@@ -410,11 +414,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/SemigroupIdentity.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTrivial/SemigroupTrivial.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/MaybeAnotherMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTrivial/SemigroupTrivial.cabal"
 	],
 	"find":
 	{
@@ -540,8 +540,8 @@
 						"selection":
 						[
 							[
-								1729,
-								1729
+								1690,
+								1690
 							]
 						],
 						"settings":

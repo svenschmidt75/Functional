@@ -2,6 +2,8 @@
 .stack-work
 
 {-# START_FILE app/Main.hs #-}
+{-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE QuasiQuotes #-}
 module Main where
 
 main :: IO ()
@@ -19,9 +21,13 @@ instance Functor Identity where
     fmap f (Identity a) = Identity (f a)
 
 {-# START_FILE test/Spec.hs #-}
+{-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE QuasiQuotes #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
 {-# START_FILE test/{{name}}Spec.hs #-}
+{-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE QuasiQuotes #-}
 module {{name}}Spec (spec) where
 
 import Test.Hspec
