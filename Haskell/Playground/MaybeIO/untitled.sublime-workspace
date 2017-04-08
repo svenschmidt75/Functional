@@ -496,7 +496,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -526,7 +526,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -556,7 +556,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -572,8 +572,8 @@
 						"selection":
 						[
 							[
-								3119,
-								3119
+								2873,
+								2873
 							]
 						],
 						"settings":
@@ -583,10 +583,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 867.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -670,9 +670,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "bif",
 		"selected_items":
 		[
+			[
+				"bif",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/untitled.sublime-project"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/untitled.sublime-project"

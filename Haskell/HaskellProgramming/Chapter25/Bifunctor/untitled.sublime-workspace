@@ -211,7 +211,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 514,
+				"buffer_size": 689,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -220,7 +220,7 @@
 			"file": "test/BifunctorSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1238,
+				"buffer_size": 1564,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -503,15 +503,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 514,
+						"buffer_size": 689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								372,
-								372
+								91,
+								91
 							]
 						],
 						"settings":
@@ -531,15 +531,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1238,
+						"buffer_size": 1564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								330,
-								330
+								482,
+								482
 							]
 						],
 						"settings":
@@ -560,7 +560,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -640,12 +640,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "mayb",
 		"selected_items":
 		[
 			[
+				"mayb",
+				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"
+			],
+			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"
 			],
 			[
 				"DasHaus",

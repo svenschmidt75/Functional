@@ -2,12 +2,12 @@
 module BifunctorSpec (spec) where
 
 import Test.Hspec
-import Test.QuickCheck (Property)
 import Test.QuickCheck.Arbitrary ( Arbitrary
                                  , arbitrary)
 import Test.Hspec.QuickCheck (prop)
 
-import Data.Bifunctor (first)
+import Data.Bifunctor ( first
+                      , second)
 
 import Lib
     ( Deux (..)
@@ -17,16 +17,18 @@ import Lib
 instance (Arbitrary a, Arbitrary b) => Arbitrary (Deux a b) where
     arbitrary = Deux <$> arbitrary <*> arbitrary
 
-
 spec :: Spec
 spec = do
-    describe "Bifunctor laws" $
-        prop "composition 2" $ do
-            deuxFirstProp :: Deux Int Int -> Bool
+    describe "Bifunctor laws" $ do
+        prop "first law" (deuxFirstProp :: Deux Int Int -> Bool)
+        prop "second law" (deuxSecondProp :: Deux Int Int -> Bool)
 
 
 deuxFirstProp :: (Eq a, Eq b) => Deux a b -> Bool
 deuxFirstProp deux = first id deux == id deux
+
+deuxSecondProp :: (Eq a, Eq b) => Deux a b -> Bool
+deuxSecondProp deux = second id deux == id deux
 
 
 {-
