@@ -207,7 +207,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1408,
+				"buffer_size": 1389,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -282,6 +282,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/ML/h2o-3.10.4.2/log.log",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
@@ -408,8 +409,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
 	],
 	"find":
 	{
@@ -500,15 +500,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1408,
+						"buffer_size": 1389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1388,
-								1388
+								1389,
+								1389
 							]
 						],
 						"settings":
@@ -604,6 +604,10 @@
 	{
 		"height": 100.0
 	},
+	"output.sublime_haskell_error_panel":
+	{
+		"height": 276.0
+	},
 	"output.sublime_haskell_output_panel":
 	{
 		"height": 425.0
@@ -640,7 +644,7 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/untitled.sublime-project"
 			],
 			[
 				"DasHaus",

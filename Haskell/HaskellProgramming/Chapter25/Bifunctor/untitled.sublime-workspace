@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"Bi",
+				"Bifunctor\tmodule"
+			],
+			[
+				"tra",
+				"traverse ∷ (Traversable t, Applicative f) ⇒ (a → f b) → t a → f (t b)\tPrelude"
+			],
+			[
+				"M",
+				"Monad\tmodule"
+			],
+			[
+				"May",
+				"MaybeIO"
+			],
+			[
+				"Maybe",
+				"MaybeIO a\tLib"
+			],
+			[
+				"Ban",
+				"BankCommand ∷ BankOperation → Command\tOperations"
+			],
+			[
+				"string",
+				"stringToBool ∷ String → Bool\tTransactions"
+			],
+			[
+				"putst",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"create",
+				"createDirectoryIfMissing ∷ Bool → FilePath → IO ()\tSystem.Directory"
+			],
+			[
+				"append",
+				"appendFile ∷ FilePath → String → IO ()\tPrelude"
+			],
+			[
+				"new",
+				"newAccount"
+			],
+			[
+				"acc",
+				"accum"
+			],
+			[
+				"foldr",
+				"foldr ∷ Foldable t ⇒ (a → b → b) → b → t a → b\tPrelude"
+			],
+			[
+				"get",
+				"getLine ∷ IO String\tPrelude"
+			],
+			[
+				"putStr",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"par",
+				"parserInfoCommand"
+			],
+			[
+				"pa",
+				"parserInfoCommand"
+			],
+			[
+				"Parser",
+				"ParserInfo"
+			],
+			[
+				"putSt",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"gen",
+				"genImage"
+			],
+			[
 				"putS",
 				"putStrLn ∷ String → IO ()\tPrelude"
 			],
@@ -46,10 +126,6 @@
 			[
 				"put",
 				"putStrLn :: String -> IO ()\tPrelude"
-			],
-			[
-				"get",
-				"getUncoloredEdges :: Vertex -> Graph -> [Edge]\tLib"
 			],
 			[
 				"gra",
@@ -135,16 +211,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1593,
+				"buffer_size": 514,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/ZipListApplicativeSpec.hs",
+			"file": "test/BifunctorSpec.hs",
 			"settings":
 			{
-				"buffer_size": 3159,
+				"buffer_size": 1238,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -203,12 +279,35 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/ML/h2o-3.10.4.2/log.log",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-balanced.csv",
+		"/home/svenschmidt75/Develop/ML/104864_-_Flint_Hills_Resources_-_Corpus_Christi__Texas01_8-inch_Lead_Free_Line_feat.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat.csv",
+		"/home/svenschmidt75/Develop/NUnit3.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/MaybeIO.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/Capstone3.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/fmap_fmap",
+		"/home/svenschmidt75/Develop/Functional/Haskell/MonadTransformer.txt",
+		"/tmp/audits/Sven/6e32b3e6-44c9-44d7-ac04-b6e0c5bb6e13.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/optex/optex.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test/CoArbitrarySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/CoArbitrary.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/stack.yaml",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/FourPrimeApplicative/FourPrimeApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreePrimeApplicative/ThreePrimeApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/PairApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ValidationApplicative/ValidationApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/ZipListApplicative.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/ApplicativeLaws.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/test/ApplicativeConstantSpec.hs",
@@ -313,34 +412,11 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/SemigroupIdentity.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupTrivial/SemigroupTrivial.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/MaybeAnotherMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/MaybeAnotherMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/OptionalMonoidSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MaybeAnotherMonoid/stack.yaml",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/stack.yaml",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/HelperSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/GraphSpec.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -354,6 +430,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"applicativeNothingJustProp",
+			"applicativeJustJustProp",
+			"functorNothingProp",
+			"sumFunctorLawsProp",
+			"bank_operation",
+			"operation",
+			"serialize",
+			"folderName",
+			"account",
+			"accountTransactions",
+			"accountOwner",
+			"datetime",
+			"datetimeStr",
+			"higherOrderFunc",
+			"functorCompose",
+			"threePrimeApplicativeLawsProp",
+			"threePrimeFunctorLawsProp",
+			"Three",
+			"threeApplicativeLawsProp",
+			"threeFunctorLawsProp",
+			"Three",
+			"validationApplicativeLawsProp",
+			"validationFunctorLawsProp",
+			"listApplicativeProp",
 			"prop5",
 			"ap",
 			"append",
@@ -403,15 +503,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1593,
+						"buffer_size": 514,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1052,
-								1052
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/BifunctorSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
 							]
 						],
 						"settings":
@@ -424,36 +552,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ZipListApplicativeSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3159,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2746,
-								2746
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 867.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
 					"type": "text"
 				}
@@ -462,7 +560,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -507,6 +605,10 @@
 	{
 		"height": 100.0
 	},
+	"output.sublime_haskell_error_panel":
+	{
+		"height": 276.0
+	},
 	"output.sublime_haskell_output_panel":
 	{
 		"height": 425.0
@@ -523,7 +625,7 @@
 	"project": "untitled.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -543,7 +645,11 @@
 		[
 			[
 				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/untitled.sublime-project"
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/untitled.sublime-project"
+			],
+			[
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
 			]
 		],
 		"width": 380.0
