@@ -1,4 +1,5 @@
 {-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE FlexibleInstances #-}
 module Lib
     ( Deux (..)
     ) where
@@ -8,6 +9,12 @@ import Data.Bifunctor
 
 data Deux a b = Deux a b
     deriving (Show, Eq)
+
+-- due to FlexibleInstances
+instance Show (Int -> Int) where
+    show :: (Int -> Int) -> String
+    show _ = "Int -> Int"
+
 {-
 class Bifunctor p where
 {-# MINIMAL bimap | first, second #-}

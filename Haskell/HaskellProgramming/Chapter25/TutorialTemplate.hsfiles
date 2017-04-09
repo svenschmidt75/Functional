@@ -4,6 +4,7 @@
 {-# START_FILE app/Main.hs #-}
 {-# LANGUAGE InstanceSigs #-}
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE FlexibleInstances #-}
 module Main where
 
 main :: IO ()
@@ -11,6 +12,7 @@ main = print "Done"
 
 {-# START_FILE src/Lib.hs #-}
 {-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE FlexibleInstances #-}
 module Lib
     ( Identity (..)
     ) where
@@ -24,6 +26,7 @@ instance Functor Identity where
 {-# START_FILE test/Spec.hs #-}
 {-# LANGUAGE InstanceSigs #-}
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE FlexibleInstances #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
 {-# START_FILE test/{{name}}Spec.hs #-}

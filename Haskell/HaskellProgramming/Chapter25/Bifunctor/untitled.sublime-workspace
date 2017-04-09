@@ -220,7 +220,7 @@
 			"file": "test/BifunctorSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1564,
+				"buffer_size": 1565,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -531,15 +531,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1564,
+						"buffer_size": 1565,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								482,
-								482
+								813,
+								813
 							]
 						],
 						"settings":
@@ -549,7 +549,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
