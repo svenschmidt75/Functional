@@ -6,24 +6,36 @@ import Test.QuickCheck.Arbitrary ( Arbitrary
                                  , arbitrary)
 import Test.Hspec.QuickCheck (prop)
 
-import Data.Bifunctor ( first
+import Data.Bifunctor ( Bifunctor
+                      , first
                       , second)
 
 import Lib
     ( Deux (..)
+    , Const (..)
+    , Drei (..)
     )
 
 
 instance (Arbitrary a, Arbitrary b) => Arbitrary (Deux a b) where
     arbitrary = Deux <$> arbitrary <*> arbitrary
 
+instance Arbitrary a => Arbitrary (Const a b) where
+    arbitrary = Const <$> arbitrary
+
 spec :: Spec
 spec = do
-    describe "Bifunctor laws" $ do
-        prop "first law" (deuxFirstProp :: Deux Int Int -> Bool)
-        prop "second law" (deuxSecondProp :: Deux Int Int -> Bool)
-        prop "first2 law" (deuxFirst2Prop :: (Int -> Int) -> (Int -> Int) -> Deux Int Int -> Bool)
-        prop "second2 law" (deuxSecond2Prop :: (Int -> Int) -> (Int -> Int) -> Deux Int Int -> Bool)
+    describe "Deux bifunctor laws" $ do
+        prop "first law" (firstProp :: Deux Int Int -> Bool)
+        prop "second law" (secondProp :: Deux Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Deux Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Deux Int Int -> Bool)
+
+    describe "Const bifunctor laws" $ do
+        prop "first law" (firstProp :: Const Int Int -> Bool)
+        prop "second law" (secondProp :: Const Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Const Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Const Int Int -> Bool)
 
 {-
 Imported from Data.Bifunctor
@@ -54,14 +66,14 @@ Package: base-4.9.0.0
 Defined in: Data.Bifunctor
 -}
 
-deuxFirstProp :: (Eq a, Eq b) => Deux a b -> Bool
-deuxFirstProp deux = first id deux == id deux
+firstProp :: (Bifunctor f, Eq (f a b)) => f a b -> Bool
+firstProp deux = first id deux == id deux
 
-deuxSecondProp :: (Eq a, Eq b) => Deux a b -> Bool
-deuxSecondProp deux = second id deux == id deux
+secondProp :: (Bifunctor f, Eq (f a b)) => f a b -> Bool
+secondProp deux = second id deux == id deux
 
-deuxFirst2Prop :: (Eq b, Eq d) => (c -> d) -> (a -> c) -> Deux a b -> Bool
-deuxFirst2Prop f g deux = first (f . g) deux == (first f . first g) deux
+first2Prop :: (Bifunctor f, Eq (f d b)) => (c -> d) -> (a -> c) -> f a b -> Bool
+first2Prop f g deux = first (f . g) deux == (first f . first g) deux
 
-deuxSecond2Prop :: (Eq a, Eq d) => (c -> d) -> (b -> c) -> Deux a b -> Bool
-deuxSecond2Prop f g deux = second (f . g) deux == (second f . second g) deux
+second2Prop :: (Bifunctor f, Eq (f a d)) => (c -> d) -> (b -> c) -> f a b -> Bool
+second2Prop f g deux = second (f . g) deux == (second f . second g) deux
