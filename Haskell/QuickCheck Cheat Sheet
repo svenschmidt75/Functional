@@ -172,6 +172,19 @@ instance Arbitrary Point where
     return (MkPoint x y)
 
 
+Restrict randomly generated values with suchThat:
+
+-- write Arbitrary instance for return type of function
+-- generateImage :: (Int -> Int) -> Int -> Image, i.e.
+-- Image
+genImage :: Gen Image
+genImage = do
+    -- generate function
+    f <- arbitrary
+    -- restrict count
+    count <- arbitrary `suchThat` (\n -> n > 0 && n < 10)
+    return $ generateImage f count
+
 
 choose
 ------

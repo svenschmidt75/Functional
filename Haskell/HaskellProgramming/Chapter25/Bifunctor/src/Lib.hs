@@ -4,6 +4,9 @@ module Lib
     ( Deux (..)
     , Const (..)
     , Drei (..)
+    , SuperDrei (..)
+    , SemiDrei (..)
+    , Quadriceps (..)
     ) where
 
 import Data.Bifunctor
@@ -65,3 +68,49 @@ instance Bifunctor (Drei a) where
 --    second :: (b -> c) -> p a b -> p a c
     second :: (c1 -> c2) -> Drei a b c1 -> Drei a b c2
     second f (Drei a b c1) = Drei a b (f c1)
+
+
+
+
+
+data SuperDrei a b c = SuperDrei a b
+    deriving (Show, Eq)
+
+instance Bifunctor (SuperDrei a) where
+--    first :: (a -> b) -> p a c -> p b c
+    first :: (b1 -> b2) -> SuperDrei a b1 c -> SuperDrei a b2 c
+    first f (SuperDrei a b1) = SuperDrei a (f b1)
+
+--    second :: (b -> c) -> p a b -> p a c
+    second :: (c1 -> c2) -> SuperDrei a b c1 -> SuperDrei a b c2
+    second _ (SuperDrei a b) = SuperDrei a b
+
+
+
+
+data SemiDrei a b c = SemiDrei a
+    deriving (Show, Eq)
+
+instance Bifunctor (SemiDrei a) where
+--    first :: (a -> b) -> p a c -> p b c
+    first :: (b1 -> b2) -> SemiDrei a b1 c -> SemiDrei a b2 c
+    first _ (SemiDrei a) = SemiDrei a
+
+--    second :: (b -> c) -> p a b -> p a c
+    second :: (c1 -> c2) -> SemiDrei a b c1 -> SemiDrei a b c2
+    second _ (SemiDrei a) = SemiDrei a
+
+
+
+
+data Quadriceps a b c d = Quadzzz a b c d
+    deriving (Show, Eq)
+
+instance Bifunctor (Quadriceps a b) where
+--    first :: (a -> b) -> p a c -> p b c
+    first :: (c1 -> c2) -> Quadriceps a b c1 d -> Quadriceps a b c2 d
+    first f (Quadzzz a b c1 d) = Quadzzz a b (f c1) d
+
+--    second :: (b -> c) -> p a b -> p a c
+    second :: (d1 -> d2) -> Quadriceps a b c d1 -> Quadriceps a b c d2
+    second f (Quadzzz a b c d1) = Quadzzz a b c (f d1)

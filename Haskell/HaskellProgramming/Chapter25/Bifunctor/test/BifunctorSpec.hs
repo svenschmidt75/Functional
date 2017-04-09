@@ -14,6 +14,9 @@ import Lib
     ( Deux (..)
     , Const (..)
     , Drei (..)
+    , SuperDrei (..)
+    , SemiDrei (..)
+    , Quadriceps (..)
     )
 
 
@@ -22,6 +25,19 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Deux a b) where
 
 instance Arbitrary a => Arbitrary (Const a b) where
     arbitrary = Const <$> arbitrary
+
+instance (Arbitrary a, Arbitrary b, Arbitrary c) => Arbitrary (Drei a b c) where
+    arbitrary = Drei <$> arbitrary <*> arbitrary <*> arbitrary
+
+instance (Arbitrary a, Arbitrary b) => Arbitrary (SuperDrei a b c) where
+    arbitrary = SuperDrei <$> arbitrary <*> arbitrary
+
+instance Arbitrary a => Arbitrary (SemiDrei a b c) where
+    arbitrary = SemiDrei <$> arbitrary
+
+instance (Arbitrary a, Arbitrary b, Arbitrary c, Arbitrary d) => Arbitrary (Quadriceps a b c d) where
+    arbitrary = Quadzzz <$> arbitrary <*> arbitrary <*> arbitrary <*> arbitrary
+
 
 spec :: Spec
 spec = do
@@ -36,6 +52,30 @@ spec = do
         prop "second law" (secondProp :: Const Int Int -> Bool)
         prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Const Int Int -> Bool)
         prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Const Int Int -> Bool)
+
+    describe "Drei bifunctor laws" $ do
+        prop "first law" (firstProp :: Drei Int Int Int -> Bool)
+        prop "second law" (secondProp :: Drei Int Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Drei Int Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Drei Int Int Int -> Bool)
+
+    describe "SuperDrei bifunctor laws" $ do
+        prop "first law" (firstProp :: SuperDrei Int Int Int -> Bool)
+        prop "second law" (secondProp :: SuperDrei Int Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> SuperDrei Int Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> SuperDrei Int Int Int -> Bool)
+
+    describe "SemiDrei bifunctor laws" $ do
+        prop "first law" (firstProp :: SemiDrei Int Int Int -> Bool)
+        prop "second law" (secondProp :: SemiDrei Int Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> SemiDrei Int Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> SemiDrei Int Int Int -> Bool)
+
+    describe "Quadriceps bifunctor laws" $ do
+        prop "first law" (firstProp :: Quadriceps Int Int Int Int -> Bool)
+        prop "second law" (secondProp :: Quadriceps Int Int Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Quadriceps Int Int Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Quadriceps Int Int Int Int -> Bool)
 
 {-
 Imported from Data.Bifunctor
