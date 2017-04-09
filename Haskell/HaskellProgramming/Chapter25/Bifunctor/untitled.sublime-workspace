@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"My",
+				"MyLeft ∷ a → a (b MyEither)\tLib"
+			],
+			[
+				"Qu",
+				"Quadzzz ∷ a → b → c → d → a (b (c (d Quadriceps)))\tLib"
+			],
+			[
 				"Bi",
 				"Bifunctor\tmodule"
 			],
@@ -211,7 +219,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 689,
+				"buffer_size": 3404,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -220,7 +228,7 @@
 			"file": "test/BifunctorSpec.hs",
 			"settings":
 			{
-				"buffer_size": 1565,
+				"buffer_size": 5453,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -285,9 +293,10 @@
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/ML/h2o-3.10.4.2/log.log",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter25/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/ML/h2o-3.10.4.2/log.log",
 		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
 		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
 		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-balanced.csv",
@@ -411,12 +420,11 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -430,6 +438,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Quadriceps",
+			"SemiDrei",
+			"SuperDrei",
+			"Drei",
+			"Const",
+			"deuxSecond2Prop",
+			"deuxFirst2Prop",
+			"deuxSecondProp",
+			"deuxFirstProp",
+			"deuxFirst2Prop",
+			"deuxSecondProp",
+			"deuxFirstProp",
+			"second2",
+			"first",
+			"second",
+			"Deux",
+			"deuxSecond2Prop",
+			"deuxFirst2Prop",
+			"deuxSecondProp",
+			"deux",
+			"Deux",
+			"deux",
+			"Deux",
+			"deuxFirstProp",
 			"applicativeNothingJustProp",
 			"applicativeJustJustProp",
 			"functorNothingProp",
@@ -503,15 +535,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 689,
+						"buffer_size": 3404,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								91,
-								91
+								3404,
+								3404
 							]
 						],
 						"settings":
@@ -531,15 +563,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1565,
+						"buffer_size": 5453,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								813,
-								813
+								496,
+								496
 							]
 						],
 						"settings":
@@ -549,7 +581,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 255.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -591,7 +623,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 232.0
 	},
 	"output.find_results":
 	{
@@ -611,7 +643,7 @@
 	},
 	"output.sublime_haskell_output_panel":
 	{
-		"height": 425.0
+		"height": 285.0
 	},
 	"output.sublime_haskell_show_types_panel":
 	{

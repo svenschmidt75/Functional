@@ -7,6 +7,7 @@ module Lib
     , SuperDrei (..)
     , SemiDrei (..)
     , Quadriceps (..)
+    , MyEither (..)
     ) where
 
 import Data.Bifunctor
@@ -114,3 +115,19 @@ instance Bifunctor (Quadriceps a b) where
 --    second :: (b -> c) -> p a b -> p a c
     second :: (d1 -> d2) -> Quadriceps a b c d1 -> Quadriceps a b c d2
     second f (Quadzzz a b c d1) = Quadzzz a b c (f d1)
+
+
+data MyEither a b = MyLeft a
+                  | MyRight b
+    deriving (Show, Eq)
+
+instance Bifunctor MyEither where
+--    first :: (a -> b) -> p a c -> p b c
+    first :: (a1 -> a2) -> MyEither a1 b -> MyEither a2 b
+    first f (MyLeft a)  = MyLeft (f a)
+    first _ (MyRight b) = MyRight b
+
+--    second :: (b -> c) -> p a b -> p a c
+    second :: (b1 -> b2) -> MyEither a b1 -> MyEither a b2
+    second f (MyRight b) = MyRight (f b)
+    second _ (MyLeft a)  = MyLeft a

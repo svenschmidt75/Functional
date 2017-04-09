@@ -4,6 +4,7 @@ module BifunctorSpec (spec) where
 import Test.Hspec
 import Test.QuickCheck.Arbitrary ( Arbitrary
                                  , arbitrary)
+import Test.QuickCheck.Gen (frequency)
 import Test.Hspec.QuickCheck (prop)
 
 import Data.Bifunctor ( Bifunctor
@@ -17,6 +18,7 @@ import Lib
     , SuperDrei (..)
     , SemiDrei (..)
     , Quadriceps (..)
+    , MyEither (..)
     )
 
 
@@ -37,6 +39,12 @@ instance Arbitrary a => Arbitrary (SemiDrei a b c) where
 
 instance (Arbitrary a, Arbitrary b, Arbitrary c, Arbitrary d) => Arbitrary (Quadriceps a b c d) where
     arbitrary = Quadzzz <$> arbitrary <*> arbitrary <*> arbitrary <*> arbitrary
+
+instance (Arbitrary a, Arbitrary b) => Arbitrary (MyEither a b) where
+    arbitrary = frequency [
+                            (1, MyLeft <$> arbitrary)
+                          , (1, MyRight <$> arbitrary)
+                          ]
 
 
 spec :: Spec
@@ -76,6 +84,12 @@ spec = do
         prop "second law" (secondProp :: Quadriceps Int Int Int Int -> Bool)
         prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> Quadriceps Int Int Int Int -> Bool)
         prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> Quadriceps Int Int Int Int -> Bool)
+
+    describe "MyEither bifunctor laws" $ do
+        prop "first law" (firstProp :: MyEither Int Int -> Bool)
+        prop "second law" (secondProp :: MyEither Int Int -> Bool)
+        prop "first2 law" (first2Prop :: (Int -> Int) -> (Int -> Int) -> MyEither Int Int -> Bool)
+        prop "second2 law" (second2Prop :: (Int -> Int) -> (Int -> Int) -> MyEither Int Int -> Bool)
 
 {-
 Imported from Data.Bifunctor
