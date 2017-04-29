@@ -1,0 +1,597 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lift",
+				"liftMaybe ∷ Maybe a → MaybeIO a\tLib"
+			],
+			[
+				"M",
+				"Monad\tmodule"
+			],
+			[
+				"May",
+				"MaybeIO"
+			],
+			[
+				"Maybe",
+				"MaybeIO a\tLib"
+			],
+			[
+				"Ban",
+				"BankCommand ∷ BankOperation → Command\tOperations"
+			],
+			[
+				"string",
+				"stringToBool ∷ String → Bool\tTransactions"
+			],
+			[
+				"putst",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"create",
+				"createDirectoryIfMissing ∷ Bool → FilePath → IO ()\tSystem.Directory"
+			],
+			[
+				"append",
+				"appendFile ∷ FilePath → String → IO ()\tPrelude"
+			],
+			[
+				"new",
+				"newAccount"
+			],
+			[
+				"acc",
+				"accum"
+			],
+			[
+				"foldr",
+				"foldr ∷ Foldable t ⇒ (a → b → b) → b → t a → b\tPrelude"
+			],
+			[
+				"get",
+				"getLine ∷ IO String\tPrelude"
+			],
+			[
+				"putStr",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"par",
+				"parserInfoCommand"
+			],
+			[
+				"pa",
+				"parserInfoCommand"
+			],
+			[
+				"Parser",
+				"ParserInfo"
+			],
+			[
+				"putSt",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"gen",
+				"genImage"
+			],
+			[
+				"putS",
+				"putStrLn ∷ String → IO ()\tPrelude"
+			],
+			[
+				"B",
+				"BoolConjAssoc \tMonoidBoolConjSpec"
+			],
+			[
+				"map",
+				"mappend ∷ Monoid a ⇒ a → a → a\tPrelude"
+			],
+			[
+				"Fa",
+				"Failure' ∷ a → a (b Validation')\tLib"
+			],
+			[
+				"A",
+				"AccumulateRight a b\tLib"
+			],
+			[
+				"a",
+				"arbitrary"
+			],
+			[
+				"Fir",
+				"First"
+			],
+			[
+				"mo",
+				"monoidLeftIdentity"
+			],
+			[
+				"edge",
+				"edgeComparator :: Edge -> Edge -> Bool\tGraph"
+			],
+			[
+				"rep",
+				"replace' :: Eq a => (a -> a -> Bool) -> a -> a -> [a] -> [a]\tHelper"
+			],
+			[
+				"put",
+				"putStrLn :: String -> IO ()\tPrelude"
+			],
+			[
+				"gra",
+				"Graph \tGraph"
+			],
+			[
+				"repl",
+				"replace :: Eq a => a -> a -> [a] -> [a]\tHelper"
+			],
+			[
+				"ne",
+				"neighbors"
+			],
+			[
+				"Gra",
+				"Graph"
+			],
+			[
+				"ha",
+				"hasEdge"
+			],
+			[
+				"has",
+				"hasVertex"
+			],
+			[
+				"v",
+				"vertices"
+			],
+			[
+				"vowels",
+				"vowelsInString"
+			],
+			[
+				"co",
+				"countVowels"
+			],
+			[
+				"isP",
+				"isPunctuation :: Char -> Bool\tData.Char"
+			],
+			[
+				"cre",
+				"createMultiplicityMap2 :: [String] -> Map.Map String Int\tLib"
+			],
+			[
+				"max",
+				"maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a\tData.List"
+			],
+			[
+				"fin",
+				"fingerTaps"
+			],
+			[
+				"mu",
+				"multiplicityMap"
+			],
+			[
+				"from",
+				"fromList :: Ord k => [(k, a)] -> Map k a\tData.Map"
+			],
+			[
+				"fi",
+				"fingerTaps"
+			],
+			[
+				"con",
+				"convertToCapital"
+			],
+			[
+				"fold",
+				"foldTree"
+			],
+			[
+				"ins",
+				"insert"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Haskell",
+				"SublimeHaskell: Go to module"
+			],
+			[
+				"Package ",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"view",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 471.0
+	},
+	"console":
+	{
+		"height": 305.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers"
+	],
+	"file_history":
+	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/stack.yaml",
+		"/home/svenschmidt75/.stack/global-project/stack.yaml",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-balanced.csv",
+		"/home/svenschmidt75/Develop/ML/104864_-_Flint_Hills_Resources_-_Corpus_Christi__Texas01_8-inch_Lead_Free_Line_feat.csv",
+		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat.csv",
+		"/home/svenschmidt75/Develop/NUnit3.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/MaybeIO.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/LearnF#/Capstone3/Capstone3.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter24/IPv6/IPv6.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/fmap_fmap",
+		"/home/svenschmidt75/Develop/Functional/Haskell/MonadTransformer.txt",
+		"/tmp/audits/Sven/6e32b3e6-44c9-44d7-ac04-b6e0c5bb6e13.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/optex/optex.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test/CoArbitrarySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/CoArbitrary.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/stack.yaml",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/FourPrimeApplicative/FourPrimeApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ThreePrimeApplicative/ThreePrimeApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/PairApplicative/PairApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ValidationApplicative/ValidationApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ZipListApplicative/ZipListApplicative.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/ApplicativeLaws.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/test/ApplicativeConstantSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeConstant/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/test/ApplicativeIdentitySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeIdentity/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/test/ApplicativeLookupSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLookup/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellAndSublime.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/test/FunctorFlipSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorK/test/FunctorKSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorK/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorQuant/test/FunctorQuantSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorQuant/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorEither/test/FunctorEitherSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorEither/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorMaybe/test/FunctorMaybeSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorMaybe/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorMaybe/FunctorMaybe.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTrivial/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFourPrime/test/FunctorFourPrimeSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFourPrime/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFour/test/FunctorFourSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFour/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThreePrime/test/FunctorThreePrimeSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThreePrime/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThree/test/FunctorThreeSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorThree/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/test/FunctorTwoSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorTwo/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/TutorialTemplate.hsfiles",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorPair/test/FunctorPairSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorPair/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorPair/LICENSE",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/test/FunctorIdentitySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorIdentity/FunctorIdentity.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/ValidationSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/test/HeavyLifting1Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter16/HeavyLifting1/HeavyLifting1.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/MonoidMemSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/MonoidMem.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidMem/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidCombine/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidCombine/test/MonoidCombineSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidCombine/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidCombine/MonoidCombine.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidCombine/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolDisj/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolDisj/MonoidBoolDisj.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolDisj/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolDisj/test/MonoidBoolDisjSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolDisj/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolConj/MonoidBoolConj.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolConj/test/MonoidBoolConjSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolConj/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolConj/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidBoolConj/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTwo/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTwo/test/MonoidTwoSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTwo/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTwo/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTwo/MonoidTwo.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidIdentity/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidIdentity/test/MonoidIdentitySpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidIdentity/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidIdentity/MonoidIdentity.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidIdentity/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTrivial/test/MonoidTrivialSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTrivial/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTrivial/MonoidTrivial.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTrivial/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/MonoidTrivial/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/test/AccumulateBothSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/src/AccumulateBothSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateBoth/SemigroupAccumulateBoth.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/test/AccumulateRightSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupAccumulateRight/SemigroupAccumulateRight.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/app/Main.hs",
+		"/home/svenschmidt75/Develop/Functional/.gitignore",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/SemigroupValidation.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/Spec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"getFirstMail",
+			"applicativeNothingJustProp",
+			"applicativeJustJustProp",
+			"functorNothingProp",
+			"sumFunctorLawsProp",
+			"bank_operation",
+			"operation",
+			"serialize",
+			"folderName",
+			"account",
+			"accountTransactions",
+			"accountOwner",
+			"datetime",
+			"datetimeStr",
+			"higherOrderFunc",
+			"functorCompose",
+			"threePrimeApplicativeLawsProp",
+			"threePrimeFunctorLawsProp",
+			"Three",
+			"threeApplicativeLawsProp",
+			"threeFunctorLawsProp",
+			"Three",
+			"validationApplicativeLawsProp",
+			"validationFunctorLawsProp",
+			"listApplicativeProp",
+			"prop5",
+			"ap",
+			"append",
+			"identity",
+			"Identity",
+			"identity",
+			"Identity",
+			"Possibly",
+			"Identity",
+			"identity",
+			"Identity",
+			"addThenClearMakesClear",
+			"BoolConj",
+			"SemigroupBoolConj",
+			"theme",
+			"i",
+			"                    it \"getEdge - no such edge\" $ do\n            let graph = Graph [Vertex 1, Vertex 2, Vertex 3] [Edge (Vertex 1) (Vertex 2) 0]\n            getEdge (Edge (Vertex 1) (Vertex 3) 0) graph `shouldBe` Nothing",
+			"            addVertex (Vertex 1) isGraph `shouldBe` expectedGraph\n            addVertex (Vertex 2) isGraph `shouldBe` expectedGraph\n",
+			"addVertex",
+			"hasEdge",
+			"hasVertex"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"SemigroupCombine",
+			"SemigroupOr"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.haskell_run_output":
+	{
+		"height": 98.0
+	},
+	"output.sublime_haskell_build_log_panel":
+	{
+		"height": 100.0
+	},
+	"output.sublime_haskell_output_panel":
+	{
+		"height": 425.0
+	},
+	"output.sublime_haskell_show_types_panel":
+	{
+		"height": 98.0
+	},
+	"output.sublime_haskell_symbol_info_panel":
+	{
+		"height": 237.0
+	},
+	"pinned_build_system": "Packages/Haskell/Haskell.sublime-build",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "bif",
+		"selected_items":
+		[
+			[
+				"bif",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/untitled.sublime-project"
+			],
+			[
+				"",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/ComposeFoldable/untitled.sublime-project"
+			],
+			[
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 319.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
