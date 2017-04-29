@@ -25,6 +25,7 @@ data Value = IntVal Integer -- values
 type Env = Map.Map Name Value -- mapping from names to values
 
 
+-- simple style
 eval0 :: Env -> Exp -> Value
 eval0 env (Lit i) = IntVal i
 eval0 env (Var n) = fromJust (Map.lookup n env)
@@ -36,3 +37,60 @@ eval0 env (App e1 e2) = let val1 = eval0 env e1
                             val2 = eval0 env e2
                         in case val1 of
                             FunVal env0 n body -> eval0 (Map.insert n val2 env0) body
+
+
+-- monadic style (to prepare for monad transformer use)
+-- here we use the Identity monad as a wrapper for the result
+type Eval1 a = Identity a
+
+runEval1 :: Eval1 a -> a
+runEval1 ev = runIdentity ev
+
+eval1 :: Env -> Exp -> Eval1 Value
+eval1 env (Lit i) = return $ IntVal i
+eval1 env (Var n) = return $ fromJust (Map.lookup n env)
+eval1 env (Plus e1 e2) = do IntVal i1 <- eval1 env e1
+                            IntVal i2 <- eval1 env e2
+                            return $ IntVal (i1 + i2 )
+eval1 env (Abs n e) = return $ FunVal env n e
+eval1 env (App e1 e2) = do val1 <- eval1 env e1
+                           val2 <- eval1 env e2
+                           case val1 of
+                               FunVal env0 n body -> eval1 (Map.insert n val2 env0) body
+
+
+-- with error handling
+type Eval2 a = ErrorT String Identity a
+
+runEval2 :: Eval2 a -> Either String a
+runEval2 ev = runIdentity (runErrorT ev)
+
+eval2a :: Env -> Exp -> Eval2 Value
+eval2a env (Lit i) = return $ IntVal i
+eval2a env (Var n) = return $ fromJust (Map.lookup n env)
+eval2a env (Plus e1 e2) = do IntVal i1 <- eval2a env e1
+                             IntVal i2 <- eval2a env e2
+                             return $ IntVal (i1 + i2)
+eval2a env (Abs n e) = return $ FunVal env n e
+eval2a env (App e1 e2) = do val1 <- eval2a env e1
+                            val2 <- eval2a env e2
+                            case val1 of
+                                FunVal env0 n body -> eval2a (Map.insert n val2 env0) body
+
+eval2b :: Env -> Exp -> Eval2 Value
+eval2b env (Lit i) = return $ IntVal i
+eval2b env (Var n) = case (Map.lookup n env) of
+                         Just a  -> return a
+                         Nothing -> throwError "Key not found"
+eval2b env (Plus e1 e2) = do e1' <- eval2b env e1
+                             e2' <- eval2b env e2
+                             case (e1', e2') of
+                                 (IntVal i1 ,IntVal i2) -> return $ IntVal (i1 + i2)
+                                 _                      -> throwError "type error"
+eval2b env (Abs n e) = return $ FunVal env n e
+eval2b env (App e1 e2) = do val1 <- eval2b env e1
+                            val2 <- eval2b env e2
+                            case val1 of
+                                FunVal env0 n body -> eval2b (Map.insert n val2 env0) body
+                                _                  -> throwError "type error"
+
