@@ -152,6 +152,14 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "test/CoArbitrarySpec.hs",
+			"settings":
+			{
+				"buffer_size": 369,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -214,6 +222,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/test/CoArbitrarySpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/CoArbitrary.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/CoArbitrary/stack.yaml",
@@ -340,8 +349,7 @@
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/svenschmidt75/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/svenschmidt75/Develop/Preferences.sublime-settings",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/app/Main.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/OptionalMonoid.cabal"
 	],
 	"find":
 	{
@@ -410,7 +418,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -426,8 +434,8 @@
 						"selection":
 						[
 							[
-								730,
-								730
+								462,
+								462
 							]
 						],
 						"settings":
@@ -438,7 +446,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -454,8 +462,8 @@
 						"selection":
 						[
 							[
-								128,
-								128
+								327,
+								327
 							]
 						],
 						"settings":
@@ -466,7 +474,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/CoArbitrarySpec.hs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								369,
+								369
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -550,16 +586,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "DasHaus",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"DasHaus",
-				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
+				"",
+				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"
 			],
 			[
-				"",
-				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/untitled.sublime-project"
+				"DasHaus",
+				"~/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/sublime.sublime-workspace"
 			]
 		],
 		"width": 380.0

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"lift",
+				"liftMaybe ∷ Maybe a → MaybeIO a\tLib"
+			],
+			[
 				"M",
 				"Monad\tmodule"
 			],
@@ -212,7 +216,7 @@
 			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1730,
+				"buffer_size": 2155,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -287,6 +291,8 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/stack.yaml",
+		"/home/svenschmidt75/.stack/global-project/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
 		"/home/svenschmidt75/Develop/old/compilerbau/devel/miniC/sslr.gra",
 		"/home/svenschmidt75/Develop/ML/101260_-_Esso__Australia1_114.3mm_-_TNA100-WTN_Gas_feat-corrected.csv",
@@ -412,9 +418,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/app/Main.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupIdentity/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
 	],
 	"find":
 	{
@@ -432,6 +436,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getFirstMail",
 			"applicativeNothingJustProp",
 			"applicativeJustJustProp",
 			"functorNothingProp",
@@ -496,7 +501,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -526,7 +531,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -535,15 +540,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1730,
+						"buffer_size": 2155,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1302,
-								1302
+								2154,
+								2154
 							]
 						],
 						"settings":
@@ -556,7 +561,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -572,8 +577,8 @@
 						"selection":
 						[
 							[
-								2873,
-								2873
+								2582,
+								2582
 							]
 						],
 						"settings":
@@ -583,10 +588,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 663.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

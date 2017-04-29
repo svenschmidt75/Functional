@@ -50,7 +50,26 @@ f = do
         liftIO $ putStrLn ("Number: " ++ show mb)
         liftMaybe mb
 
+g :: MaybeIO String
+g = do
+    i <- liftMaybe getInbox
+    liftIO $ putStrLn "debug"
+    m <- liftMaybe $ getFirstMail i
+    h <- liftMaybe $ getHeader m
+    return h
+
+getInbox :: Maybe String
+getInbox = Just "Inbox"
+
+getFirstMail :: String -> Maybe String
+getFirstMail folder = Just "1stMail"
+
+getHeader :: String -> Maybe String
+getHeader mail = Just "Mail Header"
+
 main :: IO ()
 main = do
     resultIO <- runMaybeIO f
     print $ "Result: " ++ show resultIO
+    resultIO2 <- runMaybeIO g
+    print $ show resultIO2
