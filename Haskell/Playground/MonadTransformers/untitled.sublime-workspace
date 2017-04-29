@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"l",
+				"lookup ∷ Ord k ⇒ k → Map k a → Maybe a\tData.Map"
+			],
+			[
 				"lift",
 				"liftMaybe ∷ Maybe a → MaybeIO a\tLib"
 			],
@@ -203,6 +207,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/Main.hs",
+			"settings":
+			{
+				"buffer_size": 1771,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Transformers.hs",
+			"settings":
+			{
+				"buffer_size": 7664,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -257,10 +279,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/src"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/MonadTransformers.cabal",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/Transformers.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/stack.yaml",
 		"/home/svenschmidt75/.stack/global-project/stack.yaml",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/TutorialTemplate.hsfiles",
@@ -386,9 +412,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/SemigroupBoolDisj.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/project.sublime-project"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs"
 	],
 	"find":
 	{
@@ -406,6 +430,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"example2b",
+			"example2",
 			"getFirstMail",
 			"applicativeNothingJustProp",
 			"applicativeJustJustProp",
@@ -471,8 +497,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1302,
+								1302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Transformers.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6550,
+								6550
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2324.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -38,6 +38,13 @@ example3 =
     -- Instead, it is passed to runEval3!!!
     in runEval3 Map.empty (eval3 exampleExp)
 
+example4 :: (Either String Value, Integer)
+example4 =
+    let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
+    -- Note what happens here: eval3 no longer takes Map.empty as an argument!
+    -- Instead, it is passed to runEval3!!!
+    in runEval4 Map.empty 0 (eval4 exampleExp)
+
 main :: IO ()
 main = do
     print example0
@@ -48,3 +55,4 @@ main = do
     print example2c
     print example2
     print example3
+    print example4
