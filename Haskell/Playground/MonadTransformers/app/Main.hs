@@ -25,6 +25,19 @@ example2b_1 = runEval2 (eval2b Map.empty (Plus (Lit 1) (Abs "x" (Var "x"))))
 example2b_2 :: Either String Value
 example2b_2 = runEval2 (eval2b Map.empty (Var "x"))
 
+example2c :: Either String Value
+example2c = runEval2 (eval2c Map.empty (Plus (Lit 1) (Abs "x" (Var "x"))))
+
+example2 :: Either String Value
+example2 = runEval2 (eval2 Map.empty (Plus (Lit 1) (Abs "x" (Var "x"))))
+
+example3 :: Either String Value
+example3 =
+    let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
+    -- Note what happens here: eval3 no longer takes Map.empty as an argument!
+    -- Instead, it is passed to runEval3!!!
+    in runEval3 Map.empty (eval3 exampleExp)
+
 main :: IO ()
 main = do
     print example0
@@ -32,3 +45,6 @@ main = do
     print example2a
     print example2b_1
     print example2b_2
+    print example2c
+    print example2
+    print example3
