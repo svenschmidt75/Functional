@@ -501,7 +501,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -517,8 +517,8 @@
 						"selection":
 						[
 							[
-								138,
-								138
+								908,
+								908
 							]
 						],
 						"settings":
@@ -531,7 +531,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -561,7 +561,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -675,9 +675,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "bif",
+		"last_filter": "maybe",
 		"selected_items":
 		[
+			[
+				"maybe",
+				"~/Develop/Functional/Haskell/Playground/MaybeT/untitled.sublime-project"
+			],
 			[
 				"bif",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter25/Bifunctor/untitled.sublime-project"

@@ -5,7 +5,7 @@ module Lib
     , liftIO
     ) where
 
-import Control.Applicative (liftA2)
+--import Control.Applicative (liftA2)
 
 
 newtype MyMaybeT m a = MyMaybeT { runMyMaybeT :: m (Maybe a) }
@@ -22,7 +22,15 @@ instance Applicative m => Applicative (MyMaybeT m) where
 
 --  (<*>) :: f          (a -> b) -> f          a -> f          b
     (<*>) :: MyMaybeT m (a -> b) -> MyMaybeT m a -> MyMaybeT m b
-    (<*>) (MyMaybeT mf) (MyMaybeT ma) = MyMaybeT $ liftA2 (<*>) mf ma
+--    (<*>) (MyMaybeT mf) (MyMaybeT ma) = MyMaybeT $ liftA2 (<*>) mf ma
+-- MyMaybeT $ mf <*> ma won't work:
+-- Expected type: m (Maybe a -> Maybe b)
+--   Actual type: m (Maybe (a -> b))
+-- That is because the 1st argument for <*> needs to be of the form
+-- f (a -> b), but here it is m (f (a -> b)), and the 2nd argument
+-- is of form m (f a), but needs to be f a.
+-- So, we need to move past the m structure and <$> does exactly that!
+    (<*>) (MyMaybeT mf) (MyMaybeT ma) = MyMaybeT $ (<*>) <$> mf <*> ma
 
 instance Monad m => Monad (MyMaybeT m) where
 --  return :: a -> m a
@@ -31,9 +39,11 @@ instance Monad m => Monad (MyMaybeT m) where
 
 --  (>>=) ::          m a -> (a ->          m b) ->          m b
     (>>=) :: MyMaybeT m a -> (a -> MyMaybeT m b) -> MyMaybeT m b
-    (>>=) (MyMaybeT ma) f = MyMaybeT $ ma >>= \b -> case b of
-                                                        Just a  -> runMyMaybeT (f a)
-                                                        Nothing -> return Nothing
+    (>>=) (MyMaybeT ma) f = MyMaybeT $ do
+                                         b <- ma
+                                         case b of
+                                           Just a  -> runMyMaybeT (f a)
+                                           Nothing -> return Nothing
 
 liftMaybe :: Monad m => Maybe a -> MyMaybeT m a
 liftMaybe a = MyMaybeT (return a)

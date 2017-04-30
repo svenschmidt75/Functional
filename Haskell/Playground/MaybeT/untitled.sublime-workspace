@@ -211,7 +211,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 1407,
+				"buffer_size": 1900,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -523,20 +523,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1407,
+						"buffer_size": 1900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1079,
-								1079
+								105,
+								105
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -564,7 +566,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
