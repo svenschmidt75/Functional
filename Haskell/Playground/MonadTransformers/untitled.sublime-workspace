@@ -211,7 +211,7 @@
 			"file": "app/Main.hs",
 			"settings":
 			{
-				"buffer_size": 1771,
+				"buffer_size": 2321,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -220,7 +220,7 @@
 			"file": "src/Transformers.hs",
 			"settings":
 			{
-				"buffer_size": 7664,
+				"buffer_size": 11784,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -430,6 +430,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"example5",
+			"example4",
+			"eval4",
+			"Eval4",
+			"eval4",
 			"example2b",
 			"example2",
 			"getFirstMail",
@@ -506,15 +511,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1771,
+						"buffer_size": 2321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1302,
-								1302
+								2302,
+								2302
 							]
 						],
 						"settings":
@@ -522,7 +527,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -534,15 +539,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7664,
+						"buffer_size": 11784,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6550,
-								6550
+								10735,
+								10735
 							]
 						],
 						"settings":
@@ -550,7 +555,7 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2324.0,
+						"translation.y": 3701.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

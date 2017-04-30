@@ -1,6 +1,7 @@
 module Main where
 
 import Transformers
+import Control.Monad (join)
 import qualified Data.Map as Map
 
 
@@ -41,9 +42,22 @@ example3 =
 example4 :: (Either String Value, Integer)
 example4 =
     let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
-    -- Note what happens here: eval3 no longer takes Map.empty as an argument!
-    -- Instead, it is passed to runEval3!!!
     in runEval4 Map.empty 0 (eval4 exampleExp)
+
+example4' :: Either String (Value, Integer)
+example4' =
+    let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
+    in runEval4' Map.empty 0 (eval4' exampleExp)
+
+example5 :: ((Either String Value, [String]), Integer)
+example5 =
+    let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
+    in runEval5 Map.empty 0 (eval5 exampleExp)
+
+example6 :: IO ((Either String Value, [String]), Integer)
+example6 =
+    let exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))
+    in runEval6 Map.empty 0 (eval6 exampleExp)
 
 main :: IO ()
 main = do
@@ -56,3 +70,6 @@ main = do
     print example2
     print example3
     print example4
+    print example4'
+    print example5
+    example6 >>= print
