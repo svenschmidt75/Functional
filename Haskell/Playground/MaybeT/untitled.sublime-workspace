@@ -211,7 +211,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 120,
+				"buffer_size": 1407,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Main.hs",
+			"settings":
+			{
+				"buffer_size": 977,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -220,7 +229,8 @@
 			"file": "test/MaybeTSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2316,
+				"buffer_size": 2627,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -430,6 +440,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MaybeIO",
+			"runMaybeIO",
 			"example5",
 			"example4",
 			"eval4",
@@ -502,7 +514,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -511,15 +523,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 120,
+						"buffer_size": 1407,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								120,
-								120
+								1079,
+								1079
 							]
 						],
 						"settings":
@@ -530,24 +542,52 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/MaybeTSpec.hs",
-					"semi_transient": true,
+					"file": "app/Main.hs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2316,
+						"buffer_size": 977,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1066,
-								1066
+								977,
+								977
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/MaybeTSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2537,
+								2537
 							]
 						],
 						"settings":
@@ -557,10 +597,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

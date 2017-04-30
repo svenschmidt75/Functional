@@ -517,8 +517,8 @@
 						"selection":
 						[
 							[
-								190,
-								190
+								138,
+								138
 							]
 						],
 						"settings":
@@ -547,8 +547,8 @@
 						"selection":
 						[
 							[
-								2154,
-								2154
+								89,
+								89
 							]
 						],
 						"settings":
@@ -577,8 +577,8 @@
 						"selection":
 						[
 							[
-								2582,
-								2582
+								956,
+								956
 							]
 						],
 						"settings":
@@ -588,7 +588,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 663.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
