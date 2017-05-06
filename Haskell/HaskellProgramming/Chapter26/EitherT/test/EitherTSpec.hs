@@ -1,10 +1,20 @@
 {-# LANGUAGE InstanceSigs #-}
-{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE UndecidableInstances #-}
 module EitherTSpec (spec) where
 
 import Data.Maybe (isNothing)
 import Test.Hspec
-import Test.Hspec.QuickCheck (prop)
+import Test.Hspec.QuickCheck ( prop
+                             , modifyMaxSuccess)
+import Test.QuickCheck.Arbitrary ( Arbitrary
+                                 , arbitrary)
+import Test.QuickCheck.Gen (frequency)
+import Test.QuickCheck (Property)
+import Test.QuickCheck.Monadic ( monadicIO
+                               , run)
+import Test.QuickCheck.Checkers
+import Test.QuickCheck.Classes (functor)
 import Data.Either (isLeft)
 import Data.Maybe (fromJust)
 
@@ -12,6 +22,39 @@ import Lib
     ( MyEitherT (..)
     )
 
+instance (Arbitrary a, Arbitrary b, Monad m) => Arbitrary (MyEitherT a m b) where
+--  arbitrary :: Gen a
+    arbitrary = do
+        a <- arbitrary
+        b <- arbitrary
+        frequency [
+                    (1, return $ MyEitherT $ return (Right b))
+                  , (1, return $ MyEitherT $ return (Left a))
+                  ]
+
+
+
+
+
+TODO SS: Document
+
+
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE UndecidableInstances #-}
+{-# LANGUAGE UndecidableInstances #-}
+{-# LANGUAGE InstanceSigs #-}
+
+
+
+
+
+
+
+
+
+
+instance (Eq a, Eq b, Eq (Maybe (Either a b))) => EqProp (MyEitherT a Maybe b) where
+    (=-=) = eq
 
 spec :: Spec
 spec = do
@@ -22,6 +65,9 @@ spec = do
                 functorJustProp 39
             prop "Nothing"
                 functorNothingProp
+            modifyMaxSuccess (const 1) $ do
+                prop "Checkers - Functor"
+                    sTraversableLawsProp
     -- describe "Applicative laws" $ do
     --         prop "Just-Just"
     --             applicativeJustJustProp
@@ -39,6 +85,12 @@ functorJustProp a = do
     let value = MyEitherT $ (return . Right) 1 :: MyEitherT String Maybe Int
     let result = (+a) <$> value
     runMyEitherT result == Just (Right (1 + a))
+
+sTraversableLawsProp :: Property
+sTraversableLawsProp = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: MyEitherT String Maybe (Int, Int, Int)
+    run $ quickBatch $ functor trigger
 
 functorNothingProp :: Bool
 functorNothingProp = do

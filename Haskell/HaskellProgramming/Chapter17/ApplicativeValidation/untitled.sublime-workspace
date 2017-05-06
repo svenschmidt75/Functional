@@ -152,16 +152,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
-			"settings":
-			{
-				"buffer_size": 2150,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "QuickCheck and HSpec"
-			}
 		}
 	],
 	"build_system": "",
@@ -219,6 +209,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeValidation/ApplicativeValidation.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/test/ApplicativeLawsSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter17/ApplicativeLaws/src/Lib.hs",
@@ -345,8 +336,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/OptionalMonoid/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/DasHausVomNikolaus/src/Helper.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter12/StringProcessing125/StringProcessing125.cabal"
 	],
 	"find":
 	{
@@ -419,13 +409,15 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -441,8 +433,8 @@
 						"selection":
 						[
 							[
-								362,
-								362
+								457,
+								457
 							]
 						],
 						"settings":
@@ -452,39 +444,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 714.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck and HSpec",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								851,
-								851
-							]
-						],
-						"settings":
-						{
-							"auto_name": "QuickCheck and HSpec",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]

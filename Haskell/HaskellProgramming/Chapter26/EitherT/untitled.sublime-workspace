@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Une",
+				"UndecidableInstances"
+			],
+			[
+				"My",
+				"MyEitherT"
+			],
+			[
 				"l",
 				"lookup ∷ Ord k ⇒ k → Map k a → Maybe a\tData.Map"
 			],
@@ -207,6 +215,32 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Lib.hs",
+			"settings":
+			{
+				"buffer_size": 713,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/EitherTSpec.hs",
+			"settings":
+			{
+				"buffer_size": 4147,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
+			"settings":
+			{
+				"buffer_size": 8339,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -261,10 +295,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/EitherT.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/MonadTransformers.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/Transformers.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MaybeIO/stack.yaml",
@@ -391,12 +428,11 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupBoolDisj/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/SemigroupOr.cabal"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -410,6 +446,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"runMyMaybeT",
+			"MyMaybeT",
 			"MaybeIO",
 			"runMaybeIO",
 			"example5",
@@ -484,8 +522,97 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/EitherTSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1116,
+								1116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4709,
+								4709
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

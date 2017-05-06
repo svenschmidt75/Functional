@@ -411,8 +411,8 @@
 						"selection":
 						[
 							[
-								1132,
-								1132
+								485,
+								485
 							]
 						],
 						"settings":
@@ -509,9 +509,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "Mayb",
 		"selected_items":
 		[
+			[
+				"Mayb",
+				"~/Develop/Functional/Haskell/Playground/MaybeT/untitled.sublime-workspace"
+			],
 			[
 				"",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter20/ThreePrimeFoldable/untitled.sublime-project"
