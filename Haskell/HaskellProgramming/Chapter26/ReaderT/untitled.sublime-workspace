@@ -219,16 +219,16 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2343,
+				"buffer_size": 110,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/EitherTSpec.hs",
+			"file": "test/ReaderTSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2214,
+				"buffer_size": 2141,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -287,14 +287,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/app",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/test"
 	],
 	"file_history":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
-		"/home/svenschmidt75/Develop/Functional/Haskell/GHCExtensions.txt",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/ReaderT.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/EitherT.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/MonadTransformers.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/Transformers.hs",
@@ -420,11 +420,12 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -519,7 +520,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -528,15 +529,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2343,
+						"buffer_size": 110,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2343,
-								2343
+								110,
+								110
 							]
 						],
 						"settings":
@@ -547,24 +548,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/EitherTSpec.hs",
+					"file": "test/ReaderTSpec.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2214,
+						"buffer_size": 2141,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								828,
-								828
+								2141,
+								2141
 							]
 						],
 						"settings":
@@ -577,7 +578,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
