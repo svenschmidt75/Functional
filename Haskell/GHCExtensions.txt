@@ -1,0 +1,54 @@
+Sven Schmidt
+05/07/2017
+
+Flexible Instances
+==================
+
+When implementing type classes, all types must be polymorphic be default.
+FlexibleInstances allows to specifiy concrete types, like
+
+instance Show (Int -> Int) where
+              ^^^^^^^^^^^^
+    show :: (Int -> Int) -> String
+    show _ = "Int -> Int"
+
+This can be useful, for example, when working with QuickCheck, that might ask
+for an instance of Show for function types.
+
+
+
+InstanceSigs
+============
+
+Allows to specify the type class instance signatutes so be used with the
+concrete types, i.e.
+
+instance Show (Int -> Int) where
+    show :: (Int -> Int) -> String
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    show _ = "Int -> Int"
+
+
+FlexibleContexts
+================
+
+Allows using types (opposed to type variables) in constraints, for example in tpe
+class instances,
+
+instance (Eq a, Eq b, Eq (Maybe (Either a b))) => Eq (MyEitherT a Maybe b) where
+                          ^^^^^  ^^^^^^
+
+
+UndecidableInstances
+====================
+
+instance (Eq a, Eq b, Eq (m (Either a b))) => Eq (MyEitherT a m b) where
+
+causes error
+
+• The constraint ‘Eq (m (Either a b))’
+  is no smaller than the instance head
+  (Use UndecidableInstances to permit this)
+• In the instance declaration for ‘Eq (MyEitherT a m b)’
+
+Not sure what this means...

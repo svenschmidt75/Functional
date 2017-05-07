@@ -7,15 +7,15 @@ module Lib
     ) where
 
 
-data MyEitherT a m b = MyEitherT { runMyEitherT :: (m (Either a b)) }
+newtype MyEitherT a m b = MyEitherT { runMyEitherT :: m (Either a b) }
 
-instance (Eq a, Eq b, Eq (Maybe (Either a b))) => Eq (MyEitherT a Maybe b) where
+instance (Eq (m (Either a b))) => Eq (MyEitherT a m b) where
 --  (==) :: a -> a -> Bool
     (==) (MyEitherT a) (MyEitherT b) = a == b
 
 instance Show (MyEitherT a m b) where
 --  show :: a -> String
-    show a = ""
+    show _ = ""
 
 instance Monad m => Functor (MyEitherT a m) where
 --  fmap :: (a -> b) -> f             a -> f             b

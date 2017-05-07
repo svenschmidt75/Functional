@@ -32,27 +32,6 @@ instance (Arbitrary a, Arbitrary b, Monad m) => Arbitrary (MyEitherT a m b) wher
                   , (1, return $ MyEitherT $ return (Left a))
                   ]
 
-
-
-
-
-TODO SS: Document
-
-
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE UndecidableInstances #-}
-{-# LANGUAGE UndecidableInstances #-}
-{-# LANGUAGE InstanceSigs #-}
-
-
-
-
-
-
-
-
-
-
 instance (Eq a, Eq b, Eq (Maybe (Either a b))) => EqProp (MyEitherT a Maybe b) where
     (=-=) = eq
 
