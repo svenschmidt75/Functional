@@ -21,17 +21,17 @@ import Lib
     ( MyEitherT (..)
     )
 
-instance (Arbitrary a, Arbitrary b, Monad m) => Arbitrary (MyEitherT a m b) where
+instance (Arbitrary e, Arbitrary a, Monad m) => Arbitrary (MyEitherT e m a) where
 --  arbitrary :: Gen a
     arbitrary = do
+        e <- arbitrary
         a <- arbitrary
-        b <- arbitrary
         frequency [
-                    (1, return $ MyEitherT $ return (Right b))
-                  , (1, return $ MyEitherT $ return (Left a))
+                    (1, return $ MyEitherT $ return (Right a))
+                  , (1, return $ MyEitherT $ return (Left e))
                   ]
 
-instance (Eq a, Eq b, Eq (Maybe (Either a b))) => EqProp (MyEitherT a Maybe b) where
+instance (Eq e, Eq a, Eq (Maybe (Either e a))) => EqProp (MyEitherT e Maybe a) where
     (=-=) = eq
 
 spec :: Spec
