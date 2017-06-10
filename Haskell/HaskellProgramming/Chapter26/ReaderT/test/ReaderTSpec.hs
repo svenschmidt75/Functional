@@ -1,4 +1,7 @@
 {-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE UndecidableInstances #-}
 module ReaderTSpec (spec) where
 
 import Test.Hspec
@@ -19,17 +22,13 @@ import Lib
     ( MyReaderT (..)
     )
 
-instance (Arbitrary a, Arbitrary b, Monad m) => Arbitrary (MyReaderT a m b) where
+instance (Arbitrary a, Monad m) => Arbitrary (MyReaderT r m a) where
 --  arbitrary :: Gen a
     arbitrary = do
         a <- arbitrary
-        b <- arbitrary
-        frequency [
-                    (1, return $ MyEitherT $ return (Right b))
-                  , (1, return $ MyEitherT $ return (Left a))
-                  ]
+        return $ MyReaderT (\r -> return a)
 
-instance (Eq a, Eq b, Eq (Maybe (Either a b))) => EqProp (MyEitherT a Maybe b) where
+instance (Monad m, Eq (m a), Eq (MyReaderT r m a)) => EqProp (MyReaderT r m a) where
     (=-=) = eq
 
 spec :: Spec
@@ -37,27 +36,27 @@ spec = do
     describe "Functor laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Functor" functorCheckers
-    describe "Functor laws" $
-        modifyMaxSuccess (const 1) $
-            prop "Checkers - Applicative" applicativeCheckers
-    describe "Functor laws" $
-        modifyMaxSuccess (const 1) $
-            prop "Checkers - Monad" monadCheckers
+    -- describe "Applicative laws" $
+    --     modifyMaxSuccess (const 1) $
+    --         prop "Checkers - Applicative" applicativeCheckers
+    -- describe "Monad laws" $
+    --     modifyMaxSuccess (const 1) $
+    --         prop "Checkers - Monad" monadCheckers
 
 functorCheckers :: Property
 functorCheckers = monadicIO $ do
     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
-    let trigger = undefined :: MyEitherT String Maybe (Int, Int, Int)
+    let trigger = undefined :: MyReaderT Int Maybe (Int, Int, Int)
     run $ quickBatch $ functor trigger
 
-applicativeCheckers :: Property
-applicativeCheckers = monadicIO $ do
-    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
-    let trigger = undefined :: MyEitherT String Maybe (Int, Int, Int)
-    run $ quickBatch $ applicative trigger
+-- applicativeCheckers :: Property
+-- applicativeCheckers = monadicIO $ do
+--     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+--     let trigger = undefined :: MyReaderT String Maybe (Int, Int, Int)
+--     run $ quickBatch $ applicative trigger
 
-monadCheckers :: Property
-monadCheckers = monadicIO $ do
-    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
-    let trigger = undefined :: MyEitherT String Maybe (Int, Int, Int)
-    run $ quickBatch $ monad trigger
+-- monadCheckers :: Property
+-- monadCheckers = monadicIO $ do
+--     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+--     let trigger = undefined :: MyReaderT String Maybe (Int, Int, Int)
+--     run $ quickBatch $ monad trigger

@@ -351,6 +351,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"functorCompose",
 			"Possibly",
 			"Identity",
 			"identity",
@@ -428,8 +429,8 @@
 						"selection":
 						[
 							[
-								855,
-								855
+								1608,
+								1608
 							]
 						],
 						"settings":

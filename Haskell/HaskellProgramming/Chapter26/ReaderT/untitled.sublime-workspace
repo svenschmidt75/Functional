@@ -219,7 +219,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 110,
+				"buffer_size": 774,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -228,7 +228,7 @@
 			"file": "test/ReaderTSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2141,
+				"buffer_size": 2138,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -439,6 +439,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MyEitherT",
 			"applicativeCheckers",
 			"functorCheckers",
 			"functorNothingProp",
@@ -520,7 +521,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -529,15 +530,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 110,
+						"buffer_size": 774,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								110,
-								110
+								774,
+								774
 							]
 						],
 						"settings":
@@ -548,7 +549,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -557,28 +558,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2141,
+						"buffer_size": 2138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2141,
-								2141
+								921,
+								921
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -662,9 +663,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "Maybe",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Either",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/untitled.sublime-project"
+			],
 			[
 				"Maybe",
 				"~/Develop/Functional/Haskell/Playground/MaybeIO/untitled.sublime-project"

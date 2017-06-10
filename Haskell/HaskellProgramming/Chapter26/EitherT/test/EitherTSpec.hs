@@ -39,10 +39,10 @@ spec = do
     describe "Functor laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Functor" functorCheckers
-    describe "Functor laws" $
+    describe "Applicative laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Applicative" applicativeCheckers
-    describe "Functor laws" $
+    describe "Monad laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Monad" monadCheckers
 
