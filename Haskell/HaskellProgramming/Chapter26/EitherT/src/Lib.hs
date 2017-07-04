@@ -24,7 +24,7 @@ Eq (MyEitherT a m b) makes sense, which means that each
 resolution step peels off one type constructor.
 Here, the contraint is the definition of MyEitherT itself,
 so it does not allow to remove one layer of constructor.
-There are tricks to make this work, dor example by introducing
+There are tricks to make this work, for example by introducing
 a newtype, see http://stackoverflow.com/questions/17863332/what-contraint-is-no-smaller-than-the-instance-head-means-and-how-to-solve-it
 but here we just go with the UndecidableInstances extension...
 -}

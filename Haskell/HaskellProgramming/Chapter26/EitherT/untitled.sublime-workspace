@@ -293,6 +293,8 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/stack.yaml",
+		"/home/svenschmidt75/Download/MvcApplication/MvcApplication/MvcApplication.csproj",
 		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
 		"/home/svenschmidt75/Develop/Functional/Haskell/GHCExtensions.txt",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/EitherT.cabal",
@@ -418,9 +420,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/SemigroupValidation.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/Spec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs"
 	],
 	"find":
 	{
@@ -546,7 +546,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -565,8 +565,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								2216,
+								2216
 							]
 						],
 						"settings":
