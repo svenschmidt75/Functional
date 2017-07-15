@@ -9,6 +9,11 @@ module Lib
 {-
 The reader transformer monad add additional structure to the
 result, compared to the reader monad itself, (->) r.
+
+newtype MyReader r a = MyReader { runMyReader :: r -> a }
+
+The difference is that the result, a, is changed such that
+the reader returns a type with a monadic structure, i.e. m a.
 -}
 newtype MyReaderT r m a = MyReaderT { runMyReaderT :: r -> m a }
 
@@ -19,6 +24,10 @@ instance Show (MyReaderT Int Maybe Int) where
 instance Eq (r -> m a) => Eq (MyReaderT r m a) where
     (==) :: MyReaderT r m a -> MyReaderT r m a -> Bool
     (==) (MyReaderT a) (MyReaderT b) = a == b
+
+instance Eq (Int -> Maybe Int) where
+    (==) :: (Int -> Maybe Int) -> (Int -> Maybe Int) -> Bool
+    (==) _ _ = True
 
 instance Monad m => Functor (MyReaderT r m) where
     fmap :: (a -> b) -> MyReaderT r m a -> MyReaderT r m b

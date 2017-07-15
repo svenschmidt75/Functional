@@ -293,6 +293,7 @@
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/dotNETCore/.gitignore",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/stack.yaml",
 		"/home/svenschmidt75/Download/MvcApplication/MvcApplication/MvcApplication.csproj",
 		"/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
@@ -419,8 +420,7 @@
 		"/home/svenschmidt75/Develop/Functional/.gitignore",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/SemigroupValidation.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupValidation/test/Spec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs"
 	],
 	"find":
 	{
@@ -565,8 +565,8 @@
 						"selection":
 						[
 							[
-								2216,
-								2216
+								515,
+								515
 							]
 						],
 						"settings":
@@ -663,9 +663,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "readerT",
 		"selected_items":
 		[
+			[
+				"readerT",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/untitled.sublime-project"
+			],
 			[
 				"MaybeT",
 				"~/Develop/Functional/Haskell/Playground/MaybeT/untitled.sublime-workspace"
