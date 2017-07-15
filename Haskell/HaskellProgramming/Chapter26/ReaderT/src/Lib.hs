@@ -58,5 +58,5 @@ instance Monad m => Monad (MyReaderT r m) where
 --  (>>=) :: t             a -> (a -> t             b) -> t             b
     (>>=) :: MyReaderT r m a -> (a -> MyReaderT r m b) -> MyReaderT r m b
     (>>=) (MyReaderT a) f =  MyReaderT $ \r -> do
-                                a1 <- a r
-                                (runMyReaderT (f a1)) r
+                                                a1 <- a r
+                                                runMyReaderT (f a1) r

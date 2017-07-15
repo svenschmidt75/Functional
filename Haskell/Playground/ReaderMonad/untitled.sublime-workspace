@@ -433,8 +433,8 @@
 						"selection":
 						[
 							[
-								470,
-								470
+								256,
+								256
 							]
 						],
 						"settings":
@@ -529,9 +529,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "LearnF",
+		"last_filter": "reader",
 		"selected_items":
 		[
+			[
+				"reader",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter22/ReaderMonad/untitled.sublime-project"
+			],
 			[
 				"LearnF",
 				"~/Develop/Functional/Haskell/Playground/LearnFSharpPetrolExampleMonad/untitled.sublime-project"

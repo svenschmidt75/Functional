@@ -9,7 +9,6 @@ import Test.Hspec.QuickCheck ( prop
                              , modifyMaxSuccess)
 import Test.QuickCheck.Arbitrary ( Arbitrary
                                  , arbitrary)
-import Test.QuickCheck.Gen (frequency)
 import Test.QuickCheck (Property)
 import Test.QuickCheck.Monadic ( monadicIO
                                , run)
@@ -26,7 +25,7 @@ instance (Arbitrary a, Monad m) => Arbitrary (MyReaderT r m a) where
 --  arbitrary :: Gen a
     arbitrary = do
         a <- arbitrary
-        return $ MyReaderT (\r -> return a)
+        return $ MyReaderT (\_ -> return a)
 
 instance (Monad m, Eq (m a), Eq (MyReaderT r m a)) => EqProp (MyReaderT r m a) where
     (=-=) = eq

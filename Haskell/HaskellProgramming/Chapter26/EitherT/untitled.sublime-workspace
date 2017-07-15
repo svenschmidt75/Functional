@@ -219,7 +219,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2343,
+				"buffer_size": 2345,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -519,7 +519,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -528,15 +528,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2343,
+						"buffer_size": 2345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2343,
-								2343
+								454,
+								454
 							]
 						],
 						"settings":
@@ -549,7 +549,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -565,8 +565,8 @@
 						"selection":
 						[
 							[
-								515,
-								515
+								1117,
+								1117
 							]
 						],
 						"settings":
@@ -579,7 +579,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -663,9 +663,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "readerT",
+		"last_filter": "reader",
 		"selected_items":
 		[
+			[
+				"reader",
+				"~/Develop/Functional/Haskell/Playground/ReaderMonad/untitled.sublime-project"
+			],
 			[
 				"readerT",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/untitled.sublime-project"
