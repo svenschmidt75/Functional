@@ -48,7 +48,7 @@ instance Monad m => Applicative (MyEitherT e m) where
 
 --  (<*>) :: f (a -> b) -> f a -> f b
     (<*>) :: MyEitherT e m (a -> b) -> MyEitherT e m a -> MyEitherT e m b
-    (<*>) (MyEitherT fab) (MyEitherT a) = MyEitherT $ (<*>) <$> fab <*> a
+    (<*>) (MyEitherT fab) (MyEitherT fa) = MyEitherT $ (<*>) <$> fab <*> fa
 
 instance Monad m => Monad (MyEitherT e m) where
 --  return :: a -> t             a

@@ -17,7 +17,13 @@ the reader returns a type with a monadic structure, i.e. m a.
 -}
 newtype MyReaderT r m a = MyReaderT { runMyReaderT :: r -> m a }
 
+-- for checking the functor instance via checkers
 instance Show (MyReaderT Int Maybe Int) where
+    show :: a -> String
+    show _ = ""
+
+-- for checking the applicative instance via checkers
+instance Show (MyReaderT Int Maybe (Int -> Int)) where
     show :: a -> String
     show _ = ""
 
@@ -32,3 +38,15 @@ instance Eq (Int -> Maybe Int) where
 instance Monad m => Functor (MyReaderT r m) where
     fmap :: (a -> b) -> MyReaderT r m a -> MyReaderT r m b
     fmap f (MyReaderT a) = MyReaderT $ \r -> f <$> a r
+
+instance Monad m => Applicative (MyReaderT r m) where
+--  pure :: a -> f             a
+    pure :: a -> MyReaderT r m a
+    pure a = MyReaderT $ (pure . pure) a
+
+--  (<*>) :: f (a -> b) -> f a -> f b
+    (<*>) :: MyReaderT r m (a -> b) -> MyReaderT r m a -> MyReaderT r m b
+-- Use <$> to lift <*> over m
+    (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ ((<*>) <$> fab) <*> fa
+--    (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ \r -> (fab r) <*> (fa r)
+
