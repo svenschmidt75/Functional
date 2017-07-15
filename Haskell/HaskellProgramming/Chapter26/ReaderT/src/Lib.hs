@@ -50,3 +50,13 @@ instance Monad m => Applicative (MyReaderT r m) where
     (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ ((<*>) <$> fab) <*> fa
 --    (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ \r -> (fab r) <*> (fa r)
 
+instance Monad m => Monad (MyReaderT r m) where
+--  return :: a -> t             a
+    return :: a -> MyReaderT e m a
+    return = pure
+
+--  (>>=) :: t             a -> (a -> t             b) -> t             b
+    (>>=) :: MyReaderT r m a -> (a -> MyReaderT r m b) -> MyReaderT r m b
+    (>>=) (MyReaderT a) f =  MyReaderT $ \r -> do
+                                a1 <- a r
+                                (runMyReaderT (f a1)) r

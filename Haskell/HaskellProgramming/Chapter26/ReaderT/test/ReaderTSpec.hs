@@ -39,9 +39,9 @@ spec = do
     describe "Applicative laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Applicative" applicativeCheckers
-    -- describe "Monad laws" $
-    --     modifyMaxSuccess (const 1) $
-    --         prop "Checkers - Monad" monadCheckers
+    describe "Monad laws" $
+        modifyMaxSuccess (const 1) $
+            prop "Checkers - Monad" monadCheckers
 
 functorCheckers :: Property
 functorCheckers = monadicIO $ do
@@ -55,8 +55,8 @@ applicativeCheckers = monadicIO $ do
     let trigger = undefined :: MyReaderT Int Maybe (Int, Int, Int)
     run $ quickBatch $ applicative trigger
 
--- monadCheckers :: Property
--- monadCheckers = monadicIO $ do
---     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
---     let trigger = undefined :: MyReaderT String Maybe (Int, Int, Int)
---     run $ quickBatch $ monad trigger
+monadCheckers :: Property
+monadCheckers = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: MyReaderT Int Maybe (Int, Int, Int)
+    run $ quickBatch $ monad trigger
