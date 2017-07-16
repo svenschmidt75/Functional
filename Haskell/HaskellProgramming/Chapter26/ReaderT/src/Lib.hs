@@ -46,7 +46,35 @@ instance Monad m => Applicative (MyReaderT r m) where
 
 --  (<*>) :: f (a -> b) -> f a -> f b
     (<*>) :: MyReaderT r m (a -> b) -> MyReaderT r m a -> MyReaderT r m b
--- Use <$> to lift <*> over m
+{- We have to lift the apply function (<*>) over (->) r
+   in fab :: r -> m (a -> b).
+   The inner context is now m, and fa :: r -> m a, hence
+   ((<*>) <$> fab) <*> fa is what we want.
+   Note, the f in the right-most
+   (<*>) :: f (a -> b) -> f a -> f b
+   here is (->) r, not m!
+
+    Why does (<$>) (<*>) fab work?
+    The types:
+    (<$>) :: (a -> b) -> f a -> f b
+    (<*>) :: f (a -> b) -> f a -> f b
+
+    (<$>) (<*>)       fab
+       :: (a -> b) -> f a -> f b
+
+    hence (a -> b) ~ (<*>) :: h (u -> v) -> h u -> h v
+    with a ~ h (u -> v), b ~ h u -> h v
+    and f a ~ fab :: r -> m (x -> y), where f ~ (->) r, a ~ m (x -> y).
+
+    It follows that h ~ m, x ~ u, y ~ v, so and
+
+    f b :: r -> (m u -> m v)
+
+    and
+
+    ((<$>) (<*>) fab) <*> fb is well defined, where the <*> lifts
+    over the (->) r structure.
+-}
     (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ ((<*>) <$> fab) <*> fa
 --    (<*>) (MyReaderT fab) (MyReaderT fa) = MyReaderT $ \r -> (fab r) <*> (fa r)
 

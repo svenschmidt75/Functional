@@ -403,8 +403,8 @@
 						"selection":
 						[
 							[
-								764,
-								764
+								803,
+								803
 							]
 						],
 						"settings":
@@ -531,9 +531,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "state",
+		"last_filter": "ReaderT",
 		"selected_items":
 		[
+			[
+				"ReaderT",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/untitled.sublime-project"
+			],
 			[
 				"state",
 				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter23/StateMonad/untitled.sublime-project"

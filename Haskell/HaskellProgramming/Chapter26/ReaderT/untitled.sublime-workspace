@@ -219,7 +219,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 774,
+				"buffer_size": 2997,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -228,7 +228,16 @@
 			"file": "test/ReaderTSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2138,
+				"buffer_size": 2045,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Main.hs",
+			"settings":
+			{
+				"buffer_size": 112,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -530,23 +539,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 774,
+						"buffer_size": 2997,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								774,
-								774
+								2370,
+								2370
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 710.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -558,15 +569,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2138,
+						"buffer_size": 2045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2138,
-								2138
+								440,
+								440
 							]
 						],
 						"settings":
@@ -574,6 +585,34 @@
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
