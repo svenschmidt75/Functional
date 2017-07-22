@@ -215,33 +215,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/Lib.hs",
-			"settings":
-			{
-				"buffer_size": 2997,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/ReaderTSpec.hs",
-			"settings":
-			{
-				"buffer_size": 2045,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Main.hs",
-			"settings":
-			{
-				"buffer_size": 112,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -296,10 +269,7 @@
 	},
 	"expanded_folders":
 	[
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/app",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/src",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/test"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/StateT"
 	],
 	"file_history":
 	[
@@ -530,97 +500,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2997,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1289,
-								1289
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 353.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/ReaderTSpec.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2045,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								440,
-								440
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Main.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 112,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
