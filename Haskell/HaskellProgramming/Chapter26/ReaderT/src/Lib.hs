@@ -44,7 +44,7 @@ instance Monad m => Applicative (MyReaderT r m) where
     pure :: a -> MyReaderT r m a
     pure a = MyReaderT $ (pure . pure) a
 
---  (<*>) :: f (a -> b) -> f a -> f b
+--  (<*>) :: f             (a -> b) -> f             a -> f             b
     (<*>) :: MyReaderT r m (a -> b) -> MyReaderT r m a -> MyReaderT r m b
 {- We have to lift the apply function (<*>) over (->) r
    in fab :: r -> m (a -> b).
@@ -85,6 +85,5 @@ instance Monad m => Monad (MyReaderT r m) where
 
 --  (>>=) :: t             a -> (a -> t             b) -> t             b
     (>>=) :: MyReaderT r m a -> (a -> MyReaderT r m b) -> MyReaderT r m b
-    (>>=) (MyReaderT a) f =  MyReaderT $ \r -> do
-                                                a1 <- a r
-                                                runMyReaderT (f a1) r
+    (>>=) (MyReaderT a) f =  MyReaderT $ \r -> do a1 <- a r
+                                                  runMyReaderT (f a1) r

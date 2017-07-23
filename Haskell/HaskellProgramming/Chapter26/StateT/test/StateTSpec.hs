@@ -35,12 +35,12 @@ spec = do
     describe "Functor laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Functor" functorCheckers
-    -- describe "Applicative laws" $
-    --     modifyMaxSuccess (const 1) $
-    --         prop "Checkers - Applicative" applicativeCheckers
-    -- describe "Monad laws" $
-    --     modifyMaxSuccess (const 1) $
-    --         prop "Checkers - Monad" monadCheckers
+    describe "Applicative laws" $
+        modifyMaxSuccess (const 1) $
+            prop "Checkers - Applicative" applicativeCheckers
+    describe "Monad laws" $
+        modifyMaxSuccess (const 1) $
+            prop "Checkers - Monad" monadCheckers
 
 functorCheckers :: Property
 functorCheckers = monadicIO $ do
@@ -48,14 +48,14 @@ functorCheckers = monadicIO $ do
     let trigger = undefined :: MyStateT Int Maybe (String, String, String)
     run $ quickBatch $ functor trigger
 
--- applicativeCheckers :: Property
--- applicativeCheckers = monadicIO $ do
---     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
---     let trigger = undefined :: MyReaderT Int Maybe (Int, Int, Int)
---     run $ quickBatch $ applicative trigger
+applicativeCheckers :: Property
+applicativeCheckers = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: MyStateT Int Maybe (String, String, String)
+    run $ quickBatch $ applicative trigger
 
--- monadCheckers :: Property
--- monadCheckers = monadicIO $ do
---     -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
---     let trigger = undefined :: MyReaderT Int Maybe (Int, Int, Int)
---     run $ quickBatch $ monad trigger
+monadCheckers :: Property
+monadCheckers = monadicIO $ do
+    -- result type is Test.QuickCheck.Monadic.PropertyM IO ()
+    let trigger = undefined :: MyStateT Int Maybe (String, String, String)
+    run $ quickBatch $ monad trigger
