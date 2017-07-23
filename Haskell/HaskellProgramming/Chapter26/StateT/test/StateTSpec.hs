@@ -32,6 +32,10 @@ instance (Monad m, Eq (MyStateT s m a)) => EqProp (MyStateT s m a) where
 
 spec :: Spec
 spec = do
+{- I don't think this is doing what I want it to do, because
+   we cannot compare functions.
+   The Eq instances defined in Lib.hs are bogus...
+-}
     describe "Functor laws" $
         modifyMaxSuccess (const 1) $
             prop "Checkers - Functor" functorCheckers

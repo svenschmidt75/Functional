@@ -219,7 +219,7 @@
 			"file": "test/StateTSpec.hs",
 			"settings":
 			{
-				"buffer_size": 2101,
+				"buffer_size": 2216,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -228,7 +228,7 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 2037,
+				"buffer_size": 2348,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -520,7 +520,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -529,15 +529,45 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2101,
+						"buffer_size": 2216,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								102,
-								102
+								1380,
+								1380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Lib.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								570,
+								570
 							]
 						],
 						"settings":
@@ -551,34 +581,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Lib.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2037,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1525,
-								1525
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 217.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
