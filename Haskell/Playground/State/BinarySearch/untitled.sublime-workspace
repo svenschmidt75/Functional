@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"bin",
+				"binarySearch' ∷ Eq a ⇒ [a] → a → Int → Int → State Int Bool\tLib"
+			],
+			[
 				"M",
 				"MyEitherT a m b\tLib"
 			],
@@ -219,7 +223,34 @@
 			"file": "src/Lib.hs",
 			"settings":
 			{
-				"buffer_size": 171,
+				"buffer_size": 821,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/BinarySearchSpec.hs",
+			"settings":
+			{
+				"buffer_size": 1653,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "BinarySearch.cabal",
+			"settings":
+			{
+				"buffer_size": 1464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
+			"settings":
+			{
+				"buffer_size": 8359,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -278,10 +309,12 @@
 	"expanded_folders":
 	[
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/BinarySearch",
-		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/BinarySearch/src"
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/BinarySearch/src",
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/BinarySearch/test"
 	],
 	"file_history":
 	[
+		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/State/BinarySearch/BinarySearch.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/ReaderT/ReaderT.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter26/EitherT/EitherT.cabal",
 		"/home/svenschmidt75/Develop/Functional/Haskell/Playground/MonadTransformers/MonadTransformers.cabal",
@@ -408,8 +441,7 @@
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/test/LibSpec.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/src/Lib.hs",
 		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupCombine/SemigroupCombine.cabal",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs",
-		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/src/Lib.hs"
+		"/home/svenschmidt75/Develop/Functional/Haskell/HaskellProgramming/Chapter15/SemigroupOr/test/LibSpec.hs"
 	],
 	"find":
 	{
@@ -509,24 +541,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "src/Lib.hs",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 171,
+						"buffer_size": 821,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								821,
+								821
 							]
 						],
 						"settings":
@@ -537,7 +569,97 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/BinarySearchSpec.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1653,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1653,
+								1653
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "BinarySearch.cabal",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1197,
+								1197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Cabal.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/svenschmidt75/Develop/Functional/Haskell/QuickCheck Cheat Sheet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

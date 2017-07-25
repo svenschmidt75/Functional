@@ -2,8 +2,6 @@
 {-# LANGUAGE QuasiQuotes #-}
 module BinarySearchSpec (spec) where
 
-import Prelude hiding (min, max)
-
 import Test.Hspec
 import Test.Hspec.QuickCheck (prop)
 import Test.QuickCheck
@@ -22,7 +20,7 @@ spec :: Spec
 spec = do
     describe "Binary Search" $ do
         it "empty array" $
-            fst (runState (binarySearch [] 1) 0) `shouldBe` False
+            evalState (binarySearch [] 1) 0 `shouldBe` False
         it "one-element array" $ do
             let found = evalState (binarySearch [0] 1) 0
             found `shouldBe` False
@@ -41,3 +39,8 @@ spec = do
         it "element too small" $ do
             let found = evalState (binarySearch [1, 2, 3, 4, 5, 9, 18, 465, 3645] (-1)) 0
             found `shouldBe` False
+        prop "" $ \x -> myProp x
+
+myProp :: [Int] -> Bool
+myProp xs = do let (found, n) = runState (binarySearch xs 465) 0
+               ((fromIntegral n) :: Float) < ((logBase 2 (length xs)) :: Float)

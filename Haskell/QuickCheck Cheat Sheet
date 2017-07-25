@@ -10,6 +10,7 @@ Feb. 26th, 2017
 Load QuichCheck into instance og ghci:
 
 :set -package QuickCheck
+:set -package hspec
 import Test.Quickcheck
 
 

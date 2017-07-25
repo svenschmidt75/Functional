@@ -443,8 +443,8 @@
 						"selection":
 						[
 							[
-								1212,
-								1404
+								1211,
+								1211
 							]
 						],
 						"settings":
@@ -537,9 +537,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "FunctorFl",
 		"selected_items":
 		[
+			[
+				"FunctorFl",
+				"~/Develop/Functional/Haskell/HaskellProgramming/Chapter16/FunctorFlip/untitled.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
